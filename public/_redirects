@@ -1,5 +1,2 @@
-# Redirect ALL pages.dev variants to canonical domain
-https://*.enorve-market.pages.dev/*  https://enorve.com/:splat  301
-
-# SPA routing
+# SPA routing - serve index.html for all routes
 /*  /index.html  200
