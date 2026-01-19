@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import {
     Shield, ArrowRight, Lock, Key, Database, Cloud,
-    Activity, AlertTriangle, Eye, Mail, CheckCircle
+    Activity, AlertTriangle, Eye, Mail, CheckCircle, Zap
 } from "lucide-react"
 import { Button } from "../components/ui/Button"
 import { usePageTitle } from "../hooks/usePageTitle"
@@ -12,10 +12,13 @@ const securityAreas = [
         title: "Access & Authentication",
         icon: Key,
         items: [
-            "Secure, password-based authentication",
-            "Multi-factor authentication (MFA) for privileged roles",
+            "Password-based user authentication",
+            "Multi-factor authentication (MFA) supported for privileged roles",
             "Role-based access controls",
-            "Tenant-isolated data access"
+            "Logical tenant-level data isolation",
+            "Authorization checks enforced server-side for protected operations",
+            "Client-side state is not relied upon for access control or billing decisions",
+            "Access decisions are evaluated based on server-validated identity and permissions"
         ]
     },
     {
@@ -23,27 +26,39 @@ const securityAreas = [
         icon: Database,
         items: [
             "Encryption in transit using modern TLS standards",
-            "Encryption at rest for stored data",
+            "Encryption at rest for stored data, as supported by underlying infrastructure providers",
             "Logical separation of customer data",
-            "Secure handling based on data classification"
+            "Data handled in accordance with defined internal classification and access guidelines"
+        ]
+    },
+    {
+        title: "AI Usage & Abuse Controls",
+        icon: Zap,
+        items: [
+            "AI features are subject to server-side usage limits and plan-level enforcement",
+            "Controls are in place to reduce the risk of automated misuse and excessive consumption",
+            "Monitoring is applied to identify abnormal or unintended usage patterns",
+            "These controls are designed to support fair usage and operational stability"
         ]
     },
     {
         title: "Infrastructure & Reliability",
         icon: Cloud,
         items: [
-            "Cloud-hosted infrastructure with redundancy",
-            "Continuous monitoring for availability",
-            "Regular backups with defined recovery objectives",
-            "Planned maintenance communicated in advance"
+            "Cloud-hosted infrastructure with redundancy and fault-tolerance measures",
+            "Ongoing monitoring for service availability and operational anomalies",
+            "Regular data backups with defined recovery objectives",
+            "Planned maintenance activities communicated in advance where applicable"
         ]
     },
     {
         title: "Incident Response",
         icon: AlertTriangle,
         items: [
-            "Documented procedures for security incidents",
-            "Timely notification for confirmed incidents"
+            "Documented procedures for handling security incidents",
+            "Investigation and response processes aligned with severity and impact",
+            "Notification provided for confirmed incidents in accordance with applicable obligations",
+            "Internal controls may be used to restrict access or disable specific functionality when required to mitigate risk"
         ]
     }
 ]
@@ -70,12 +85,12 @@ export function Security() {
                         Built with security<br />from day one
                     </h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                        Protecting customer data is a core design principle at Enorve. We follow industry-standard security practices to safeguard information, maintain system reliability, and ensure responsible access.
+                        Protecting customer data is a core design consideration at Enorve. We apply industry-standard security practices designed to safeguard information, support system reliability, and promote responsible access to the platform.
                     </p>
                 </motion.div>
             </section>
 
-            {/* Security Areas - Streamlined List */}
+            {/* Security Areas */}
             <section className="max-w-4xl mx-auto px-6 mb-20 relative z-10">
                 <div className="space-y-8">
                     {securityAreas.map((area, index) => (
@@ -106,7 +121,7 @@ export function Security() {
                 </div>
             </section>
 
-            {/* Additional Info - Compact */}
+            {/* Additional Info */}
             <section className="max-w-4xl mx-auto px-6 mb-20 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -120,10 +135,10 @@ export function Security() {
                         <div>
                             <h3 className="text-white font-medium mb-1">System Status</h3>
                             <p className="text-sm text-gray-400">
-                                View real-time system availability on our{" "}
+                                Current service availability and incident updates are published on our public{" "}
                                 <a href="https://status.enorve.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
                                     Status page
-                                </a>
+                                </a>.
                             </p>
                         </div>
                     </div>
@@ -134,8 +149,11 @@ export function Security() {
                         <Eye className="w-5 h-5 text-emerald-400 mt-1" />
                         <div>
                             <h3 className="text-white font-medium mb-1">Privacy & Compliance</h3>
+                            <p className="text-sm text-gray-400 mb-2">
+                                Enorve processes personal data in accordance with its Privacy Policy and applicable data protection requirements.
+                            </p>
                             <p className="text-sm text-gray-400">
-                                We handle personal data responsibly and our controls align with SaaS industry standards.{" "}
+                                Security controls are designed to align with commonly adopted SaaS and enterprise security practices, including principles reflected in SOC 2 Trust Services Criteria.{" "}
                                 <Link to="/privacy-policy" className="text-emerald-400 hover:underline">
                                     Privacy Policy →
                                 </Link>
@@ -150,7 +168,7 @@ export function Security() {
                         <div>
                             <h3 className="text-white font-medium mb-1">Responsible Disclosure</h3>
                             <p className="text-sm text-gray-400">
-                                Found a vulnerability? Report it to{" "}
+                                If you believe you have identified a security vulnerability, please report it responsibly to{" "}
                                 <a href="mailto:security@enorve.com" className="text-amber-400 hover:underline">
                                     security@enorve.com
                                 </a>
@@ -173,10 +191,13 @@ export function Security() {
 
                     <div className="relative z-10">
                         <h2 className="text-2xl md:text-3xl font-medium text-white mb-4 tracking-tight">
-                            Questions about security?
+                            Questions about Security?
                         </h2>
                         <p className="text-gray-400 mb-6 max-w-md mx-auto">
-                            Our team is happy to discuss our security practices.
+                            For security-related inquiries, contact{" "}
+                            <a href="mailto:security@enorve.com" className="text-emerald-400 hover:underline">
+                                security@enorve.com
+                            </a>
                         </p>
                         <Link to="/contact-sales">
                             <Button variant="primary" size="lg">
