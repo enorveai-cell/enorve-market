@@ -136,7 +136,7 @@ export function Security() {
                             <h3 className="text-white font-medium mb-1">System Status</h3>
                             <p className="text-sm text-gray-400">
                                 Current service availability and incident updates are published on our public{" "}
-                                <a href="https://status.enorve.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+                                <a href="https://app.enorve.com/status" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
                                     Status page
                                 </a>.
                             </p>
