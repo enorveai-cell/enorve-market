@@ -106,14 +106,14 @@ export function Analytics() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">Analytics Dashboard</span>
+                                        <span className="text-xs text-gray-400 ml-3">Analytics Dashboard</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <div className="flex items-center gap-1 px-2 py-1 rounded bg-green-500/10 border border-green-500/20">
                                             <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                                             <span className="text-[10px] text-green-400">Live</span>
                                         </div>
-                                        <div className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 text-gray-500">
+                                        <div className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 text-gray-400">
                                             <Calendar className="w-3 h-3" />
                                             <span className="text-[10px]">Last 7 days</span>
                                         </div>
@@ -129,7 +129,7 @@ export function Analytics() {
                                         { label: "CSAT", value: "4.6/5", change: "+0.3", up: true }
                                     ].map((kpi) => (
                                         <div key={kpi.label} className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
-                                            <div className="text-[10px] text-gray-500 mb-1">{kpi.label}</div>
+                                            <div className="text-[10px] text-gray-400 mb-1">{kpi.label}</div>
                                             <div className="flex items-end gap-2">
                                                 <span className="text-lg font-bold text-white">{kpi.value}</span>
                                                 <span className={`text-[10px] ${kpi.up ? 'text-green-400' : 'text-red-400'}`}>
@@ -146,7 +146,7 @@ export function Analytics() {
                                         <span className="text-xs text-white font-medium">Conversation Volume</span>
                                         <div className="flex gap-2">
                                             <span className="text-[10px] px-2 py-0.5 rounded bg-orange-500/10 text-orange-400">Messages</span>
-                                            <span className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-gray-500">Conversations</span>
+                                            <span className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-gray-400">Conversations</span>
                                         </div>
                                     </div>
 
@@ -161,7 +161,7 @@ export function Analytics() {
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="flex justify-between mt-2 text-[10px] text-gray-500">
+                                    <div className="flex justify-between mt-2 text-[10px] text-gray-400">
                                         <span>Mon</span>
                                         <span>Tue</span>
                                         <span>Wed</span>
@@ -179,7 +179,7 @@ export function Analytics() {
                                             <Brain className="w-4 h-4 text-green-400" />
                                         </div>
                                         <div>
-                                            <div className="text-[10px] text-gray-500">AI Handled</div>
+                                            <div className="text-[10px] text-gray-400">AI Handled</div>
                                             <div className="text-xs text-white font-medium">78%</div>
                                         </div>
                                     </div>
@@ -188,7 +188,7 @@ export function Analytics() {
                                             <Users className="w-4 h-4 text-blue-400" />
                                         </div>
                                         <div>
-                                            <div className="text-[10px] text-gray-500">Agent Handled</div>
+                                            <div className="text-[10px] text-gray-400">Agent Handled</div>
                                             <div className="text-xs text-white font-medium">22%</div>
                                         </div>
                                     </div>
@@ -197,7 +197,7 @@ export function Analytics() {
                                             <DollarSign className="w-4 h-4 text-orange-400" />
                                         </div>
                                         <div>
-                                            <div className="text-[10px] text-gray-500">Revenue</div>
+                                            <div className="text-[10px] text-gray-400">Revenue</div>
                                             <div className="text-xs text-white font-medium">₹8.4L</div>
                                         </div>
                                     </div>
@@ -210,7 +210,7 @@ export function Analytics() {
                                     <TrendingUp className="w-4 h-4 text-green-400" />
                                     <div>
                                         <div className="text-xs text-white">+23%</div>
-                                        <div className="text-[10px] text-gray-500">vs last week</div>
+                                        <div className="text-[10px] text-gray-400">vs last week</div>
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +270,7 @@ export function Analytics() {
                                     </div>
                                 </div>
                                 <div className="text-3xl font-bold text-white mb-1">{kpi.value}</div>
-                                <div className="text-sm text-gray-500 mb-3">{kpi.label}</div>
+                                <div className="text-sm text-gray-400 mb-3">{kpi.label}</div>
                                 <div className="flex items-center gap-2">
                                     <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
                                         <div
@@ -278,7 +278,7 @@ export function Analytics() {
                                             style={{ width: `${parseInt(kpi.value)}%` }}
                                         />
                                     </div>
-                                    <span className="text-[10px] text-gray-500">Target: {kpi.target}</span>
+                                    <span className="text-[10px] text-gray-400">Target: {kpi.target}</span>
                                 </div>
                             </motion.div>
                         ))}
@@ -328,14 +328,14 @@ export function Analytics() {
                             <div className="flex items-center justify-between mb-4">
                                 <div>
                                     <div className="text-4xl font-bold text-white">78%</div>
-                                    <div className="text-sm text-gray-500">Auto-resolved ÷ AI-handled</div>
+                                    <div className="text-sm text-gray-400">Auto-resolved ÷ AI-handled</div>
                                 </div>
                                 <div className="text-right">
                                     <div className="text-sm text-green-400 flex items-center gap-1 justify-end">
                                         <TrendingUp className="w-4 h-4" />
                                         +5% vs last week
                                     </div>
-                                    <div className="text-xs text-gray-500 mt-1">Target: 70%</div>
+                                    <div className="text-xs text-gray-400 mt-1">Target: 70%</div>
                                 </div>
                             </div>
 
@@ -346,15 +346,15 @@ export function Analytics() {
                                     <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-violet-500 to-purple-500" />
                                 </div>
                                 <div className="flex justify-between mt-2 text-xs">
-                                    <span className="text-gray-500">0%</span>
-                                    <span className="text-gray-500">70% target</span>
-                                    <span className="text-gray-500">100%</span>
+                                    <span className="text-gray-400">0%</span>
+                                    <span className="text-gray-400">70% target</span>
+                                    <span className="text-gray-400">100%</span>
                                 </div>
                             </div>
 
                             {/* Confidence Distribution */}
                             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                                <div className="text-xs text-gray-500 mb-3">Confidence Distribution</div>
+                                <div className="text-xs text-gray-400 mb-3">Confidence Distribution</div>
                                 <div className="space-y-2">
                                     {[
                                         { range: "90-100%", count: 892, percent: 45, color: "#10B981" },
@@ -370,7 +370,7 @@ export function Analytics() {
                                                     style={{ width: `${item.percent}%`, backgroundColor: item.color }}
                                                 />
                                             </div>
-                                            <span className="text-[10px] text-gray-500 w-10">{item.count}</span>
+                                            <span className="text-[10px] text-gray-400 w-10">{item.count}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -390,17 +390,17 @@ export function Analytics() {
                             <div className="grid grid-cols-2 gap-4 mb-6">
                                 <div className="p-4 rounded-xl bg-red-500/5 border border-red-500/20">
                                     <div className="text-2xl font-bold text-red-400">18%</div>
-                                    <div className="text-xs text-gray-500">Escalation Rate</div>
+                                    <div className="text-xs text-gray-400">Escalation Rate</div>
                                 </div>
                                 <div className="p-4 rounded-xl bg-amber-500/5 border border-amber-500/20">
                                     <div className="text-2xl font-bold text-amber-400">287</div>
-                                    <div className="text-xs text-gray-500">Low Confidence</div>
+                                    <div className="text-xs text-gray-400">Low Confidence</div>
                                 </div>
                             </div>
 
                             {/* Escalation Triggers */}
                             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                                <div className="text-xs text-gray-500 mb-3">Top Escalation Triggers</div>
+                                <div className="text-xs text-gray-400 mb-3">Top Escalation Triggers</div>
                                 <div className="space-y-3">
                                     {[
                                         { reason: "Low Confidence", count: 287, percent: 42 },
@@ -466,7 +466,7 @@ export function Analytics() {
                             >
                                 <div className="text-3xl font-bold text-white mb-1">{metric.value}</div>
                                 <div className="text-sm text-white font-medium mb-1">{metric.label}</div>
-                                <div className="text-xs text-gray-500">{metric.desc}</div>
+                                <div className="text-xs text-gray-400">{metric.desc}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -490,21 +490,21 @@ export function Analytics() {
                                     <h4 className="text-sm text-white font-medium mb-3">{item.feature}</h4>
                                     <div className="space-y-2 text-xs">
                                         <div className="flex justify-between">
-                                            <span className="text-gray-500">Generated</span>
+                                            <span className="text-gray-400">Generated</span>
                                             <span className="text-white">{item.generated.toLocaleString()}</span>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span className="text-gray-500">Used</span>
+                                            <span className="text-gray-400">Used</span>
                                             <span className="text-green-400">{item.used.toLocaleString()}</span>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span className="text-gray-500">Edited</span>
+                                            <span className="text-gray-400">Edited</span>
                                             <span className="text-amber-400">{item.edited.toLocaleString()}</span>
                                         </div>
                                     </div>
                                     <div className="mt-3 pt-3 border-t border-white/5">
                                         <div className="flex items-center justify-between">
-                                            <span className="text-xs text-gray-500">Usage Rate</span>
+                                            <span className="text-xs text-gray-400">Usage Rate</span>
                                             <span className="text-sm font-medium text-orange-400">{item.rate}%</span>
                                         </div>
                                         <div className="h-2 rounded-full bg-white/10 overflow-hidden mt-2">
@@ -533,7 +533,7 @@ export function Analytics() {
                         >
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Channel<br />
-                                <span className="text-gray-500">Insights</span>
+                                <span className="text-gray-400">Insights</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Understand which channels drive the most volume, AI vs agent handling per channel, and revenue attribution by source.
@@ -594,7 +594,7 @@ export function Analytics() {
                                     </svg>
                                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                                         <div className="text-3xl font-bold text-white">78%</div>
-                                        <div className="text-xs text-gray-500">AI Handled</div>
+                                        <div className="text-xs text-gray-400">AI Handled</div>
                                     </div>
                                 </div>
                             </div>
@@ -664,7 +664,7 @@ export function Analytics() {
                             { label: "Top Channel", value: "WhatsApp", trend: "₹4.2L" }
                         ].map((stat, i) => (
                             <div key={stat.label} className="p-6 rounded-[24px] bg-[#0C0E12] border border-white/5">
-                                <div className="text-sm text-gray-500 mb-2">{stat.label}</div>
+                                <div className="text-sm text-gray-400 mb-2">{stat.label}</div>
                                 <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
                                 <div className="text-xs text-green-400">{stat.trend}</div>
                             </div>
@@ -691,7 +691,7 @@ export function Analytics() {
 
                             <div className="text-center mb-8">
                                 <div className="text-5xl font-bold text-white mb-2">96.8%</div>
-                                <div className="text-sm text-gray-500">Overall SLA Compliance</div>
+                                <div className="text-sm text-gray-400">Overall SLA Compliance</div>
                             </div>
 
                             <div className="space-y-6">
@@ -718,11 +718,11 @@ export function Analytics() {
                             <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/5">
                                 <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/20 text-center">
                                     <div className="text-lg font-bold text-amber-400">12</div>
-                                    <div className="text-[10px] text-gray-500">At Risk</div>
+                                    <div className="text-[10px] text-gray-400">At Risk</div>
                                 </div>
                                 <div className="p-3 rounded-xl bg-red-500/5 border border-red-500/20 text-center">
                                     <div className="text-lg font-bold text-red-400">3</div>
-                                    <div className="text-[10px] text-gray-500">Breached</div>
+                                    <div className="text-[10px] text-gray-400">Breached</div>
                                 </div>
                             </div>
                         </motion.div>
@@ -735,7 +735,7 @@ export function Analytics() {
                         >
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Never miss<br />
-                                <span className="text-gray-500">an SLA</span>
+                                <span className="text-gray-400">an SLA</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Real-time SLA tracking with at-risk warnings and breach alerts. Goal progress bars help teams stay on target.
@@ -753,7 +753,7 @@ export function Analytics() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium text-sm mb-1">{item.title}</h4>
-                                            <p className="text-gray-500 text-xs">{item.desc}</p>
+                                            <p className="text-gray-400 text-xs">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -848,3 +848,4 @@ export function Analytics() {
         </div>
     )
 }
+

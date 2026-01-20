@@ -202,14 +202,14 @@ export function Automation() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">Workflow Builder</span>
+                                        <span className="text-xs text-gray-400 ml-3">Workflow Builder</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <div className="flex items-center gap-1 px-2 py-1 rounded bg-green-500/10 border border-green-500/20">
                                             <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
                                             <span className="text-[10px] text-green-400">Active</span>
                                         </div>
-                                        <Settings className="w-4 h-4 text-gray-500" />
+                                        <Settings className="w-4 h-4 text-gray-400" />
                                     </div>
                                 </div>
 
@@ -280,7 +280,7 @@ export function Automation() {
                                         <span className="text-[10px] px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">True</span>
                                     </div>
                                     <div className="absolute bottom-[70px] right-[calc(50%-60px)] translate-x-1/2">
-                                        <span className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-gray-500 border border-white/10">False</span>
+                                        <span className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-gray-400 border border-white/10">False</span>
                                     </div>
                                 </div>
                             </div>
@@ -291,7 +291,7 @@ export function Automation() {
                                     <TrendingUp className="w-4 h-4 text-green-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">2,847</div>
-                                        <div className="text-[10px] text-gray-500">Executions this week</div>
+                                        <div className="text-[10px] text-gray-400">Executions this week</div>
                                     </div>
                                 </div>
                             </div>
@@ -351,7 +351,7 @@ export function Automation() {
                                 <div className="flex items-center gap-2 mb-2">
                                     <h3 className="text-xl font-medium text-white tracking-tight">{cap.title}</h3>
                                 </div>
-                                <p className="text-sm text-gray-500 mb-4">{cap.subtitle}</p>
+                                <p className="text-sm text-gray-400 mb-4">{cap.subtitle}</p>
                                 <ul className="space-y-2">
                                     {cap.features.map((feature) => (
                                         <li key={feature} className="flex items-start gap-2 text-xs text-gray-400">
@@ -414,7 +414,7 @@ export function Automation() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium text-sm">{trigger.name}</h4>
-                                            <p className="text-gray-500 text-xs">{trigger.desc}</p>
+                                            <p className="text-gray-400 text-xs">{trigger.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -440,7 +440,7 @@ export function Automation() {
                                 {actions.map((action) => (
                                     <div key={action.name} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-green-500/20 transition-colors">
                                         <h4 className="text-white font-medium text-sm mb-1">{action.name}</h4>
-                                        <p className="text-gray-500 text-xs">{action.desc}</p>
+                                        <p className="text-gray-400 text-xs">{action.desc}</p>
                                     </div>
                                 ))}
                             </div>
@@ -506,14 +506,14 @@ export function Automation() {
                                     <div className="flex items-start gap-2">
                                         <Play className="w-3 h-3 text-pink-400 mt-1" />
                                         <div>
-                                            <div className="text-[10px] text-gray-500">Trigger</div>
+                                            <div className="text-[10px] text-gray-400">Trigger</div>
                                             <div className="text-xs text-gray-300">{template.trigger}</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-2">
                                         <Target className="w-3 h-3 text-amber-400 mt-1" />
                                         <div>
-                                            <div className="text-[10px] text-gray-500">Condition</div>
+                                            <div className="text-[10px] text-gray-400">Condition</div>
                                             <div className="text-xs text-gray-300">{template.condition}</div>
                                         </div>
                                     </div>
@@ -544,7 +544,7 @@ export function Automation() {
                             </div>
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Governance<br />
-                                <span className="text-gray-500">Policies</span>
+                                <span className="text-gray-400">Policies</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Define rules that control when AI actions should be allowed, blocked, or require human approval. Built-in safety for enterprise deployments.
@@ -565,7 +565,7 @@ export function Automation() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium text-sm mb-1">{policy.title}</h4>
-                                            <p className="text-gray-500 text-xs">{policy.desc}</p>
+                                            <p className="text-gray-400 text-xs">{policy.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -588,40 +588,40 @@ export function Automation() {
                             <div className="space-y-4">
                                 {/* Condition */}
                                 <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                                    <div className="text-xs text-gray-500 mb-2">Condition</div>
+                                    <div className="text-xs text-gray-400 mb-2">Condition</div>
                                     <div className="flex items-center gap-2 flex-wrap">
                                         <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400">signals.confidence</span>
-                                        <span className="text-xs text-gray-500">{"<"}</span>
+                                        <span className="text-xs text-gray-400">{"<"}</span>
                                         <span className="text-xs px-2 py-1 rounded bg-white/10 text-white">0.6</span>
-                                        <span className="text-xs text-gray-500">AND</span>
+                                        <span className="text-xs text-gray-400">AND</span>
                                         <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400">context.customer_ltv</span>
-                                        <span className="text-xs text-gray-500">{">"}</span>
+                                        <span className="text-xs text-gray-400">{">"}</span>
                                         <span className="text-xs px-2 py-1 rounded bg-white/10 text-white">$1000</span>
                                     </div>
                                 </div>
 
                                 {/* Outcome */}
                                 <div className="p-4 rounded-xl bg-amber-500/5 border border-amber-500/20">
-                                    <div className="text-xs text-gray-500 mb-2">Outcome</div>
+                                    <div className="text-xs text-gray-400 mb-2">Outcome</div>
                                     <div className="flex items-center gap-2">
                                         <Pause className="w-4 h-4 text-amber-400" />
                                         <span className="text-sm text-amber-400 font-medium">Require Approval</span>
                                     </div>
-                                    <p className="text-xs text-gray-500 mt-2">High-value customers with low AI confidence require human review</p>
+                                    <p className="text-xs text-gray-400 mt-2">High-value customers with low AI confidence require human review</p>
                                 </div>
 
                                 {/* Priority */}
                                 <div className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5">
                                     <div>
-                                        <div className="text-xs text-gray-500">Priority</div>
+                                        <div className="text-xs text-gray-400">Priority</div>
                                         <div className="text-sm text-white">10 (High)</div>
                                     </div>
                                     <div>
-                                        <div className="text-xs text-gray-500">Evaluations</div>
+                                        <div className="text-xs text-gray-400">Evaluations</div>
                                         <div className="text-sm text-white">1,247 this week</div>
                                     </div>
                                     <div>
-                                        <div className="text-xs text-gray-500">Triggered</div>
+                                        <div className="text-xs text-gray-400">Triggered</div>
                                         <div className="text-sm text-amber-400">89 approvals</div>
                                     </div>
                                 </div>
@@ -669,7 +669,7 @@ export function Automation() {
                             { label: "Revenue Attributed", value: "$847K", trend: "This month" }
                         ].map((stat, i) => (
                             <div key={stat.label} className="p-6 rounded-[24px] bg-[#0C0E12] border border-white/5">
-                                <div className="text-sm text-gray-500 mb-2">{stat.label}</div>
+                                <div className="text-sm text-gray-400 mb-2">{stat.label}</div>
                                 <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
                                 <div className="text-xs text-pink-400">{stat.trend}</div>
                             </div>
@@ -763,3 +763,4 @@ export function Automation() {
         </div>
     )
 }
+

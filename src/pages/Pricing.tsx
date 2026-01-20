@@ -196,7 +196,7 @@ export function Pricing() {
                     <p className="text-xl text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed">
                         Automate customer conversations, workflows, and decisions — with governance, visibility, and human oversight built in.
                     </p>
-                    <p className="text-sm text-gray-500">Start building today — choose your plan and get started in minutes</p>
+                    <p className="text-sm text-gray-400">Start building today — choose your plan and get started in minutes</p>
                 </motion.div>
             </section>
 
@@ -225,8 +225,8 @@ export function Pricing() {
                                     <plan.icon className="w-6 h-6" style={{ color: plan.color }} />
                                 </div>
                                 <h3 className="text-xl font-medium text-white mb-1">{plan.name}</h3>
-                                {plan.tagline && <p className="text-xs text-gray-500 italic mb-1">{plan.tagline}</p>}
-                                <p className="text-sm text-gray-500">{plan.description}</p>
+                                {plan.tagline && <p className="text-xs text-gray-400 italic mb-1">{plan.tagline}</p>}
+                                <p className="text-sm text-gray-400">{plan.description}</p>
                             </div>
 
                             <div className="mb-6">
@@ -236,7 +236,7 @@ export function Pricing() {
                                     ) : (
                                         <>
                                             <span className="text-4xl font-bold text-white">${plan.price}</span>
-                                            <span className="text-gray-500">/ month</span>
+                                            <span className="text-gray-400">/ month</span>
                                         </>
                                     )}
                                 </div>
@@ -259,7 +259,7 @@ export function Pricing() {
                             </div>
 
                             <div className="mb-6 p-3 rounded-lg bg-white/[0.02] border border-white/5">
-                                <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Best for</div>
+                                <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-2">Best for</div>
                                 <div className="space-y-1">
                                     {plan.bestFor.map((item, i) => (
                                         <p key={i} className="text-xs text-gray-400">{item}</p>
@@ -284,7 +284,7 @@ export function Pricing() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
-                    className="text-center text-sm text-gray-500 mt-8"
+                    className="text-center text-sm text-gray-400 mt-8"
                 >
                     All plans include the unified inbox, core analytics, and secure infrastructure.
                 </motion.p>
@@ -424,7 +424,7 @@ export function Pricing() {
                                 </div>
                                 <h3 className="text-lg font-medium text-white">What counts as an AI message?</h3>
                             </div>
-                            <p className="text-sm text-gray-500 mb-4">An AI message is counted when Enorve:</p>
+                            <p className="text-sm text-gray-400 mb-4">An AI message is counted when Enorve:</p>
                             <div className="space-y-2">
                                 {aiUsage.counts.map((item, i) => (
                                     <div key={i} className="flex items-center gap-2 p-3 rounded-lg bg-violet-500/5 border border-violet-500/10">
@@ -449,7 +449,7 @@ export function Pricing() {
                                 </div>
                                 <h3 className="text-lg font-medium text-white">What does NOT count?</h3>
                             </div>
-                            <p className="text-sm text-gray-500 mb-4">These are always free:</p>
+                            <p className="text-sm text-gray-400 mb-4">These are always free:</p>
                             <div className="space-y-2">
                                 {aiUsage.doesNotCount.map((item, i) => (
                                     <div key={i} className="flex items-center gap-2 p-3 rounded-lg bg-green-500/5 border border-green-500/10">
@@ -526,7 +526,7 @@ export function Pricing() {
                                     <addon.icon className="w-5 h-5 text-gray-400" />
                                 </div>
                                 <h3 className="text-sm font-medium text-white mb-1">{addon.title}</h3>
-                                <p className="text-xs text-gray-500">{addon.desc}</p>
+                                <p className="text-xs text-gray-400">{addon.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -550,7 +550,7 @@ export function Pricing() {
                         >
                             Included on all plans
                         </motion.h2>
-                        <p className="text-gray-500">Designed with industry-standard security practices.</p>
+                        <p className="text-gray-400">Designed with industry-standard security practices.</p>
                     </div>
 
                     <div className="flex flex-wrap justify-center gap-4">

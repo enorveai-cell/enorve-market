@@ -142,7 +142,7 @@ export function Founders() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">Your Support Dashboard</span>
+                                        <span className="text-xs text-gray-400 ml-3">Your Support Dashboard</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <div className="px-2 py-1 rounded bg-green-500/10 border border-green-500/20">
@@ -155,21 +155,21 @@ export function Founders() {
                                 <div className="grid grid-cols-3 gap-3 p-4 border-b border-white/5">
                                     <div className="text-center p-3 rounded-lg bg-white/[0.02]">
                                         <div className="text-2xl font-bold text-green-400">12</div>
-                                        <div className="text-[10px] text-gray-500">AI Resolved</div>
+                                        <div className="text-[10px] text-gray-400">AI Resolved</div>
                                     </div>
                                     <div className="text-center p-3 rounded-lg bg-white/[0.02]">
                                         <div className="text-2xl font-bold text-amber-400">2</div>
-                                        <div className="text-[10px] text-gray-500">Need You</div>
+                                        <div className="text-[10px] text-gray-400">Need You</div>
                                     </div>
                                     <div className="text-center p-3 rounded-lg bg-white/[0.02]">
                                         <div className="text-2xl font-bold text-white">85%</div>
-                                        <div className="text-[10px] text-gray-500">Auto-Resolved</div>
+                                        <div className="text-[10px] text-gray-400">Auto-Resolved</div>
                                     </div>
                                 </div>
 
                                 {/* Activity Feed */}
                                 <div className="p-4">
-                                    <div className="text-xs text-gray-500 mb-3">Today's Activity</div>
+                                    <div className="text-xs text-gray-400 mb-3">Today's Activity</div>
                                     <div className="space-y-2">
                                         {[
                                             { icon: Bot, text: "AI resolved: 'How do I reset my password?'", time: "2m ago", color: "#10B981" },
@@ -187,7 +187,7 @@ export function Founders() {
                                                 <div className="flex-1">
                                                     <p className="text-xs text-gray-300">{item.text}</p>
                                                 </div>
-                                                <span className="text-[10px] text-gray-500">{item.time}</span>
+                                                <span className="text-[10px] text-gray-400">{item.time}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -213,7 +213,7 @@ export function Founders() {
                                     <Bot className="w-4 h-4 text-green-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">85%</div>
-                                        <div className="text-[10px] text-gray-500">Handled by AI</div>
+                                        <div className="text-[10px] text-gray-400">Handled by AI</div>
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@ export function Founders() {
                                     <Coffee className="w-4 h-4 text-orange-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">Focus time</div>
-                                        <div className="text-[10px] text-gray-500">Protected</div>
+                                        <div className="text-[10px] text-gray-400">Protected</div>
                                     </div>
                                 </div>
                             </div>
@@ -332,7 +332,7 @@ export function Founders() {
 
                                     {/* Impact */}
                                     <div className="p-4 rounded-xl bg-gradient-to-br from-white/[0.02] to-white/[0.05] border border-white/10">
-                                        <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Impact</div>
+                                        <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Impact</div>
                                         <p className="text-white font-medium text-sm">{solution.impact}</p>
                                     </div>
                                 </div>
@@ -391,7 +391,7 @@ export function Founders() {
                                     { time: "12:00 PM", event: "0 features shipped", status: "failed" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center gap-4">
-                                        <span className="text-[10px] text-gray-500 w-16">{item.time}</span>
+                                        <span className="text-[10px] text-gray-400 w-16">{item.time}</span>
                                         <div className="flex-1 p-3 rounded-lg bg-red-500/5 border border-red-500/10">
                                             <p className="text-xs text-gray-400">{item.event}</p>
                                         </div>
@@ -418,7 +418,7 @@ export function Founders() {
                                     { time: "12:00 PM", event: "Feature shipped! 🚀", status: "success" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center gap-4">
-                                        <span className="text-[10px] text-gray-500 w-16">{item.time}</span>
+                                        <span className="text-[10px] text-gray-400 w-16">{item.time}</span>
                                         <div className={`flex-1 p-3 rounded-lg ${item.status === 'auto' ? 'bg-green-500/5 border border-green-500/10' : item.status === 'escalated' ? 'bg-amber-500/5 border border-amber-500/10' : 'bg-white/[0.02] border border-white/5'}`}>
                                             <div className="flex items-center gap-2">
                                                 {item.status === 'auto' && <Bot className="w-3 h-3 text-green-400" />}
@@ -450,7 +450,7 @@ export function Founders() {
                             </div>
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Know what<br />
-                                <span className="text-gray-500">customers want</span>
+                                <span className="text-gray-400">customers want</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 See what questions customers ask most. Find gaps in your docs. Make better product decisions with real data.
@@ -468,7 +468,7 @@ export function Founders() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium text-sm mb-1">{item.title}</h4>
-                                            <p className="text-gray-500 text-xs">{item.desc}</p>
+                                            <p className="text-gray-400 text-xs">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -485,7 +485,7 @@ export function Founders() {
                         >
                             <div className="flex items-center justify-between mb-6">
                                 <h3 className="text-white font-medium">Top Questions This Week</h3>
-                                <span className="text-xs text-gray-500">47 total</span>
+                                <span className="text-xs text-gray-400">47 total</span>
                             </div>
 
                             <div className="space-y-3">
@@ -499,7 +499,7 @@ export function Founders() {
                                     <div key={i} className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
                                         <div className="flex items-center justify-between mb-2">
                                             <span className="text-sm text-white">"{item.question}"</span>
-                                            <span className="text-xs text-gray-500">{item.count}x</span>
+                                            <span className="text-xs text-gray-400">{item.count}x</span>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
@@ -561,7 +561,7 @@ export function Founders() {
                                     <outcome.icon className="w-10 h-10 text-orange-400" />
                                 </div>
                                 <div className="text-5xl font-bold text-white mb-2">{outcome.value}</div>
-                                <div className="text-sm text-gray-500 mb-4">{outcome.desc}</div>
+                                <div className="text-sm text-gray-400 mb-4">{outcome.desc}</div>
                                 <h3 className="text-xl font-medium text-white">{outcome.title}</h3>
                             </motion.div>
                         ))}
@@ -648,3 +648,4 @@ export function Founders() {
         </div>
     )
 }
+

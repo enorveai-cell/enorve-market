@@ -140,7 +140,7 @@ export function CustomerSupport() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">Support Dashboard</span>
+                                        <span className="text-xs text-gray-400 ml-3">Support Dashboard</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <div className="px-2 py-1 rounded bg-green-500/10 border border-green-500/20">
@@ -159,7 +159,7 @@ export function CustomerSupport() {
                                     ].map((stat) => (
                                         <div key={stat.label} className="text-center p-2 rounded-lg bg-white/[0.02]">
                                             <div className={`text-lg font-bold ${stat.color}`}>{stat.value}</div>
-                                            <div className="text-[10px] text-gray-500">{stat.label}</div>
+                                            <div className="text-[10px] text-gray-400">{stat.label}</div>
                                         </div>
                                     ))}
                                 </div>
@@ -218,7 +218,7 @@ export function CustomerSupport() {
                                             </div>
                                         ))}
                                     </div>
-                                    <span className="text-[10px] text-gray-500">All channels in one view</span>
+                                    <span className="text-[10px] text-gray-400">All channels in one view</span>
                                 </div>
                             </div>
 
@@ -228,7 +228,7 @@ export function CustomerSupport() {
                                     <Zap className="w-4 h-4 text-green-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">73%</div>
-                                        <div className="text-[10px] text-gray-500">Auto-resolved</div>
+                                        <div className="text-[10px] text-gray-400">Auto-resolved</div>
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +238,7 @@ export function CustomerSupport() {
                                     <Timer className="w-4 h-4 text-blue-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">45s</div>
-                                        <div className="text-[10px] text-gray-500">Avg response</div>
+                                        <div className="text-[10px] text-gray-400">Avg response</div>
                                     </div>
                                 </div>
                             </div>
@@ -347,7 +347,7 @@ export function CustomerSupport() {
 
                                     {/* Impact */}
                                     <div className="p-4 rounded-xl bg-gradient-to-br from-white/[0.02] to-white/[0.05] border border-white/10">
-                                        <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Impact</div>
+                                        <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Impact</div>
                                         <p className="text-white font-medium text-sm">{solution.impact}</p>
                                     </div>
                                 </div>
@@ -390,7 +390,7 @@ export function CustomerSupport() {
                                     <outcome.icon className="w-8 h-8 text-blue-400" />
                                 </div>
                                 <div className="text-4xl font-bold text-white mb-2">{outcome.value}</div>
-                                <div className="text-xs text-gray-500 mb-3">{outcome.desc}</div>
+                                <div className="text-xs text-gray-400 mb-3">{outcome.desc}</div>
                                 <h3 className="text-lg font-medium text-white">{outcome.title}</h3>
                             </motion.div>
                         ))}
@@ -410,7 +410,7 @@ export function CustomerSupport() {
                         >
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 From chaos<br />
-                                <span className="text-gray-500">to clarity</span>
+                                <span className="text-gray-400">to clarity</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Watch your team's productivity transform. AI handles the repetitive work while your agents focus on conversations that matter.
@@ -427,7 +427,7 @@ export function CustomerSupport() {
                                             <div className="text-[10px] text-red-400 mb-1">Before</div>
                                             <p className="text-xs text-gray-400">{item.before}</p>
                                         </div>
-                                        <ArrowRight className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                                        <ArrowRight className="w-4 h-4 text-gray-400 flex-shrink-0" />
                                         <div className="flex-1 p-3 rounded-lg bg-green-500/5 border border-green-500/20">
                                             <div className="text-[10px] text-green-400 mb-1">After</div>
                                             <p className="text-xs text-white">{item.after}</p>
@@ -464,10 +464,10 @@ export function CustomerSupport() {
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-1">
-                                                <span className="text-[10px] text-gray-500">{item.time}</span>
+                                                <span className="text-[10px] text-gray-400">{item.time}</span>
                                             </div>
                                             <h4 className="text-sm text-white font-medium">{item.event}</h4>
-                                            <p className="text-xs text-gray-500">{item.detail}</p>
+                                            <p className="text-xs text-gray-400">{item.detail}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -526,3 +526,4 @@ export function CustomerSupport() {
         </div>
     )
 }
+

@@ -162,15 +162,15 @@ export function Inbox() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">Inbox</span>
+                                        <span className="text-xs text-gray-400 ml-3">Inbox</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <div className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 text-gray-500">
+                                        <div className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 text-gray-400">
                                             <Search className="w-3 h-3" />
                                             <span className="text-[10px]">Search...</span>
                                             <span className="text-[10px] px-1 rounded bg-white/10">/</span>
                                         </div>
-                                        <Filter className="w-4 h-4 text-gray-500" />
+                                        <Filter className="w-4 h-4 text-gray-400" />
                                     </div>
                                 </div>
 
@@ -190,7 +190,7 @@ export function Inbox() {
                                                         <Crown className="w-3 h-3 text-amber-400" />
                                                         <Pin className="w-3 h-3 text-blue-400" />
                                                     </div>
-                                                    <span className="text-[10px] text-gray-500">2m</span>
+                                                    <span className="text-[10px] text-gray-400">2m</span>
                                                 </div>
                                                 <p className="text-xs text-gray-400 truncate">That sounds good. Please confirm the delivery date.</p>
                                                 <div className="flex items-center gap-2 mt-2">
@@ -217,12 +217,12 @@ export function Inbox() {
                                             <div className="flex-1 min-w-0">
                                                 <div className="flex items-center justify-between mb-1">
                                                     <span className="text-sm font-medium text-white">Rahul Khanna</span>
-                                                    <span className="text-[10px] text-gray-500">18m</span>
+                                                    <span className="text-[10px] text-gray-400">18m</span>
                                                 </div>
                                                 <p className="text-xs text-gray-400 truncate">Payment failed but amount deducted. Need urgent help!</p>
                                                 <div className="flex items-center gap-2 mt-2">
                                                     <span className="text-[9px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">urgent</span>
-                                                    <Paperclip className="w-3 h-3 text-gray-500" />
+                                                    <Paperclip className="w-3 h-3 text-gray-400" />
                                                 </div>
                                             </div>
                                             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
@@ -244,14 +244,14 @@ export function Inbox() {
                                                     </div>
                                                     <span className="text-[10px] text-amber-400">Tomorrow 9AM</span>
                                                 </div>
-                                                <p className="text-xs text-gray-500 truncate">Waiting for stock update on blue variant</p>
+                                                <p className="text-xs text-gray-400 truncate">Waiting for stock update on blue variant</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* More indicator */}
                                     <div className="p-3 text-center">
-                                        <span className="text-xs text-gray-500">32 more conversations</span>
+                                        <span className="text-xs text-gray-400">32 more conversations</span>
                                     </div>
                                 </div>
                             </div>
@@ -284,10 +284,10 @@ export function Inbox() {
                             {/* Keyboard Shortcut Hint */}
                             <div className="absolute -right-4 bottom-8 bg-[#0C0E12] border border-white/10 rounded-lg p-2 shadow-xl animate-float" style={{ animationDelay: '1s' }}>
                                 <div className="flex items-center gap-2">
-                                    <Keyboard className="w-3 h-3 text-gray-500" />
+                                    <Keyboard className="w-3 h-3 text-gray-400" />
                                     <div className="flex gap-1">
                                         <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-gray-400">R</span>
-                                        <span className="text-[10px] text-gray-500">Resolve</span>
+                                        <span className="text-[10px] text-gray-400">Resolve</span>
                                     </div>
                                 </div>
                             </div>
@@ -341,7 +341,7 @@ export function Inbox() {
                                     {channel.svg}
                                 </div>
                                 <h3 className="text-lg font-medium text-white">{channel.name}</h3>
-                                <p className="text-sm text-gray-500 mt-1">Real-time sync</p>
+                                <p className="text-sm text-gray-400 mt-1">Real-time sync</p>
                             </motion.div>
                         ))}
                     </div>
@@ -376,7 +376,7 @@ export function Inbox() {
                                 {/* Signal Legend */}
                                 <div className="p-4 border-b border-white/5 bg-white/[0.01]">
                                     <div className="flex items-center gap-4 text-[10px]">
-                                        <span className="text-gray-500">Priority signals:</span>
+                                        <span className="text-gray-400">Priority signals:</span>
                                         <div className="flex items-center gap-1">
                                             <div className="w-2 h-2 rounded-full bg-red-500" />
                                             <span className="text-gray-400">Critical</span>
@@ -411,10 +411,10 @@ export function Inbox() {
                                                 <Crown className="w-3 h-3 text-amber-400" />
                                                 <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400">VIP</span>
                                             </div>
-                                            <p className="text-xs text-gray-500 truncate mt-1">Latest message preview...</p>
+                                            <p className="text-xs text-gray-400 truncate mt-1">Latest message preview...</p>
                                         </div>
                                         <div className="text-right">
-                                            <div className="text-[10px] text-gray-500">now</div>
+                                            <div className="text-[10px] text-gray-400">now</div>
                                             <div className="text-[9px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-400 mt-1">₹8,999</div>
                                         </div>
                                     </div>
@@ -442,7 +442,7 @@ export function Inbox() {
                         >
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Smart Conversation<br />
-                                <span className="text-gray-500">List</span>
+                                <span className="text-gray-400">List</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Intercom-style conversation cards packed with intelligence signals. See everything at a glance without opening the thread.
@@ -530,7 +530,7 @@ export function Inbox() {
                         >
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 360° Customer<br />
-                                <span className="text-gray-500">Context</span>
+                                <span className="text-gray-400">Context</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Everything you need to know about the customer, right in the sidebar. No more context switching.
@@ -550,7 +550,7 @@ export function Inbox() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium text-sm mb-1">{item.title}</h4>
-                                            <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                                            <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -570,7 +570,7 @@ export function Inbox() {
                                 <div className="p-6 border-b border-white/5 text-center">
                                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 mx-auto mb-3 flex items-center justify-center text-xl font-bold text-white">PS</div>
                                     <h3 className="text-lg font-medium text-white">Priya Sharma</h3>
-                                    <p className="text-xs text-gray-500">+91 98765 43210 • priya@email.com</p>
+                                    <p className="text-xs text-gray-400">+91 98765 43210 • priya@email.com</p>
                                     <div className="flex justify-center gap-2 mt-3">
                                         <span className="text-[10px] px-2 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center gap-1">
                                             <Crown className="w-3 h-3" /> VIP
@@ -587,11 +587,11 @@ export function Inbox() {
                                     </div>
                                     <div className="space-y-2">
                                         <div className="flex justify-between text-xs">
-                                            <span className="text-gray-500">Intent</span>
+                                            <span className="text-gray-400">Intent</span>
                                             <span className="text-blue-400">Order Status</span>
                                         </div>
                                         <div className="flex justify-between text-xs">
-                                            <span className="text-gray-500">Risk Score</span>
+                                            <span className="text-gray-400">Risk Score</span>
                                             <div className="flex items-center gap-2">
                                                 <div className="w-16 h-1.5 rounded-full bg-white/10 overflow-hidden">
                                                     <div className="w-[25%] h-full bg-emerald-500 rounded-full" />
@@ -606,19 +606,19 @@ export function Inbox() {
                                 <div className="p-4 border-b border-white/5">
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="text-xs font-medium text-white">Shopify Orders</span>
-                                        <ChevronRight className="w-4 h-4 text-gray-500" />
+                                        <ChevronRight className="w-4 h-4 text-gray-400" />
                                     </div>
                                     <div className="space-y-2">
                                         <div className="flex items-center justify-between p-2 rounded bg-white/[0.02]">
                                             <div>
                                                 <div className="text-xs text-white">#EN-99821</div>
-                                                <div className="text-[10px] text-gray-500">2 items • ₹12,499</div>
+                                                <div className="text-[10px] text-gray-400">2 items • ₹12,499</div>
                                             </div>
                                             <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400">Shipping</span>
                                         </div>
                                     </div>
                                     <div className="mt-3 pt-3 border-t border-white/5 flex justify-between text-xs">
-                                        <span className="text-gray-500">Total Spend</span>
+                                        <span className="text-gray-400">Total Spend</span>
                                         <span className="text-white font-medium">₹1,24,500</span>
                                     </div>
                                 </div>
@@ -693,7 +693,7 @@ export function Inbox() {
                         >
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Power-user<br />
-                                <span className="text-gray-500">productivity</span>
+                                <span className="text-gray-400">productivity</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Every action is keyboard-accessible. Keep your hands on the keyboard and fly through conversations.
@@ -704,21 +704,21 @@ export function Inbox() {
                                     <Zap className="w-5 h-5 text-amber-400 mt-1" />
                                     <div>
                                         <h4 className="text-white font-medium text-sm mb-1">Instant Actions</h4>
-                                        <p className="text-gray-500 text-xs">Resolve, assign, snooze, and transfer without touching your mouse</p>
+                                        <p className="text-gray-400 text-xs">Resolve, assign, snooze, and transfer without touching your mouse</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5">
                                     <Search className="w-5 h-5 text-blue-400 mt-1" />
                                     <div>
                                         <h4 className="text-white font-medium text-sm mb-1">Smart Search</h4>
-                                        <p className="text-gray-500 text-xs">Debounced search with URL persistence for sharing and bookmarking</p>
+                                        <p className="text-gray-400 text-xs">Debounced search with URL persistence for sharing and bookmarking</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5">
                                     <LayoutGrid className="w-5 h-5 text-emerald-400 mt-1" />
                                     <div>
                                         <h4 className="text-white font-medium text-sm mb-1">Bulk Operations</h4>
-                                        <p className="text-gray-500 text-xs">Select multiple conversations and act on them all at once</p>
+                                        <p className="text-gray-400 text-xs">Select multiple conversations and act on them all at once</p>
                                     </div>
                                 </div>
                             </div>
@@ -753,7 +753,7 @@ export function Inbox() {
                             ].map((item, i) => (
                                 <div key={item.category} className={`p-6 ${i >= 4 ? 'border-t border-white/5' : ''}`}>
                                     <h4 className="text-white font-medium mb-2">{item.category}</h4>
-                                    <p className="text-sm text-gray-500">{item.capabilities}</p>
+                                    <p className="text-sm text-gray-400">{item.capabilities}</p>
                                 </div>
                             ))}
                         </div>
@@ -810,3 +810,4 @@ export function Inbox() {
         </div>
     )
 }
+

@@ -107,7 +107,7 @@ export function ContactSales() {
                                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                     </Button>
                                 </a>
-                                <p className="text-xs text-center text-gray-500">We typically respond within 24 hours</p>
+                                <p className="text-xs text-center text-gray-400">We typically respond within 24 hours</p>
                             </div>
 
                             {/* Trust badges */}
@@ -118,7 +118,7 @@ export function ContactSales() {
                                         { icon: Clock, text: "High availability" },
                                         { icon: Globe, text: "Status page" }
                                     ].map((badge) => (
-                                        <div key={badge.text} className="flex items-center gap-1.5 text-xs text-gray-500">
+                                        <div key={badge.text} className="flex items-center gap-1.5 text-xs text-gray-400">
                                             <badge.icon className="w-3 h-3" />
                                             {badge.text}
                                         </div>
@@ -153,7 +153,7 @@ export function ContactSales() {
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-400">
                                 Just getting started?{" "}
                                 <Link to="/pricing" className="text-violet-400 hover:underline">
                                     Get Started
@@ -179,7 +179,7 @@ export function ContactSales() {
                                         </div>
                                         <div className="space-y-1">
                                             {topic.items.map((item, j) => (
-                                                <p key={j} className="text-xs text-gray-500">{item}</p>
+                                                <p key={j} className="text-xs text-gray-400">{item}</p>
                                             ))}
                                         </div>
                                     </div>

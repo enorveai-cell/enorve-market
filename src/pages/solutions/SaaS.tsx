@@ -149,7 +149,7 @@ export function SaaS() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">Technical Support</span>
+                                        <span className="text-xs text-gray-400 ml-3">Technical Support</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <div className="px-2 py-1 rounded bg-violet-500/10 border border-violet-500/20">
@@ -165,7 +165,7 @@ export function SaaS() {
                                         <div className="flex items-center gap-2 mb-3">
                                             <Sparkles className="w-4 h-4 text-violet-400" />
                                             <span className="text-xs font-medium text-violet-400">AI Conversation Summary</span>
-                                            <span className="text-[10px] text-gray-500 ml-auto">12 messages • 2h 15m</span>
+                                            <span className="text-[10px] text-gray-400 ml-auto">12 messages • 2h 15m</span>
                                         </div>
                                         <p className="text-xs text-gray-300 leading-relaxed mb-3">
                                             Customer experiencing API rate limiting on the /v2/users endpoint. They're on the Pro plan (1000 req/min). Logs show 1247 requests in the last minute. Suggested implementing exponential backoff.
@@ -226,7 +226,7 @@ export function SaaS() {
                                     <Brain className="w-4 h-4 text-violet-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">Context Mode</div>
-                                        <div className="text-[10px] text-gray-500">12 msg summarized</div>
+                                        <div className="text-[10px] text-gray-400">12 msg summarized</div>
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +236,7 @@ export function SaaS() {
                                     <Target className="w-4 h-4 text-green-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">95%</div>
-                                        <div className="text-[10px] text-gray-500">Confidence</div>
+                                        <div className="text-[10px] text-gray-400">Confidence</div>
                                     </div>
                                 </div>
                             </div>
@@ -345,7 +345,7 @@ export function SaaS() {
 
                                     {/* Impact */}
                                     <div className="p-4 rounded-xl bg-gradient-to-br from-white/[0.02] to-white/[0.05] border border-white/10">
-                                        <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Impact</div>
+                                        <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Impact</div>
                                         <p className="text-white font-medium text-sm">{solution.impact}</p>
                                     </div>
                                 </div>
@@ -371,7 +371,7 @@ export function SaaS() {
                             </div>
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Docs that<br />
-                                <span className="text-gray-500">power AI</span>
+                                <span className="text-gray-400">power AI</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Import from your existing docs, help center, or upload directly. AI uses verified knowledge to answer questions accurately.
@@ -389,7 +389,7 @@ export function SaaS() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium text-sm mb-1">{item.title}</h4>
-                                            <p className="text-gray-500 text-xs">{item.desc}</p>
+                                            <p className="text-gray-400 text-xs">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -426,9 +426,9 @@ export function SaaS() {
                                                     <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-400">{source.status}</span>
                                                 </div>
                                                 <div className="flex items-center gap-2 mt-1">
-                                                    <span className="text-[10px] text-gray-500">{source.type}</span>
-                                                    <span className="text-[10px] text-gray-500">•</span>
-                                                    <span className="text-[10px] text-gray-500">{source.articles} articles</span>
+                                                    <span className="text-[10px] text-gray-400">{source.type}</span>
+                                                    <span className="text-[10px] text-gray-400">•</span>
+                                                    <span className="text-[10px] text-gray-400">{source.articles} articles</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -530,7 +530,7 @@ export function SaaS() {
                                     <outcome.icon className="w-10 h-10 text-violet-400" />
                                 </div>
                                 <div className="text-5xl font-bold text-white mb-2">{outcome.value}</div>
-                                <div className="text-sm text-gray-500 mb-4">{outcome.desc}</div>
+                                <div className="text-sm text-gray-400 mb-4">{outcome.desc}</div>
                                 <h3 className="text-xl font-medium text-white">{outcome.title}</h3>
                             </motion.div>
                         ))}
@@ -636,3 +636,4 @@ export function SaaS() {
         </div>
     )
 }
+

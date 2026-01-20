@@ -148,7 +148,7 @@ export function Ecommerce() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">Order Support</span>
+                                        <span className="text-xs text-gray-400 ml-3">Order Support</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <div className="px-2 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">
@@ -202,18 +202,18 @@ export function Ecommerce() {
 
                                         <div className="space-y-3">
                                             <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
-                                                <div className="text-[10px] text-gray-500">Order ID</div>
+                                                <div className="text-[10px] text-gray-400">Order ID</div>
                                                 <div className="text-xs text-white font-mono">#EN-45821</div>
                                             </div>
                                             <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
-                                                <div className="text-[10px] text-gray-500">Status</div>
+                                                <div className="text-[10px] text-gray-400">Status</div>
                                                 <div className="flex items-center gap-1">
                                                     <Truck className="w-3 h-3 text-blue-400" />
                                                     <span className="text-xs text-blue-400">In Transit</span>
                                                 </div>
                                             </div>
                                             <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
-                                                <div className="text-[10px] text-gray-500">Order Value</div>
+                                                <div className="text-[10px] text-gray-400">Order Value</div>
                                                 <div className="text-xs text-emerald-400 font-medium">₹4,299</div>
                                             </div>
                                             <div className="p-3 rounded-lg bg-amber-500/5 border border-amber-500/20">
@@ -221,7 +221,7 @@ export function Ecommerce() {
                                                     <Crown className="w-3 h-3 text-amber-400" />
                                                     <span className="text-[10px] text-amber-400 font-medium">VIP Customer</span>
                                                 </div>
-                                                <div className="text-[10px] text-gray-500 mt-1">LTV: ₹42,500</div>
+                                                <div className="text-[10px] text-gray-400 mt-1">LTV: ₹42,500</div>
                                             </div>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@ export function Ecommerce() {
                                     <Zap className="w-4 h-4 text-emerald-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">68%</div>
-                                        <div className="text-[10px] text-gray-500">WISMO resolved</div>
+                                        <div className="text-[10px] text-gray-400">WISMO resolved</div>
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@ export function Ecommerce() {
                                     <DollarSign className="w-4 h-4 text-emerald-400" />
                                     <div>
                                         <div className="text-xs text-white font-medium">₹8.4L</div>
-                                        <div className="text-[10px] text-gray-500">Revenue attributed</div>
+                                        <div className="text-[10px] text-gray-400">Revenue attributed</div>
                                     </div>
                                 </div>
                             </div>
@@ -353,7 +353,7 @@ export function Ecommerce() {
 
                                     {/* Impact */}
                                     <div className="p-4 rounded-xl bg-gradient-to-br from-white/[0.02] to-white/[0.05] border border-white/10">
-                                        <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Impact</div>
+                                        <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Impact</div>
                                         <p className="text-white font-medium text-sm">{solution.impact}</p>
                                     </div>
                                 </div>
@@ -381,7 +381,7 @@ export function Ecommerce() {
                             </div>
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Order context<br />
-                                <span className="text-gray-500">everywhere</span>
+                                <span className="text-gray-400">everywhere</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 No more switching between tabs. Pull order status, shipping info, and purchase history directly into every conversation.
@@ -399,7 +399,7 @@ export function Ecommerce() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium text-sm mb-1">{item.title}</h4>
-                                            <p className="text-gray-500 text-xs">{item.desc}</p>
+                                            <p className="text-gray-400 text-xs">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -425,7 +425,7 @@ export function Ecommerce() {
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-sm font-bold text-white">SP</div>
                                     <div>
                                         <div className="text-white font-medium">Sneha Patel</div>
-                                        <div className="text-xs text-gray-500">sneha@example.com</div>
+                                        <div className="text-xs text-gray-400">sneha@example.com</div>
                                     </div>
                                     <div className="ml-auto flex items-center gap-1 px-2 py-1 rounded bg-amber-500/10 border border-amber-500/20">
                                         <Crown className="w-3 h-3 text-amber-400" />
@@ -435,21 +435,21 @@ export function Ecommerce() {
                                 <div className="grid grid-cols-3 gap-3">
                                     <div className="text-center p-2 rounded-lg bg-white/[0.02]">
                                         <div className="text-lg font-bold text-white">12</div>
-                                        <div className="text-[10px] text-gray-500">Orders</div>
+                                        <div className="text-[10px] text-gray-400">Orders</div>
                                     </div>
                                     <div className="text-center p-2 rounded-lg bg-white/[0.02]">
                                         <div className="text-lg font-bold text-emerald-400">₹42.5K</div>
-                                        <div className="text-[10px] text-gray-500">Lifetime Value</div>
+                                        <div className="text-[10px] text-gray-400">Lifetime Value</div>
                                     </div>
                                     <div className="text-center p-2 rounded-lg bg-white/[0.02]">
                                         <div className="text-lg font-bold text-white">4.9</div>
-                                        <div className="text-[10px] text-gray-500">Avg CSAT</div>
+                                        <div className="text-[10px] text-gray-400">Avg CSAT</div>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Recent Orders */}
-                            <div className="text-xs text-gray-500 mb-3">Recent Orders</div>
+                            <div className="text-xs text-gray-400 mb-3">Recent Orders</div>
                             <div className="space-y-2">
                                 {[
                                     { id: "#EN-45821", status: "In Transit", value: "₹4,299", date: "2 days ago" },
@@ -458,10 +458,10 @@ export function Ecommerce() {
                                 ].map((order) => (
                                     <div key={order.id} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.02] border border-white/5">
                                         <div className="flex items-center gap-3">
-                                            <Package className="w-4 h-4 text-gray-500" />
+                                            <Package className="w-4 h-4 text-gray-400" />
                                             <div>
                                                 <div className="text-xs text-white font-mono">{order.id}</div>
-                                                <div className="text-[10px] text-gray-500">{order.date}</div>
+                                                <div className="text-[10px] text-gray-400">{order.date}</div>
                                             </div>
                                         </div>
                                         <div className="text-right">
@@ -556,7 +556,7 @@ export function Ecommerce() {
                                     <outcome.icon className="w-10 h-10 text-emerald-400" />
                                 </div>
                                 <div className="text-5xl font-bold text-white mb-2">{outcome.value}</div>
-                                <div className="text-sm text-gray-500 mb-4">{outcome.desc}</div>
+                                <div className="text-sm text-gray-400 mb-4">{outcome.desc}</div>
                                 <h3 className="text-xl font-medium text-white">{outcome.title}</h3>
                             </motion.div>
                         ))}
@@ -613,3 +613,4 @@ export function Ecommerce() {
         </div>
     )
 }
+

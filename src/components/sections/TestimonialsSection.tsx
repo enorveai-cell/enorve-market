@@ -88,7 +88,7 @@ export function TestimonialsSection() {
                                 </div>
                                 <div>
                                     <div className="font-semibold text-white">{testimonial.author}</div>
-                                    <div className="text-sm text-gray-500">{testimonial.role}, {testimonial.company}</div>
+                                    <div className="text-sm text-gray-400">{testimonial.role}, {testimonial.company}</div>
                                 </div>
                             </div>
                         </motion.div>
@@ -98,3 +98,4 @@ export function TestimonialsSection() {
         </section>
     )
 }
+

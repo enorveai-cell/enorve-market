@@ -124,12 +124,12 @@ export function AICopilot() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">AI Copilot</span>
+                                        <span className="text-xs text-gray-400 ml-3">AI Copilot</span>
                                     </div>
                                     <div className="flex gap-2">
                                         <span className="text-[10px] px-2 py-1 rounded bg-violet-500/20 text-violet-300 border border-violet-500/30">Assist</span>
-                                        <span className="text-[10px] px-2 py-1 rounded bg-white/5 text-gray-500">Knowledge</span>
-                                        <span className="text-[10px] px-2 py-1 rounded bg-white/5 text-gray-500">Context</span>
+                                        <span className="text-[10px] px-2 py-1 rounded bg-white/5 text-gray-400">Knowledge</span>
+                                        <span className="text-[10px] px-2 py-1 rounded bg-white/5 text-gray-400">Context</span>
                                     </div>
                                 </div>
 
@@ -141,17 +141,17 @@ export function AICopilot() {
                                     </div>
                                     <div className="grid grid-cols-3 gap-3">
                                         <div className="p-2 rounded-lg bg-white/5 border border-white/5">
-                                            <div className="text-[10px] text-gray-500 mb-1">Intent</div>
+                                            <div className="text-[10px] text-gray-400 mb-1">Intent</div>
                                             <div className="text-xs text-blue-400 font-medium">Billing Question</div>
                                         </div>
                                         <div className="p-2 rounded-lg bg-white/5 border border-white/5">
-                                            <div className="text-[10px] text-gray-500 mb-1">Emotion</div>
+                                            <div className="text-[10px] text-gray-400 mb-1">Emotion</div>
                                             <div className="text-xs text-amber-400 font-medium flex items-center gap-1">
-                                                Frustrated <span className="text-gray-500">78%</span>
+                                                Frustrated <span className="text-gray-400">78%</span>
                                             </div>
                                         </div>
                                         <div className="p-2 rounded-lg bg-red-500/10 border border-red-500/20">
-                                            <div className="text-[10px] text-gray-500 mb-1">Risk</div>
+                                            <div className="text-[10px] text-gray-400 mb-1">Risk</div>
                                             <div className="text-xs text-red-400 font-medium flex items-center gap-1">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
                                                 High
@@ -185,14 +185,14 @@ export function AICopilot() {
 
                                     {/* Alternatives */}
                                     <div className="mt-4 pt-4 border-t border-white/5">
-                                        <div className="flex items-center gap-2 text-gray-500 text-xs mb-3">
+                                        <div className="flex items-center gap-2 text-gray-400 text-xs mb-3">
                                             <RefreshCw className="w-3 h-3" />
                                             <span>3 alternatives available</span>
                                         </div>
                                         <div className="flex gap-2">
                                             <span className="text-[10px] px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Empathetic</span>
-                                            <span className="text-[10px] px-2 py-1 rounded bg-white/5 text-gray-500 border border-white/5">Direct</span>
-                                            <span className="text-[10px] px-2 py-1 rounded bg-white/5 text-gray-500 border border-white/5">Technical</span>
+                                            <span className="text-[10px] px-2 py-1 rounded bg-white/5 text-gray-400 border border-white/5">Direct</span>
+                                            <span className="text-[10px] px-2 py-1 rounded bg-white/5 text-gray-400 border border-white/5">Technical</span>
                                         </div>
                                     </div>
                                 </div>
@@ -277,7 +277,7 @@ export function AICopilot() {
                                             </div>
                                             <div>
                                                 <span className="text-white text-sm font-medium">{feature.name}</span>
-                                                <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">{feature.desc}</p>
+                                                <p className="text-gray-400 text-xs mt-0.5 leading-relaxed">{feature.desc}</p>
                                             </div>
                                         </li>
                                     ))}

@@ -72,15 +72,15 @@ export function CopilotSection() {
                         <div className="grid grid-cols-3 gap-6 mb-10">
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-purple-400 mb-1">92%</div>
-                                <div className="text-xs text-gray-500 uppercase tracking-wider">Accuracy</div>
+                                <div className="text-xs text-gray-400 uppercase tracking-wider">Accuracy</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-purple-400 mb-1">2x</div>
-                                <div className="text-xs text-gray-500 uppercase tracking-wider">Faster</div>
+                                <div className="text-xs text-gray-400 uppercase tracking-wider">Faster</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-purple-400 mb-1">60%</div>
-                                <div className="text-xs text-gray-500 uppercase tracking-wider">Auto-Resolved</div>
+                                <div className="text-xs text-gray-400 uppercase tracking-wider">Auto-Resolved</div>
                             </div>
                         </div>
 
@@ -111,3 +111,4 @@ export function CopilotSection() {
         </section>
     )
 }
+

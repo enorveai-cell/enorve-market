@@ -56,7 +56,7 @@ export function AIEngineSection() {
                             <div className="p-5 font-mono text-xs leading-6">
                                 <div className="text-purple-400">rules:</div>
                                 <div className="pl-4">
-                                    <span className="text-gray-500">-</span> <span className="text-blue-400">name:</span> <span className="text-green-300">"refund_cap"</span>
+                                    <span className="text-gray-400">-</span> <span className="text-blue-400">name:</span> <span className="text-green-300">"refund_cap"</span>
                                 </div>
                                 <div className="pl-6">
                                     <span className="text-blue-400">condition:</span> <span className="text-orange-300">"amount &gt; 500"</span>
@@ -65,7 +65,7 @@ export function AIEngineSection() {
                                     <span className="text-blue-400">action:</span> <span className="text-red-400">reject</span>
                                 </div>
                                 <div className="pl-4 mt-2">
-                                    <span className="text-gray-500">-</span> <span className="text-blue-400">name:</span> <span className="text-green-300">"pii_filter"</span>
+                                    <span className="text-gray-400">-</span> <span className="text-blue-400">name:</span> <span className="text-green-300">"pii_filter"</span>
                                 </div>
                                 <div className="pl-6">
                                     <span className="text-blue-400">strict:</span> <span className="text-purple-400">true</span>
@@ -113,7 +113,7 @@ export function AIEngineSection() {
                                             <span className="text-xs text-white font-medium">Response Generated</span>
                                             <span className="text-[10px] text-gray-600 font-mono">0x8f...2a</span>
                                         </div>
-                                        <div className="text-[10px] text-gray-500 truncate font-mono">latency: 42ms | tokens: 128</div>
+                                        <div className="text-[10px] text-gray-400 truncate font-mono">latency: 42ms | tokens: 128</div>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3 p-3 rounded-lg border border-white/5 bg-white/[0.03] backdrop-blur-sm opacity-60">
@@ -127,7 +127,7 @@ export function AIEngineSection() {
                                             <span className="text-xs text-white font-medium">Policy Check</span>
                                             <span className="text-[10px] text-gray-600 font-mono">0x3b...9c</span>
                                         </div>
-                                        <div className="text-[10px] text-gray-500 truncate font-mono">rules: refund_cap (pass)</div>
+                                        <div className="text-[10px] text-gray-400 truncate font-mono">rules: refund_cap (pass)</div>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@ export function AIEngineSection() {
 
                                 <div className="border-t border-white/5 pt-3 flex items-center justify-between">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Sentiment</span>
+                                        <span className="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">Sentiment</span>
                                         <div className="h-1.5 w-16 bg-white/10 rounded-full overflow-hidden">
                                             <div className="h-full w-[20%] bg-red-500" />
                                         </div>
@@ -202,7 +202,7 @@ export function AIEngineSection() {
                         <div className="mt-8 relative w-full h-64 bg-[#08090B] border border-white/5 rounded-xl shadow-2xl overflow-hidden flex flex-col items-center justify-center px-8">
                             <div className="w-full space-y-3">
                                 <div className="w-full h-10 bg-black border border-white/10 rounded-lg flex items-center px-3 gap-2 shadow-lg">
-                                    <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                     <span className="text-sm text-gray-400">shipping to Alaska</span>
@@ -221,14 +221,14 @@ export function AIEngineSection() {
                                     </div>
                                     <div className="p-3 space-y-2">
                                         <div className="flex items-center gap-2">
-                                            <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                             </svg>
                                             <span className="text-xs text-gray-300">shipping_policy_us.pdf</span>
                                             <span className="text-[10px] text-gray-600 ml-auto">98% sim</span>
                                         </div>
                                         <div className="flex items-center gap-2 opacity-50">
-                                            <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <circle cx="12" cy="12" r="10" />
                                                 <path d="M2 12h20" />
                                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -246,3 +246,4 @@ export function AIEngineSection() {
         </section>
     )
 }
+

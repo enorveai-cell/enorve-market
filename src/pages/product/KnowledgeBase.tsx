@@ -118,10 +118,10 @@ export function KnowledgeBase() {
                                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/40" />
                                             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/40" />
                                         </div>
-                                        <span className="text-xs text-gray-500 ml-3">Knowledge Base</span>
+                                        <span className="text-xs text-gray-400 ml-3">Knowledge Base</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <div className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 text-gray-500">
+                                        <div className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 text-gray-400">
                                             <Search className="w-3 h-3" />
                                             <span className="text-[10px]">Search articles...</span>
                                         </div>
@@ -149,8 +149,8 @@ export function KnowledgeBase() {
                                                     "Our refund policy allows returns within 30 days of purchase. Refunds are processed within 5-7 business days."
                                                 </p>
                                                 <div className="flex items-center gap-2">
-                                                    <FileText className="w-3 h-3 text-gray-500" />
-                                                    <span className="text-[10px] text-gray-500">From: Refund Policy v2.3</span>
+                                                    <FileText className="w-3 h-3 text-gray-400" />
+                                                    <span className="text-[10px] text-gray-400">From: Refund Policy v2.3</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,7 +162,7 @@ export function KnowledgeBase() {
 
                                 {/* Article List Preview */}
                                 <div className="p-4">
-                                    <div className="text-xs text-gray-500 mb-3">Recent Articles</div>
+                                    <div className="text-xs text-gray-400 mb-3">Recent Articles</div>
                                     <div className="space-y-2">
                                         {[
                                             { title: "Refund Policy", category: "Policies", status: "Published", updated: "2h ago" },
@@ -171,17 +171,17 @@ export function KnowledgeBase() {
                                         ].map((article) => (
                                             <div key={article.title} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 transition-colors">
                                                 <div className="flex items-center gap-3">
-                                                    <FileText className="w-4 h-4 text-gray-500" />
+                                                    <FileText className="w-4 h-4 text-gray-400" />
                                                     <div>
                                                         <div className="text-xs text-white">{article.title}</div>
-                                                        <div className="text-[10px] text-gray-500">{article.category}</div>
+                                                        <div className="text-[10px] text-gray-400">{article.category}</div>
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <span className={`text-[9px] px-1.5 py-0.5 rounded ${article.status === 'Published' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-gray-500/10 text-gray-400'}`}>
                                                         {article.status}
                                                     </span>
-                                                    <span className="text-[10px] text-gray-500">{article.updated}</span>
+                                                    <span className="text-[10px] text-gray-400">{article.updated}</span>
                                                 </div>
                                             </div>
                                         ))}
@@ -202,7 +202,7 @@ export function KnowledgeBase() {
                                     <TrendingUp className="w-4 h-4 text-emerald-400" />
                                     <div>
                                         <div className="text-xs text-white">+23%</div>
-                                        <div className="text-[10px] text-gray-500">Containment</div>
+                                        <div className="text-[10px] text-gray-400">Containment</div>
                                     </div>
                                 </div>
                             </div>
@@ -271,12 +271,12 @@ export function KnowledgeBase() {
                             </div>
                             <div>
                                 <h3 className="text-lg font-medium text-white">Website Crawler</h3>
-                                <p className="text-xs text-gray-500">Advanced crawling with security built-in</p>
+                                <p className="text-xs text-gray-400">Advanced crawling with security built-in</p>
                             </div>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                                <div className="text-xs text-gray-500 mb-2">Max Pages</div>
+                                <div className="text-xs text-gray-400 mb-2">Max Pages</div>
                                 <div className="flex items-center gap-2">
                                     <div className="flex-1 h-2 rounded-full bg-white/10">
                                         <div className="w-1/2 h-full rounded-full bg-emerald-500" />
@@ -285,7 +285,7 @@ export function KnowledgeBase() {
                                 </div>
                             </div>
                             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                                <div className="text-xs text-gray-500 mb-2">Crawl Depth</div>
+                                <div className="text-xs text-gray-400 mb-2">Crawl Depth</div>
                                 <div className="flex gap-2">
                                     {[1, 2, 3].map((d) => (
                                         <button key={d} className={`px-3 py-1 rounded text-xs ${d === 2 ? 'bg-emerald-500 text-white' : 'bg-white/5 text-gray-400'}`}>
@@ -295,7 +295,7 @@ export function KnowledgeBase() {
                                 </div>
                             </div>
                             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                                <div className="text-xs text-gray-500 mb-2">Security</div>
+                                <div className="text-xs text-gray-400 mb-2">Security</div>
                                 <div className="flex items-center gap-2">
                                     <Shield className="w-4 h-4 text-emerald-400" />
                                     <span className="text-xs text-emerald-400">SSRF Protection Active</span>
@@ -318,7 +318,7 @@ export function KnowledgeBase() {
                         >
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Article<br />
-                                <span className="text-gray-500">Lifecycle</span>
+                                <span className="text-gray-400">Lifecycle</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 Full version control with immutable history. Publish to AI with one click, rollback when needed, and track every change.
@@ -340,7 +340,7 @@ export function KnowledgeBase() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium">{stage.stage}</h4>
-                                            <p className="text-sm text-gray-500">{stage.desc}</p>
+                                            <p className="text-sm text-gray-400">{stage.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -360,7 +360,7 @@ export function KnowledgeBase() {
                                     <History className="w-5 h-5 text-emerald-400" />
                                     <h3 className="text-white font-medium">Version History</h3>
                                 </div>
-                                <span className="text-xs text-gray-500">Refund Policy</span>
+                                <span className="text-xs text-gray-400">Refund Policy</span>
                             </div>
 
                             <div className="relative space-y-4 pl-4 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-emerald-500 before:via-blue-500 before:to-gray-500">
@@ -382,7 +382,7 @@ export function KnowledgeBase() {
                                                 </div>
                                                 {i === 0 && <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Current</span>}
                                             </div>
-                                            <div className="text-[10px] text-gray-500">{item.by} • {item.time}</div>
+                                            <div className="text-[10px] text-gray-400">{item.by} • {item.time}</div>
                                         </div>
                                     </div>
                                 ))}
@@ -448,7 +448,7 @@ export function KnowledgeBase() {
                                         <h3 className="text-white font-medium">Suggested Article</h3>
                                         <div className="flex items-center gap-2 mt-1">
                                             <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400">82% confidence</span>
-                                            <span className="text-[10px] text-gray-500">12 escalations</span>
+                                            <span className="text-[10px] text-gray-400">12 escalations</span>
                                         </div>
                                     </div>
                                 </div>
@@ -459,7 +459,7 @@ export function KnowledgeBase() {
                                     Customers have asked about shipping times to countries outside India. AI detected this pattern from 12 escalated conversations where no KB match was found.
                                 </p>
                             </div>
-                            <div className="text-xs text-gray-500 mb-4">
+                            <div className="text-xs text-gray-400 mb-4">
                                 <span className="text-amber-400">Escalation reason:</span> no_kb_match
                             </div>
                             <div className="flex gap-2">
@@ -482,7 +482,7 @@ export function KnowledgeBase() {
                                         <h3 className="text-white font-medium">Suggested Article</h3>
                                         <div className="flex items-center gap-2 mt-1">
                                             <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400">67% confidence</span>
-                                            <span className="text-[10px] text-gray-500">8 escalations</span>
+                                            <span className="text-[10px] text-gray-400">8 escalations</span>
                                         </div>
                                     </div>
                                 </div>
@@ -493,7 +493,7 @@ export function KnowledgeBase() {
                                     Multiple customers have asked how to check their gift card balance. Current KB articles don't cover this specific use case.
                                 </p>
                             </div>
-                            <div className="text-xs text-gray-500 mb-4">
+                            <div className="text-xs text-gray-400 mb-4">
                                 <span className="text-blue-400">Escalation reason:</span> low_confidence
                             </div>
                             <div className="flex gap-2">
@@ -573,7 +573,7 @@ export function KnowledgeBase() {
                             </div>
                             <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6 leading-[1.1]">
                                 Measure real<br />
-                                <span className="text-gray-500">impact</span>
+                                <span className="text-gray-400">impact</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
                                 See before/after metrics for every published article. Track escalation rates, containment, and get a verdict on whether your changes helped.
@@ -587,7 +587,7 @@ export function KnowledgeBase() {
                                     { label: "Articles Published", value: "142", trend: "+15", up: true }
                                 ].map((metric) => (
                                     <div key={metric.label} className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                                        <div className="text-xs text-gray-500 mb-1">{metric.label}</div>
+                                        <div className="text-xs text-gray-400 mb-1">{metric.label}</div>
                                         <div className="flex items-end gap-2">
                                             <span className="text-2xl font-bold text-white">{metric.value}</span>
                                             <span className={`text-xs mb-1 ${metric.up ? 'text-emerald-400' : 'text-red-400'}`}>
@@ -609,7 +609,7 @@ export function KnowledgeBase() {
                         >
                             <div className="flex items-center justify-between mb-6">
                                 <h3 className="text-white font-medium">Article Impact</h3>
-                                <span className="text-xs text-gray-500">Refund Policy v2.3</span>
+                                <span className="text-xs text-gray-400">Refund Policy v2.3</span>
                             </div>
 
                             <div className="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/20 mb-6">
@@ -623,7 +623,7 @@ export function KnowledgeBase() {
                             <div className="space-y-4">
                                 <div>
                                     <div className="flex justify-between text-xs mb-2">
-                                        <span className="text-gray-500">Before</span>
+                                        <span className="text-gray-400">Before</span>
                                         <span className="text-red-400">42% escalation rate</span>
                                     </div>
                                     <div className="h-3 rounded-full bg-white/5 overflow-hidden">
@@ -632,7 +632,7 @@ export function KnowledgeBase() {
                                 </div>
                                 <div>
                                     <div className="flex justify-between text-xs mb-2">
-                                        <span className="text-gray-500">After</span>
+                                        <span className="text-gray-400">After</span>
                                         <span className="text-emerald-400">8% escalation rate</span>
                                     </div>
                                     <div className="h-3 rounded-full bg-white/5 overflow-hidden">
@@ -643,11 +643,11 @@ export function KnowledgeBase() {
 
                             <div className="mt-6 pt-6 border-t border-white/5 flex justify-between text-xs">
                                 <div>
-                                    <div className="text-gray-500">Sample Size</div>
+                                    <div className="text-gray-400">Sample Size</div>
                                     <div className="text-white font-medium">1,247 conversations</div>
                                 </div>
                                 <div>
-                                    <div className="text-gray-500">Verdict</div>
+                                    <div className="text-gray-400">Verdict</div>
                                     <div className="text-emerald-400 font-medium flex items-center gap-1">
                                         <CheckCircle className="w-3 h-3" />
                                         Statistically Significant
@@ -744,3 +744,4 @@ export function KnowledgeBase() {
         </div>
     )
 }
+

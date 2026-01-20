@@ -65,7 +65,7 @@ export function AnalyticsSection() {
                                 )}
                             </div>
                             <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
-                            <div className="text-sm text-gray-500">{metric.label}</div>
+                            <div className="text-sm text-gray-400">{metric.label}</div>
                         </div>
                     ))}
                 </motion.div>
@@ -92,3 +92,4 @@ export function AnalyticsSection() {
         </section>
     )
 }
+

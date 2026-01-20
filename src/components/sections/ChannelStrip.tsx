@@ -11,7 +11,7 @@ export function ChannelStrip() {
     return (
         <section className="py-16 border-t border-white/5">
             <div className="max-w-[1200px] mx-auto px-6 text-center">
-                <p className="text-lg text-gray-500 mb-10">Works Across</p>
+                <p className="text-lg text-gray-400 mb-10">Works Across</p>
                 <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                     {channels.map((channel) => (
                         <div key={channel.name} className={`flex items-center gap-2 text-xl font-semibold text-white`}>
@@ -24,3 +24,4 @@ export function ChannelStrip() {
         </section>
     )
 }
+
