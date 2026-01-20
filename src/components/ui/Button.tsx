@@ -25,7 +25,7 @@ export function Button({
     disabled,
     type = "button",
 }: ButtonProps) {
-    const baseStyles = "relative inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 rounded-full disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+    const baseStyles = "relative inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 rounded-full disabled:opacity-50 disabled:pointer-events-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
 
     const variants = {
         primary: "bg-white text-black hover:bg-gray-100 shadow-lg shadow-white/10",
@@ -76,6 +76,7 @@ export function GlowButton({
                 "group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium text-white rounded-full transition-all duration-300 cursor-pointer",
                 "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500",
                 "hover:shadow-[0_0_40px_8px_rgba(99,102,241,0.3)]",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
                 className
             )}
         >
@@ -106,6 +107,7 @@ export function ShimmerButton({
             className={cn(
                 "group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium rounded-full overflow-hidden cursor-pointer",
                 "bg-white text-black",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
                 className
             )}
         >
