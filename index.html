@@ -5,6 +5,29 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Google Analytics 4 -->
+    <script>
+      // Only load GA if measurement ID is provided
+      window.GA_MEASUREMENT_ID = '%VITE_GA_MEASUREMENT_ID%';
+      if (window.GA_MEASUREMENT_ID && window.GA_MEASUREMENT_ID !== '%VITE_GA_MEASUREMENT_ID%') {
+        // Load gtag.js
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+        document.head.appendChild(script);
+        
+        // Initialize dataLayer and gtag
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', window.GA_MEASUREMENT_ID, {
+          'send_page_view': true,
+          'anonymize_ip': true
+        });
+      }
+    </script>
+    
     <!-- Primary Meta Tags -->
     <title>Enorve - AI-Powered Customer Support Platform</title>
     <meta name="title" content="Enorve - AI-Powered Customer Support Platform" />
