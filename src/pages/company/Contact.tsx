@@ -226,7 +226,7 @@ export function ContactSales() {
                     <div className="flex flex-wrap gap-4">
                         <Link to="/pricing">
                             <Button variant="primary">
-                                Start free trial
+                                Get Started
                                 <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>
                         </Link>
