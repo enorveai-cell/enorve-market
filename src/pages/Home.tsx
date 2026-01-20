@@ -8,12 +8,20 @@ import { CTASection } from "../components/sections/CTASection"
 import { MidPageCTA } from "../components/sections/MidPageCTA"
 import { Hero } from "../components/Hero"
 import { usePageTitle } from "../hooks/usePageTitle"
+import { useStructuredData, createOrganizationSchema, createSoftwareApplicationSchema } from "../hooks/useStructuredData"
 
 export function Home() {
     usePageTitle({
         title: "AI-Powered Customer Support Platform",
         description: "Transform customer support with AI. Enorve combines intelligent automation, unified inbox, and knowledge management to help teams resolve issues faster and delight customers."
     })
+
+    // Add structured data for SEO
+    useStructuredData([
+        createOrganizationSchema(),
+        createSoftwareApplicationSchema()
+    ])
+
     return (
         <>
             <Hero />

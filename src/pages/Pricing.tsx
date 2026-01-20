@@ -8,6 +8,7 @@ import {
 import { Button } from "../components/ui/Button"
 import { useState } from "react"
 import { usePageTitle } from "../hooks/usePageTitle"
+import { useStructuredData, createProductSchema } from "../hooks/useStructuredData"
 
 const plans = [
     {
@@ -155,6 +156,26 @@ export function Pricing() {
         title: "Pricing - Plans for Every Team Size",
         description: "Flexible pricing for growing teams. Start at $39/month with Starter plan. Scale with Professional ($199), Business ($499), or Custom Enterprise solutions."
     })
+
+    // Add product structured data for SEO
+    useStructuredData([
+        createProductSchema(
+            "Enorve Starter Plan",
+            "39",
+            "Perfect for small teams starting with AI customer support. Includes unified inbox and basic AI features."
+        ),
+        createProductSchema(
+            "Enorve Professional Plan",
+            "199",
+            "For growing teams. Advanced AI Copilot, workflow automation, and analytics included."
+        ),
+        createProductSchema(
+            "Enorve Business Plan",
+            "499",
+            "Enterprise features with governance, audit logs, and AI decision explainability for controlled automation."
+        )
+    ])
+
     const [openFaq, setOpenFaq] = useState<number | null>(null)
 
     return (
