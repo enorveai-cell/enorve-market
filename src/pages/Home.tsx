@@ -10,7 +10,10 @@ import { Hero } from "../components/Hero"
 import { usePageTitle } from "../hooks/usePageTitle"
 
 export function Home() {
-    usePageTitle("AI-Powered Customer Support Platform")
+    usePageTitle({
+        title: "AI-Powered Customer Support Platform",
+        description: "Transform customer support with AI. Enorve combines intelligent automation, unified inbox, and knowledge management to help teams resolve issues faster and delight customers."
+    })
     return (
         <>
             <Hero />

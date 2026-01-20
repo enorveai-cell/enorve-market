@@ -85,7 +85,10 @@ const enterpriseFeatures = [
 ]
 
 export function SaaS() {
-    usePageTitle("SaaS Companies - Technical Support at Scale")
+    usePageTitle({
+        title: "SaaS Companies - Technical Support at Scale",
+        description: "Technical support software for SaaS companies. Scale customer success with AI, knowledge bases, and integrations built for fast-growing products."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

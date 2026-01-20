@@ -84,7 +84,10 @@ const channels = [
 ]
 
 export function Ecommerce() {
-    usePageTitle("E-commerce Support - Scale Order & Returns Automation")
+    usePageTitle({
+        title: "E-commerce Support - Scale Order & Returns Automation",
+        description: "Scale e-commerce support with AI automation. Handle order tracking, returns, refunds, and customer inquiries efficiently across all channels."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

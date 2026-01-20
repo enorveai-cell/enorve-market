@@ -64,7 +64,10 @@ const securityAreas = [
 ]
 
 export function Security() {
-    usePageTitle("Security - Enterprise-Grade Protection")
+    usePageTitle({
+        title: "Security - Enterprise-Grade Protection",
+        description: "Enterprise-grade security for your customer data. SOC 2 compliant, encrypted at rest and in transit, with 99.99% uptime SLA and comprehensive access controls."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

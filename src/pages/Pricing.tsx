@@ -151,7 +151,10 @@ const securityFeatures = [
 ]
 
 export function Pricing() {
-    usePageTitle("Pricing - Plans for Every Team Size")
+    usePageTitle({
+        title: "Pricing - Plans for Every Team Size",
+        description: "Flexible pricing for growing teams. Start at $39/month with Starter plan. Scale with Professional ($199), Business ($499), or Custom Enterprise solutions."
+    })
     const [openFaq, setOpenFaq] = useState<number | null>(null)
 
     return (

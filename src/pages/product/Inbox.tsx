@@ -97,7 +97,10 @@ const workflowFeatures = [
 ]
 
 export function Inbox() {
-    usePageTitle("Unified Inbox - All Channels in One Place")
+    usePageTitle({
+        title: "Unified Inbox - All Channels in One Place",
+        description: "Unified omnichannel inbox for modern support teams. Manage email, live chat, WhatsApp, Instagram, and more from one powerful, organized interface."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

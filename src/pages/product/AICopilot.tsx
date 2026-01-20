@@ -59,7 +59,10 @@ const differentiators = [
 ]
 
 export function AICopilot() {
-    usePageTitle("AI Copilot - Intelligent Agent Assistant")
+    usePageTitle({
+        title: "AI Copilot - Intelligent Agent Assistant",
+        description: "AI-powered agent assistance that resolves tickets 3x faster. Get instant suggestions, automated responses, and intelligent routing powered by advanced machine learning."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

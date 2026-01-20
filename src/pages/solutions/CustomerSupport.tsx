@@ -76,7 +76,10 @@ const outcomes = [
 ]
 
 export function CustomerSupport() {
-    usePageTitle("Customer Support Teams - AI-Powered Solutions")
+    usePageTitle({
+        title: "Customer Support Teams - AI-Powered Solutions",
+        description: "AI-powered solutions for modern customer support teams. Streamline operations, reduce response times, and scale support with intelligent automation."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

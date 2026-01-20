@@ -41,7 +41,10 @@ const differentiators = [
 ]
 
 export function Analytics() {
-    usePageTitle("Analytics - Performance Insights & Metrics")
+    usePageTitle({
+        title: "Analytics - Performance Insights & Metrics",
+        description: "Real-time support analytics and insights. Track CSAT scores, response times, resolution rates, and team performance with comprehensive dashboards."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

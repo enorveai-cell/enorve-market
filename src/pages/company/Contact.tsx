@@ -52,7 +52,10 @@ const volumeOptions = ["< 1,000", "1,000 - 10,000", "10,000 - 50,000", "50,000+"
 const lookingForOptions = ["Product Demo", "Pricing Discussion", "Enterprise Requirements", "Other"]
 
 export function ContactSales() {
-    usePageTitle("Contact Sales - Talk to Our Team")
+    usePageTitle({
+        title: "Contact Sales - Talk to Our Team",
+        description: "Get in touch with Enorve. Sales inquiries, support questions, or partnership opportunities - we're here to help your business succeed."
+    })
 
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">

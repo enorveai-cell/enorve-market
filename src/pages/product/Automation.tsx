@@ -137,7 +137,10 @@ const differentiators = [
 ]
 
 export function Automation() {
-    usePageTitle("Automation - Workflows & Intelligent Routing")
+    usePageTitle({
+        title: "Automation - Workflows & Intelligent Routing",
+        description: "Intelligent workflow automation for customer support. Route tickets, assign agents, and resolve common issues automatically with AI-powered workflows."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

@@ -53,7 +53,10 @@ const differentiators = [
 ]
 
 export function KnowledgeBase() {
-    usePageTitle("Knowledge Base - AI-Powered Help Center")
+    usePageTitle({
+        title: "Knowledge Base - AI-Powered Help Center",
+        description: "Self-service knowledge base that reduces support volume. AI-powered articles, instant answers, and searchable documentation for customer success."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}

@@ -78,7 +78,10 @@ const outcomes = [
 ]
 
 export function Founders() {
-    usePageTitle("For Founders - AI Support Without a Team")
+    usePageTitle({
+        title: "For Founders - AI Support Without a Team",
+        description: "AI-powered customer support for solo founders and small teams. Deliver enterprise-quality support without hiring, using intelligent automation."
+    })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}
