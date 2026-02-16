@@ -9,6 +9,7 @@ import { Button } from "../components/ui/Button"
 import { useState } from "react"
 import { usePageTitle } from "../hooks/usePageTitle"
 import { useStructuredData, createProductSchema } from "../hooks/useStructuredData"
+import { ROIWidget } from "../components/roi/ROIWidget"
 
 const plans = [
     {
@@ -568,6 +569,13 @@ export function Pricing() {
                             </motion.div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* ROI Calculator - Interactive Widget */}
+            <section className="py-16 relative z-10">
+                <div className="max-w-[1100px] mx-auto px-6">
+                    <ROIWidget />
                 </div>
             </section>
 
