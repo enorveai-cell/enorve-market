@@ -43,6 +43,18 @@ export default {
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',
+        'marquee-left': 'marquee-left linear infinite',
+        'marquee-right': 'marquee-right linear infinite',
+      },
+      keyframes: {
+        'marquee-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-right': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       typography: {
         DEFAULT: {

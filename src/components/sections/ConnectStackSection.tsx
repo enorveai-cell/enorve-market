@@ -80,6 +80,37 @@ export function ConnectStackSection() {
                                 </svg>
                             </span>
                         </div>
+                        {/* Email */}
+                        <div className="group relative">
+                            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-[#4285F4]/50 group-hover:shadow-[0_0_20px_rgba(66,133,244,0.2)] transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4285F4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </span>
+                        </div>
+                        {/* Telegram */}
+                        <div className="group relative">
+                            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-[#26A5E4]/50 group-hover:shadow-[0_0_20px_rgba(38,165,228,0.2)] transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#26A5E4">
+                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                                </svg>
+                            </span>
+                        </div>
+                        {/* Facebook Messenger */}
+                        <div className="group relative">
+                            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-[#0084FF]/50 group-hover:shadow-[0_0_20px_rgba(0,132,255,0.2)] transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="url(#messenger-gradient)">
+                                    <defs>
+                                        <linearGradient id="messenger-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                            <stop offset="0%" stopColor="#0099FF" />
+                                            <stop offset="100%" stopColor="#A033FF" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8.2l3.131 3.259L19.752 8.2l-6.561 6.763z" />
+                                </svg>
+                            </span>
+                        </div>
                         {/* Zapier */}
                         <div className="group relative">
                             <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-[#FF4A00]/50 group-hover:shadow-[0_0_20px_rgba(255,74,0,0.2)] transition-all duration-300">

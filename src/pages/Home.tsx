@@ -1,6 +1,8 @@
 import { ChannelStrip } from "../components/sections/ChannelStrip"
+import { GovernedAutonomySection } from "../components/sections/GovernedAutonomySection"
 import { PlatformSection } from "../components/sections/PlatformSection"
 import { AIEngineSection } from "../components/sections/AIEngineSection"
+import { LanguagesSection } from "../components/sections/LanguagesSection"
 import { IsometricSection } from "../components/sections/IsometricSection"
 import { EnterpriseSecuritySection } from "../components/sections/EnterpriseSecuritySection"
 import { ConnectStackSection } from "../components/sections/ConnectStackSection"
@@ -26,8 +28,10 @@ export function Home() {
         <>
             <Hero />
             <ChannelStrip />
+            <GovernedAutonomySection />
             <PlatformSection />
             <AIEngineSection />
+            <LanguagesSection />
             <IsometricSection />
             <EnterpriseSecuritySection />
             <MidPageCTA />
