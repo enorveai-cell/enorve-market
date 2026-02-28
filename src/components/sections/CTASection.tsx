@@ -20,21 +20,21 @@ export function CTASection() {
                 >
                     {/* Headline */}
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                        <span className="text-gradient">Ready to transform</span>
+                        <span className="text-gradient">Let AI run your support.</span>
                         <br />
-                        <span className="text-white">your support?</span>
+                        <span className="text-white">Stay in control.</span>
                     </h2>
 
                     <p className="text-lg text-gray-400 max-w-xl mx-auto mb-10">
-                        Join hundreds of teams delivering faster, smarter customer support.
-                        Choose your plan and start building today
+                        See how autonomous support works — from first message to resolution.
+                        AI resolves. Humans govern. You stay in control.
                     </p>
 
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                         <a href="https://app.enorve.com/">
                             <GlowButton>
-                                Get Started
+                                Request Beta Access
                             </GlowButton>
                         </a>
                         <Link to="/contact-sales">

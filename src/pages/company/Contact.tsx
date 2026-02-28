@@ -156,7 +156,7 @@ export function ContactSales() {
                             <p className="text-sm text-gray-400">
                                 Just getting started?{" "}
                                 <Link to="/pricing" className="text-violet-400 hover:underline">
-                                    Get Started
+                                    Request Beta Access
                                 </Link>{" "}
                                 — no sales call required.
                             </p>
@@ -225,11 +225,11 @@ export function ContactSales() {
                     className="p-8 rounded-[24px] bg-[#0C0E12] border border-white/5"
                 >
                     <h3 className="text-lg font-medium text-white mb-2">Prefer to try it yourself?</h3>
-                    <p className="text-gray-400 mb-6">You don't need a sales call to get started.</p>
+                    <p className="text-gray-400 mb-6">You don't need a sales call to Request Beta Access.</p>
                     <div className="flex flex-wrap gap-4">
                         <Link to="/pricing">
                             <Button variant="primary">
-                                Get Started
+                                Request Beta Access
                                 <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>
                         </Link>
@@ -264,7 +264,7 @@ export function ContactSales() {
                             </summary>
                             <div className="mt-4 text-gray-400 space-y-2">
                                 <p><strong className="text-white">No.</strong></p>
-                                <p>You can sign up instantly and select your plan to get started. Payment is required to activate your account.</p>
+                                <p>You can sign up instantly and select your plan to Request Beta Access. Payment is required to activate your account.</p>
                                 <p>Sales is helpful if you're evaluating Business or Enterprise plans, need custom workflows, or have security requirements.</p>
                             </div>
                         </details>
@@ -284,7 +284,7 @@ export function ContactSales() {
                                     <li>Require SSO, audit logs, or governance controls</li>
                                     <li>Want custom integrations or pricing guidance</li>
                                 </ul>
-                                <p>Smaller teams can get started without a call.</p>
+                                <p>Smaller teams can Request Beta Access without a call.</p>
                             </div>
                         </details>
 

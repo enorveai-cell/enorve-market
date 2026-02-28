@@ -4,8 +4,8 @@ import { BarChart3, Users, Clock, Target, Activity } from "lucide-react"
 const metrics = [
     { icon: Clock, label: "Avg. Response Time", value: "1m 45s", change: "-32%", positive: true },
     { icon: Target, label: "CSAT Score", value: "4.8/5", change: "+12%", positive: true },
-    { icon: Activity, label: "AI Automation Rate", value: "65%", change: "+8%", positive: true },
-    { icon: Users, label: "Active Agents", value: "24", change: "", positive: true },
+    { icon: Activity, label: "AI Resolution Rate", value: "65%", change: "+8%", positive: true },
+    { icon: Users, label: "Human Interventions", value: "8", change: "-12%", positive: true },
 ]
 
 export function AnalyticsSection() {
@@ -29,14 +29,15 @@ export function AnalyticsSection() {
                     </span>
 
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                        <span className="text-gradient">Data-driven</span>
+                        <span className="text-gradient">See what AI resolved.</span>
                         <br />
-                        <span className="text-white">decisions.</span>
+                        <span className="text-white">See where humans were needed.</span>
                     </h2>
 
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                        Get real-time insights into your support operations. Track response times,
-                        CSAT scores, AI performance, and team productivity—all in one dashboard.
+                        Track AI resolution rates, human intervention frequency, and escalation
+                        patterns — all in real time. Know exactly where AI handles it and where
+                        your team steps in.
                     </p>
                 </motion.div>
 

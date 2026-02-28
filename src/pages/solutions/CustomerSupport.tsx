@@ -77,8 +77,8 @@ const outcomes = [
 
 export function CustomerSupport() {
     usePageTitle({
-        title: "Customer Support Teams - AI-Powered Solutions",
-        description: "AI-powered solutions for modern customer support teams. Streamline operations, reduce response times, and scale support with intelligent automation."
+        title: "Customer Support Teams - Autonomous Support Solutions",
+        description: "Autonomous support solutions for modern customer operations. Resolve conversations automatically, reduce response times, and scale support with AI-first automation and human oversight."
     })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
@@ -107,7 +107,7 @@ export function CustomerSupport() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -494,12 +494,12 @@ export function CustomerSupport() {
                             See Enorve in action for support teams
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Get started with Enorve and transform your support operations today.
+                            Request Beta Access with Enorve and transform your support operations today.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

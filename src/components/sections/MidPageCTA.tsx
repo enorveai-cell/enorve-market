@@ -10,17 +10,17 @@ export function MidPageCTA() {
 
                     <div className="relative z-10">
                         <h2 className="text-2xl md:text-3xl font-medium text-white mb-3">
-                            Ready to transform your support?
+                            Let AI run your support. Stay in control.
                         </h2>
                         <p className="text-gray-400 mb-6 max-w-lg mx-auto">
-                            Join hundreds of teams using AI to resolve customer issues faster.
+                            See how AI resolves conversations end-to-end, without human intervention.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                             <a
                                 href="https://app.enorve.com/"
                                 className="bg-white text-black font-medium text-sm h-11 px-6 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2"
                             >
-                                Get Started
+                                Request Beta Access
                                 <ArrowRight className="w-4 h-4" />
                             </a>
                         </div>

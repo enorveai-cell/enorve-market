@@ -129,7 +129,7 @@ export function Inbox() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -778,12 +778,12 @@ export function Inbox() {
                             Ready to unify your inbox?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Get started with Enorve and bring all your channels together.
+                            Request Beta Access with Enorve and bring all your channels together.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

@@ -34,7 +34,7 @@ export const createOrganizationSchema = () => ({
     name: 'Enorve',
     url: 'https://enorve.com',
     logo: 'https://enorve.com/favicon.svg',
-    description: 'AI-Powered Customer Support Platform for WhatsApp, Email, Chat & Social',
+    description: 'Autonomous support platform that resolves customer conversations across WhatsApp, Email, and Chat — with full governance and escalation control.',
     foundingDate: '2024',
     sameAs: [
         'https://twitter.com/enorveai',

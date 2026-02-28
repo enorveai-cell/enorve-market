@@ -1,0 +1,149 @@
+# Site Philosophy Audit: "AI runs by default. Humans supervise."
+
+Full audit of every section, headline, CTA, and meta tag on the Enorve marketing site against the core philosophy:
+
+> **"AI handles support by default. Humans supervise, not operate."**
+> Not "AI-powered support" — that's Intercom. But "support that runs itself, with humans in control."
+
+---
+
+## ✅ Sections Already Aligned
+
+These sections correctly express the philosophy — AI-first with human oversight:
+
+| Section | Why It Works |
+|---|---|
+| **Hero** (updated) | "Your AI handles support. Your team handles exceptions." |
+| [GovernedAutonomySection](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/GovernedAutonomySection.tsx) | "Governed autonomy for customer operations" — perfect framing of AI with guardrails |
+| [AIEngineSection](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/AIEngineSection.tsx) | "A complete support platform with deterministic AI at its core" — emphasizes governance |
+| [PlatformSection](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/PlatformSection.tsx) | "From conversation to resolution — automatically, safely" — AI-first with safety |
+| [IsometricSection](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/IsometricSection.tsx) | "From Algorithm to Accountability" — deterministic control layers |
+| [EnterpriseSecuritySection](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/EnterpriseSecuritySection.tsx) | Security-first, enterprise-grade — aligned |
+| [LanguagesSection](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/LanguagesSection.tsx) | Multilingual AI resolution — neutral, fine |
+| [ConnectStackSection](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/ConnectStackSection.tsx) | Integrations — channel-focused, fine |
+
+---
+
+## ❌ Violations Found
+
+### 1. CTA: "Get Started" → Should be "Request Beta Access" or "See Enorve Work"
+
+**29 instances** across the site. "Get Started" implies a self-serve product. For a pre-launch beta, this is misleading.
+
+| File | Lines |
+|---|---|
+| [Navbar.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/Navbar.tsx) | 224, 299 |
+| [CTASection.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/CTASection.tsx) | 37 |
+| [MidPageCTA.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/MidPageCTA.tsx) | 23 |
+| [Pricing.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/Pricing.tsx) | 34, 57, 81, 650 |
+| [Contact.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/company/Contact.tsx) | 159, 232 |
+| [ROICalculator.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/ROICalculator.tsx) | 202 |
+| All 5 product pages | Hero + bottom CTA in each |
+| All 4 solution pages | Hero + bottom CTA in each |
+
+---
+
+### 2. "AI-Powered" Label — Sounds Like Intercom
+
+**9 instances.** This is exactly the framing to avoid. "AI-Powered" positions AI as an add-on to a human-operated tool.
+
+| File | Line | Current Text | Suggested Fix |
+|---|---|---|---|
+| [Home.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/Home.tsx) | 17 | `"AI-Powered Customer Support Platform"` | `"Autonomous Customer Support Platform"` |
+| [usePageTitle.ts](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/hooks/usePageTitle.ts) | 25 | `"Enorve - AI-Powered Customer Support Platform"` | `"Enorve - Autonomous Customer Support"` |
+| [useStructuredData.ts](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/hooks/useStructuredData.ts) | 37 | `"AI-Powered Customer Support Platform..."` | `"Autonomous support platform..."` |
+| [CopilotSection.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/CopilotSection.tsx) | 56 | Badge: `"AI-Powered"` | `"Autonomous"` or `"AI-Native"` |
+| [CustomerSupport.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/solutions/CustomerSupport.tsx) | 80 | `"AI-Powered Solutions"` | `"Autonomous Support Solutions"` |
+| [KnowledgeBase.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/product/KnowledgeBase.tsx) | 57, 411 | `"AI-Powered Help Center"` / badge | `"Self-Resolving Help Center"` |
+| [Automation.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/product/Automation.tsx) | 132 | `"AI-Powered Signals"` | `"Autonomous Signals"` |
+| [SaaS.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/solutions/SaaS.tsx) | 442 | Badge: `"AI-Powered"` | `"AI-Native"` |
+
+---
+
+### 3. "Ready to transform your support?" — Generic, Not Philosophy-Aligned
+
+**3 instances.** This is Zendesk/Intercom language. Doesn't express the inversion.
+
+| File | Line | Suggested Fix |
+|---|---|---|
+| [CTASection.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/CTASection.tsx) | 22-25 | → "Let AI run your support. Stay in control." |
+| [MidPageCTA.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/MidPageCTA.tsx) | 13 | → "Let AI run your support. Stay in control." |
+| [Pricing.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/Pricing.tsx) | 642 | → Same |
+
+---
+
+### 4. "Join hundreds of teams" — False Social Proof
+
+**3 instances** (including TestimonialsSection). Pre-launch product has no customers.
+
+| File | Line | Suggested Fix |
+|---|---|---|
+| [CTASection.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/CTASection.tsx) | 29 | → "See how autonomous support works — from first message to resolution." |
+| [MidPageCTA.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/MidPageCTA.tsx) | 16 | → "See how AI resolves conversations end-to-end, without human intervention." |
+| [TestimonialsSection.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/TestimonialsSection.tsx) | 50 | → Remove or reframe entirely |
+
+---
+
+### 5. Agent-Centric Framing — "Your agents, supercharged"
+
+The [CopilotSection](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/CopilotSection.tsx) and [Features.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/Features.tsx) frame AI as a tool for human agents, inverting the philosophy.
+
+| File | Issue | Suggested Fix |
+|---|---|---|
+| CopilotSection headline | "Your agents, supercharged." | → "When AI escalates, your team is ready." |
+| CopilotSection body | "The AI Copilot sits alongside your agents..." | → "When conversations require human judgment, Copilot equips your team with full context, suggested actions, and real-time sentiment — so they resolve faster." |
+| CopilotSection badge | "AI-Powered" | → "Human Oversight" |
+| Features.tsx heading | "Everything you need. All in one place." | → "Support that runs itself. With everything you need to stay in control." |
+| Features.tsx sub | "Powerful tools designed for modern support teams." | → "AI resolves. Humans govern. Every tool built for that." |
+| Features.tsx: AI Copilot desc | "Smart suggestions that help agents resolve tickets 2x faster." | → "Real-time context and actions for the moments humans step in." |
+| Features.tsx: Auto-Resolution desc | "Let AI handle routine queries while you focus on VIPs." | → "AI resolves autonomously. Humans intervene by exception." |
+
+---
+
+### 6. InboxSection — Human-Operator Framing
+
+[InboxSection.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/InboxSection.tsx): "Stop switching between tabs... Your team sees every conversation" frames the inbox as a tool humans operate, not supervise.
+
+| Issue | Suggested Fix |
+|---|---|
+| Body text: "Your team sees every conversation in one place" | → "AI handles every conversation in one place — your team sees only what needs attention." |
+| Feature: "Bulk actions for efficient ticket management" | → "Bulk overrides when human judgment is needed" |
+
+---
+
+### 7. AnalyticsSection — Neutral but Misses Opportunity
+
+[AnalyticsSection.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/components/sections/AnalyticsSection.tsx): "Data-driven decisions" is neutral. Metric "Active Agents: 24" frames agents as the main workforce.
+
+| Issue | Suggested Fix |
+|---|---|
+| Headline "Data-driven decisions" | → "See what AI resolved. See where humans were needed." |
+| Metric "Active Agents: 24" | → "Human Interventions: 8" (shows AI handles the rest) |
+| Metric "AI Automation Rate: 65%" | → "AI Resolution Rate: 65%" |
+| Body text | → "Track AI resolution rates, human intervention frequency, and escalation patterns — all in real time." |
+
+---
+
+### 8. SEO & Meta — Old Positioning
+
+| File | Issue |
+|---|---|
+| [Home.tsx](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/pages/Home.tsx#L17-L18) | Title: "AI-Powered Customer Support Platform", Description: "Transform customer support with AI..." |
+| [usePageTitle.ts](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/hooks/usePageTitle.ts#L25) | Default: "Enorve - AI-Powered Customer Support Platform" |
+| [useStructuredData.ts](file:///c:/Users/Jarvis/Documents/Enorve-Market/src/hooks/useStructuredData.ts#L37) | "AI-Powered Customer Support Platform for WhatsApp, Email, Chat & Social" |
+
+---
+
+## Summary: Scale of Changes
+
+| Category | Count | Severity |
+|---|---|---|
+| "Get Started" CTAs | 29 | 🔴 High — false promise for pre-launch |
+| "AI-Powered" labels | 9 | 🔴 High — Intercom language |
+| "Ready to transform" headlines | 3 | 🟡 Medium — generic |
+| "Join hundreds" social proof | 3 | 🔴 High — false claims |
+| Agent-centric framing | 5+ sections | 🟡 Medium — inverts the philosophy |
+| SEO metadata | 3 files | 🟡 Medium — wrong positioning |
+
+> [!IMPORTANT]
+> The homepage sections built recently (GovernedAutonomy, AIEngine, Platform, Isometric) are excellently aligned. The violations are concentrated in **older shared components** (CTAs, Navbar, Features, Copilot) and **all product/solution detail pages** which were likely written before the philosophy crystallized.

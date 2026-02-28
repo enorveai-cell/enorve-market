@@ -31,7 +31,7 @@ const plans = [
             { text: "Email support", included: true }
         ],
         bestFor: ["Small teams starting with AI support"],
-        cta: "Get Started"
+        cta: "Request Beta Access"
     },
     {
         name: "Professional",
@@ -54,7 +54,7 @@ const plans = [
             { text: "Priority email support", included: true }
         ],
         bestFor: ["Growing support teams"],
-        cta: "Get Started"
+        cta: "Request Beta Access"
     },
     {
         name: "Business",
@@ -78,7 +78,7 @@ const plans = [
             { text: "Priority phone & email support", included: true }
         ],
         bestFor: ["High-volume, regulated teams"],
-        cta: "Get Started"
+        cta: "Request Beta Access"
     },
     {
         name: "Enterprise",
@@ -200,7 +200,7 @@ export function Pricing() {
                     <p className="text-xl text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed">
                         Automate customer conversations, workflows, and decisions — with governance, visibility, and human oversight built in.
                     </p>
-                    <p className="text-sm text-gray-400">Start building today — choose your plan and get started in minutes</p>
+                    <p className="text-sm text-gray-400">Start building today — choose your plan and Request Beta Access in minutes</p>
                 </motion.div>
             </section>
 
@@ -639,15 +639,15 @@ export function Pricing() {
 
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-4xl font-medium text-white mb-4 tracking-tight">
-                            Ready to transform your customer support?
+                            Let AI run your support. Stay in control.
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Choose your plan and start building in minutes
+                            Choose your plan and request beta access in minutes
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

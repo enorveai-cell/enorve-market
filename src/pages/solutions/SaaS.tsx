@@ -116,7 +116,7 @@ export function SaaS() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -439,7 +439,7 @@ export function SaaS() {
                             <div className="mt-4 p-4 rounded-xl bg-violet-500/5 border border-violet-500/20">
                                 <div className="flex items-center gap-2 mb-2">
                                     <Sparkles className="w-4 h-4 text-violet-400" />
-                                    <span className="text-xs text-violet-400 font-medium">AI-Powered</span>
+                                    <span className="text-xs text-violet-400 font-medium">AI-Native</span>
                                 </div>
                                 <p className="text-xs text-gray-400">148 articles indexed with semantic embeddings. Average retrieval confidence: 94%</p>
                             </div>
@@ -604,12 +604,12 @@ export function SaaS() {
                             Build scalable SaaS support
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Get started with Enorve and see how AI can transform your technical support.
+                            Request Beta Access with Enorve and see how AI can transform your technical support.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

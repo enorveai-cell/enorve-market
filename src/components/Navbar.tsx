@@ -221,7 +221,7 @@ export function Navbar() {
                             </a>
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="sm">
-                                    Get Started
+                                    Request Beta Access
                                 </Button>
                             </a>
                         </div>
@@ -296,7 +296,7 @@ export function Navbar() {
                                     <a href="https://app.enorve.com/" className="block py-2 px-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-center">Login</a>
                                     <a href="https://app.enorve.com/" className="block">
                                         <Button variant="primary" size="md" className="w-full">
-                                            Get Started
+                                            Request Beta Access
                                         </Button>
                                     </a>
                                 </div>

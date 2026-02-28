@@ -53,18 +53,18 @@ export function CopilotSection() {
                     >
                         <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium uppercase tracking-wider text-purple-400 bg-purple-500/10 rounded-full mb-6">
                             <Sparkles className="w-3.5 h-3.5" />
-                            AI-Powered
+                            Human Oversight
                         </span>
 
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                            <span className="text-gradient">Your agents,</span>
+                            <span className="text-gradient">When AI escalates, your team is</span>
                             <br />
-                            <span className="text-gradient-primary">supercharged.</span>
+                            <span className="text-gradient-primary">ready.</span>
                         </h2>
 
                         <p className="text-lg text-gray-400 leading-relaxed mb-8">
-                            The AI Copilot sits alongside your agents, providing real-time suggestions,
-                            sentiment analysis, and smart actions. Resolve tickets 2x faster while
+                            When conversations require human judgment, Copilot equips your team with full context,
+                            suggested actions, and real-time sentiment — so they resolve faster while
                             maintaining your brand voice.
                         </p>
 

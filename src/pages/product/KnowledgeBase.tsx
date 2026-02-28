@@ -54,8 +54,8 @@ const differentiators = [
 
 export function KnowledgeBase() {
     usePageTitle({
-        title: "Knowledge Base - AI-Powered Help Center",
-        description: "Self-service knowledge base that reduces support volume. AI-powered articles, instant answers, and searchable documentation for customer success."
+        title: "Knowledge Base - Self-Resolving Help Center",
+        description: "Self-service knowledge base that reduces support volume. Governance-first articles, instant answers, and searchable documentation for autonomous customer support."
     })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
@@ -85,7 +85,7 @@ export function KnowledgeBase() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -408,7 +408,7 @@ export function KnowledgeBase() {
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 mb-4">
                             <Sparkles className="w-3 h-3 text-amber-400" />
-                            <span className="text-xs text-amber-400 font-medium">AI-Powered</span>
+                            <span className="text-xs text-amber-400 font-medium">AI-Native</span>
                         </div>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
@@ -712,12 +712,12 @@ export function KnowledgeBase() {
                             Ready to power your AI?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Get started with Enorve and build your knowledge base today.
+                            Request Beta Access with Enorve and build your knowledge base today.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

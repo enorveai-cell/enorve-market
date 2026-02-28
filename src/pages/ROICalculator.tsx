@@ -194,12 +194,12 @@ export function ROICalculator() {
                                     Ready to reduce your support costs?
                                 </h3>
                                 <p className="text-gray-400 mb-6 max-w-md mx-auto">
-                                    Get started with Enorve today and see real savings within months.
+                                    Request Beta Access with Enorve today and see real savings within months.
                                 </p>
                                 <div className="flex flex-wrap justify-center gap-4">
                                     <a href="https://app.enorve.com/">
                                         <Button variant="primary">
-                                            Get Started Free
+                                            Request Beta Access Free
                                         </Button>
                                     </a>
                                     <Link to="/contact-sales">

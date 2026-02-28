@@ -14,8 +14,8 @@ import { useStructuredData, createOrganizationSchema, createSoftwareApplicationS
 
 export function Home() {
     usePageTitle({
-        title: "AI-Powered Customer Support Platform",
-        description: "Transform customer support with AI. Enorve combines intelligent automation, unified inbox, and knowledge management to help teams resolve issues faster and delight customers."
+        title: "Autonomous Customer Support Platform",
+        description: "Support that runs itself. Enorve resolves customer conversations autonomously across WhatsApp, Email, and Chat — with full governance, explainability, and escalation control."
     })
 
     // Add structured data for SEO

@@ -36,9 +36,9 @@ export function InboxSection() {
                         </h2>
 
                         <p className="text-lg text-gray-400 leading-relaxed mb-8">
-                            Stop switching between tabs. Enorve unifies WhatsApp, Email, Slack,
-                            Instagram, and more into a single, intelligent inbox. Your team sees
-                            every conversation in one place—with full context.
+                            AI handles every conversation in one place — across WhatsApp, Email, Slack,
+                            Instagram, and more. Your team sees only what needs attention,
+                            with full context when they step in.
                         </p>
 
                         {/* Channel pills */}
@@ -66,7 +66,7 @@ export function InboxSection() {
                                 "Real-time message syncing across all channels",
                                 "Collision detection—see when teammates are viewing",
                                 "Advanced filtering by status, priority, and tags",
-                                "Bulk actions for efficient ticket management",
+                                "Bulk overrides when human judgment is needed",
                             ].map((feature, i) => (
                                 <motion.li
                                     key={i}

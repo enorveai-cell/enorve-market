@@ -129,7 +129,7 @@ const templates = [
 
 const differentiators = [
     { title: "No-Code Visual Builder", desc: "Create complex automations without writing code", icon: GitBranch },
-    { title: "AI-Powered Signals", desc: "Leverage intent, sentiment, and confidence in rules", icon: Sparkles },
+    { title: "Autonomous Signals", desc: "Leverage intent, sentiment, and confidence in rules", icon: Sparkles },
     { title: "Governance-First", desc: "Built-in safety guardrails for AI actions", icon: Shield },
     { title: "Template Library", desc: "Pre-built patterns with proven outcomes", icon: LayoutTemplate },
     { title: "Revenue Attribution", desc: "Tie conversations directly to revenue", icon: DollarSign },
@@ -169,7 +169,7 @@ export function Automation() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -731,12 +731,12 @@ export function Automation() {
                             Ready to automate your support?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Get started with Enorve and build your first workflow in minutes.
+                            Request Beta Access with Enorve and build your first workflow in minutes.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Get Started
+                                    Request Beta Access
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

@@ -10,7 +10,7 @@ const features = [
     },
     {
         title: "AI Copilot",
-        description: "Smart suggestions that help agents resolve tickets 2x faster.",
+        description: "Real-time context and actions for the moments humans step in.",
         icon: Bot,
         className: "md:col-span-1",
     },
@@ -22,7 +22,7 @@ const features = [
     },
     {
         title: "Auto-Resolution",
-        description: "Let AI handle routine queries while you focus on VIPs.",
+        description: "AI resolves autonomously. Humans intervene by exception.",
         icon: Zap,
         className: "md:col-span-2",
     },
@@ -33,10 +33,10 @@ export function Features() {
         <section id="features" className="py-24 px-6 max-w-7xl mx-auto">
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
-                    Everything you need.<br />All in one place.
+                    Support that runs itself.<br />With everything you need to stay in control.
                 </h2>
                 <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                    Powerful tools designed for modern support teams.
+                    AI resolves. Humans govern. Every tool built for that.
                 </p>
             </div>
 

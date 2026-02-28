@@ -17,33 +17,34 @@ export function Hero() {
                 <div
                     className="animate-fade-in-up inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-purple-300 mb-8"
                 >
-                    <span className="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[10px] font-semibold border border-purple-500/30">
-                        New
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
                     </span>
-                    <span>Enorve Enterprise 2.0</span>
+                    <span>Now in Beta</span>
                 </div>
 
                 {/* Headline - Animated with delay */}
                 <h1 className="animate-fade-in-up delay-100 text-3xl md:text-7xl lg:text-[80px] font-medium tracking-tighter leading-[1.1] bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 mb-4 md:mb-6">
-                    Customer support platform for
+                    Your AI handles support.
                     <br />
-                    WhatsApp, Email, Chat & Social.
+                    Your team handles exceptions.
                 </h1>
 
                 {/* Subheadline */}
-                <p className="animate-fade-in-up delay-200 text-base md:text-2xl font-normal text-gray-300 max-w-xl mx-auto mb-6 md:mb-10 leading-relaxed px-2 md:px-0">
-                    Enorve is a unified inbox with AI auto-resolution, where every action
-                    is governed, auditable, and escalation-safe. Built for enterprise
-                    teams managing high-risk interactions.
+                <p className="animate-fade-in-up delay-200 text-sm md:text-2xl font-normal text-gray-300 max-w-3xl mx-auto mb-6 md:mb-10 leading-relaxed px-4 md:px-0">
+                    Enorve resolves customer conversations autonomously — across WhatsApp, Email, and Chat — with full governance, explainability, and escalation control.
+                    <br className="hidden md:block" />
+                    {" "}AI runs first. Humans step in only when it matters.
                 </p>
 
                 {/* CTAs */}
                 <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-                    <a href="https://app.enorve.com/" className="bg-white text-black font-medium text-base h-12 px-8 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transform hover:scale-105 flex items-center justify-center w-full sm:w-auto">
-                        Get Started
+                    <a href="#demo" className="bg-white text-black font-medium text-base h-12 px-8 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transform hover:scale-105 flex items-center justify-center w-full sm:w-auto">
+                        See Enorve Work
                     </a>
-                    <a href="https://help.enorve.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 text-white font-medium text-base h-12 px-8 rounded-full border border-white/20 hover:bg-white/10 transition-all w-full sm:w-auto">
-                        Read Documentation
+                    <a href="#beta" className="group flex items-center justify-center gap-2 text-white font-medium text-base h-12 px-8 rounded-full border border-white/20 hover:bg-white/10 transition-all w-full sm:w-auto">
+                        Request Beta Access
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
                             <path d="m9 18 6-6-6-6" />
                         </svg>
