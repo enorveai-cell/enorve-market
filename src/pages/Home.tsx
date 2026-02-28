@@ -14,8 +14,8 @@ import { useStructuredData, createOrganizationSchema, createSoftwareApplicationS
 
 export function Home() {
     usePageTitle({
-        title: "Autonomous Customer Support Platform",
-        description: "Support that runs itself. Enorve resolves customer conversations autonomously across WhatsApp, Email, and Chat — with full governance, explainability, and escalation control."
+        title: "Governed Autonomous AI Operations for E-commerce",
+        description: "Your AI handles support. Your team handles exceptions. Enorve autonomously resolves customer conversations across WhatsApp, Email, and Chat — with full governance, explainability, and escalation control."
     })
 
     // Add structured data for SEO

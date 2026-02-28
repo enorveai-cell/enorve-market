@@ -1,24 +1,27 @@
 import { motion } from "framer-motion"
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from "recharts"
-import type { ROIResults } from "../../hooks/useROICalculator"
+import type { LaborResults } from "../../hooks/useROICalculator"
 
 interface Props {
-    results: ROIResults
+    results: LaborResults
 }
 
 export function HeadcountChart({ results }: Props) {
     const data = [
         {
-            name: "Without AI",
-            agents: results.withoutAI.requiredAgents,
+            name: "Current Team",
+            agents: results.currentAnnualLaborCost / (results.currentAnnualLaborCost / (results.projectedHeadcount + results.headcountReduction)),
             color: "#EF4444",
         },
         {
-            name: "With Enorve AI",
-            agents: results.enorveResult.requiredAgents,
+            name: "With Enorve",
+            agents: results.projectedHeadcount,
             color: "#10B981",
         },
     ]
+
+    // Fix: use actual headcount values
+    data[0].agents = results.projectedHeadcount + results.headcountReduction
 
     return (
         <motion.div
@@ -29,9 +32,9 @@ export function HeadcountChart({ results }: Props) {
         >
             <h3 className="text-lg font-medium text-white mb-1">Headcount Impact</h3>
             <p className="text-sm text-gray-400 mb-6">
-                Agents required to handle {results.enorveResult.requiredAgents < results.withoutAI.requiredAgents
-                    ? `${((results.withoutAI.requiredAgents - results.enorveResult.requiredAgents))} fewer agents with AI`
-                    : "your monthly ticket volume"
+                {results.headcountReduction > 0
+                    ? `${results.headcountReduction} fewer agents needed — from ${results.projectedHeadcount + results.headcountReduction} to ${results.projectedHeadcount}`
+                    : "Agents required for your conversation volume"
                 }
             </p>
 
@@ -75,12 +78,12 @@ export function HeadcountChart({ results }: Props) {
                 </ResponsiveContainer>
             </div>
 
-            {results.fteAvoided > 0 && (
+            {results.headcountReduction > 0 && (
                 <div className="mt-4 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
                     <p className="text-sm text-emerald-400">
-                        <span className="font-semibold">{results.fteAvoided} FTE avoided</span> — saving{" "}
+                        <span className="font-semibold">{results.headcountReduction} positions replaced by AI</span> — saving{" "}
                         <span className="font-semibold">
-                            ${(results.fteAvoided * 55000).toLocaleString()}
+                            ${results.annualLaborSavings.toLocaleString()}
                         </span>{" "}
                         in annual labor costs
                     </p>

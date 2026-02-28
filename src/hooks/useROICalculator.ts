@@ -1,270 +1,163 @@
 import { useState, useMemo } from "react"
-import { competitors, enorve, type CompetitorPricing } from "../data/competitorPricing"
 
 /* ───────── Types ───────── */
 
-export interface ROIInputs {
-    // Operational
-    numberOfAgents: number
-    monthlyTicketVolume: number
-    aiDeflectionRate: number   // 0–0.80
-    avgHandleTime: number      // minutes
-    agentUtilization: number   // 0–1
-
-    // Financial
-    fullyLoadedSalary: number  // $/year
-    hiringOnboardingCost: number
-    migrationCost: number
-    discountRate: number       // 0–1 (e.g. 0.08 for 8%)
+export interface LaborInputs {
+    currentHeadcount: number
+    avgAgentCost: number        // $/year fully loaded
+    monthlyConversations: number
+    automationRate: number      // 0–0.80
 }
 
-export interface VendorResult {
-    name: string
-    softwareCostAnnual: number
-    aiAddonCostAnnual: number
-    laborCostAnnual: number
-    tsocAnnual: number
-    costPerTicket: number
-    requiredAgents: number
-}
+export interface LaborResults {
+    // Current state
+    currentAnnualLaborCost: number
 
-export interface ROIResults {
-    // Per-vendor
-    enorveResult: VendorResult
-    competitorResults: VendorResult[]
-    withoutAI: {
-        requiredAgents: number
-        laborCostAnnual: number
-    }
+    // Projected state with Enorve
+    projectedHeadcount: number
+    headcountReduction: number
+    reducedLaborCost: number
 
-    // Savings vs each competitor
-    savingsVsCompetitors: Array<{
-        competitor: string
-        annualSavings: number
-        threeYearCumulative: number
-        npv: number
-        paybackMonths: number | null
-    }>
+    // Enorve platform cost (based on conversation volume tier)
+    enorveAnnualCost: number
+    enorveMonthlyPlan: string
+    enorveMonthlyPlanCost: number
 
-    // Best-case summary (vs most expensive competitor)
-    bestAnnualSavings: number
-    bestThreeYearNPV: number
-    fteAvoided: number
-    bestPaybackMonths: number | null
-    ticketsPerAgentCapacity: number
+    // Savings
+    annualLaborSavings: number
+    netAnnualSavings: number   // after Enorve cost
+    threeYearCumulativeSavings: number
+
+    // ROI
+    roiPercent: number
+    roiMonths: number | null   // months to break even (null if no savings)
+
+    // Efficiency metrics
+    conversationsPerAgent: number
+    autonomousConversationsPerMonth: number
+    humanConversationsPerMonth: number
 
     // 3-year projection data (for charts)
     projectionData: Array<{
         month: number
-        [vendorName: string]: number
+        currentCost: number      // cumulative without Enorve
+        enorveBasedCost: number  // cumulative with Enorve
+        savings: number          // cumulative savings
     }>
 
-    // Edge-case warnings
+    // Warnings
     warnings: string[]
 }
 
 /* ───────── Constants ───────── */
 
-const WORK_HOURS_PER_MONTH = 160
-const MONTHS_PER_YEAR = 12
+const CONVERSATIONS_PER_AGENT_PER_MONTH = 150
+
+// Enorve pricing tiers (based on monthly conversation volume)
+function getEnorvePlan(monthlyConversations: number): { name: string; monthlyCost: number } {
+    if (monthlyConversations <= 1000) return { name: "Starter", monthlyCost: 39 }
+    if (monthlyConversations <= 10000) return { name: "Professional", monthlyCost: 199 }
+    if (monthlyConversations <= 50000) return { name: "Business", monthlyCost: 499 }
+    // Enterprise — estimate based on volume
+    return { name: "Enterprise", monthlyCost: Math.ceil(monthlyConversations / 10000) * 499 }
+}
 
 /* ───────── Hook ───────── */
 
 export function useROICalculator() {
-    const [inputs, setInputs] = useState<ROIInputs>({
-        numberOfAgents: 50,
-        monthlyTicketVolume: 50 * 150,
-        aiDeflectionRate: 0.40,
-        avgHandleTime: 8,
-        agentUtilization: 0.80,
-        fullyLoadedSalary: 55000,
-        hiringOnboardingCost: 6000,
-        migrationCost: 0,
-        discountRate: 0.08,
+    const [inputs, setInputs] = useState<LaborInputs>({
+        currentHeadcount: 10,
+        avgAgentCost: 45000,
+        monthlyConversations: 5000,
+        automationRate: 0.60,
     })
 
-    function setInput<K extends keyof ROIInputs>(key: K, value: ROIInputs[K]) {
+    function setInput<K extends keyof LaborInputs>(key: K, value: LaborInputs[K]) {
         setInputs(prev => ({ ...prev, [key]: value }))
     }
 
-    const results = useMemo<ROIResults>(() => {
+    const results = useMemo<LaborResults>(() => {
         const warnings: string[] = []
 
-        /* ── Agent Capacity ── */
-        const effectiveMinutes = WORK_HOURS_PER_MONTH * 60 * inputs.agentUtilization
-        const ticketsPerAgentCapacity = Math.floor(effectiveMinutes / inputs.avgHandleTime)
+        /* ── Current State ── */
+        const currentAnnualLaborCost = inputs.currentHeadcount * inputs.avgAgentCost
 
-        /* ── Without AI (baseline) ── */
-        const totalMonthlyTickets = inputs.monthlyTicketVolume
-        const totalAnnualTickets = totalMonthlyTickets * MONTHS_PER_YEAR
-        const agentsWithoutAI = Math.ceil(totalMonthlyTickets / ticketsPerAgentCapacity)
-        const laborCostWithoutAI = agentsWithoutAI * inputs.fullyLoadedSalary
+        /* ── With Enorve ── */
+        const humanConversationsPerMonth = inputs.monthlyConversations * (1 - inputs.automationRate)
+        const autonomousConversationsPerMonth = inputs.monthlyConversations * inputs.automationRate
+        const projectedHeadcount = Math.max(1, Math.ceil(humanConversationsPerMonth / CONVERSATIONS_PER_AGENT_PER_MONTH))
+        const headcountReduction = Math.max(0, inputs.currentHeadcount - projectedHeadcount)
+        const reducedLaborCost = projectedHeadcount * inputs.avgAgentCost
 
-        /* ── With AI (Enorve) ── */
-        const humanTicketsMonthly = totalMonthlyTickets * (1 - inputs.aiDeflectionRate)
-        const agentsWithAI = Math.ceil(humanTicketsMonthly / ticketsPerAgentCapacity)
-        const fteAvoided = Math.max(0, agentsWithoutAI - agentsWithAI)
-        const laborCostWithAI = agentsWithAI * inputs.fullyLoadedSalary
+        /* ── Enorve Platform Cost ── */
+        const plan = getEnorvePlan(inputs.monthlyConversations)
+        const enorveAnnualCost = plan.monthlyCost * 12
+
+        /* ── Savings ── */
+        const annualLaborSavings = currentAnnualLaborCost - reducedLaborCost
+        const netAnnualSavings = annualLaborSavings - enorveAnnualCost
+        const threeYearCumulativeSavings = netAnnualSavings * 3
+
+        /* ── ROI ── */
+        const roiPercent = enorveAnnualCost > 0
+            ? (netAnnualSavings / enorveAnnualCost) * 100
+            : 0
+        const monthlyNetSavings = netAnnualSavings / 12
+        const roiMonths = monthlyNetSavings > 0
+            ? Math.max(1, Math.ceil(enorveAnnualCost / (netAnnualSavings / 1))) // months in first year
+            : null
+
+        // Simpler ROI: how many months of Enorve cost before annual savings cover it
+        const actualRoiMonths = netAnnualSavings > 0
+            ? Math.max(1, Math.ceil(enorveAnnualCost / monthlyNetSavings))
+            : null
 
         /* ── Edge Cases ── */
-        if (inputs.aiDeflectionRate === 0) {
-            warnings.push("With 0% AI deflection, this is a pure software cost comparison. Enable AI to see labor savings.")
+        if (inputs.automationRate === 0) {
+            warnings.push("With 0% automation, there are no labor savings. Increase the automation rate to see the impact.")
         }
-        if (inputs.aiDeflectionRate >= 0.70) {
-            warnings.push("Deflection rates above 70% show diminishing returns. Consider investing savings into proactive support.")
+        if (netAnnualSavings < 0) {
+            warnings.push("Current inputs show Enorve costs more than labor savings. Try increasing headcount, agent cost, or automation rate.")
         }
-
-        /* ── Vendor Cost Calculations ── */
-        function calcVendor(
-            comp: CompetitorPricing | typeof enorve,
-            useAI: boolean
-        ): VendorResult {
-            const agents = useAI ? agentsWithAI : agentsWithoutAI
-            const labor = useAI ? laborCostWithAI : laborCostWithoutAI
-
-            // Software cost
-            let softwareCostMonthly: number
-            if ("basePlanCost" in comp) {
-                // Enorve — flat $499 for up to 100, then per-agent beyond
-                if (agents <= comp.maxAgentsInBase) {
-                    softwareCostMonthly = comp.basePlanCost
-                } else {
-                    softwareCostMonthly = comp.basePlanCost + (agents - comp.maxAgentsInBase) * comp.perAgentCost
-                }
-            } else {
-                softwareCostMonthly = agents * comp.perAgentCost
-            }
-
-            // AI add-on cost
-            let aiAddonMonthly = agents * comp.aiAddonCost
-            if (comp.perResolutionCost && comp.perResolutionCost > 0) {
-                // Resolution-based pricing (Intercom)
-                const deflectedTicketsMonthly = totalMonthlyTickets * inputs.aiDeflectionRate
-                aiAddonMonthly += deflectedTicketsMonthly * comp.perResolutionCost
-            }
-
-            const softwareCostAnnual = softwareCostMonthly * MONTHS_PER_YEAR
-            const aiAddonCostAnnual = aiAddonMonthly * MONTHS_PER_YEAR
-            const tsocAnnual = softwareCostAnnual + aiAddonCostAnnual + labor
-            const costPerTicket = totalAnnualTickets > 0 ? tsocAnnual / totalAnnualTickets : 0
-
-            return {
-                name: comp.name,
-                softwareCostAnnual,
-                aiAddonCostAnnual,
-                laborCostAnnual: labor,
-                tsocAnnual,
-                costPerTicket,
-                requiredAgents: agents,
-            }
+        if (inputs.currentHeadcount <= 2 && inputs.automationRate < 0.5) {
+            warnings.push("Very small teams may not see significant headcount reduction at low automation rates.")
         }
 
-        // Enorve always uses AI
-        const enorveResult = calcVendor(enorve, true)
+        /* ── Efficiency ── */
+        const conversationsPerAgent = projectedHeadcount > 0
+            ? Math.round(humanConversationsPerMonth / projectedHeadcount)
+            : 0
 
-        // Competitors — calculate with their AI add-ons but without labor savings from deflection
-        // (they have AI features too, but Enorve's deflection rate is what we model)
-        const competitorResults = competitors.map(comp => {
-            // Competitors: full agent headcount (no deflection benefit), plus their AI costs
-            const agents = agentsWithoutAI
-            const labor = laborCostWithoutAI
+        /* ── 3-Year Projection ── */
+        const projectionData: LaborResults["projectionData"] = []
+        const currentMonthlyCost = currentAnnualLaborCost / 12
+        const enorveBasedMonthlyCost = (reducedLaborCost + enorveAnnualCost) / 12
 
-            let softwareCostMonthly = agents * comp.perAgentCost
-            let aiAddonMonthly = agents * comp.aiAddonCost
-            if (comp.perResolutionCost && comp.perResolutionCost > 0) {
-                // Estimate resolution cost based on modest 15% deflection for competitors
-                const compDeflectedTickets = totalMonthlyTickets * 0.15
-                aiAddonMonthly += compDeflectedTickets * comp.perResolutionCost
-            }
-
-            const softwareCostAnnual = softwareCostMonthly * MONTHS_PER_YEAR
-            const aiAddonCostAnnual = aiAddonMonthly * MONTHS_PER_YEAR
-            const tsocAnnual = softwareCostAnnual + aiAddonCostAnnual + labor
-            const costPerTicket = totalAnnualTickets > 0 ? tsocAnnual / totalAnnualTickets : 0
-
-            return {
-                name: comp.name,
-                softwareCostAnnual,
-                aiAddonCostAnnual,
-                laborCostAnnual: labor,
-                tsocAnnual,
-                costPerTicket,
-                requiredAgents: agents,
-            }
-        })
-
-        /* ── Savings & NPV per competitor ── */
-        const savingsVsCompetitors = competitorResults.map(cr => {
-            const annualSavings = cr.tsocAnnual - enorveResult.tsocAnnual
-            const threeYearCumulative = annualSavings * 3
-
-            // NPV over 3 years (migration cost in Year 0)
-            let npv = -inputs.migrationCost
-            for (let year = 1; year <= 3; year++) {
-                npv += annualSavings / Math.pow(1 + inputs.discountRate, year)
-            }
-
-            // Payback period
-            const monthlySavings = annualSavings / MONTHS_PER_YEAR
-            let paybackMonths: number | null = null
-            if (monthlySavings > 0 && inputs.migrationCost > 0) {
-                paybackMonths = Math.ceil(inputs.migrationCost / monthlySavings)
-            } else if (monthlySavings > 0 && inputs.migrationCost === 0) {
-                paybackMonths = 0 // Immediate savings
-            }
-
-            return {
-                competitor: cr.name,
-                annualSavings,
-                threeYearCumulative,
-                npv,
-                paybackMonths,
-            }
-        })
-
-        // Best case = highest savings
-        const bestSavings = savingsVsCompetitors.reduce((best, s) =>
-            s.annualSavings > best.annualSavings ? s : best
-            , savingsVsCompetitors[0])
-
-        // Check negative ROI
-        if (bestSavings.annualSavings < 0) {
-            warnings.push("Current inputs show Enorve costs more than competitors. Consider increasing AI deflection rate or adjusting team size for better ROI.")
-        }
-
-        /* ── 3-Year Monthly Projection ── */
-        const projectionData: ROIResults["projectionData"] = []
         for (let month = 0; month <= 36; month++) {
-            const entry: Record<string, number> = { month }
-
-            // Enorve cumulative cost
-            const enorveMonthly = enorveResult.tsocAnnual / MONTHS_PER_YEAR
-            entry["Enorve"] = month === 0
-                ? inputs.migrationCost
-                : inputs.migrationCost + enorveMonthly * month
-
-            // Competitor cumulative costs
-            for (const cr of competitorResults) {
-                const crMonthly = cr.tsocAnnual / MONTHS_PER_YEAR
-                entry[cr.name] = crMonthly * month
-            }
-
-            projectionData.push(entry as typeof projectionData[0])
+            projectionData.push({
+                month,
+                currentCost: currentMonthlyCost * month,
+                enorveBasedCost: enorveBasedMonthlyCost * month,
+                savings: (currentMonthlyCost - enorveBasedMonthlyCost) * month,
+            })
         }
 
         return {
-            enorveResult,
-            competitorResults,
-            withoutAI: {
-                requiredAgents: agentsWithoutAI,
-                laborCostAnnual: laborCostWithoutAI,
-            },
-            savingsVsCompetitors,
-            bestAnnualSavings: bestSavings.annualSavings,
-            bestThreeYearNPV: bestSavings.npv,
-            fteAvoided,
-            bestPaybackMonths: bestSavings.paybackMonths,
-            ticketsPerAgentCapacity,
+            currentAnnualLaborCost,
+            projectedHeadcount,
+            headcountReduction,
+            reducedLaborCost,
+            enorveAnnualCost,
+            enorveMonthlyPlan: plan.name,
+            enorveMonthlyPlanCost: plan.monthlyCost,
+            annualLaborSavings,
+            netAnnualSavings,
+            threeYearCumulativeSavings,
+            roiPercent,
+            roiMonths: actualRoiMonths,
+            conversationsPerAgent,
+            autonomousConversationsPerMonth,
+            humanConversationsPerMonth,
             projectionData,
             warnings,
         }
@@ -272,3 +165,7 @@ export function useROICalculator() {
 
     return { inputs, setInput, results }
 }
+
+// Re-export types with old names for backward compatibility
+export type ROIInputs = LaborInputs
+export type ROIResults = LaborResults

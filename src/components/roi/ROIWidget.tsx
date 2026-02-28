@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import {
     DollarSign, Users, Clock, TrendingUp, Download,
-    ArrowRight, Bot, AlertTriangle, ChevronRight
+    Bot, AlertTriangle, ChevronRight
 } from "lucide-react"
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts"
 import { Button } from "../ui/Button"
@@ -18,12 +18,11 @@ function formatCurrency(value: number): string {
 
 export function ROIWidget() {
     const { inputs, setInput, results } = useROICalculator()
-    const [showAdvanced, setShowAdvanced] = useState(false)
-    const isNegative = results.bestAnnualSavings < 0
+    const isNegative = results.netAnnualSavings < 0
 
     const headcountData = [
-        { name: "Without AI", agents: results.withoutAI.requiredAgents, color: "#EF4444" },
-        { name: "With Enorve", agents: results.enorveResult.requiredAgents, color: "#10B981" },
+        { name: "Current Team", agents: inputs.currentHeadcount, color: "#EF4444" },
+        { name: "With Enorve", agents: results.projectedHeadcount, color: "#10B981" },
     ]
 
     return (
@@ -43,13 +42,13 @@ export function ROIWidget() {
                     <div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-3">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                            <span className="text-xs text-emerald-400 font-medium">Support Economics Engine</span>
+                            <span className="text-xs text-emerald-400 font-medium">Labor Economics</span>
                         </div>
                         <h3 className="text-2xl font-medium text-white tracking-tight">
-                            How much will you save?
+                            How many FTEs can you replace?
                         </h3>
                         <p className="text-sm text-gray-400 mt-1">
-                            Total support operating cost — not just subscription price
+                            Calculate your labor savings with autonomous AI operations
                         </p>
                     </div>
                     <div className="flex items-center gap-3">
@@ -62,9 +61,9 @@ export function ROIWidget() {
                         >
                             PDF Report
                         </Button>
-                        <Link to="/roi-calculator">
+                        <Link to="/labor-replacement-calculator">
                             <Button variant="ghost" size="sm">
-                                Full Analysis <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                                Full Calculator <ChevronRight className="w-3.5 h-3.5 ml-1" />
                             </Button>
                         </Link>
                     </div>
@@ -74,47 +73,43 @@ export function ROIWidget() {
             <div className="relative z-10 px-6 pb-6 md:px-8 md:pb-8">
                 {/* Inputs Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                    {/* Number of Agents */}
+                    {/* Headcount */}
                     <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
                         <div className="flex items-center gap-2 mb-2">
                             <Users className="w-3.5 h-3.5 text-violet-400" />
-                            <label className="text-xs text-gray-400 font-medium uppercase tracking-wider">Agents</label>
+                            <label className="text-xs text-gray-400 font-medium uppercase tracking-wider">Headcount</label>
                         </div>
                         <input
                             type="number"
                             min={1}
-                            max={10000}
-                            value={inputs.numberOfAgents}
-                            onChange={e => {
-                                const val = parseInt(e.target.value) || 1
-                                setInput("numberOfAgents", val)
-                                setInput("monthlyTicketVolume", val * 150)
-                            }}
+                            max={500}
+                            value={inputs.currentHeadcount}
+                            onChange={e => setInput("currentHeadcount", Math.max(1, parseInt(e.target.value) || 1))}
                             className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white text-lg font-semibold
                 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20
                 transition-colors"
                         />
-                        <p className="text-[10px] text-gray-500 mt-1">{inputs.monthlyTicketVolume.toLocaleString()} tickets/mo</p>
+                        <p className="text-[10px] text-gray-500 mt-1">Support agents</p>
                     </div>
 
-                    {/* AI Deflection Rate */}
+                    {/* Automation Rate */}
                     <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
                         <div className="flex items-center justify-between mb-2">
                             <div className="flex items-center gap-2">
                                 <Bot className="w-3.5 h-3.5 text-emerald-400" />
-                                <label className="text-xs text-gray-400 font-medium uppercase tracking-wider">AI Deflection</label>
+                                <label className="text-xs text-gray-400 font-medium uppercase tracking-wider">Automation</label>
                             </div>
                             <span className="text-sm font-semibold text-emerald-400 tabular-nums">
-                                {Math.round(inputs.aiDeflectionRate * 100)}%
+                                {Math.round(inputs.automationRate * 100)}%
                             </span>
                         </div>
                         <input
                             type="range"
-                            min={0}
+                            min={0.20}
                             max={0.80}
                             step={0.01}
-                            value={inputs.aiDeflectionRate}
-                            onChange={e => setInput("aiDeflectionRate", parseFloat(e.target.value))}
+                            value={inputs.automationRate}
+                            onChange={e => setInput("automationRate", parseFloat(e.target.value))}
                             className="w-full h-1.5 rounded-full appearance-none bg-white/10 cursor-pointer mt-2
                 [&::-webkit-slider-thumb]:appearance-none
                 [&::-webkit-slider-thumb]:w-4
@@ -134,82 +129,30 @@ export function ROIWidget() {
                 [&::-moz-range-thumb]:cursor-pointer"
                         />
                         <div className="flex justify-between text-[10px] text-gray-500 mt-1">
-                            <span>0%</span>
+                            <span>20%</span>
                             <span>80%</span>
                         </div>
                     </div>
 
-                    {/* Salary */}
+                    {/* Agent Cost */}
                     <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
                         <div className="flex items-center gap-2 mb-2">
                             <DollarSign className="w-3.5 h-3.5 text-amber-400" />
-                            <label className="text-xs text-gray-400 font-medium uppercase tracking-wider">Agent Salary (yr)</label>
+                            <label className="text-xs text-gray-400 font-medium uppercase tracking-wider">Agent Cost (yr)</label>
                         </div>
                         <input
                             type="number"
-                            min={0}
+                            min={20000}
                             step={1000}
-                            value={inputs.fullyLoadedSalary}
-                            onChange={e => setInput("fullyLoadedSalary", parseInt(e.target.value) || 0)}
+                            value={inputs.avgAgentCost}
+                            onChange={e => setInput("avgAgentCost", parseInt(e.target.value) || 20000)}
                             className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white text-lg font-semibold
                 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20
                 transition-colors"
                         />
-                        <p className="text-[10px] text-gray-500 mt-1">Fully loaded cost per agent</p>
+                        <p className="text-[10px] text-gray-500 mt-1">Fully loaded cost</p>
                     </div>
                 </div>
-
-                {/* Advanced toggle */}
-                <button
-                    onClick={() => setShowAdvanced(!showAdvanced)}
-                    className="text-xs text-gray-500 hover:text-gray-300 transition-colors mb-4 flex items-center gap-1 cursor-pointer"
-                >
-                    <ChevronRight className={`w-3 h-3 transition-transform ${showAdvanced ? "rotate-90" : ""}`} />
-                    Advanced: handle time, utilization, discount rate, migration cost
-                </button>
-
-                {showAdvanced && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6"
-                    >
-                        {[
-                            { key: "avgHandleTime" as const, label: "Handle Time (min)", min: 2, max: 30, step: 1, display: `${inputs.avgHandleTime} min` },
-                            { key: "agentUtilization" as const, label: "Utilization", min: 0.4, max: 1, step: 0.05, display: `${Math.round(inputs.agentUtilization * 100)}%` },
-                            { key: "discountRate" as const, label: "Discount Rate", min: 0, max: 0.2, step: 0.01, display: `${Math.round(inputs.discountRate * 100)}%` },
-                            { key: "migrationCost" as const, label: "Migration Cost", min: 0, max: 100000, step: 1000, display: `$${inputs.migrationCost.toLocaleString()}` },
-                        ].map(field => (
-                            <div key={field.key} className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
-                                <div className="flex items-center justify-between mb-1.5">
-                                    <label className="text-[10px] text-gray-500 uppercase tracking-wider">{field.label}</label>
-                                    <span className="text-xs font-medium text-white tabular-nums">{field.display}</span>
-                                </div>
-                                <input
-                                    type="range"
-                                    min={field.min}
-                                    max={field.max}
-                                    step={field.step}
-                                    value={inputs[field.key]}
-                                    onChange={e => setInput(field.key, parseFloat(e.target.value))}
-                                    className="w-full h-1 rounded-full appearance-none bg-white/10 cursor-pointer
-                    [&::-webkit-slider-thumb]:appearance-none
-                    [&::-webkit-slider-thumb]:w-3
-                    [&::-webkit-slider-thumb]:h-3
-                    [&::-webkit-slider-thumb]:rounded-full
-                    [&::-webkit-slider-thumb]:bg-violet-500
-                    [&::-webkit-slider-thumb]:cursor-pointer
-                    [&::-moz-range-thumb]:w-3
-                    [&::-moz-range-thumb]:h-3
-                    [&::-moz-range-thumb]:rounded-full
-                    [&::-moz-range-thumb]:bg-violet-500
-                    [&::-moz-range-thumb]:cursor-pointer"
-                                />
-                            </div>
-                        ))}
-                    </motion.div>
-                )}
 
                 {/* Warnings */}
                 {results.warnings.length > 0 && (
@@ -229,12 +172,12 @@ export function ROIWidget() {
                     <div className="space-y-4">
                         {/* Hero savings */}
                         <div className={`p-5 rounded-2xl border ${isNegative ? "bg-red-500/5 border-red-500/20" : "bg-emerald-500/5 border-emerald-500/20"}`}>
-                            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Annual Savings (best case)</p>
+                            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Net Annual Savings</p>
                             <p className={`text-3xl font-bold tracking-tight ${isNegative ? "text-red-400" : "text-emerald-400"}`}>
-                                {isNegative ? "-" : ""}{formatCurrency(Math.abs(results.bestAnnualSavings))}
+                                {isNegative ? "-" : ""}{formatCurrency(Math.abs(results.netAnnualSavings))}
                             </p>
                             <p className="text-xs text-gray-500 mt-1">
-                                vs {results.savingsVsCompetitors.reduce((best, s) => s.annualSavings > best.annualSavings ? s : best, results.savingsVsCompetitors[0])?.competitor}
+                                after {results.enorveMonthlyPlan} plan ({formatCurrency(results.enorveAnnualCost)}/yr)
                             </p>
                         </div>
 
@@ -242,20 +185,20 @@ export function ROIWidget() {
                         <div className="grid grid-cols-3 gap-3">
                             {[
                                 {
-                                    label: "FTE Avoided",
-                                    value: `${results.fteAvoided}`,
+                                    label: "FTEs Replaced",
+                                    value: `${results.headcountReduction}`,
                                     icon: Users,
                                     color: "#8B5CF6",
                                 },
                                 {
-                                    label: "3-Year NPV",
-                                    value: formatCurrency(results.bestThreeYearNPV),
+                                    label: "3-Year Savings",
+                                    value: formatCurrency(results.threeYearCumulativeSavings),
                                     icon: TrendingUp,
                                     color: "#3B82F6",
                                 },
                                 {
-                                    label: "Payback",
-                                    value: results.bestPaybackMonths === null ? "—" : results.bestPaybackMonths === 0 ? "Now" : `${results.bestPaybackMonths} mo`,
+                                    label: "ROI",
+                                    value: results.roiMonths === null ? "—" : results.roiMonths <= 1 ? "< 1 mo" : `${results.roiMonths} mo`,
                                     icon: Clock,
                                     color: "#F59E0B",
                                 },
@@ -271,19 +214,18 @@ export function ROIWidget() {
                             })}
                         </div>
 
-                        {/* Cost per ticket */}
+                        {/* Cost comparison */}
                         <div className="grid grid-cols-2 gap-3">
-                            {[results.enorveResult, ...results.competitorResults].slice(0, 4).map(v => (
-                                <div key={v.name} className={`p-3 rounded-xl text-center ${v.name === "Enorve"
-                                        ? "bg-emerald-500/8 border border-emerald-500/20"
-                                        : "bg-white/[0.02] border border-white/5"
-                                    }`}>
-                                    <p className="text-[10px] text-gray-500 uppercase tracking-wider">{v.name}</p>
-                                    <p className={`text-sm font-semibold ${v.name === "Enorve" ? "text-emerald-400" : "text-white"}`}>
-                                        ${v.costPerTicket.toFixed(2)}<span className="text-[10px] text-gray-500">/ticket</span>
-                                    </p>
-                                </div>
-                            ))}
+                            <div className="p-3 rounded-xl bg-red-500/5 border border-red-500/20 text-center">
+                                <p className="text-[10px] text-gray-500 uppercase tracking-wider">Current Cost</p>
+                                <p className="text-sm font-semibold text-red-400">{formatCurrency(results.currentAnnualLaborCost)}</p>
+                                <p className="text-[10px] text-gray-500">/yr</p>
+                            </div>
+                            <div className="p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-center">
+                                <p className="text-[10px] text-gray-500 uppercase tracking-wider">With Enorve</p>
+                                <p className="text-sm font-semibold text-emerald-400">{formatCurrency(results.reducedLaborCost + results.enorveAnnualCost)}</p>
+                                <p className="text-[10px] text-gray-500">/yr</p>
+                            </div>
                         </div>
                     </div>
 
@@ -291,9 +233,9 @@ export function ROIWidget() {
                     <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
                         <h4 className="text-sm font-medium text-white mb-1">Headcount Impact</h4>
                         <p className="text-xs text-gray-500 mb-4">
-                            {results.fteAvoided > 0
-                                ? `${results.fteAvoided} fewer agents needed with Enorve AI`
-                                : "Agents required for your ticket volume"}
+                            {results.headcountReduction > 0
+                                ? `${results.headcountReduction} fewer agents needed with Enorve`
+                                : "Agents required for your conversation volume"}
                         </p>
                         <div className="h-[140px]">
                             <ResponsiveContainer width="100%" height="100%">
@@ -328,16 +270,20 @@ export function ROIWidget() {
                             </ResponsiveContainer>
                         </div>
 
-                        {/* TSOC comparison mini table */}
-                        <div className="mt-4 space-y-1.5">
-                            {[results.enorveResult, ...results.competitorResults].map(v => (
-                                <div key={v.name} className="flex items-center justify-between text-xs">
-                                    <span className={v.name === "Enorve" ? "text-emerald-400 font-medium" : "text-gray-400"}>{v.name}</span>
-                                    <span className={v.name === "Enorve" ? "text-emerald-400 font-semibold tabular-nums" : "text-gray-300 tabular-nums"}>
-                                        {formatCurrency(v.tsocAnnual)}<span className="text-gray-500">/yr</span>
-                                    </span>
-                                </div>
-                            ))}
+                        {/* Conversation split */}
+                        <div className="mt-4 space-y-2">
+                            <div className="flex items-center justify-between text-xs">
+                                <span className="text-emerald-400 font-medium">AI-Resolved</span>
+                                <span className="text-emerald-400 font-semibold tabular-nums">
+                                    {results.autonomousConversationsPerMonth.toLocaleString()}<span className="text-gray-500">/mo</span>
+                                </span>
+                            </div>
+                            <div className="flex items-center justify-between text-xs">
+                                <span className="text-gray-400">Human-Handled</span>
+                                <span className="text-gray-300 tabular-nums">
+                                    {results.humanConversationsPerMonth.toLocaleString()}<span className="text-gray-500">/mo</span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -345,9 +291,9 @@ export function ROIWidget() {
                 {/* Footer with CTA */}
                 <div className="mt-6 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-[11px] text-gray-500 max-w-md">
-                        Based on Enorve Business plan ($499/mo). Competitor pricing from public list prices as of Jan 2026.
-                        <Link to="/roi-calculator" className="text-emerald-400/70 hover:text-emerald-400 ml-1 transition-colors">
-                            View full analysis →
+                        Based on Enorve {results.enorveMonthlyPlan} plan (${results.enorveMonthlyPlanCost}/mo).
+                        <Link to="/labor-replacement-calculator" className="text-emerald-400/70 hover:text-emerald-400 ml-1 transition-colors">
+                            Full analysis →
                         </Link>
                     </p>
                     <Button
@@ -357,7 +303,7 @@ export function ROIWidget() {
                         icon={<Download className="w-3.5 h-3.5" />}
                         iconPosition="left"
                     >
-                        Download Executive Report
+                        Download Report
                     </Button>
                 </div>
             </div>

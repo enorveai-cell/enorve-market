@@ -52,7 +52,7 @@ export function Footer() {
                             <EnorveLogoFull className="w-[94px] h-[23px] text-white" />
                         </Link>
                         <p className="text-sm text-gray-400 leading-relaxed">
-                            AI-powered customer support platform for modern teams.
+                            Governed Autonomous AI Operations for E-commerce.
                         </p>
                     </div>
 

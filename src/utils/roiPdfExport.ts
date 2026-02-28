@@ -1,6 +1,6 @@
 import jsPDF from "jspdf"
 import autoTable from "jspdf-autotable"
-import type { ROIInputs, ROIResults } from "../hooks/useROICalculator"
+import type { LaborInputs, LaborResults } from "../hooks/useROICalculator"
 
 function formatCurrency(value: number): string {
     return `$${value.toLocaleString("en-US", { maximumFractionDigits: 0 })}`
@@ -10,13 +10,13 @@ function formatPercent(value: number): string {
     return `${Math.round(value * 100)}%`
 }
 
-export function generateROIPdf(inputs: ROIInputs, results: ROIResults) {
+export function generateROIPdf(inputs: LaborInputs, results: LaborResults) {
     const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" })
     const pageWidth = doc.internal.pageSize.getWidth()
     let y = 20
 
     // Colors
-    const primary = [99, 102, 241] as const  // indigo-500
+    const primary = [16, 185, 129] as const  // emerald-500
     const dark = [15, 15, 25] as const
     const gray = [156, 163, 175] as const
 
@@ -27,46 +27,42 @@ export function generateROIPdf(inputs: ROIInputs, results: ROIResults) {
     doc.setTextColor(255, 255, 255)
     doc.setFontSize(22)
     doc.setFont("helvetica", "bold")
-    doc.text("Enorve ROI Analysis", 20, y + 8)
+    doc.text("Labor Replacement Analysis", 20, y + 8)
 
     doc.setFontSize(10)
     doc.setFont("helvetica", "normal")
     doc.setTextColor(...gray)
-    doc.text("Support Economics Engine — Executive Summary", 20, y + 16)
+    doc.text("Enorve — Governed Autonomous AI Operations", 20, y + 16)
 
     const now = new Date()
     doc.text(`Generated: ${now.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}`, 20, y + 24)
 
     y = 55
 
-    // ── Executive Summary Metrics ──
+    // ── Executive Summary ──
     doc.setTextColor(40, 40, 60)
     doc.setFontSize(14)
     doc.setFont("helvetica", "bold")
-    doc.text("Key Metrics", 20, y)
+    doc.text("Labor Replacement Summary", 20, y)
     y += 8
-
-    const bestSavings = results.savingsVsCompetitors.reduce(
-        (best, s) => (s.annualSavings > best.annualSavings ? s : best),
-        results.savingsVsCompetitors[0]
-    )
 
     autoTable(doc, {
         startY: y,
         head: [["Metric", "Value"]],
         body: [
-            ["Annual Savings", formatCurrency(results.bestAnnualSavings)],
-            ["3-Year NPV", formatCurrency(results.bestThreeYearNPV)],
-            ["FTE Avoided", `${results.fteAvoided} agents`],
+            ["Net Annual Savings", formatCurrency(results.netAnnualSavings)],
+            ["Headcount Reduction", `${results.headcountReduction} agents (${results.projectedHeadcount + results.headcountReduction} → ${results.projectedHeadcount})`],
+            ["Annual Labor Savings", formatCurrency(results.annualLaborSavings)],
+            ["Enorve Platform Cost", `${formatCurrency(results.enorveAnnualCost)}/yr (${results.enorveMonthlyPlan} plan)`],
+            ["3-Year Cumulative Savings", formatCurrency(results.threeYearCumulativeSavings)],
             [
-                "Payback Period",
-                results.bestPaybackMonths === null
+                "ROI Timeline",
+                results.roiMonths === null
                     ? "N/A"
-                    : results.bestPaybackMonths === 0
-                        ? "Immediate"
-                        : `${results.bestPaybackMonths} months`,
+                    : results.roiMonths <= 1
+                        ? "< 1 month"
+                        : `${results.roiMonths} months`,
             ],
-            ["Best Savings vs.", bestSavings?.competitor ?? "N/A"],
         ],
         theme: "grid",
         headStyles: { fillColor: [...primary], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 10 },
@@ -87,15 +83,10 @@ export function generateROIPdf(inputs: ROIInputs, results: ROIResults) {
         startY: y,
         head: [["Parameter", "Value"]],
         body: [
-            ["Number of Agents", `${inputs.numberOfAgents}`],
-            ["Monthly Ticket Volume", `${inputs.monthlyTicketVolume.toLocaleString()}`],
-            ["AI Deflection Rate", formatPercent(inputs.aiDeflectionRate)],
-            ["Avg Handle Time", `${inputs.avgHandleTime} minutes`],
-            ["Agent Utilization", formatPercent(inputs.agentUtilization)],
-            ["Fully Loaded Salary", formatCurrency(inputs.fullyLoadedSalary)],
-            ["Hiring + Onboarding Cost", formatCurrency(inputs.hiringOnboardingCost)],
-            ["Migration Cost", formatCurrency(inputs.migrationCost)],
-            ["Discount Rate", formatPercent(inputs.discountRate)],
+            ["Current Support Headcount", `${inputs.currentHeadcount}`],
+            ["Avg Agent Cost (fully loaded)", formatCurrency(inputs.avgAgentCost)],
+            ["Monthly Conversations", `${inputs.monthlyConversations.toLocaleString()}`],
+            ["Expected Automation Rate", formatPercent(inputs.automationRate)],
         ],
         theme: "striped",
         headStyles: { fillColor: [...primary], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 10 },
@@ -106,25 +97,19 @@ export function generateROIPdf(inputs: ROIInputs, results: ROIResults) {
 
     y = (doc as jsPDF & { lastAutoTable: { finalY: number } }).lastAutoTable.finalY + 12
 
-    // ── Cost Breakdown ──
+    // ── Cost Comparison ──
     doc.setFontSize(14)
     doc.setFont("helvetica", "bold")
-    doc.text("Annual Cost Breakdown", 20, y)
+    doc.text("Annual Cost Comparison", 20, y)
     y += 8
-
-    const costRows = [results.enorveResult, ...results.competitorResults].map(v => [
-        v.name,
-        formatCurrency(v.softwareCostAnnual),
-        formatCurrency(v.aiAddonCostAnnual),
-        formatCurrency(v.laborCostAnnual),
-        formatCurrency(v.tsocAnnual),
-        `$${v.costPerTicket.toFixed(2)}`,
-    ])
 
     autoTable(doc, {
         startY: y,
-        head: [["Vendor", "Software", "AI Add-ons", "Labor", "Total TSOC", "Cost/Ticket"]],
-        body: costRows,
+        head: [["Scenario", "Labor Cost", "Platform Cost", "Total"]],
+        body: [
+            ["Current (no AI)", formatCurrency(results.currentAnnualLaborCost), "$0", formatCurrency(results.currentAnnualLaborCost)],
+            ["With Enorve", formatCurrency(results.reducedLaborCost), formatCurrency(results.enorveAnnualCost), formatCurrency(results.reducedLaborCost + results.enorveAnnualCost)],
+        ],
         theme: "grid",
         headStyles: { fillColor: [...primary], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 9 },
         bodyStyles: { fontSize: 9 },
@@ -136,55 +121,24 @@ export function generateROIPdf(inputs: ROIInputs, results: ROIResults) {
 
     y = (doc as jsPDF & { lastAutoTable: { finalY: number } }).lastAutoTable.finalY + 12
 
-    // ── Headcount Comparison ──
+    // ── Conversation Breakdown ──
     doc.setFontSize(14)
     doc.setFont("helvetica", "bold")
-    doc.text("Headcount Impact", 20, y)
+    doc.text("Conversation Breakdown", 20, y)
     y += 8
 
     autoTable(doc, {
         startY: y,
-        head: [["Scenario", "Required Agents"]],
+        head: [["Metric", "Value"]],
         body: [
-            ["Without AI", `${results.withoutAI.requiredAgents}`],
-            ["With Enorve AI", `${results.enorveResult.requiredAgents}`],
-            ["FTE Avoided", `${results.fteAvoided}`],
+            ["Monthly Conversations", `${inputs.monthlyConversations.toLocaleString()}`],
+            ["Autonomous (AI-resolved)", `${results.autonomousConversationsPerMonth.toLocaleString()} (${formatPercent(inputs.automationRate)})`],
+            ["Human-handled", `${results.humanConversationsPerMonth.toLocaleString()} (${formatPercent(1 - inputs.automationRate)})`],
+            ["Conversations per Agent", `${results.conversationsPerAgent}`],
         ],
         theme: "grid",
         headStyles: { fillColor: [...primary], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 10 },
         bodyStyles: { fontSize: 10 },
-        margin: { left: 20, right: 20 },
-    })
-
-    y = (doc as jsPDF & { lastAutoTable: { finalY: number } }).lastAutoTable.finalY + 12
-
-    // Check if we need a new page
-    if (y > 240) {
-        doc.addPage()
-        y = 20
-    }
-
-    // ── 3-Year Savings ──
-    doc.setFontSize(14)
-    doc.setFont("helvetica", "bold")
-    doc.text("3-Year Savings by Competitor", 20, y)
-    y += 8
-
-    const savingsRows = results.savingsVsCompetitors.map(s => [
-        `vs ${s.competitor}`,
-        formatCurrency(s.annualSavings),
-        formatCurrency(s.threeYearCumulative),
-        formatCurrency(s.npv),
-        s.paybackMonths === null ? "N/A" : s.paybackMonths === 0 ? "Immediate" : `${s.paybackMonths} mo`,
-    ])
-
-    autoTable(doc, {
-        startY: y,
-        head: [["Comparison", "Annual Savings", "3-Year Cumulative", "NPV", "Payback"]],
-        body: savingsRows,
-        theme: "grid",
-        headStyles: { fillColor: [...primary], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 9 },
-        bodyStyles: { fontSize: 9 },
         margin: { left: 20, right: 20 },
     })
 
@@ -206,12 +160,9 @@ export function generateROIPdf(inputs: ROIInputs, results: ROIResults) {
 
     const disclaimer = [
         "DISCLAIMER: This analysis is provided for informational purposes only and does not constitute financial advice.",
-        "Competitor pricing is based on publicly available list prices as of the last verified date shown in our records.",
-        "Actual costs may vary based on negotiated contracts, usage volumes, and vendor-specific terms.",
-        "Enorve makes no guarantees regarding the accuracy of third-party pricing data. A quarterly pricing review",
-        "process is maintained to keep benchmarks current. All financial projections are estimates based on the",
-        "input parameters provided and actual results may differ. Please consult your financial advisor for",
-        "decisions involving significant capital allocation.",
+        "Actual costs and savings may vary based on conversation complexity, AI training quality, and operational factors.",
+        "Enorve pricing is based on current list prices and may change. All projections are estimates based on the",
+        "input parameters provided. Please consult your financial advisor for decisions involving capital allocation.",
     ]
 
     disclaimer.forEach(line => {
@@ -222,9 +173,9 @@ export function generateROIPdf(inputs: ROIInputs, results: ROIResults) {
     // ── Footer ──
     doc.setFontSize(7)
     doc.setTextColor(180, 180, 190)
-    doc.text("© Enorve — Support Economics Engine", 20, doc.internal.pageSize.getHeight() - 10)
+    doc.text("© Enorve — Governed Autonomous AI Operations", 20, doc.internal.pageSize.getHeight() - 10)
     doc.text(`Page 1 of ${doc.getNumberOfPages()}`, pageWidth - 40, doc.internal.pageSize.getHeight() - 10)
 
     // Save
-    doc.save("Enorve-ROI-Analysis.pdf")
+    doc.save("Enorve-Labor-Replacement-Analysis.pdf")
 }

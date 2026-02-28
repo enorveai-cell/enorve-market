@@ -1,69 +1,64 @@
 import { motion } from "framer-motion"
 import { TrendingUp, Users, Clock, DollarSign, AlertTriangle } from "lucide-react"
-import type { ROIResults } from "../../hooks/useROICalculator"
+import type { LaborResults } from "../../hooks/useROICalculator"
 
 interface Props {
-    results: ROIResults
+    results: LaborResults
 }
 
 function formatCurrency(value: number): string {
-    if (Math.abs(value) >= 1_000_000) {
-        return `$${(value / 1_000_000).toFixed(1)}M`
-    }
-    if (Math.abs(value) >= 1_000) {
-        return `$${(value / 1_000).toFixed(0)}K`
-    }
+    if (Math.abs(value) >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`
+    if (Math.abs(value) >= 1_000) return `$${(value / 1_000).toFixed(0)}K`
     return `$${value.toFixed(0)}`
 }
 
 const metrics = [
     {
-        key: "annualSavings" as const,
-        label: "Annual Savings",
+        key: "netSavings" as const,
+        label: "Net Annual Savings",
         icon: DollarSign,
         color: "#10B981",
-        format: (r: ROIResults) => formatCurrency(r.bestAnnualSavings),
-        sub: (r: ROIResults) => `vs ${r.savingsVsCompetitors.find(s => s.annualSavings === r.bestAnnualSavings)?.competitor ?? "competitors"}`,
+        format: (r: LaborResults) => formatCurrency(r.netAnnualSavings),
+        sub: () => "after Enorve platform cost",
     },
     {
-        key: "fteAvoided" as const,
-        label: "FTE Avoided",
+        key: "headcountReduction" as const,
+        label: "Headcount Reduction",
         icon: Users,
         color: "#8B5CF6",
-        format: (r: ROIResults) => `${r.fteAvoided}`,
-        sub: () => "agents no longer needed",
+        format: (r: LaborResults) => `${r.headcountReduction}`,
+        sub: (r: LaborResults) => `${r.projectedHeadcount} agents remaining`,
     },
     {
-        key: "payback" as const,
-        label: "Payback Period",
+        key: "roiMonths" as const,
+        label: "ROI Timeline",
         icon: Clock,
         color: "#F59E0B",
-        format: (r: ROIResults) =>
-            r.bestPaybackMonths === null
+        format: (r: LaborResults) =>
+            r.roiMonths === null
                 ? "—"
-                : r.bestPaybackMonths === 0
-                    ? "Immediate"
-                    : `${r.bestPaybackMonths} mo`,
-        sub: () => "time to recoup migration",
+                : r.roiMonths <= 1
+                    ? "< 1 month"
+                    : `${r.roiMonths} months`,
+        sub: () => "to break even on Enorve cost",
     },
     {
-        key: "npv" as const,
-        label: "3-Year NPV",
+        key: "threeYear" as const,
+        label: "3-Year Savings",
         icon: TrendingUp,
         color: "#3B82F6",
-        format: (r: ROIResults) => formatCurrency(r.bestThreeYearNPV),
-        sub: (r: ROIResults) => `at ${(r.savingsVsCompetitors.length > 0 ? 8 : 8)}% discount rate`,
+        format: (r: LaborResults) => formatCurrency(r.threeYearCumulativeSavings),
+        sub: () => "cumulative net savings",
     },
 ]
 
 export function ExecutiveSummary({ results }: Props) {
-    const isNegative = results.bestAnnualSavings < 0
+    const isNegative = results.netAnnualSavings < 0
 
     return (
         <div className="space-y-4">
-            <h2 className="text-2xl font-medium text-white tracking-tight">Executive Summary</h2>
+            <h2 className="text-2xl font-medium text-white tracking-tight">Labor Replacement Summary</h2>
 
-            {/* Warning for negative ROI */}
             {isNegative && (
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -72,9 +67,9 @@ export function ExecutiveSummary({ results }: Props) {
                 >
                     <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                     <div>
-                        <p className="text-sm font-medium text-amber-300">Optimization Recommended</p>
+                        <p className="text-sm font-medium text-amber-300">Increase Automation</p>
                         <p className="text-sm text-amber-400/80 mt-1">
-                            Current inputs show higher costs with Enorve. Try increasing the AI deflection rate or reviewing team size for better ROI.
+                            Current inputs show Enorve platform cost exceeds labor savings. Try increasing the automation rate or team size.
                         </p>
                     </div>
                 </motion.div>
@@ -91,7 +86,6 @@ export function ExecutiveSummary({ results }: Props) {
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             className="relative p-5 rounded-2xl bg-[#0C0E12] border border-white/5 overflow-hidden group hover:border-white/10 transition-colors"
                         >
-                            {/* Glow */}
                             <div
                                 className="absolute top-0 right-0 w-24 h-24 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity"
                                 style={{ background: metric.color }}

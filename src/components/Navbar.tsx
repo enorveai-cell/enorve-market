@@ -7,18 +7,18 @@ import { Button } from "./ui/Button"
 import { EnorveLogoFull } from "./ui/Logo"
 
 const productLinks = [
-    { label: "AI Copilot", href: "/product/ai-copilot", icon: Bot, description: "AI assist & auto-resolution" },
-    { label: "Inbox", href: "/product/inbox", icon: Inbox, description: "Unified multi-channel inbox" },
-    { label: "Automation", href: "/product/automation", icon: Zap, description: "Workflows & routing" },
-    { label: "Knowledge Base", href: "/product/knowledge-base", icon: BookOpen, description: "Knowledge management" },
-    { label: "Analytics", href: "/product/analytics", icon: BarChart3, description: "Performance insights" },
+    { label: "AI Copilot", href: "/product/ai-copilot", icon: Bot, description: "Autonomous resolution engine" },
+    { label: "Inbox", href: "/product/inbox", icon: Inbox, description: "Governed operations inbox" },
+    { label: "Automation", href: "/product/automation", icon: Zap, description: "Autonomous workflow execution" },
+    { label: "Knowledge Base", href: "/product/knowledge-base", icon: BookOpen, description: "Self-resolving knowledge base" },
+    { label: "Analytics", href: "/product/analytics", icon: BarChart3, description: "Operations intelligence" },
 ]
 
 const solutionLinks = [
-    { label: "Customer Support", href: "/solutions/customer-support", icon: Headphones, description: "For support teams" },
-    { label: "E-commerce", href: "/solutions/ecommerce", icon: ShoppingCart, description: "For online stores" },
-    { label: "SaaS", href: "/solutions/saas", icon: Building2, description: "For B2B companies" },
-    { label: "Founders", href: "/solutions/founders", icon: Rocket, description: "For small teams" },
+    { label: "Customer Support", href: "/solutions/customer-support", icon: Headphones, description: "Autonomous support operations" },
+    { label: "E-commerce", href: "/solutions/ecommerce", icon: ShoppingCart, description: "Replace support labor with AI" },
+    { label: "SaaS", href: "/solutions/saas", icon: Building2, description: "Autonomous SaaS operations" },
+    { label: "Founders", href: "/solutions/founders", icon: Rocket, description: "AI-first from day one" },
 ]
 
 const resourceLinks = [

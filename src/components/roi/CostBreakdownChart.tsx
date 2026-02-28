@@ -1,9 +1,9 @@
 import { motion } from "framer-motion"
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts"
-import type { ROIResults } from "../../hooks/useROICalculator"
+import type { LaborResults } from "../../hooks/useROICalculator"
 
 interface Props {
-    results: ROIResults
+    results: LaborResults
 }
 
 function formatK(value: number): string {
@@ -15,23 +15,20 @@ function formatK(value: number): string {
 export function CostBreakdownChart({ results }: Props) {
     const data = [
         {
-            name: "Enorve",
-            Software: results.enorveResult.softwareCostAnnual,
-            "AI Add-ons": results.enorveResult.aiAddonCostAnnual,
-            Labor: results.enorveResult.laborCostAnnual,
+            name: "Current",
+            Labor: results.currentAnnualLaborCost,
+            "Enorve Platform": 0,
         },
-        ...results.competitorResults.map(cr => ({
-            name: cr.name,
-            Software: cr.softwareCostAnnual,
-            "AI Add-ons": cr.aiAddonCostAnnual,
-            Labor: cr.laborCostAnnual,
-        })),
+        {
+            name: "With Enorve",
+            Labor: results.reducedLaborCost,
+            "Enorve Platform": results.enorveAnnualCost,
+        },
     ]
 
     const COLORS = {
-        Software: "#8B5CF6",
-        "AI Add-ons": "#F59E0B",
         Labor: "#6366F1",
+        "Enorve Platform": "#10B981",
     }
 
     return (
@@ -41,12 +38,12 @@ export function CostBreakdownChart({ results }: Props) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="p-6 rounded-2xl bg-[#0C0E12] border border-white/5"
         >
-            <h3 className="text-lg font-medium text-white mb-1">Annual Cost Breakdown</h3>
+            <h3 className="text-lg font-medium text-white mb-1">Annual Cost Comparison</h3>
             <p className="text-sm text-gray-400 mb-6">
-                Total Support Operating Cost by vendor — software + AI add-ons + labor
+                Current labor cost vs reduced labor + Enorve platform
             </p>
 
-            <div className="h-[320px]">
+            <div className="h-[280px]">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
                         <XAxis
@@ -76,30 +73,29 @@ export function CostBreakdownChart({ results }: Props) {
                         <Legend
                             wrapperStyle={{ color: "#9CA3AF", fontSize: "12px", paddingTop: "8px" }}
                         />
-                        <Bar dataKey="Software" stackId="a" fill={COLORS.Software} radius={[0, 0, 0, 0]} />
-                        <Bar dataKey="AI Add-ons" stackId="a" fill={COLORS["AI Add-ons"]} radius={[0, 0, 0, 0]} />
-                        <Bar dataKey="Labor" stackId="a" fill={COLORS.Labor} radius={[4, 4, 0, 0]} barSize={50} />
+                        <Bar dataKey="Labor" stackId="a" fill={COLORS.Labor} radius={[0, 0, 0, 0]} />
+                        <Bar dataKey="Enorve Platform" stackId="a" fill={COLORS["Enorve Platform"]} radius={[4, 4, 0, 0]} barSize={60} />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
 
-            {/* Cost per ticket comparison */}
-            <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3">
-                {[results.enorveResult, ...results.competitorResults].map(v => (
-                    <div
-                        key={v.name}
-                        className={`p-3 rounded-xl text-center ${v.name === "Enorve"
-                            ? "bg-emerald-500/10 border border-emerald-500/20"
-                            : "bg-white/[0.02] border border-white/5"
-                            }`}
-                    >
-                        <p className="text-xs text-gray-400 mb-1">{v.name}</p>
-                        <p className={`text-lg font-semibold ${v.name === "Enorve" ? "text-emerald-400" : "text-white"}`}>
-                            ${v.costPerTicket.toFixed(2)}
-                        </p>
-                        <p className="text-[10px] text-gray-500">per ticket</p>
-                    </div>
-                ))}
+            {/* Summary row */}
+            <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="p-3 rounded-xl bg-red-500/5 border border-red-500/20 text-center">
+                    <p className="text-xs text-gray-400 mb-1">Current Cost</p>
+                    <p className="text-lg font-semibold text-red-400">{formatK(results.currentAnnualLaborCost)}</p>
+                    <p className="text-[10px] text-gray-500">per year</p>
+                </div>
+                <div className="p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-center">
+                    <p className="text-xs text-gray-400 mb-1">With Enorve</p>
+                    <p className="text-lg font-semibold text-emerald-400">{formatK(results.reducedLaborCost + results.enorveAnnualCost)}</p>
+                    <p className="text-[10px] text-gray-500">per year</p>
+                </div>
+                <div className="p-3 rounded-xl bg-violet-500/5 border border-violet-500/20 text-center">
+                    <p className="text-xs text-gray-400 mb-1">Net Savings</p>
+                    <p className={`text-lg font-semibold ${results.netAnnualSavings >= 0 ? "text-violet-400" : "text-red-400"}`}>{formatK(results.netAnnualSavings)}</p>
+                    <p className="text-[10px] text-gray-500">per year</p>
+                </div>
             </div>
         </motion.div>
     )

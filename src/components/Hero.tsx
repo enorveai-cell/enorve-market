@@ -13,7 +13,7 @@ export function Hero() {
             <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] pointer-events-none z-0" />
 
             <div className="text-center max-w-[1200px] mx-auto px-6 relative">
-                {/* Badge - Animated */}
+                {/* Category Label */}
                 <div
                     className="animate-fade-in-up inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-purple-300 mb-8"
                 >
@@ -21,7 +21,7 @@ export function Hero() {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
                     </span>
-                    <span>Now in Beta</span>
+                    <span>Governed Autonomous AI Operations for E-commerce</span>
                 </div>
 
                 {/* Headline - Animated with delay */}

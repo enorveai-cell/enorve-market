@@ -1,217 +1,129 @@
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
-import { Download, ArrowLeft, AlertTriangle, Info } from "lucide-react"
+import { Download, Calculator, AlertTriangle } from "lucide-react"
 import { Button } from "../components/ui/Button"
-import { usePageTitle } from "../hooks/usePageTitle"
 import { useROICalculator } from "../hooks/useROICalculator"
+import { InputPanel } from "../components/roi/InputPanel"
 import { ExecutiveSummary } from "../components/roi/ExecutiveSummary"
 import { HeadcountChart } from "../components/roi/HeadcountChart"
 import { CostBreakdownChart } from "../components/roi/CostBreakdownChart"
 import { ProjectionChart } from "../components/roi/ProjectionChart"
-import { SensitivityPanel } from "../components/roi/SensitivityPanel"
-import { InputPanel } from "../components/roi/InputPanel"
 import { generateROIPdf } from "../utils/roiPdfExport"
+import { usePageTitle } from "../hooks/usePageTitle"
 
 export function ROICalculator() {
+    const { inputs, setInput, results } = useROICalculator()
     usePageTitle({
-        title: "ROI Calculator — Support Economics Engine | Enorve",
-        description:
-            "Calculate your total support operating cost savings with Enorve vs Zendesk, Intercom, and Freshdesk. Enterprise-grade ROI analysis with PDF export.",
+        title: "Labor Replacement Calculator — Enorve",
+        description: "Calculate how many support FTEs Enorve can replace and your projected annual savings. Input your headcount, agent cost, and conversation volume to see the economics."
     })
 
-    const { inputs, setInput, results } = useROICalculator()
-
     return (
-        <div className="pt-28 pb-20 relative overflow-hidden">
-            {/* Ambient glow */}
-            <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(16,185,129,0.15),rgba(255,255,255,0))] pointer-events-none z-0" />
+        <div className="pt-32 pb-20 relative overflow-hidden">
+            {/* Ambient Background Glow */}
+            <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(16,185,129,0.3),rgba(255,255,255,0))] pointer-events-none z-0" />
 
-            {/* Hero */}
+            {/* Hero Section */}
             <section className="max-w-7xl mx-auto px-6 mb-12 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
+                    className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
                 >
-                    <Link
-                        to="/pricing"
-                        className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-6"
-                    >
-                        <ArrowLeft className="w-4 h-4" />
-                        Back to Pricing
-                    </Link>
-
-                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                        <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-4">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                                <span className="text-xs text-emerald-400 font-medium">Support Economics Engine</span>
-                            </div>
-                            <h1 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1.1] mb-3 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-                                Total Cost of Support
-                            </h1>
-                            <p className="text-lg text-gray-400 max-w-xl leading-relaxed">
-                                Compare your total support operating cost — not just subscription price — across platforms over 3 years.
-                            </p>
+                    <div>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-4">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            <span className="text-xs text-emerald-400 font-medium">Labor Economics</span>
                         </div>
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-                            <Button
-                                variant="outline"
-                                onClick={() => generateROIPdf(inputs, results)}
-                                icon={<Download className="w-4 h-4" />}
-                                iconPosition="left"
-                            >
-                                Download Executive ROI Report
-                            </Button>
-                        </motion.div>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter leading-[1.1] mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+                            Labor Replacement Calculator
+                        </h1>
+                        <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
+                            How many support FTEs can Enorve replace? Input your team, cost, and volume — see the economics in real-time.
+                        </p>
                     </div>
+
+                    <Button
+                        variant="outline"
+                        size="md"
+                        onClick={() => generateROIPdf(inputs, results)}
+                        icon={<Download className="w-4 h-4" />}
+                        iconPosition="left"
+                    >
+                        Download Report
+                    </Button>
                 </motion.div>
             </section>
 
-            {/* Main Content */}
+            {/* Calculator Grid */}
             <section className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-[340px_1fr] gap-8">
-                    {/* Left Sidebar — Inputs */}
-                    <div className="lg:sticky lg:top-28 lg:self-start">
-                        <InputPanel inputs={inputs} onInputChange={setInput} />
-                    </div>
+                <div className="grid lg:grid-cols-[320px,1fr] gap-8">
+                    {/* Inputs */}
+                    <InputPanel inputs={inputs} onInputChange={setInput} />
 
-                    {/* Right Content — Results */}
+                    {/* Results */}
                     <div className="space-y-8">
                         {/* Warnings */}
                         {results.warnings.length > 0 && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="space-y-3"
-                            >
-                                {results.warnings.map((warning, i) => (
-                                    <div
+                            <div className="space-y-3">
+                                {results.warnings.map((w, i) => (
+                                    <motion.div
                                         key={i}
-                                        className="flex items-start gap-3 p-4 rounded-2xl bg-amber-500/5 border border-amber-500/20"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="flex items-start gap-3 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30"
                                     >
-                                        <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                                        <p className="text-sm text-amber-400/90">{warning}</p>
-                                    </div>
+                                        <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                                        <p className="text-sm text-amber-400/80">{w}</p>
+                                    </motion.div>
                                 ))}
-                            </motion.div>
+                            </div>
                         )}
 
-                        {/* Section 1: Executive Summary */}
+                        {/* Executive Summary */}
                         <ExecutiveSummary results={results} />
 
-                        {/* Section 2: Headcount Impact */}
-                        <HeadcountChart results={results} />
+                        {/* Charts Grid */}
+                        <div className="grid lg:grid-cols-2 gap-6">
+                            <HeadcountChart results={results} />
+                            <CostBreakdownChart results={results} />
+                        </div>
 
-                        {/* Section 3: Cost Breakdown */}
-                        <CostBreakdownChart results={results} />
-
-                        {/* Section 4: 3-Year Projection */}
+                        {/* Projection */}
                         <ProjectionChart results={results} />
 
-                        {/* Section 5: Sensitivity Panel */}
-                        <SensitivityPanel inputs={inputs} onInputChange={setInput} />
-
-                        {/* Savings Table */}
+                        {/* Enorve plan info */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.6 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
                             className="p-6 rounded-2xl bg-[#0C0E12] border border-white/5"
                         >
-                            <h3 className="text-lg font-medium text-white mb-4">Detailed Savings Comparison</h3>
-                            <div className="overflow-x-auto">
-                                <table className="w-full border-collapse">
-                                    <thead>
-                                        <tr className="border-b border-white/10">
-                                            <th className="text-left py-3 px-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Comparison</th>
-                                            <th className="text-right py-3 px-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Annual Savings</th>
-                                            <th className="text-right py-3 px-4 text-xs font-medium text-gray-400 uppercase tracking-wider">3-Year Cumulative</th>
-                                            <th className="text-right py-3 px-4 text-xs font-medium text-gray-400 uppercase tracking-wider">NPV</th>
-                                            <th className="text-right py-3 px-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Payback</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {results.savingsVsCompetitors.map((s, i) => (
-                                            <tr key={s.competitor} className={`border-b border-white/5 ${i % 2 === 0 ? "bg-white/[0.01]" : ""}`}>
-                                                <td className="py-3 px-4 text-sm text-white font-medium">
-                                                    Enorve vs {s.competitor}
-                                                </td>
-                                                <td className={`py-3 px-4 text-sm text-right font-medium tabular-nums ${s.annualSavings >= 0 ? "text-emerald-400" : "text-red-400"}`}>
-                                                    {s.annualSavings >= 0 ? "+" : ""}${Math.abs(s.annualSavings).toLocaleString("en-US", { maximumFractionDigits: 0 })}
-                                                </td>
-                                                <td className={`py-3 px-4 text-sm text-right tabular-nums ${s.threeYearCumulative >= 0 ? "text-emerald-400" : "text-red-400"}`}>
-                                                    ${Math.abs(s.threeYearCumulative).toLocaleString("en-US", { maximumFractionDigits: 0 })}
-                                                </td>
-                                                <td className={`py-3 px-4 text-sm text-right tabular-nums ${s.npv >= 0 ? "text-emerald-400" : "text-red-400"}`}>
-                                                    ${Math.abs(s.npv).toLocaleString("en-US", { maximumFractionDigits: 0 })}
-                                                </td>
-                                                <td className="py-3 px-4 text-sm text-right text-gray-400 tabular-nums">
-                                                    {s.paybackMonths === null
-                                                        ? "—"
-                                                        : s.paybackMonths === 0
-                                                            ? "Immediate"
-                                                            : `${s.paybackMonths} mo`}
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </motion.div>
-
-                        {/* Legal Disclaimer */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.8 }}
-                            className="flex items-start gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5"
-                        >
-                            <Info className="w-4 h-4 text-gray-500 flex-shrink-0 mt-0.5" />
-                            <div className="text-xs text-gray-500 leading-relaxed space-y-1">
-                                <p>
-                                    <strong className="text-gray-400">Disclaimer:</strong> Competitor pricing is based on publicly available
-                                    list prices as of January 2026. Actual costs may vary based on negotiated contracts, usage volumes,
-                                    and vendor-specific terms. This analysis is for informational purposes only and does not constitute
-                                    financial advice.
-                                </p>
-                                <p>
-                                    Enorve maintains a quarterly pricing review process to keep competitor benchmarks current.
-                                </p>
-                            </div>
-                        </motion.div>
-
-                        {/* CTA */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.9 }}
-                            className="relative p-8 rounded-[24px] bg-gradient-to-br from-emerald-500/10 to-violet-500/10 border border-emerald-500/20 text-center overflow-hidden"
-                        >
-                            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.1),transparent_70%)]" />
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-medium text-white mb-2 tracking-tight">
-                                    Ready to reduce your support costs?
-                                </h3>
-                                <p className="text-gray-400 mb-6 max-w-md mx-auto">
-                                    Request Beta Access with Enorve today and see real savings within months.
-                                </p>
-                                <div className="flex flex-wrap justify-center gap-4">
-                                    <a href="https://app.enorve.com/">
-                                        <Button variant="primary">
-                                            Request Beta Access Free
-                                        </Button>
-                                    </a>
-                                    <Link to="/contact-sales">
-                                        <Button variant="outline">
-                                            Talk to Sales
-                                        </Button>
-                                    </Link>
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-1">Enorve Plan Used</h3>
+                                    <p className="text-lg font-medium text-white">{results.enorveMonthlyPlan} Plan</p>
+                                    <p className="text-sm text-gray-400">
+                                        ${results.enorveMonthlyPlanCost}/mo • Based on {inputs.monthlyConversations.toLocaleString()} conversations/mo
+                                    </p>
+                                </div>
+                                <div className="text-right">
+                                    <p className="text-2xl font-bold text-emerald-400">${results.enorveAnnualCost.toLocaleString()}</p>
+                                    <p className="text-xs text-gray-500">annual platform cost</p>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
                 </div>
+            </section>
+
+            {/* Disclaimer */}
+            <section className="max-w-7xl mx-auto px-6 mt-12 relative z-10">
+                <p className="text-[11px] text-gray-600 leading-relaxed max-w-3xl">
+                    This calculator provides estimates based on the inputs provided. Actual results may vary based on
+                    conversation complexity, AI training, and operational factors. Enorve pricing is based on current list prices.
+                    Consult your financial advisor for decisions involving significant capital allocation.
+                </p>
             </section>
         </div>
     )

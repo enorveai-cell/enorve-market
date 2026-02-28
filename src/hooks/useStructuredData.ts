@@ -34,7 +34,7 @@ export const createOrganizationSchema = () => ({
     name: 'Enorve',
     url: 'https://enorve.com',
     logo: 'https://enorve.com/favicon.svg',
-    description: 'Autonomous support platform that resolves customer conversations across WhatsApp, Email, and Chat — with full governance and escalation control.',
+    description: 'Governed Autonomous AI Operations for E-commerce. Enorve autonomously resolves customer conversations across WhatsApp, Email, and Chat — with full governance, explainability, and escalation control.',
     foundingDate: '2024',
     sameAs: [
         'https://twitter.com/enorveai',
@@ -53,9 +53,9 @@ export const createSoftwareApplicationSchema = () => ({
     '@type': 'SoftwareApplication',
     name: 'Enorve',
     applicationCategory: 'BusinessApplication',
-    applicationSubCategory: 'Customer Support Software',
+    applicationSubCategory: 'Autonomous AI Operations Platform',
     operatingSystem: 'Web, Cloud',
-    description: 'Unified inbox with AI auto-resolution for customer support teams. Manage WhatsApp, Email, Instagram, and Chat from one platform.',
+    description: 'Governed Autonomous AI Operations platform that autonomously resolves customer conversations across WhatsApp, Email, and Chat. AI runs first, humans supervise.',
     offers: {
         '@type': 'AggregateOffer',
         priceCurrency: 'USD',
@@ -85,11 +85,6 @@ export const createSoftwareApplicationSchema = () => ({
                 billingDuration: 'P1M'
             }
         ]
-    },
-    aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.8',
-        reviewCount: '127'
     }
 })
 

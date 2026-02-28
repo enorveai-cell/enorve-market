@@ -22,7 +22,7 @@ export function usePageMeta(options: PageMetaOptions | string) {
     useEffect(() => {
         // Update page title
         const previousTitle = document.title
-        document.title = title ? `${title} | Enorve` : 'Enorve - Autonomous Customer Support'
+        document.title = title ? `${title} | Enorve` : 'Enorve — Governed Autonomous AI Operations'
 
         // Helper function to set or create meta tag
         const setMetaTag = (name: string, content: string, property = false) => {

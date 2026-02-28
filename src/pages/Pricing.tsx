@@ -15,59 +15,59 @@ const plans = [
     {
         name: "Starter",
         price: 39,
-        tagline: "Observe & learn",
-        description: "Small teams starting with AI support",
+        tagline: "Up to 500 autonomously resolved conversations/mo",
+        description: "AI-first support for small teams",
         color: "#3B82F6",
         icon: Zap,
         popular: false,
         features: [
             { text: "Up to 5 team members", included: true },
-            { text: "1,000 messages / month", included: true },
-            { text: "500 AI-assisted messages / month", included: true },
+            { text: "500 autonomous resolutions / month", included: true, highlight: true },
+            { text: "1,000 total conversations / month", included: true },
             { text: "Email & Chat channels", included: true },
             { text: "Multi-channel inbox", included: true },
-            { text: "AI Auto-Resolution (common queries)", included: true },
+            { text: "AI Auto-Resolution", included: true },
             { text: "Basic analytics", included: true },
             { text: "Email support", included: true }
         ],
-        bestFor: ["Small teams starting with AI support"],
+        bestFor: ["Small teams starting with autonomous operations"],
         cta: "Request Beta Access"
     },
     {
         name: "Professional",
         price: 199,
-        tagline: "Operate & automate",
-        description: "Growing support teams",
+        tagline: "Up to 2,500 autonomously resolved conversations/mo",
+        description: "Autonomous operations for growing teams",
         color: "#8B5CF6",
         icon: Sparkles,
         popular: true,
         features: [
             { text: "Up to 25 team members", included: true },
-            { text: "10,000 messages / month", included: true },
-            { text: "2,500 AI-assisted messages / month", included: true },
+            { text: "2,500 autonomous resolutions / month", included: true, highlight: true },
+            { text: "10,000 total conversations / month", included: true },
             { text: "Email, Chat & Social channels", included: true },
             { text: "AI Copilot for agents", included: true, highlight: true },
             { text: "100+ languages (auto-detect & translate)", included: true, highlight: true },
-            { text: "Workflow automation", included: true, highlight: true },
+            { text: "Workflow automation", included: true },
             { text: "Advanced analytics", included: true },
             { text: "AI action execution", included: true },
             { text: "Priority email support", included: true }
         ],
-        bestFor: ["Growing support teams"],
+        bestFor: ["Growing teams replacing manual support with AI"],
         cta: "Request Beta Access"
     },
     {
         name: "Business",
         price: 499,
-        tagline: "Control & govern",
-        description: "High-volume, regulated teams",
+        tagline: "Up to 10,000 autonomously resolved conversations/mo",
+        description: "Governed autonomous operations at scale",
         color: "#10B981",
         icon: Building2,
         popular: false,
         features: [
             { text: "Up to 100 team members", included: true },
-            { text: "50,000 messages / month", included: true },
-            { text: "10,000 AI-assisted messages / month", included: true },
+            { text: "10,000 autonomous resolutions / month", included: true, highlight: true },
+            { text: "50,000 total conversations / month", included: true },
             { text: "Omnichannel support", included: true },
             { text: "100+ languages (auto-detect & translate)", included: true, highlight: true },
             { text: "Ticketing with SLAs", included: true, highlight: true },
@@ -77,21 +77,21 @@ const plans = [
             { text: "Custom branding", included: true },
             { text: "Priority phone & email support", included: true }
         ],
-        bestFor: ["High-volume, regulated teams"],
+        bestFor: ["High-volume teams with governance requirements"],
         cta: "Request Beta Access"
     },
     {
         name: "Enterprise",
         price: "Custom",
-        tagline: "Contractual trust",
-        description: "Large orgs with custom needs",
+        tagline: "50,000+ autonomously resolved conversations/mo",
+        description: "Full autonomous operations with contractual guarantees",
         color: "#F59E0B",
         icon: Crown,
         popular: false,
         features: [
             { text: "Unlimited team members", included: true },
-            { text: "200,000+ messages / month", included: true },
-            { text: "50,000+ AI-assisted messages / month", included: true },
+            { text: "50,000+ autonomous resolutions / month", included: true, highlight: true },
+            { text: "200,000+ total conversations / month", included: true },
             { text: "Full omnichannel", included: true },
             { text: "100+ languages (auto-detect & translate)", included: true, highlight: true },
             { text: "Custom SLAs", included: true, highlight: true },
@@ -101,17 +101,17 @@ const plans = [
             { text: "Dedicated account manager", included: true },
             { text: "Sales-assisted contracts", included: true }
         ],
-        bestFor: ["Large orgs with custom needs"],
+        bestFor: ["Large orgs requiring enterprise-grade autonomous operations"],
         cta: "Contact Sales"
     }
 ]
 
 const aiUsage = {
     counts: [
-        "Generates a reply",
-        "Summarizes a conversation",
-        "Detects intent or sentiment",
-        "Auto-resolves a conversation"
+        "Autonomously resolves a conversation",
+        "Generates a reply without human involvement",
+        "Detects intent and takes autonomous action",
+        "Summarizes a conversation for handoff"
     ],
     doesNotCount: [
         "Human-written messages",
@@ -157,8 +157,8 @@ const securityFeatures = [
 
 export function Pricing() {
     usePageTitle({
-        title: "Pricing - Plans for Every Team Size",
-        description: "Flexible pricing for growing teams. Start at $39/month with Starter plan. Scale with Professional ($199), Business ($499), or Custom Enterprise solutions."
+        title: "Pricing — Autonomous Resolution Capacity",
+        description: "Plans built around autonomous resolution capacity — not feature checklists. From 500 to 50,000+ autonomously resolved conversations per month. Governed Autonomous AI Operations for E-commerce."
     })
 
     // Add product structured data for SEO
@@ -195,12 +195,12 @@ export function Pricing() {
                     transition={{ duration: 0.6 }}
                 >
                     <h1 className="text-5xl md:text-6xl font-medium tracking-tighter leading-[1.1] mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-                        Built for control,<br />not chaos.
+                        Pay for resolution capacity,<br />not feature access.
                     </h1>
                     <p className="text-xl text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed">
-                        Automate customer conversations, workflows, and decisions — with governance, visibility, and human oversight built in.
+                        Each plan is defined by how many conversations AI resolves autonomously — not by how many features you unlock.
                     </p>
-                    <p className="text-sm text-gray-400">Start building today — choose your plan and Request Beta Access in minutes</p>
+                    <p className="text-sm text-gray-400">Choose your autonomous resolution tier and start replacing manual support today</p>
                 </motion.div>
             </section>
 

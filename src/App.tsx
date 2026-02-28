@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { MainLayout } from "./layouts/MainLayout"
 import { ScrollToTop } from "./components/ScrollToTop"
 import { Home } from "./pages/Home"
@@ -55,7 +55,8 @@ function App() {
 
           {/* Trust & Security Routes */}
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/roi-calculator" element={<ROICalculator />} />
+          <Route path="/labor-replacement-calculator" element={<ROICalculator />} />
+          <Route path="/roi-calculator" element={<Navigate to="/labor-replacement-calculator" replace />} />
           <Route path="/security" element={<Security />} />
 
           {/* Company Routes */}
