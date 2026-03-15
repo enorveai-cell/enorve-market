@@ -44,7 +44,7 @@ const qualityFeatures = [
 ]
 
 const differentiators = [
-    { title: "Governance-First", desc: "Retrieval-only mode with zero hallucination risk", icon: Shield },
+    { title: "Governance-First", desc: "Retrieval-only mode with verified-source responses", icon: Shield },
     { title: "AI-Generated Suggestions", desc: "Proactive gap detection from escalation patterns", icon: Sparkles },
     { title: "Impact Measurement", desc: "Before/after metrics for each published article", icon: TrendingUp },
     { title: "Conflict Detection", desc: "Automatically find contradictory information", icon: AlertTriangle },
@@ -55,7 +55,7 @@ const differentiators = [
 export function KnowledgeBase() {
     usePageTitle({
         title: "Knowledge Base - Self-Resolving Help Center",
-        description: "Self-service knowledge base that reduces support volume. Governance-first articles, instant answers, and searchable documentation for autonomous customer support."
+        description: "Self-service knowledge base that reduces support volume. Governance-first articles, instant answers, and searchable documentation for AI-powered customer support."
     })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
@@ -76,7 +76,7 @@ export function KnowledgeBase() {
                         </div>
                         <h1 className="text-5xl md:text-6xl font-medium tracking-tighter leading-[1.1] mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
                             Power your AI.<br />
-                            Zero hallucinations.
+                            Grounded in your knowledge.
                         </h1>
                         <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                             Governance-first knowledge retrieval that grounds every AI response in verified content.
@@ -85,7 +85,7 @@ export function KnowledgeBase() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -193,7 +193,7 @@ export function KnowledgeBase() {
                             <div className="absolute -right-4 top-8 bg-[#0C0E12] border border-white/10 rounded-lg p-3 shadow-xl animate-float">
                                 <div className="flex items-center gap-2">
                                     <Shield className="w-4 h-4 text-emerald-400" />
-                                    <span className="text-xs text-white font-medium">Zero Hallucinations</span>
+                                    <span className="text-xs text-white font-medium">Knowledge-Grounded</span>
                                 </div>
                             </div>
 
@@ -712,12 +712,12 @@ export function KnowledgeBase() {
                             Ready to power your AI?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Request Beta Access with Enorve and build your knowledge base today.
+                            Start Free Trial with Enorve and build your knowledge base today.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

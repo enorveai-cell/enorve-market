@@ -3,9 +3,9 @@ export function ChannelStrip() {
         { name: "WhatsApp", color: "text-green-400" },
         { name: "Email", color: "text-blue-400" },
         { name: "Instagram", color: "text-pink-400" },
-        { name: "LinkedIn", color: "text-blue-500" },
+        { name: "Messenger", color: "text-blue-400" },
         { name: "Telegram", color: "text-sky-400" },
-        { name: "Messenger", color: "text-indigo-400" },
+        { name: "LinkedIn", color: "text-blue-500" },
         { name: "Slack", color: "text-purple-400" },
         { name: "Live Chat", color: "text-orange-400" },
     ]
@@ -26,4 +26,3 @@ export function ChannelStrip() {
         </section>
     )
 }
-

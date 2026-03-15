@@ -169,7 +169,7 @@ export function Automation() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -731,12 +731,12 @@ export function Automation() {
                             Ready to automate your support?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Request Beta Access with Enorve and build your first workflow in minutes.
+                            Start Free Trial with Enorve and build your first workflow in minutes.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

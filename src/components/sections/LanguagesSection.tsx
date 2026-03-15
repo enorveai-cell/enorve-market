@@ -95,7 +95,7 @@ export function LanguagesSection() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-6xl font-medium text-white tracking-tighter leading-[1.1] mb-6"
                     >
-                        <span className="bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent">100+ languages</span> supported
+                        <span className="bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent">Speaks your customer's</span> language
                     </motion.h2>
 
                     <motion.p
@@ -105,7 +105,7 @@ export function LanguagesSection() {
                         viewport={{ once: true }}
                         className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto"
                     >
-                        Automatic detection and translation powered by advanced AI. No configuration needed — it just works across every language your customers speak.
+                        AI responds naturally in 30+ languages. No configuration needed — it just works across every language your customers speak.
                     </motion.p>
                 </div>
 
@@ -145,8 +145,8 @@ export function LanguagesSection() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                             </svg>
                         </div>
-                        <h3 className="text-white font-medium mb-2">Real-Time Translation</h3>
-                        <p className="text-sm text-gray-500 leading-relaxed">Responds in the customer's language while agents work in their own</p>
+                        <h3 className="text-white font-medium mb-2">Native Language Responses</h3>
+                        <p className="text-sm text-gray-500 leading-relaxed">AI responds in the customer's language while agents work in their own</p>
                     </div>
 
                     <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 text-center hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300">

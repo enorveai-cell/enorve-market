@@ -20,7 +20,7 @@ export function MidPageCTA() {
                                 href="https://app.enorve.com/"
                                 className="bg-white text-black font-medium text-sm h-11 px-6 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2"
                             >
-                                Request Beta Access
+                                Start Free Trial
                                 <ArrowRight className="w-4 h-4" />
                             </a>
                         </div>

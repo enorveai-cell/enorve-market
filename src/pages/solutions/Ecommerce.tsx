@@ -30,7 +30,7 @@ const laborCosts = [
     },
     {
         icon: Clock,
-        title: "24/7 coverage means 3x headcount",
+        title: "Growing headcount costs",
         description: "Global e-commerce runs around the clock. Covering all timezones doubles or triples your team size.",
         color: "#3B82F6"
     }
@@ -39,7 +39,7 @@ const laborCosts = [
 const replacements = [
     {
         number: "01",
-        title: "WISMO and order status — autonomously resolved",
+        title: "WISMO and order status — automatically resolved",
         capability: "Shopify Order Intelligence",
         color: "#10B981",
         icon: Package,
@@ -53,11 +53,11 @@ const replacements = [
     },
     {
         number: "02",
-        title: "Returns and refunds — autonomously processed",
+        title: "Returns and refunds — automatically processed",
         capability: "Policy-Governed Resolution",
         color: "#8B5CF6",
         icon: RefreshCw,
-        what: "AI applies your return policy deterministically — checks eligibility, initiates the return, confirms the refund. No human needed.",
+        what: "AI applies your return policy consistently — checks eligibility, initiates the return, confirms the refund. No human needed.",
         laborSaved: "Eliminates ~20% of all support FTEs",
         capabilities: [
             "Return eligibility checks against your policy rules",
@@ -67,7 +67,7 @@ const replacements = [
     },
     {
         number: "03",
-        title: "Product questions — autonomously answered",
+        title: "Product questions — automatically answered",
         capability: "Knowledge Base + AI Resolution",
         color: "#F59E0B",
         icon: Brain,
@@ -122,7 +122,7 @@ const outcomes = [
 export function Ecommerce() {
     usePageTitle({
         title: "E-commerce — Replace Support Labor with Autonomous AI",
-        description: "Your Shopify store doesn't have a software problem. It has a labor scaling problem. Enorve autonomously resolves 60-80% of support conversations — replacing FTEs, not augmenting them."
+        description: "Your Shopify store doesn't have a software problem. It has a labor scaling problem. Enorve automatically resolves 60-80% of support conversations — replacing FTEs, not augmenting them."
     })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
@@ -148,7 +148,7 @@ export function Ecommerce() {
                         </h1>
                         <p className="text-xl text-gray-400 mb-8 leading-relaxed max-w-3xl">
                             Every time revenue grows, support headcount grows with it. Enorve breaks that link.
-                            AI autonomously resolves 60-80% of your conversations — replacing FTEs, not augmenting them.
+                            AI automatically resolves 60-80% of your conversations — replacing FTEs, not augmenting them.
                         </p>
 
                         {/* Economics callout */}
@@ -255,7 +255,7 @@ export function Ecommerce() {
                             AI replaces the work. Not the worker.
                         </h2>
                         <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                            Each category of support work maps to FTEs you no longer need to hire. Enorve resolves autonomously — with Shopify-native intelligence.
+                            Each category of support work maps to FTEs you no longer need to hire. Enorve resolves automatically — with Shopify-native intelligence.
                         </p>
                     </motion.div>
 
@@ -421,14 +421,14 @@ export function Ecommerce() {
                                 <span className="text-gray-400">Not as a lookup tool.</span>
                             </h2>
                             <p className="text-lg text-gray-400 leading-relaxed mb-8">
-                                Enorve doesn't just fetch order status for human agents. It pulls order data, applies your business rules, resolves the conversation, and closes the ticket — autonomously.
+                                Enorve doesn't just fetch order status for human agents. It pulls order data, applies your business rules, resolves the conversation, and closes the ticket — automatically.
                             </p>
 
                             <div className="space-y-4">
                                 {[
                                     { title: "Order Resolution, Not Lookup", desc: "AI resolves 'Where is my order?' end-to-end — no human handoff required" },
-                                    { title: "Policy Enforcement", desc: "Return eligibility, refund windows, exchange rules — applied deterministically" },
-                                    { title: "Revenue-Aware Prioritization", desc: "High-LTV customers get intelligent escalation. The rest are resolved autonomously." }
+                                    { title: "Policy Enforcement", desc: "Return eligibility, refund windows, exchange rules — applied consistently" },
+                                    { title: "Revenue-Aware Prioritization", desc: "High-LTV customers get intelligent escalation. The rest are resolved automatically." }
                                 ].map((item) => (
                                     <div key={item.title} className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5">
                                         <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
@@ -502,7 +502,7 @@ export function Ecommerce() {
                             {/* Stats Bar */}
                             <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/5">
                                 <div className="text-center">
-                                    <div className="text-lg font-bold text-emerald-400">73%</div>
+                                    <div className="text-lg font-bold text-emerald-400">AI</div>
                                     <div className="text-[10px] text-gray-400">Auto-resolved today</div>
                                 </div>
                                 <div className="text-center">

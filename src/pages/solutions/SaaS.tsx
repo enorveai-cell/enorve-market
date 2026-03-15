@@ -73,8 +73,8 @@ const solutions = [
 
 const outcomes = [
     { icon: Zap, title: "Faster onboarding support", value: "60%", desc: "faster first response" },
-    { icon: TrendingUp, title: "Lower churn risk", value: "35%", desc: "reduction in churn" },
-    { icon: Layers, title: "Scalable operations", value: "3x", desc: "tickets per agent" }
+    { icon: TrendingUp, title: "Lower churn risk", value: "Lower", desc: "customer churn" },
+    { icon: Layers, title: "Scalable operations", value: "More", desc: "tickets per agent" }
 ]
 
 const enterpriseFeatures = [
@@ -116,7 +116,7 @@ export function SaaS() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -604,12 +604,12 @@ export function SaaS() {
                             Build scalable SaaS support
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Request Beta Access with Enorve and see how AI can transform your technical support.
+                            Start Free Trial with Enorve and see how AI can transform your technical support.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

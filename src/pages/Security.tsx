@@ -1,11 +1,9 @@
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
 import {
-    Shield, ArrowRight, Lock, Key, Database, Cloud,
-    Activity, AlertTriangle, Eye, Mail, CheckCircle, Zap,
-    FileText, Globe, Check
+    Shield, Lock, Key, Database, Cloud,
+    Activity, Eye, CheckCircle, Zap,
+    FileText, Globe
 } from "lucide-react"
-import { Button } from "../components/ui/Button"
 import { usePageTitle } from "../hooks/usePageTitle"
 
 const securitySections = [
@@ -14,51 +12,51 @@ const securitySections = [
         icon: Key,
         controls: [
             { text: "Password-based authentication", status: "Enforced", description: "Secure password hashing and validation." },
-            { text: "Multi-factor authentication (MFA)", status: "Available", description: "Supported for all privileged roles and administrative access." },
-            { text: "Role-based access controls (RBAC)", status: "Enforced", description: "Granular permission settings for team members." },
-            { text: "Tenant-level data isolation", status: "Guaranteed", description: "Logical separation of customer data at the database level." },
+            { text: "Multi-factor authentication (MFA)", status: "Available", description: "TOTP-based MFA supported for all roles." },
+            { text: "Role-based access controls (RBAC)", status: "Enforced", description: "5 granular roles: super admin, admin, manager, agent, viewer." },
+            { text: "Tenant-level data isolation", status: "Enforced", description: "Row-level security ensures complete separation of customer data." },
         ]
     },
     {
         title: "Data Protection",
         icon: Database,
         controls: [
-            { text: "Encryption in transit (TLS 1.3)", status: "Enforced", description: "All data encrypted via HTTPS/TLS 1.3." },
-            { text: "Encryption at rest (AES-256)", status: "Enforced", description: "Database fields and backups encrypted at rest." },
-            { text: "Data Classification", status: "Monitored", description: "Strict internal guidelines for data handling." },
+            { text: "Encryption in transit (TLS)", status: "Enforced", description: "All data encrypted via HTTPS/TLS." },
+            { text: "Encryption at rest", status: "Enforced", description: "Database and backups encrypted at rest." },
+            { text: "PII detection in AI responses", status: "Active", description: "AI detects and masks sensitive data like emails, phone numbers, and card details." },
         ]
     },
     {
         title: "AI Safety & Ethics",
         icon: Zap,
         controls: [
-            { text: "Usage rate limiting", status: "Enforced", description: "Prevents automated misuse and excessive consumption." },
+            { text: "Usage rate limiting", status: "Enforced", description: "Distributed rate limiting prevents misuse and excessive consumption." },
             { text: "Abuse detection monitoring", status: "Active", description: "Real-time analysis of abnormal usage patterns." },
-            { text: "No training on customer data", status: "Guaranteed", description: "Your data is never used to train public models." },
+            { text: "No training on customer data", status: "Guaranteed", description: "Your data is never used to train AI models." },
         ]
     },
     {
         title: "Infrastructure",
         icon: Cloud,
         controls: [
-            { text: "99.99% Uptime SLA", status: "Guaranteed", description: "Redundant architecture with failover protection." },
-            { text: "Hourly Backups", status: "Automated", description: "Point-in-time recovery for critical data." },
-            { text: "DDoS Protection", status: "Active", description: "Enterprise-grade mitigation at the edge." },
+            { text: "High availability architecture", status: "Active", description: "Managed cloud infrastructure designed for reliability." },
+            { text: "Automated backups", status: "Active", description: "Regular database backups via managed infrastructure." },
+            { text: "Edge-level protection", status: "Active", description: "DDoS mitigation inherited from Cloudflare and infrastructure providers." },
         ]
     }
 ]
 
-const governanceItems = [
-    { label: "SOC 2 Type II", status: "Compliant" },
-    { label: "GDPR", status: "Compliant" },
-    { label: "CCPA", status: "Compliant" },
-    { label: "Penetration Testing", status: "Annual" },
+const trustItems = [
+    { label: "Encryption at rest & in transit", icon: Lock },
+    { label: "Role-based access control", icon: Shield },
+    { label: "Multi-factor authentication", icon: Key },
+    { label: "Tenant data isolation", icon: Database },
 ]
 
 export function Security() {
     usePageTitle({
         title: "Security - Enterprise-Grade Protection",
-        description: "Enterprise-grade security for your customer data. SOC 2 compliant, encrypted at rest and in transit, with 99.99% uptime SLA."
+        description: "Enterprise-grade security for your customer data. Encrypted at rest and in transit, role-based access control, and tenant-level data isolation."
     })
 
     return (
@@ -82,11 +80,11 @@ export function Security() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">foundation</span>
                     </h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
-                        We prioritize your data's safety with enterprise-grade encryption, rigorous compliance standards, and continuous monitoring.
+                        We prioritize your data's safety with encryption, strict access controls, and continuous monitoring.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
                         <div className="flex items-center gap-6 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                            {governanceItems.map((item) => (
+                            {trustItems.map((item) => (
                                 <div key={item.label} className="flex items-center gap-2">
                                     <CheckCircle className="w-4 h-4 text-emerald-400" />
                                     <span className="text-sm font-medium text-gray-300">{item.label}</span>
@@ -125,7 +123,7 @@ export function Security() {
                                         </div>
                                         <span className={`
                                             px-2 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wider
-                                            ${control.status === 'Enforced' || control.status === 'Guaranteed' || control.status === 'Automated' || control.status === 'Active'
+                                            ${control.status === 'Enforced' || control.status === 'Guaranteed' || control.status === 'Active'
                                                 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
                                                 : 'bg-blue-500/10 text-blue-400 border border-blue-500/20'}
                                         `}>
@@ -148,7 +146,7 @@ export function Security() {
                         </div>
                         <h2 className="text-3xl font-semibold text-white mb-4">Governance & Compliance</h2>
                         <p className="text-gray-400 max-w-2xl mx-auto">
-                            We maintain strict internal protocols and undergo regular third-party audits to ensure our security measures meet the highest industry standards.
+                            We maintain strict internal protocols and follow industry-standard security practices to protect your data.
                         </p>
                     </div>
 
@@ -156,10 +154,10 @@ export function Security() {
                         <div className="p-6 rounded-2xl bg-black/40 border border-white/10">
                             <h4 className="text-lg font-medium text-white mb-2 flex items-center gap-2">
                                 <Globe className="w-4 h-4 text-blue-400" />
-                                Data Sovereignty
+                                Data Hosting
                             </h4>
                             <p className="text-sm text-gray-400">
-                                Customer data is hosted in secure data centers (AWS/GCP) with options for region-specific residency upon request for enterprise plans.
+                                Customer data is hosted on secure, managed cloud infrastructure with encryption at rest and in transit.
                             </p>
                         </div>
                         <div className="p-6 rounded-2xl bg-black/40 border border-white/10">
@@ -168,15 +166,9 @@ export function Security() {
                                 Incident Response
                             </h4>
                             <p className="text-sm text-gray-400">
-                                24/7 incident response team with defined escalation paths and transparent communication channels for security events.
+                                Defined incident response procedures with escalation paths and transparent communication for security events.
                             </p>
                         </div>
-                    </div>
-
-                    <div className="mt-10">
-                        <Button variant="outline" size="lg" className="gap-2">
-                            Download Security Whitepaper <ArrowRight className="w-4 h-4" />
-                        </Button>
                     </div>
                 </div>
             </section>

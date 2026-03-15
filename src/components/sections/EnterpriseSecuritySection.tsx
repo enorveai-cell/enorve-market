@@ -7,7 +7,7 @@ export function EnterpriseSecuritySection() {
                 </svg>
             ),
             title: "Security-First Architecture",
-            description: "Built with industry-standard security controls.",
+            description: "Built with industry-standard security controls and tenant isolation.",
         },
         {
             icon: (
@@ -16,8 +16,8 @@ export function EnterpriseSecuritySection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 11V7a5 5 0 0110 0v4" />
                 </svg>
             ),
-            title: "SAML SSO",
-            description: "Enforce MFA at the identity provider level.",
+            title: "Multi-Factor Authentication",
+            description: "TOTP-based MFA available for all team members.",
         },
         {
             icon: (
@@ -26,8 +26,8 @@ export function EnterpriseSecuritySection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
                 </svg>
             ),
-            title: "Data Residency",
-            description: "Pin data to US, EU, or APAC regions.",
+            title: "Secure Cloud Infrastructure",
+            description: "Data hosted on managed cloud with encryption at rest and in transit.",
         },
         {
             icon: (
@@ -36,7 +36,7 @@ export function EnterpriseSecuritySection() {
                 </svg>
             ),
             title: "PII Redaction",
-            description: "Automatic masking of sensitive customer data.",
+            description: "AI detects and masks sensitive customer data automatically.",
         },
     ]
 

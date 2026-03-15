@@ -7,18 +7,18 @@ import { Button } from "./ui/Button"
 import { EnorveLogoFull } from "./ui/Logo"
 
 const productLinks = [
-    { label: "AI Copilot", href: "/product/ai-copilot", icon: Bot, description: "Autonomous resolution engine" },
-    { label: "Inbox", href: "/product/inbox", icon: Inbox, description: "Governed operations inbox" },
-    { label: "Automation", href: "/product/automation", icon: Zap, description: "Autonomous workflow execution" },
-    { label: "Knowledge Base", href: "/product/knowledge-base", icon: BookOpen, description: "Self-resolving knowledge base" },
-    { label: "Analytics", href: "/product/analytics", icon: BarChart3, description: "Operations intelligence" },
+    { label: "AI Copilot", href: "/product/ai-copilot", icon: Bot, description: "AI that answers customers for you" },
+    { label: "Inbox", href: "/product/inbox", icon: Inbox, description: "All your messages in one place" },
+    { label: "Automation", href: "/product/automation", icon: Zap, description: "Automate repetitive tasks" },
+    { label: "Knowledge Base", href: "/product/knowledge-base", icon: BookOpen, description: "Your AI's brain" },
+    { label: "Analytics", href: "/product/analytics", icon: BarChart3, description: "See how your team is performing" },
 ]
 
 const solutionLinks = [
-    { label: "Customer Support", href: "/solutions/customer-support", icon: Headphones, description: "Autonomous support operations" },
-    { label: "E-commerce", href: "/solutions/ecommerce", icon: ShoppingCart, description: "Replace support labor with AI" },
-    { label: "SaaS", href: "/solutions/saas", icon: Building2, description: "Autonomous SaaS operations" },
-    { label: "Founders", href: "/solutions/founders", icon: Rocket, description: "AI-first from day one" },
+    { label: "Customer Support", href: "/solutions/customer-support", icon: Headphones, description: "AI-first customer support" },
+    { label: "E-commerce", href: "/solutions/ecommerce", icon: ShoppingCart, description: "Faster support, happier shoppers" },
+    { label: "SaaS", href: "/solutions/saas", icon: Building2, description: "Scale support without scaling headcount" },
+    { label: "Founders", href: "/solutions/founders", icon: Rocket, description: "Support that grows with you" },
 ]
 
 const resourceLinks = [
@@ -221,7 +221,7 @@ export function Navbar() {
                             </a>
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="sm">
-                                    Request Beta Access
+                                    Start Free Trial
                                 </Button>
                             </a>
                         </div>
@@ -296,7 +296,7 @@ export function Navbar() {
                                     <a href="https://app.enorve.com/" className="block py-2 px-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-center">Login</a>
                                     <a href="https://app.enorve.com/" className="block">
                                         <Button variant="primary" size="md" className="w-full">
-                                            Request Beta Access
+                                            Start Free Trial
                                         </Button>
                                     </a>
                                 </div>

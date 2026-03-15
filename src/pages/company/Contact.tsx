@@ -156,7 +156,7 @@ export function ContactSales() {
                             <p className="text-sm text-gray-400">
                                 Just getting started?{" "}
                                 <Link to="/pricing" className="text-violet-400 hover:underline">
-                                    Request Beta Access
+                                    Start Free Trial
                                 </Link>{" "}
                                 — no sales call required.
                             </p>
@@ -225,11 +225,11 @@ export function ContactSales() {
                     className="p-8 rounded-[24px] bg-[#0C0E12] border border-white/5"
                 >
                     <h3 className="text-lg font-medium text-white mb-2">Prefer to try it yourself?</h3>
-                    <p className="text-gray-400 mb-6">You don't need a sales call to Request Beta Access.</p>
+                    <p className="text-gray-400 mb-6">You don't need a sales call to Start Free Trial.</p>
                     <div className="flex flex-wrap gap-4">
                         <Link to="/pricing">
                             <Button variant="primary">
-                                Request Beta Access
+                                Start Free Trial
                                 <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>
                         </Link>
@@ -264,7 +264,7 @@ export function ContactSales() {
                             </summary>
                             <div className="mt-4 text-gray-400 space-y-2">
                                 <p><strong className="text-white">No.</strong></p>
-                                <p>You can sign up instantly and select your plan to Request Beta Access. Payment is required to activate your account.</p>
+                                <p>You can sign up instantly and select your plan to Start Free Trial. Payment is required to activate your account.</p>
                                 <p>Sales is helpful if you're evaluating Business or Enterprise plans, need custom workflows, or have security requirements.</p>
                             </div>
                         </details>
@@ -284,7 +284,7 @@ export function ContactSales() {
                                     <li>Require SSO, audit logs, or governance controls</li>
                                     <li>Want custom integrations or pricing guidance</li>
                                 </ul>
-                                <p>Smaller teams can Request Beta Access without a call.</p>
+                                <p>Smaller teams can Start Free Trial without a call.</p>
                             </div>
                         </details>
 
@@ -317,13 +317,13 @@ export function ContactSales() {
 
                         <details className="group p-6 rounded-xl bg-[#0C0E12] border border-white/5 hover:border-white/10 transition-colors">
                             <summary className="cursor-pointer list-none flex items-start justify-between gap-4">
-                                <span className="text-white font-medium">Is Enorve SOC 2 certified?</span>
+                                <span className="text-white font-medium">How does Enorve handle security?</span>
                                 <svg className="w-5 h-5 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </summary>
                             <div className="mt-4 text-gray-400 space-y-2">
-                                <p>Enorve is aligned with SOC 2 controls and designed with security and auditability in mind. We're happy to discuss our security posture during a sales call.</p>
+                                <p>Enorve is built with security-first architecture including encryption at rest and in transit, role-based access control, MFA, and tenant isolation. We're happy to discuss our security posture during a sales call.</p>
                             </div>
                         </details>
 

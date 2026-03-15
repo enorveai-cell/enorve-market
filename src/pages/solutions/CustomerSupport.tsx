@@ -70,14 +70,14 @@ const solutions = [
 
 const outcomes = [
     { icon: TrendingUp, title: "Faster response times", value: "45s", desc: "avg first response" },
-    { icon: CheckCircle, title: "Higher resolution rates", value: "73%", desc: "auto-resolved" },
+    { icon: CheckCircle, title: "Higher resolution rates", value: "Most", desc: "conversations auto-resolved" },
     { icon: Heart, title: "Less agent burnout", value: "40%", desc: "less repetitive work" },
     { icon: Smile, title: "Better customer satisfaction", value: "4.6/5", desc: "CSAT score" }
 ]
 
 export function CustomerSupport() {
     usePageTitle({
-        title: "Customer Support Teams - Autonomous Support Solutions",
+        title: "Customer Support Teams - AI-Powered Support Solutions",
         description: "Autonomous support solutions for modern customer operations. Resolve conversations automatically, reduce response times, and scale support with AI-first automation and human oversight."
     })
     return (
@@ -107,7 +107,7 @@ export function CustomerSupport() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -227,7 +227,7 @@ export function CustomerSupport() {
                                 <div className="flex items-center gap-2">
                                     <Zap className="w-4 h-4 text-green-400" />
                                     <div>
-                                        <div className="text-xs text-white font-medium">73%</div>
+                                        <div className="text-xs text-white font-medium">AI</div>
                                         <div className="text-[10px] text-gray-400">Auto-resolved</div>
                                     </div>
                                 </div>
@@ -494,12 +494,12 @@ export function CustomerSupport() {
                             See Enorve in action for support teams
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Request Beta Access with Enorve and transform your support operations today.
+                            Start Free Trial with Enorve and transform your support operations today.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

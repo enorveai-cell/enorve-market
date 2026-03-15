@@ -31,7 +31,7 @@ const modes = [
             { name: "Internal Knowledge Search", desc: "Query your knowledge base for policies, procedures, and verified product information" },
             { name: "Verified Sources", desc: "Responses grounded in your published documentation with source citations" },
             { name: "Governance Guardrails", desc: "Insert confirmation before adding KB content to replies - never sent directly to customers" },
-            { name: "No Hallucination Risk", desc: "Returns explicit \"no match\" when no verified guidance exists (no LLM fallback)" },
+            { name: "Knowledge-Grounded Responses", desc: "Returns explicit \"no match\" when no verified guidance exists (no LLM fallback)" },
             { name: "Example Prompts", desc: "Pre-built queries like \"What is our refund policy?\" for quick access" }
         ]
     },
@@ -91,7 +91,7 @@ export function AICopilot() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -730,12 +730,12 @@ export function AICopilot() {
                             Ready to supercharge your support?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Request Beta Access with AI Copilot and experience it today.
+                            Start Free Trial with AI Copilot and experience it today.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

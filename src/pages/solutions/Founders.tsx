@@ -109,7 +109,7 @@ export function Founders() {
                         <div className="flex flex-wrap gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
@@ -585,7 +585,7 @@ export function Founders() {
                         </div>
                         <h2 className="text-3xl font-medium text-white mb-4">Built for early-stage teams</h2>
                         <p className="text-gray-400 mb-6">
-                            Request Beta Access instantly. Payment required. Pay only when you scale.
+                            Start Free Trial instantly. Payment required. Pay only when you scale.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link to="/pricing">
@@ -621,7 +621,7 @@ export function Founders() {
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>

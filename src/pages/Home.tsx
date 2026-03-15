@@ -3,7 +3,7 @@ import { GovernedAutonomySection } from "../components/sections/GovernedAutonomy
 import { PlatformSection } from "../components/sections/PlatformSection"
 import { AIEngineSection } from "../components/sections/AIEngineSection"
 import { LanguagesSection } from "../components/sections/LanguagesSection"
-import { IsometricSection } from "../components/sections/IsometricSection"
+import { FeatureGridSection } from "../components/sections/FeatureGridSection"
 import { EnterpriseSecuritySection } from "../components/sections/EnterpriseSecuritySection"
 import { ConnectStackSection } from "../components/sections/ConnectStackSection"
 import { CTASection } from "../components/sections/CTASection"
@@ -14,8 +14,8 @@ import { useStructuredData, createOrganizationSchema, createSoftwareApplicationS
 
 export function Home() {
     usePageTitle({
-        title: "Governed Autonomous AI Operations for E-commerce",
-        description: "Your AI handles support. Your team handles exceptions. Enorve autonomously resolves customer conversations across WhatsApp, Email, and Chat — with full governance, explainability, and escalation control."
+        title: "AI-Powered Customer Support for E-commerce",
+        description: "Your AI handles support. Your team handles exceptions. Enorve answers your customers' questions across WhatsApp, Email, and Chat — instantly and accurately."
     })
 
     // Add structured data for SEO
@@ -28,14 +28,14 @@ export function Home() {
         <>
             <Hero />
             <ChannelStrip />
-            <GovernedAutonomySection />
             <PlatformSection />
+            <FeatureGridSection />
             <AIEngineSection />
+            <GovernedAutonomySection />
             <LanguagesSection />
-            <IsometricSection />
-            <EnterpriseSecuritySection />
             <MidPageCTA />
             <ConnectStackSection />
+            <EnterpriseSecuritySection />
             <CTASection />
         </>
     )

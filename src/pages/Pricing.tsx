@@ -31,7 +31,7 @@ const plans = [
             { text: "Email support", included: true }
         ],
         bestFor: ["Small teams starting with autonomous operations"],
-        cta: "Request Beta Access"
+        cta: "Start Free Trial"
     },
     {
         name: "Professional",
@@ -47,14 +47,17 @@ const plans = [
             { text: "10,000 total conversations / month", included: true },
             { text: "Email, Chat & Social channels", included: true },
             { text: "AI Copilot for agents", included: true, highlight: true },
-            { text: "100+ languages (auto-detect & translate)", included: true, highlight: true },
+            { text: "Multilingual AI responses", included: true, highlight: true },
             { text: "Workflow automation", included: true },
             { text: "Advanced analytics", included: true },
             { text: "AI action execution", included: true },
+            { text: "Agent macros", included: true },
+            { text: "Conversation memory", included: true },
+            { text: "Proactive campaigns", included: true },
             { text: "Priority email support", included: true }
         ],
         bestFor: ["Growing teams replacing manual support with AI"],
-        cta: "Request Beta Access"
+        cta: "Start Free Trial"
     },
     {
         name: "Business",
@@ -69,16 +72,19 @@ const plans = [
             { text: "10,000 autonomous resolutions / month", included: true, highlight: true },
             { text: "50,000 total conversations / month", included: true },
             { text: "Omnichannel support", included: true },
-            { text: "100+ languages (auto-detect & translate)", included: true, highlight: true },
+            { text: "Multilingual AI responses", included: true, highlight: true },
             { text: "Ticketing with SLAs", included: true, highlight: true },
             { text: "AI decision explainability", included: true, highlight: true },
-            { text: "Governance engine", included: true },
+            { text: "Protocol Engine (visual AI workflows)", included: true, highlight: true },
+            { text: "Auto-QA grading", included: true },
+            { text: "Volume forecasting", included: true },
+            { text: "Developer API", included: true },
             { text: "90-day audit log retention", included: true },
             { text: "Custom branding", included: true },
             { text: "Priority phone & email support", included: true }
         ],
         bestFor: ["High-volume teams with governance requirements"],
-        cta: "Request Beta Access"
+        cta: "Start Free Trial"
     },
     {
         name: "Enterprise",
@@ -93,11 +99,11 @@ const plans = [
             { text: "50,000+ autonomous resolutions / month", included: true, highlight: true },
             { text: "200,000+ total conversations / month", included: true },
             { text: "Full omnichannel", included: true },
-            { text: "100+ languages (auto-detect & translate)", included: true, highlight: true },
+            { text: "Multilingual AI responses", included: true, highlight: true },
             { text: "Custom SLAs", included: true, highlight: true },
-            { text: "SSO / SAML", included: true, highlight: true },
+            { text: "SSO / SAML (Coming soon)", included: true, highlight: true },
             { text: "API access", included: true },
-            { text: "White-label", included: true },
+            { text: "White-label (Coming soon)", included: true },
             { text: "Dedicated account manager", included: true },
             { text: "Sales-assisted contracts", included: true }
         ],
@@ -151,14 +157,14 @@ const securityFeatures = [
     { icon: Lock, text: "Role-based access control" },
     { icon: Shield, text: "Data encryption at rest and in transit" },
     { icon: FileText, text: "Audit logging (Enterprise)" },
-    { icon: Clock, text: "99.9% uptime target" },
-    { icon: Globe, text: "Public status page" }
+    { icon: Clock, text: "High availability infrastructure" },
+    { icon: Globe, text: "Multi-factor authentication" }
 ]
 
 export function Pricing() {
     usePageTitle({
-        title: "Pricing — Autonomous Resolution Capacity",
-        description: "Plans built around autonomous resolution capacity — not feature checklists. From 500 to 50,000+ autonomously resolved conversations per month. Governed Autonomous AI Operations for E-commerce."
+        title: "Pricing — AI Customer Support Plans",
+        description: "Plans built around AI resolution capacity. From 500 to 50,000+ AI-resolved conversations per month. Choose the plan that fits your team."
     })
 
     // Add product structured data for SEO
@@ -336,18 +342,18 @@ export function Pricing() {
                                 ["Multi-channel inbox", "✓", "✓", "✓", "✓"],
                                 ["AI Auto-Resolution", "✓ (common queries)", "✓", "✓", "✓"],
                                 ["AI Copilot for agents", "—", "✓", "✓", "✓"],
-                                ["100+ languages (auto-detect & translate)", "—", "✓", "✓", "✓"],
+                                ["Multilingual AI responses", "—", "✓", "✓", "✓"],
                                 ["Workflow automation", "—", "✓", "✓", "✓"],
                                 ["Analytics & reporting", "Basic", "Advanced", "Advanced", "Custom"],
                                 ["Ticketing system", "Basic", "✓", "✓ (with SLAs)", "✓ (custom SLAs)"],
                                 ["AI action execution", "—", "✓", "✓", "✓"],
                                 ["AI decision explainability", "—", "—", "✓", "✓"],
-                                ["Governance engine", "—", "—", "✓", "✓"],
+                                ["Protocol Engine", "—", "—", "✓", "✓"],
                                 ["Audit logs", "—", "—", "90-day retention", "Extended / custom"],
-                                ["SSO / SAML", "—", "—", "—", "✓"],
-                                ["API access", "—", "—", "—", "✓"],
+                                ["SSO / SAML", "—", "—", "—", "Coming soon"],
+                                ["API access", "—", "—", "✓", "✓"],
                                 ["Custom integrations", "—", "Limited", "✓", "✓"],
-                                ["Branding / white-label", "—", "—", "Custom branding", "White-label"],
+                                ["Branding / white-label", "—", "—", "Custom branding", "Coming soon"],
                                 ["Support level", "Email", "Priority email", "Priority phone & email", "Dedicated account manager"],
                                 ["Billing", "Monthly", "Monthly", "Monthly", "Sales-assisted contracts"]
                             ].map(([feature, ...values], i) => (
@@ -642,12 +648,12 @@ export function Pricing() {
                             Let AI run your support. Stay in control.
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Choose your plan and request beta access in minutes
+                            Choose your plan and start your free trial in minutes
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="https://app.enorve.com/">
                                 <Button variant="primary" size="lg">
-                                    Request Beta Access
+                                    Start Free Trial
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Button>
                             </a>
