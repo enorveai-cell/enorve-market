@@ -27,6 +27,7 @@ import { ContactSales } from "./pages/company/Contact"
 // Legal Pages
 import { PrivacyPolicy } from "./pages/legal/PrivacyPolicy"
 import { TermsOfService } from "./pages/legal/TermsOfService"
+import { Subprocessors } from "./pages/legal/Subprocessors"
 
 // 404 Page
 import { NotFound } from "./pages/NotFound"
@@ -65,6 +66,7 @@ function App() {
           {/* Legal Routes */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/subprocessors" element={<Subprocessors />} />
 
           {/* 404 Catch-all */}
           <Route path="*" element={<NotFound />} />
