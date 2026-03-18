@@ -85,6 +85,7 @@ export function AnalyticsSection() {
                             src="/analytics-illustration.png"
                             alt="Analytics Dashboard"
                             className="w-full h-auto"
+                            loading="lazy"
                         />
                         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
                     </div>

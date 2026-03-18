@@ -98,6 +98,7 @@ export function InboxSection() {
                             src="/inbox-illustration.png"
                             alt="Unified Inbox with multiple channels"
                             className="relative w-full h-auto rounded-2xl"
+                            loading="lazy"
                         />
                     </motion.div>
                 </div>

@@ -40,6 +40,7 @@ export function CopilotSection() {
                             src="/copilot-illustration.png"
                             alt="AI Copilot suggesting responses"
                             className="relative w-full h-auto rounded-2xl"
+                            loading="lazy"
                         />
                     </motion.div>
 
