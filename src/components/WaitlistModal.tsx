@@ -65,18 +65,14 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         setStatus("loading")
 
         try {
-            const endpoint = import.meta.env.VITE_WAITLIST_ENDPOINT
-            if (endpoint) {
-                const res = await fetch(endpoint, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email }),
-                })
-                if (!res.ok && res.status !== 409) {
-                    throw new Error("Network error")
-                }
+            const res = await fetch("https://app.loops.so/api/newsletter-form/cmmz2b8ry01ri0i1o3vfeuyfy", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            })
+            if (!res.ok && res.status !== 409) {
+                throw new Error("Network error")
             }
-            // If no endpoint configured, treat as success (dev mode)
             setStatus("success")
         } catch {
             setStatus("error")
