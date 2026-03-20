@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 const kpiCards = [
     { label: "Auto-Resolve Rate", value: "73%", trend: "+8%", up: true, target: "70%", icon: Zap },
@@ -42,6 +43,7 @@ const differentiators = [
 ]
 
 export function Analytics() {
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "Analytics - Performance Insights & Metrics",
         description: "Real-time support analytics and insights. Track CSAT scores, response times, resolution rates, and team performance with comprehensive dashboards."
@@ -72,12 +74,10 @@ export function Analytics() {
                             Turn data into decisions with comprehensive analytics.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales
@@ -817,15 +817,13 @@ export function Analytics() {
                             Ready to see everything?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Start Free Trial with Enorve and unlock comprehensive analytics for your support team.
+                            Join the waitlist and unlock comprehensive analytics for your support team.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales

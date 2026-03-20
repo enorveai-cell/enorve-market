@@ -9,6 +9,7 @@ import {
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 const channels = [
     {
@@ -102,6 +103,7 @@ const workflowFeatures = [
 ]
 
 export function Inbox() {
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "Unified Inbox - All Channels in One Place",
         description: "Unified omnichannel inbox for modern support teams. Manage email, live chat, WhatsApp, Instagram, and more from one powerful, organized interface."
@@ -132,12 +134,10 @@ export function Inbox() {
                             Smart signals, keyboard shortcuts, and AI-powered prioritization.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales
@@ -783,15 +783,13 @@ export function Inbox() {
                             Ready to unify your inbox?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Start Free Trial with Enorve and bring all your channels together.
+                            Join the waitlist and bring all your channels together.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales

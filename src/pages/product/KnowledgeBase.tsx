@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 const ingestionSources = [
     {
@@ -53,6 +54,7 @@ const differentiators = [
 ]
 
 export function KnowledgeBase() {
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "Knowledge Base - Self-Resolving Help Center",
         description: "Self-service knowledge base that reduces support volume. Governance-first articles, instant answers, and searchable documentation for AI-powered customer support."
@@ -83,12 +85,10 @@ export function KnowledgeBase() {
                             Multi-source ingestion, AI suggestions, and real-time impact measurement.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales
@@ -712,15 +712,13 @@ export function KnowledgeBase() {
                             Ready to power your AI?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Start Free Trial with Enorve and build your knowledge base today.
+                            Join the waitlist and build your knowledge base today.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Sparkles, Users, Zap } from "lucide-react"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 const capabilities = [
     {
@@ -29,6 +30,7 @@ const capabilities = [
 ]
 
 export function TestimonialsSection() {
+    const { openWaitlist } = useWaitlist()
     return (
         <section className="py-32 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
@@ -80,13 +82,13 @@ export function TestimonialsSection() {
                     viewport={{ once: true }}
                     className="text-center"
                 >
-                    <a
-                        href="https://app.enorve.com/"
-                        className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 font-medium transition-colors"
+                    <button
+                        onClick={openWaitlist}
+                        className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 font-medium transition-colors cursor-pointer"
                     >
-                        Start your free trial
+                        Join the waitlist
                         <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </button>
                 </motion.div>
             </div>
         </section>

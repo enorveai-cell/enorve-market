@@ -7,6 +7,7 @@ import {
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 const helpTopics = [
     {
@@ -52,6 +53,7 @@ const volumeOptions = ["< 1,000", "1,000 - 10,000", "10,000 - 50,000", "50,000+"
 const lookingForOptions = ["Product Demo", "Pricing Discussion", "Enterprise Requirements", "Other"]
 
 export function ContactSales() {
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "Contact Sales - Talk to Our Team",
         description: "Get in touch with Enorve. Sales inquiries, support questions, or partnership opportunities - we're here to help your business succeed."
@@ -155,9 +157,9 @@ export function ContactSales() {
                             </div>
                             <p className="text-sm text-gray-400">
                                 Just getting started?{" "}
-                                <Link to="/pricing" className="text-violet-400 hover:underline">
-                                    Start Free Trial
-                                </Link>{" "}
+                                <button onClick={openWaitlist} className="text-violet-400 hover:underline cursor-pointer">
+                                    Join the waitlist
+                                </button>{" "}
                                 — no sales call required.
                             </p>
                         </motion.div>
@@ -225,14 +227,12 @@ export function ContactSales() {
                     className="p-8 rounded-[24px] bg-[#0C0E12] border border-white/5"
                 >
                     <h3 className="text-lg font-medium text-white mb-2">Prefer to try it yourself?</h3>
-                    <p className="text-gray-400 mb-6">You don't need a sales call to Start Free Trial.</p>
+                    <p className="text-gray-400 mb-6">Join the waitlist — no sales call required.</p>
                     <div className="flex flex-wrap gap-4">
-                        <Link to="/pricing">
-                            <Button variant="primary">
-                                Start Free Trial
-                                <ArrowRight className="w-4 h-4 ml-2" />
-                            </Button>
-                        </Link>
+                        <Button variant="primary" onClick={openWaitlist}>
+                            Join the waitlist
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
                         <Link to="/pricing">
                             <Button variant="secondary">
                                 View pricing
@@ -264,7 +264,7 @@ export function ContactSales() {
                             </summary>
                             <div className="mt-4 text-gray-400 space-y-2">
                                 <p><strong className="text-white">No.</strong></p>
-                                <p>You can sign up instantly and select your plan to Start Free Trial. Payment is required to activate your account.</p>
+                                <p>You can join the waitlist to get early access when we launch. No payment required to reserve your spot.</p>
                                 <p>Sales is helpful if you're evaluating Business or Enterprise plans, need custom workflows, or have security requirements.</p>
                             </div>
                         </details>
@@ -284,7 +284,7 @@ export function ContactSales() {
                                     <li>Require SSO, audit logs, or governance controls</li>
                                     <li>Want custom integrations or pricing guidance</li>
                                 </ul>
-                                <p>Smaller teams can Start Free Trial without a call.</p>
+                                <p>Smaller teams can join the waitlist without a call.</p>
                             </div>
                         </details>
 

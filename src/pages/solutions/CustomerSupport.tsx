@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 const painPoints = [
     { icon: Users, text: "Agents are overwhelmed by volume", color: "#EF4444" },
@@ -76,6 +77,7 @@ const outcomes = [
 ]
 
 export function CustomerSupport() {
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "Customer Support Teams - AI-Powered Support Solutions",
         description: "Autonomous support solutions for modern customer operations. Resolve conversations automatically, reduce response times, and scale support with AI-first automation and human oversight."
@@ -105,12 +107,10 @@ export function CustomerSupport() {
                             Your agents are overwhelmed. AI Copilot helps them respond faster, while Auto-Resolution handles the easy ones automatically.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales
@@ -494,15 +494,13 @@ export function CustomerSupport() {
                             See Enorve in action for support teams
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Start Free Trial with Enorve and transform your support operations today.
+                            Join the waitlist and transform your support operations today.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales

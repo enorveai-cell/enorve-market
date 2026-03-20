@@ -1,4 +1,7 @@
+import { useWaitlist } from "../hooks/useWaitlist"
+
 export function Hero() {
+    const { openWaitlist } = useWaitlist()
     const threads = [
         { initials: "NG", name: "Neha Gupta", time: "18m", msg: "Following up on my Instagram DM regarding delayed shipment." },
         { initials: "AP", name: "Ananya Patel", time: "1h", msg: "Received wrong variant. Order ID EN-99821." },
@@ -32,23 +35,32 @@ export function Hero() {
                 </h1>
 
                 {/* Subheadline */}
-                <p className="animate-fade-in-up delay-200 text-sm md:text-2xl font-normal text-gray-300 max-w-3xl mx-auto mb-6 md:mb-10 leading-relaxed px-4 md:px-0">
+                <p className="animate-fade-in-up delay-200 text-sm md:text-2xl font-normal text-gray-300 max-w-3xl mx-auto mb-4 md:mb-6 leading-relaxed px-4 md:px-0">
                     Enorve answers your customers' questions across WhatsApp, Email, and Chat — instantly and accurately.
                     <br className="hidden md:block" />
                     {" "}When things get complex, your team takes over seamlessly.
                 </p>
 
+                {/* Early access line */}
+                <p className="animate-fade-in-up delay-250 flex items-center justify-center gap-2 text-[13px] md:text-sm text-gray-400 mb-6 md:mb-10">
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+                    </span>
+                    Early access opening soon — join the waitlist for priority access.
+                </p>
+
                 {/* CTAs */}
                 <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-                    <a href="https://app.enorve.com/" className="bg-white text-black font-medium text-base h-12 px-8 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transform hover:scale-105 flex items-center justify-center w-full sm:w-auto">
-                        Start Free Trial
-                    </a>
-                    <a href="#demo" className="group flex items-center justify-center gap-2 text-white font-medium text-base h-12 px-8 rounded-full border border-white/20 hover:bg-white/10 transition-all w-full sm:w-auto">
-                        Watch Demo
+                    <button onClick={openWaitlist} className="bg-white text-black font-medium text-base h-12 px-8 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transform hover:scale-105 flex items-center justify-center w-full sm:w-auto cursor-pointer">
+                        Join the waitlist
+                    </button>
+                    <button onClick={openWaitlist} className="group flex items-center justify-center gap-2 text-white font-medium text-base h-12 px-8 rounded-full border border-white/20 hover:bg-white/10 transition-all w-full sm:w-auto cursor-pointer">
+                        Get early access
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
                             <path d="m9 18 6-6-6-6" />
                         </svg>
-                    </a>
+                    </button>
                 </div>
 
                 {/* Interactive UI Mockup */}

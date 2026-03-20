@@ -8,6 +8,7 @@ import {
 import { Button } from "../components/ui/Button"
 import { useState } from "react"
 import { usePageTitle } from "../hooks/usePageTitle"
+import { useWaitlist } from "../hooks/useWaitlist"
 import { useStructuredData, createProductSchema } from "../hooks/useStructuredData"
 import { ROIWidget } from "../components/roi/ROIWidget"
 
@@ -31,7 +32,7 @@ const plans = [
             { text: "Email support", included: true }
         ],
         bestFor: ["Small teams starting with autonomous operations"],
-        cta: "Start Free Trial"
+        cta: "Join the waitlist"
     },
     {
         name: "Professional",
@@ -57,7 +58,7 @@ const plans = [
             { text: "Priority email support", included: true }
         ],
         bestFor: ["Growing teams replacing manual support with AI"],
-        cta: "Start Free Trial"
+        cta: "Join the waitlist"
     },
     {
         name: "Business",
@@ -84,7 +85,7 @@ const plans = [
             { text: "Priority phone & email support", included: true }
         ],
         bestFor: ["High-volume teams with governance requirements"],
-        cta: "Start Free Trial"
+        cta: "Join the waitlist"
     },
     {
         name: "Enterprise",
@@ -137,7 +138,7 @@ const faqs = [
     },
     {
         question: "How does signup work?",
-        answer: "Sign up instantly and select your plan. Payment is required to activate your account and start using Enorve. No long-term contracts required."
+        answer: "Join the waitlist now to get early access when we launch. You'll be first in line to select your plan and start using Enorve. No long-term contracts required."
     },
     {
         question: "How does billing work?",
@@ -162,6 +163,7 @@ const securityFeatures = [
 ]
 
 export function Pricing() {
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "Pricing — AI Customer Support Plans",
         description: "Plans built around AI resolution capacity. From 500 to 50,000+ AI-resolved conversations per month. Choose the plan that fits your team."
@@ -277,15 +279,14 @@ export function Pricing() {
                                 </div>
                             </div>
 
-                            <a href="https://app.enorve.com/" className="block w-full">
-                                <Button
-                                    variant={plan.popular ? "primary" : "secondary"}
-                                    className={`w-full ${plan.popular ? "bg-gradient-to-r from-violet-500 to-purple-600 shadow-[0_0_25px_rgba(139,92,246,0.4)] hover:shadow-[0_0_35px_rgba(139,92,246,0.5)]" : ""}`}
-                                >
-                                    {plan.cta}
-                                    <ArrowRight className="w-4 h-4 ml-2" />
-                                </Button>
-                            </a>
+                            <Button
+                                variant={plan.popular ? "primary" : "secondary"}
+                                className={`w-full ${plan.popular ? "bg-gradient-to-r from-violet-500 to-purple-600 shadow-[0_0_25px_rgba(139,92,246,0.4)] hover:shadow-[0_0_35px_rgba(139,92,246,0.5)]" : ""}`}
+                                onClick={openWaitlist}
+                            >
+                                {plan.cta}
+                                <ArrowRight className="w-4 h-4 ml-2" />
+                            </Button>
                         </motion.div>
                     ))}
                 </div>
@@ -648,15 +649,13 @@ export function Pricing() {
                             Let AI run your support. Stay in control.
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Choose your plan and start your free trial in minutes
+                            Join the waitlist and get priority access when we launch.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
-                                    <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                Join the waitlist
+                                <ArrowRight className="w-5 h-5 ml-2" />
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Contact Sales

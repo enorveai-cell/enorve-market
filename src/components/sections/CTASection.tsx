@@ -2,8 +2,10 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom"
 import { GlowButton, Button } from "../ui/Button"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 export function CTASection() {
+    const { openWaitlist } = useWaitlist()
     return (
         <section className="py-32 relative overflow-hidden">
             {/* Background effects */}
@@ -32,11 +34,9 @@ export function CTASection() {
 
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                        <a href="https://app.enorve.com/">
-                            <GlowButton>
-                                Start Free Trial
-                            </GlowButton>
-                        </a>
+                        <GlowButton onClick={openWaitlist}>
+                            Join the waitlist
+                        </GlowButton>
                         <Link to="/contact-sales">
                             <Button variant="outline" size="lg">
                                 Talk to Sales

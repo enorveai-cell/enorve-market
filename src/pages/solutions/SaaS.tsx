@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 const painPoints = [
     { icon: MessageSquare, text: "Long, complex conversations", color: "#8B5CF6" },
@@ -85,6 +86,7 @@ const enterpriseFeatures = [
 ]
 
 export function SaaS() {
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "SaaS Companies - Technical Support at Scale",
         description: "Technical support software for SaaS companies. Scale customer success with AI, knowledge bases, and integrations built for fast-growing products."
@@ -114,12 +116,10 @@ export function SaaS() {
                             Support users across trials, onboarding, and production. AI that understands technical conversations and knowledge that stays fresh.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales
@@ -604,15 +604,13 @@ export function SaaS() {
                             Build scalable SaaS support
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Start Free Trial with Enorve and see how AI can transform your technical support.
+                            Join the waitlist and see how AI can transform your technical support.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales

@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
+import { useWaitlist } from "../../hooks/useWaitlist"
 
 const capabilities = [
     {
@@ -137,6 +138,7 @@ const differentiators = [
 ]
 
 export function Automation() {
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "Automation - Workflows & Intelligent Routing",
         description: "Intelligent workflow automation for customer support. Route tickets, assign agents, and resolve common issues automatically with AI-powered workflows."
@@ -167,12 +169,10 @@ export function Automation() {
                             Build sophisticated automations without writing a single line of code.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales
@@ -731,15 +731,13 @@ export function Automation() {
                             Ready to automate your support?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Start Free Trial with Enorve and build your first workflow in minutes.
+                            Join the waitlist and build your first workflow in minutes.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://app.enorve.com/">
-                                <Button variant="primary" size="lg">
-                                    Start Free Trial
+                            <Button variant="primary" size="lg" onClick={openWaitlist}>
+                                    Join the waitlist
                                     <ArrowRight className="w-5 h-5 ml-2" />
-                                </Button>
-                            </a>
+                            </Button>
                             <Link to="/contact-sales">
                                 <Button variant="secondary" size="lg">
                                     Talk to sales

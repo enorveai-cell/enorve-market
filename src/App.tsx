@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { MainLayout } from "./layouts/MainLayout"
 import { ScrollToTop } from "./components/ScrollToTop"
+import { WaitlistProvider } from "./hooks/useWaitlist"
 import { Home } from "./pages/Home"
 
 // Product Pages
@@ -35,6 +36,7 @@ import { NotFound } from "./pages/NotFound"
 function App() {
   return (
     <BrowserRouter>
+      <WaitlistProvider>
       <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
@@ -72,6 +74,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      </WaitlistProvider>
     </BrowserRouter>
   )
 }
