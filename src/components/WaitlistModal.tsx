@@ -65,10 +65,13 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         setStatus("loading")
 
         try {
+            const formBody = new URLSearchParams()
+            formBody.append("email", email)
+
             const res = await fetch("https://app.loops.so/api/newsletter-form/cmmz2b8ry01ri0i1o3vfeuyfy", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: formBody.toString(),
             })
             if (!res.ok && res.status !== 409) {
                 throw new Error("Network error")
