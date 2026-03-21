@@ -45,7 +45,8 @@ const modes = [
             { name: "Conversation Snapshot", desc: "AI-generated summary showing customer goal, resolved items, and pending actions" },
             { name: "Readiness Status", desc: "Visual indicator showing \"Ready to close\", \"Awaiting customer\", or \"Needs follow-up\"" },
             { name: "Internal Notes Integration", desc: "Displays tags and agent notes alongside AI analysis" },
-            { name: "One-Click Refresh", desc: "Regenerate summary as conversation evolves" }
+            { name: "One-Click Refresh", desc: "Regenerate summary as conversation evolves" },
+            { name: "Cross-Conversation Memory", desc: "AI carries customer context across sessions — preferences, past issues, and sentiment — so every interaction picks up where the last left off" }
         ]
     }
 ]
@@ -56,7 +57,8 @@ const differentiators = [
     { title: "Governance-First Design", desc: "Confirmation dialogs, audit trails, and quality controls built-in", icon: Lock },
     { title: "Three Specialized Modes", desc: "Purpose-built interfaces for different agent needs", icon: Sparkles },
     { title: "Rich Analytics", desc: "Measure ROI with detailed usage and adoption metrics", icon: BarChart3 },
-    { title: "Real-Time Intelligence", desc: "Live sentiment, intent, and risk analysis as conversations unfold", icon: TrendingUp }
+    { title: "Real-Time Intelligence", desc: "Live sentiment, intent, and risk analysis as conversations unfold", icon: TrendingUp },
+    { title: "Contextual Autonomy", desc: "AI adapts tone and actions to each customer's history — empathetic with at-risk accounts, proactive with loyal ones", icon: Brain }
 ]
 
 export function AICopilot() {

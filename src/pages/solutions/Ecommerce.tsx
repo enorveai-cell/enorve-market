@@ -57,12 +57,13 @@ const replacements = [
         capability: "Policy-Governed Resolution",
         color: "#8B5CF6",
         icon: RefreshCw,
-        what: "AI applies your return policy consistently — checks eligibility, initiates the return, confirms the refund. No human needed.",
+        what: "AI applies your return policy consistently — checks eligibility, initiates the return, confirms the refund. For repeat customers, it adapts: more generous with loyal buyers, more careful with edge cases.",
         laborSaved: "Eliminates ~20% of all support FTEs",
         capabilities: [
             "Return eligibility checks against your policy rules",
             "Automated return label generation",
-            "Refund status communication through resolution"
+            "Refund status communication through resolution",
+            "Context-aware handling based on customer history and value"
         ]
     },
     {

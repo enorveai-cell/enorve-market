@@ -39,7 +39,8 @@ const solutions = [
         capabilities: [
             "Suggested replies based on conversation + knowledge",
             "AI summaries for long threads",
-            "Sentiment and intent detection"
+            "Sentiment and intent detection",
+            "Cross-conversation memory — AI knows each customer's full history"
         ],
         impact: "Faster replies, consistent tone, less mental load"
     },

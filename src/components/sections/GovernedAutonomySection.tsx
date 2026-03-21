@@ -18,7 +18,7 @@ const pillars = [
             </svg>
         ),
         title: "Remembers Every Customer",
-        description: "Your AI remembers past conversations, order history, and preferences — so customers never have to repeat themselves.",
+        description: "Your AI knows each customer across every conversation — their history, preferences, and open issues. It uses that context to act: leading with empathy for at-risk customers, offering extras for loyal ones, and resolving routine issues without being asked.",
         color: "#F59E0B",
     },
     {
@@ -167,6 +167,7 @@ export function GovernedAutonomySection() {
                                 <div className="flex items-center gap-2"><span className="text-green-400">✓</span> AI answers instantly, 24/7</div>
                                 <div className="flex items-center gap-2"><span className="text-green-400">✓</span> Consistent, on-brand responses</div>
                                 <div className="flex items-center gap-2"><span className="text-green-400">✓</span> Full analytics and quality scoring</div>
+                                <div className="flex items-center gap-2"><span className="text-green-400">✓</span> AI gets smarter about each customer over time</div>
                             </div>
                         </div>
                     </div>
