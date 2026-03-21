@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "../lib/utils"
-import { Menu, X, ChevronDown, Bot, Inbox, Zap, BookOpen, BarChart3, Headphones, ShoppingCart, Building2, Rocket } from "lucide-react"
+import { Menu, X, ChevronDown, Bot, Inbox, Zap, BookOpen, BarChart3, Headphones, ShoppingCart, Building2, Rocket, Workflow } from "lucide-react"
 import { Button } from "./ui/Button"
 import { EnorveLogoFull } from "./ui/Logo"
 import { useWaitlist } from "../hooks/useWaitlist"
@@ -13,6 +13,7 @@ const productLinks = [
     { label: "Automation", href: "/product/automation", icon: Zap, description: "Automate repetitive tasks" },
     { label: "Knowledge Base", href: "/product/knowledge-base", icon: BookOpen, description: "Your AI's brain" },
     { label: "Analytics", href: "/product/analytics", icon: BarChart3, description: "See how your team is performing" },
+    { label: "Protocol Engine", href: "/product/protocols", icon: Workflow, description: "Visual AI conversation workflows" },
 ]
 
 const solutionLinks = [

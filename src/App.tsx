@@ -10,6 +10,7 @@ import { Inbox } from "./pages/product/Inbox"
 import { Automation } from "./pages/product/Automation"
 import { KnowledgeBase } from "./pages/product/KnowledgeBase"
 import { Analytics } from "./pages/product/Analytics"
+import { Protocols } from "./pages/product/Protocols"
 
 // Solutions Pages
 import { CustomerSupport } from "./pages/solutions/CustomerSupport"
@@ -49,6 +50,7 @@ function App() {
           <Route path="/product/automation" element={<Automation />} />
           <Route path="/product/knowledge-base" element={<KnowledgeBase />} />
           <Route path="/product/analytics" element={<Analytics />} />
+          <Route path="/product/protocols" element={<Protocols />} />
 
           {/* Solutions Routes */}
           <Route path="/solutions/customer-support" element={<CustomerSupport />} />

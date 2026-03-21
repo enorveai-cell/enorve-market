@@ -10,6 +10,7 @@ const footerLinks = {
             { label: "Automation", href: "/product/automation" },
             { label: "Knowledge Base", href: "/product/knowledge-base" },
             { label: "Analytics", href: "/product/analytics" },
+            { label: "Protocol Engine", href: "/product/protocols" },
         ]
     },
     solutions: {
