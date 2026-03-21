@@ -321,3 +321,17 @@
   background-image: radial-gradient(#facf39 1px, transparent 1px);
   background-size: 30px 30px;
 }
+
+/* ============================================
+   REDUCED MOTION — WCAG 2.1 AA compliance
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

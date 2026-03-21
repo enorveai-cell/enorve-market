@@ -36,12 +36,15 @@ export function CopilotSection() {
                         className="relative order-2 lg:order-1"
                     >
                         <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-indigo-500/20 to-blue-500/20 rounded-3xl blur-3xl opacity-40" />
-                        <img
-                            src="/copilot-illustration.png"
-                            alt="AI Copilot suggesting responses"
-                            className="relative w-full h-auto rounded-2xl"
-                            loading="lazy"
-                        />
+                        <picture>
+                            <source srcSet="/copilot-illustration.webp" type="image/webp" />
+                            <img
+                                src="/copilot-illustration.png"
+                                alt="AI Copilot suggesting responses"
+                                className="relative w-full h-auto rounded-2xl"
+                                loading="lazy"
+                            />
+                        </picture>
                     </motion.div>
 
                     {/* Content - right side */}

@@ -80,6 +80,8 @@ export function Navbar() {
                             >
                                 <button
                                     className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-default"
+                                    aria-expanded={activeDropdown === 'product'}
+                                    aria-haspopup="true"
                                 >
                                     Product
                                     <ChevronDown className={cn("w-4 h-4 transition-transform", activeDropdown === 'product' && "rotate-180")} />
@@ -91,6 +93,7 @@ export function Navbar() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: 10 }}
                                             transition={{ duration: 0.15 }}
+                                            role="menu"
                                             className="absolute top-full left-0 mt-2 w-80 p-4 rounded-2xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-2xl"
                                         >
                                             <div className="grid gap-1">
@@ -98,6 +101,7 @@ export function Navbar() {
                                                     <Link
                                                         key={link.href}
                                                         to={link.href}
+                                                        role="menuitem"
                                                         className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group"
                                                     >
                                                         <div className="w-9 h-9 rounded-lg bg-violet-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-violet-500/20 transition-colors">
@@ -123,6 +127,8 @@ export function Navbar() {
                             >
                                 <button
                                     className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-default"
+                                    aria-expanded={activeDropdown === 'solutions'}
+                                    aria-haspopup="true"
                                 >
                                     Solutions
                                     <ChevronDown className={cn("w-4 h-4 transition-transform", activeDropdown === 'solutions' && "rotate-180")} />
@@ -134,6 +140,7 @@ export function Navbar() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: 10 }}
                                             transition={{ duration: 0.15 }}
+                                            role="menu"
                                             className="absolute top-full left-0 mt-2 w-72 p-4 rounded-2xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-2xl"
                                         >
                                             <div className="grid gap-1">
@@ -141,6 +148,7 @@ export function Navbar() {
                                                     <Link
                                                         key={link.href}
                                                         to={link.href}
+                                                        role="menuitem"
                                                         className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group"
                                                     >
                                                         <div className="w-9 h-9 rounded-lg bg-violet-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-violet-500/20 transition-colors">
@@ -174,6 +182,8 @@ export function Navbar() {
                             >
                                 <button
                                     className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 cursor-default"
+                                    aria-expanded={activeDropdown === 'resources'}
+                                    aria-haspopup="true"
                                 >
                                     Resources
                                     <ChevronDown className={cn("w-4 h-4 transition-transform", activeDropdown === 'resources' && "rotate-180")} />
@@ -185,6 +195,7 @@ export function Navbar() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: 10 }}
                                             transition={{ duration: 0.15 }}
+                                            role="menu"
                                             className="absolute top-full left-0 mt-2 w-48 p-3 rounded-2xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-2xl"
                                         >
                                             <div className="grid gap-1">
@@ -194,6 +205,7 @@ export function Navbar() {
                                                         href={link.href}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
+                                                        role="menuitem"
                                                         className="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                                                     >
                                                         {link.label}

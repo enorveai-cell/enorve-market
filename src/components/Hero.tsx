@@ -45,7 +45,7 @@ export function Hero() {
 
                 {/* CTAs */}
                 <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button onClick={openWaitlist} className="bg-white text-black font-medium text-base h-12 px-8 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transform hover:scale-105 flex items-center justify-center w-full sm:w-auto cursor-pointer">
+                    <button onClick={openWaitlist} className="bg-white text-black font-medium text-base h-12 px-8 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] hover:brightness-110 flex items-center justify-center w-full sm:w-auto cursor-pointer">
                         Join the waitlist
                     </button>
                     <button onClick={openWaitlist} className="group flex items-center justify-center gap-2 text-white font-medium text-base h-12 px-8 rounded-full border border-white/20 hover:bg-white/10 transition-all w-full sm:w-auto cursor-pointer">

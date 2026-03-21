@@ -94,12 +94,15 @@ export function InboxSection() {
                         className="relative"
                     >
                         <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 via-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl opacity-40" />
-                        <img
-                            src="/inbox-illustration.png"
-                            alt="Unified Inbox with multiple channels"
-                            className="relative w-full h-auto rounded-2xl"
-                            loading="lazy"
-                        />
+                        <picture>
+                            <source srcSet="/inbox-illustration.webp" type="image/webp" />
+                            <img
+                                src="/inbox-illustration.png"
+                                alt="Unified Inbox with multiple channels"
+                                className="relative w-full h-auto rounded-2xl"
+                                loading="lazy"
+                            />
+                        </picture>
                     </motion.div>
                 </div>
             </div>
