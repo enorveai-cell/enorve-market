@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile"
 import { cn } from "../lib/utils"
 
 interface WaitlistModalProps {
@@ -12,17 +13,54 @@ type FormStatus = "idle" | "loading" | "success" | "error"
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || "1x00000000000000000000AA" // test key fallback
+
+// Disposable email domains — blocks throwaway signups
+const DISPOSABLE_DOMAINS = new Set([
+    "mailinator.com", "guerrillamail.com", "guerrillamail.de", "grr.la",
+    "guerrillamailblock.com", "tempmail.com", "temp-mail.org", "throwaway.email",
+    "yopmail.com", "sharklasers.com", "guerrillamail.info", "guerrillamail.net",
+    "trashmail.com", "trashmail.me", "trashmail.net", "dispostable.com",
+    "maildrop.cc", "mailnesia.com", "tempail.com", "tempr.email",
+    "discard.email", "discardmail.com", "fakeinbox.com", "mailcatch.com",
+    "mintemail.com", "mohmal.com", "mytemp.email", "harakirimail.com",
+    "jetable.org", "nospam.ze.tc", "mailforspam.com", "safetymail.info",
+    "10minutemail.com", "10minutemail.net", "20minutemail.com",
+    "getnada.com", "emailondeck.com", "mailsac.com", "burnermail.io",
+    "inboxkitten.com", "33mail.com",
+])
+
+// Rate limit: one submission per 60 seconds (client-side)
+const COOLDOWN_KEY = "enorve_waitlist_last"
+const COOLDOWN_MS = 60_000
+
+function isOnCooldown(): boolean {
+    const last = localStorage.getItem(COOLDOWN_KEY)
+    if (!last) return false
+    return Date.now() - parseInt(last, 10) < COOLDOWN_MS
+}
+
+function setCooldown(): void {
+    localStorage.setItem(COOLDOWN_KEY, Date.now().toString())
+}
+
+function isDisposableEmail(email: string): boolean {
+    const domain = email.split("@")[1]?.toLowerCase()
+    return domain ? DISPOSABLE_DOMAINS.has(domain) : false
+}
+
 export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
     const [email, setEmail] = useState("")
     const [status, setStatus] = useState<FormStatus>("idle")
     const [errorMessage, setErrorMessage] = useState("")
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
     const inputRef = useRef<HTMLInputElement>(null)
+    const turnstileRef = useRef<TurnstileInstance>(null)
 
     // Lock body scroll when open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden"
-            // Focus input after animation
             setTimeout(() => inputRef.current?.focus(), 250)
         } else {
             document.body.style.overflow = ""
@@ -45,19 +83,39 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
 
     const handleClose = useCallback(() => {
         onClose()
-        // Reset after close animation
         setTimeout(() => {
             setEmail("")
             setStatus("idle")
             setErrorMessage("")
+            setTurnstileToken(null)
+            turnstileRef.current?.reset()
         }, 300)
     }, [onClose])
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
 
+        // Layer 1: Basic validation
         if (!EMAIL_REGEX.test(email)) {
             setErrorMessage("Please enter a valid email address.")
+            return
+        }
+
+        // Layer 2: Disposable email blocking
+        if (isDisposableEmail(email)) {
+            setErrorMessage("Please use a work or personal email — disposable addresses aren't accepted.")
+            return
+        }
+
+        // Layer 3: Client-side rate limiting
+        if (isOnCooldown()) {
+            setErrorMessage("You've already submitted — check your inbox.")
+            return
+        }
+
+        // Layer 4: Turnstile verification
+        if (!turnstileToken) {
+            setErrorMessage("Verifying you're human — please wait a moment.")
             return
         }
 
@@ -76,10 +134,13 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             if (!res.ok && res.status !== 409) {
                 throw new Error("Network error")
             }
+            setCooldown()
             setStatus("success")
         } catch {
             setStatus("error")
             setErrorMessage("Something went wrong — please try again.")
+            turnstileRef.current?.reset()
+            setTurnstileToken(null)
         }
     }
 
@@ -109,14 +170,13 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                         {/* Close button */}
                         <button
                             onClick={handleClose}
-                            className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                            className="absolute top-4 right-4 w-8 h-4 flex items-center justify-center text-gray-500 hover:text-white transition-colors rounded-lg hover:bg-white/5"
                             aria-label="Close"
                         >
                             <X className="w-4 h-4" />
                         </button>
 
                         {status === "success" ? (
-                            /* Success State */
                             <div className="text-center py-4">
                                 <div className="w-12 h-12 rounded-full bg-green-500/15 flex items-center justify-center mx-auto mb-4">
                                     <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +187,6 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                 <p className="text-sm text-gray-400">We'll be in touch as soon as early access opens.</p>
                             </div>
                         ) : (
-                            /* Form State */
                             <>
                                 {/* Badge */}
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 mb-5">
@@ -165,6 +224,16 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                             <p className="text-xs text-red-400 mt-1.5">{errorMessage}</p>
                                         )}
                                     </div>
+
+                                    {/* Invisible Turnstile — no checkbox, renders nothing visible */}
+                                    <Turnstile
+                                        ref={turnstileRef}
+                                        siteKey={TURNSTILE_SITE_KEY}
+                                        options={{ size: "invisible", theme: "dark" }}
+                                        onSuccess={setTurnstileToken}
+                                        onError={() => setTurnstileToken(null)}
+                                        onExpire={() => setTurnstileToken(null)}
+                                    />
 
                                     <button
                                         type="submit"
