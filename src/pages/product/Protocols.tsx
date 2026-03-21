@@ -9,10 +9,51 @@ import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
 import { useWaitlist } from "../../hooks/useWaitlist"
 
-const phases = [
+const phaseColors = {
+    cyan: {
+        iconBg: "bg-cyan-500/10",
+        iconBorder: "border-cyan-500/20",
+        text: "text-cyan-400",
+        checkText: "text-cyan-400",
+        dotBg: "bg-cyan-400",
+    },
+    amber: {
+        iconBg: "bg-amber-500/10",
+        iconBorder: "border-amber-500/20",
+        text: "text-amber-400",
+        checkText: "text-amber-400",
+        dotBg: "bg-amber-400",
+    },
+    emerald: {
+        iconBg: "bg-emerald-500/10",
+        iconBorder: "border-emerald-500/20",
+        text: "text-emerald-400",
+        checkText: "text-emerald-400",
+        dotBg: "bg-emerald-400",
+    },
+    violet: {
+        iconBg: "bg-violet-500/10",
+        iconBorder: "border-violet-500/20",
+        text: "text-violet-400",
+        checkText: "text-violet-400",
+        dotBg: "bg-violet-400",
+    },
+} as const
+
+type PhaseColor = keyof typeof phaseColors
+
+const phases: {
+    title: string
+    subtitle: string
+    description: string
+    icon: typeof GitBranch
+    color: PhaseColor
+    features: { name: string; desc: string }[]
+}[] = [
     {
         title: "Design",
         subtitle: "Visual Protocol Builder",
+        description: "Build AI conversation flows the way you'd draw them on a whiteboard. Define what happens at every step — greet, classify, branch, call an API, escalate — without writing a single line of code.",
         icon: GitBranch,
         color: "cyan",
         features: [
@@ -26,6 +67,7 @@ const phases = [
     {
         title: "Test",
         subtitle: "Adversarial Simulator",
+        description: "Before your protocol goes live, three AI personas try to break it. They demand refunds outside policy, go off-topic, and push for exceptions — so you can fix problems before real customers find them.",
         icon: Shield,
         color: "amber",
         features: [
@@ -39,6 +81,7 @@ const phases = [
     {
         title: "Deploy",
         subtitle: "Production Runtime",
+        description: "Publish your protocol and it starts handling matching conversations immediately. Routing rules decide which protocol fires based on intent, channel, or tags — with human-in-the-loop for sensitive actions.",
         icon: Play,
         color: "emerald",
         features: [
@@ -52,6 +95,7 @@ const phases = [
     {
         title: "Observe",
         subtitle: "Protocol Analytics",
+        description: "Track how every protocol performs in production. Health scores, turn distributions, termination breakdowns — everything you need to know whether your AI is doing its job.",
         icon: BarChart3,
         color: "violet",
         features: [
@@ -181,14 +225,14 @@ export function Protocols() {
                                     </div>
 
                                     {/* Branch outputs */}
-                                    <div className="flex gap-4 ml-8">
+                                    <div className="flex flex-wrap gap-3 ml-8">
                                         <div className="flex items-center gap-2 bg-emerald-500/5 border border-emerald-500/10 rounded-lg px-3 py-2">
-                                            <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
-                                            <span className="text-[11px] text-emerald-400 font-medium">Yes: Call refund API</span>
+                                            <CheckCircle className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                                            <span className="text-[11px] text-emerald-400 font-medium whitespace-nowrap">Yes: Call refund API</span>
                                         </div>
                                         <div className="flex items-center gap-2 bg-red-500/5 border border-red-500/10 rounded-lg px-3 py-2">
-                                            <AlertTriangle className="w-3.5 h-3.5 text-red-400" />
-                                            <span className="text-[11px] text-red-400 font-medium">No: Escalate to agent</span>
+                                            <AlertTriangle className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
+                                            <span className="text-[11px] text-red-400 font-medium whitespace-nowrap">No: Escalate to agent</span>
                                         </div>
                                     </div>
 
@@ -243,42 +287,46 @@ export function Protocols() {
                     </p>
                 </motion.div>
 
-                <div className="space-y-20">
-                    {phases.map((phase, phaseIdx) => (
-                        <motion.div
-                            key={phase.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            className={`grid lg:grid-cols-2 gap-12 items-start ${phaseIdx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-                        >
-                            <div className={phaseIdx % 2 === 1 ? 'lg:order-2' : ''}>
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className={`w-10 h-10 rounded-xl bg-${phase.color}-500/10 border border-${phase.color}-500/20 flex items-center justify-center`}>
-                                        <phase.icon className={`w-5 h-5 text-${phase.color}-400`} />
+                <div className="space-y-12">
+                    {phases.map((phase, phaseIdx) => {
+                        const colors = phaseColors[phase.color]
+                        return (
+                            <motion.div
+                                key={phase.title}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl border border-white/[0.06] bg-[#0C0E12] p-8 md:p-10"
+                            >
+                                {/* Phase header */}
+                                <div className="flex items-center gap-3 mb-3">
+                                    <div className={`w-10 h-10 rounded-xl ${colors.iconBg} ${colors.iconBorder} border flex items-center justify-center`}>
+                                        <phase.icon className={`w-5 h-5 ${colors.text}`} />
                                     </div>
                                     <div>
-                                        <div className={`text-xs text-${phase.color}-400 uppercase tracking-wider font-medium`}>Phase {phaseIdx + 1}</div>
+                                        <div className={`text-xs ${colors.text} uppercase tracking-wider font-medium`}>Phase {phaseIdx + 1}</div>
                                         <h3 className="text-2xl font-medium text-white tracking-tight">{phase.title}</h3>
                                     </div>
                                 </div>
-                                <p className="text-gray-400 mb-6 text-lg">{phase.subtitle}</p>
-                            </div>
+                                <p className={`text-sm ${colors.text} font-medium mb-2`}>{phase.subtitle}</p>
+                                <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-2xl">{phase.description}</p>
 
-                            <div className={`space-y-3 ${phaseIdx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                                {phase.features.map((feature) => (
-                                    <div key={feature.name} className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-                                        <CheckCircle className={`w-5 h-5 text-${phase.color}-400 mt-0.5 flex-shrink-0`} />
-                                        <div>
-                                            <div className="text-sm font-medium text-white mb-0.5">{feature.name}</div>
-                                            <div className="text-xs text-gray-500">{feature.desc}</div>
+                                {/* Features grid */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                    {phase.features.map((feature) => (
+                                        <div key={feature.name} className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                                            <CheckCircle className={`w-5 h-5 ${colors.checkText} mt-0.5 flex-shrink-0`} />
+                                            <div>
+                                                <div className="text-sm font-medium text-white mb-0.5">{feature.name}</div>
+                                                <div className="text-xs text-gray-500">{feature.desc}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
+                                    ))}
+                                </div>
+                            </motion.div>
+                        )
+                    })}
                 </div>
             </section>
 
