@@ -56,7 +56,7 @@ export function Footer() {
                             <EnorveLogoFull className="w-[94px] h-[23px] text-white" />
                         </Link>
                         <p className="text-sm text-gray-400 leading-relaxed">
-                            Governed Autonomous AI Operations for E-commerce.
+                            AI that follows your rules. Not its own.
                         </p>
                     </div>
 

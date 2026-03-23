@@ -9,6 +9,7 @@ import { ConnectStackSection } from "../components/sections/ConnectStackSection"
 import { CTASection } from "../components/sections/CTASection"
 import { MidPageCTA } from "../components/sections/MidPageCTA"
 import { Hero } from "../components/Hero"
+import { SimulatorTeaser } from "../components/sections/SimulatorTeaser"
 import { usePageTitle } from "../hooks/usePageTitle"
 import { useStructuredData, createOrganizationSchema, createSoftwareApplicationSchema } from "../hooks/useStructuredData"
 
@@ -27,6 +28,7 @@ export function Home() {
     return (
         <>
             <Hero />
+            <SimulatorTeaser />
             <ChannelStrip />
             <PlatformSection />
             <FeatureGridSection />
