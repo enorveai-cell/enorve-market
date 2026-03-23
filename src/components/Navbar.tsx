@@ -24,6 +24,8 @@ const solutionLinks = [
 ]
 
 const resourceLinks = [
+    { label: "Cost Calculator", href: "/calculator" },
+    { label: "ROI Calculator", href: "/labor-replacement-calculator" },
     { label: "Help Center", href: "https://help.enorve.com", external: true },
     { label: "Blog", href: "https://blog.enorve.com", external: true },
 ]
