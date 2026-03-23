@@ -110,9 +110,9 @@ export function FeatureGridSection() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-6xl font-medium text-white tracking-tighter leading-[1.1] mb-6"
                     >
-                        Everything you need to{" "}
+                        Everything your team needs.{" "}
                         <span className="bg-gradient-to-r from-emerald-400 to-cyan-300 bg-clip-text text-transparent">
-                            run AI support
+                            Nothing your customers notice.
                         </span>
                     </motion.h2>
 

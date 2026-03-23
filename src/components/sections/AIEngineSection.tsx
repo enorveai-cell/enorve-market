@@ -13,7 +13,7 @@ export function AIEngineSection() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-6xl font-medium text-white tracking-tighter leading-[1.1]"
                     >
-                        AI that resolves support — with the guardrails you need
+                        AI that never goes off-script.
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ export function AIEngineSection() {
                         viewport={{ once: true }}
                         className="text-xl text-gray-400 leading-relaxed max-w-lg"
                     >
-                        Enorve combines AI intelligence with your business rules so the right answers reach customers — and the edge cases reach your team.
+                        Set the rules once. The AI follows them every time — on refunds, complaints, escalations, and edge cases.
                     </motion.div>
                 </div>
 

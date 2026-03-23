@@ -9,7 +9,7 @@ export function PlatformSection() {
                     {/* Text Content */}
                     <div className="order-2 lg:order-1 animate-fade-in-left">
                         <h2 className="text-2xl md:text-6xl font-semibold text-white tracking-tight leading-[1.05] mb-6">
-                            From conversation to resolution — automatically, safely.
+                            From conversation to resolution — automatically, predictably.
                         </h2>
 
                         <p className="text-lg text-neutral-400 leading-relaxed max-w-lg mb-10">

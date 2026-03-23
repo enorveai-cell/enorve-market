@@ -22,16 +22,16 @@ export function Hero() {
 
                 {/* Headline - Animated with delay */}
                 <h1 className="animate-fade-in-up delay-100 text-3xl md:text-7xl lg:text-[80px] font-medium tracking-tighter leading-[1.1] bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 mb-4 md:mb-6">
-                    Your AI handles support.
+                    Your AI says exactly
                     <br />
-                    Your team handles exceptions.
+                    what you'd say. Every time.
                 </h1>
 
                 {/* Subheadline */}
                 <p className="animate-fade-in-up delay-200 text-sm md:text-2xl font-normal text-gray-300 max-w-3xl mx-auto mb-4 md:mb-6 leading-relaxed px-4 md:px-0">
-                    Enorve answers your customers' questions across WhatsApp, Email, and Chat — instantly and accurately.
+                    Define exactly how your AI handles refunds, complaints, and escalations
                     <br className="hidden md:block" />
-                    {" "}When things get complex, your team takes over seamlessly.
+                    {" "}— then stress-test it before a real customer ever sees it.
                 </p>
 
                 {/* Early access line */}
@@ -46,7 +46,7 @@ export function Hero() {
                 {/* CTAs */}
                 <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button onClick={openWaitlist} className="bg-white text-black font-medium text-base h-12 px-8 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] hover:brightness-110 flex items-center justify-center w-full sm:w-auto cursor-pointer">
-                        Join the waitlist
+                        Join Early Access
                     </button>
                     <button onClick={openWaitlist} className="group flex items-center justify-center gap-2 text-white font-medium text-base h-12 px-8 rounded-full border border-white/20 hover:bg-white/10 transition-all w-full sm:w-auto cursor-pointer">
                         Get early access
@@ -55,6 +55,15 @@ export function Hero() {
                         </svg>
                     </button>
                 </div>
+
+                {/* Social proof */}
+                <p className="animate-fade-in-up delay-400 flex items-center justify-center gap-2 text-[13px] text-white/45 mt-5">
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+                    </span>
+                    47 support teams already waiting
+                </p>
             </div>
         </section>
     )
