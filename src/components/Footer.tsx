@@ -25,6 +25,7 @@ const footerLinks = {
     resources: {
         title: "Resources",
         links: [
+            { label: "AI Simulator", href: "/ai-simulator" },
             { label: "Cost Calculator", href: "/calculator" },
             { label: "ROI Calculator", href: "/labor-replacement-calculator" },
             { label: "Help Center", href: "https://help.enorve.com", external: true },
