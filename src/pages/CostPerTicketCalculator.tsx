@@ -10,7 +10,7 @@ function AnimatedNumber({ value, prefix = "", suffix = "", decimals = 2, duratio
     value: number; prefix?: string; suffix?: string; decimals?: number; duration?: number
 }) {
     const [display, setDisplay] = useState(0)
-    const ref = useRef<number>()
+    const ref = useRef<number>(0)
 
     useEffect(() => {
         const start = display
