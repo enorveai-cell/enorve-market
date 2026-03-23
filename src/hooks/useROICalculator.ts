@@ -65,15 +65,28 @@ function getEnorvePlan(monthlyConversations: number): { name: string; monthlyCos
 /* ───────── Hook ───────── */
 
 export function useROICalculator() {
-    const [inputs, setInputs] = useState<LaborInputs>({
-        currentHeadcount: 10,
-        avgAgentCost: 45000,
-        monthlyConversations: 5000,
-        automationRate: 0.60,
-    })
+    // Read URL params for shareable links
+    const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null
+    const [inputs, setInputs] = useState<LaborInputs>(() => ({
+        currentHeadcount: Number(searchParams?.get("agents")) || 15,
+        avgAgentCost: Number(searchParams?.get("salary")) || 55000,
+        monthlyConversations: Number(searchParams?.get("conversations")) || 5000,
+        automationRate: Number(searchParams?.get("automation")) || 0.60,
+    }))
 
     function setInput<K extends keyof LaborInputs>(key: K, value: LaborInputs[K]) {
-        setInputs(prev => ({ ...prev, [key]: value }))
+        setInputs(prev => {
+            const next = { ...prev, [key]: value }
+            // Encode in URL for shareable links
+            const params = new URLSearchParams({
+                agents: String(next.currentHeadcount),
+                salary: String(next.avgAgentCost),
+                conversations: String(next.monthlyConversations),
+                automation: String(next.automationRate),
+            })
+            window.history.replaceState({}, "", `?${params.toString()}`)
+            return next
+        })
     }
 
     const results = useMemo<LaborResults>(() => {

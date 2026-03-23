@@ -21,6 +21,7 @@ import { Founders } from "./pages/solutions/Founders"
 // Trust & Security Pages
 import { Pricing } from "./pages/Pricing"
 import { ROICalculator } from "./pages/ROICalculator"
+import { CostPerTicketCalculator } from "./pages/CostPerTicketCalculator"
 import { Security } from "./pages/Security"
 
 // Company Pages
@@ -60,6 +61,7 @@ function App() {
 
           {/* Trust & Security Routes */}
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/calculator" element={<CostPerTicketCalculator />} />
           <Route path="/labor-replacement-calculator" element={<ROICalculator />} />
           <Route path="/roi-calculator" element={<Navigate to="/labor-replacement-calculator" replace />} />
           <Route path="/security" element={<Security />} />

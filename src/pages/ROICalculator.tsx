@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Download, Calculator, AlertTriangle } from "lucide-react"
+import { Download, AlertTriangle, ArrowRight } from "lucide-react"
 import { Button } from "../components/ui/Button"
 import { useROICalculator } from "../hooks/useROICalculator"
 import { InputPanel } from "../components/roi/InputPanel"
@@ -9,9 +9,11 @@ import { CostBreakdownChart } from "../components/roi/CostBreakdownChart"
 import { ProjectionChart } from "../components/roi/ProjectionChart"
 import { generateROIPdf } from "../utils/roiPdfExport"
 import { usePageTitle } from "../hooks/usePageTitle"
+import { useWaitlist } from "../hooks/useWaitlist"
 
 export function ROICalculator() {
     const { inputs, setInput, results } = useROICalculator()
+    const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "Labor Replacement Calculator — Enorve",
         description: "Calculate how many support FTEs Enorve can replace and your projected annual savings. Input your headcount, agent cost, and conversation volume to see the economics."
@@ -43,15 +45,31 @@ export function ROICalculator() {
                         </p>
                     </div>
 
-                    <Button
-                        variant="outline"
-                        size="md"
-                        onClick={() => generateROIPdf(inputs, results)}
-                        icon={<Download className="w-4 h-4" />}
-                        iconPosition="left"
-                    >
-                        Download Report
-                    </Button>
+                    <div className="flex flex-col items-end gap-3">
+                        <Button
+                            variant="outline"
+                            size="md"
+                            onClick={() => generateROIPdf(inputs, results)}
+                            icon={<Download className="w-4 h-4" />}
+                            iconPosition="left"
+                        >
+                            Download Report
+                        </Button>
+                        <button
+                            onClick={openWaitlist}
+                            className="group flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+                        >
+                            Get early access
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                        </button>
+                        <p className="flex items-center gap-2 text-[13px] text-white/45">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+                            </span>
+                            47 support teams already on early access
+                        </p>
+                    </div>
                 </motion.div>
             </section>
 
