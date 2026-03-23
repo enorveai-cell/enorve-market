@@ -203,16 +203,28 @@ export function Navbar() {
                                         >
                                             <div className="grid gap-1">
                                                 {resourceLinks.map((link) => (
-                                                    <a
-                                                        key={link.href}
-                                                        href={link.href}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        role="menuitem"
-                                                        className="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                                                    >
-                                                        {link.label}
-                                                    </a>
+                                                    'external' in link && link.external ? (
+                                                        <a
+                                                            key={link.href}
+                                                            href={link.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            role="menuitem"
+                                                            className="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                                                        >
+                                                            {link.label}
+                                                        </a>
+                                                    ) : (
+                                                        <Link
+                                                            key={link.href}
+                                                            to={link.href}
+                                                            role="menuitem"
+                                                            className="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                                                            onClick={() => setActiveDropdown(null)}
+                                                        >
+                                                            {link.label}
+                                                        </Link>
+                                                    )
                                                 ))}
                                             </div>
                                         </motion.div>
