@@ -27,7 +27,7 @@ const resourceLinks = [
     { label: "AI Simulator", href: "/ai-simulator" },
     { label: "Cost Calculator", href: "/calculator" },
     { label: "ROI Calculator", href: "/labor-replacement-calculator" },
-    { label: "Help Center", href: "https://help.enorve.com", external: true },
+    { label: "Help Center", href: "https://app.enorve.com/help-center", external: true },
     { label: "Blog", href: "https://blog.enorve.com", external: true },
 ]
 
@@ -315,7 +315,7 @@ export function Navbar() {
                                 {/* Quick Links */}
                                 <div className="pt-2 space-y-2">
                                     <Link to="/pricing" className="block py-2 px-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-                                    <a href="https://help.enorve.com" target="_blank" rel="noopener noreferrer" className="block py-2 px-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" onClick={() => setMobileMenuOpen(false)}>Help Center</a>
+                                    <a href="https://app.enorve.com/help-center" target="_blank" rel="noopener noreferrer" className="block py-2 px-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" onClick={() => setMobileMenuOpen(false)}>Help Center</a>
                                     <Link to="/contact-sales" className="block py-2 px-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" onClick={() => setMobileMenuOpen(false)}>Talk to sales</Link>
                                 </div>
 

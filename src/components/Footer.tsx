@@ -28,7 +28,7 @@ const footerLinks = {
             { label: "AI Simulator", href: "/ai-simulator" },
             { label: "Cost Calculator", href: "/calculator" },
             { label: "ROI Calculator", href: "/labor-replacement-calculator" },
-            { label: "Help Center", href: "https://help.enorve.com", external: true },
+            { label: "Help Center", href: "https://app.enorve.com/help-center", external: true },
             { label: "Blog", href: "https://blog.enorve.com", external: true },
             { label: "Status", href: "https://app.enorve.com/status", external: true },
         ]
