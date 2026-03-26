@@ -10,7 +10,7 @@ export function EnorveLogoFull({ className = "h-[23px]", variant = "light" }: { 
                     <path d="M430.73 1081.25L1071.03 803.99L590.80 803.99Z"/>
                 </g>
             </svg>
-            <span className="text-[16px] font-normal tracking-[1.5px] lowercase text-current" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            <span className="text-[16px] font-medium tracking-[0.5px] lowercase text-current" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
                 enorve
             </span>
         </div>
