@@ -24,6 +24,7 @@ import { ROICalculator } from "./pages/ROICalculator"
 import { CostPerTicketCalculator } from "./pages/CostPerTicketCalculator"
 import { Security } from "./pages/Security"
 import { AISimulator } from "./pages/AISimulator"
+import { DemoVideo } from "./pages/DemoVideo"
 
 // Company Pages
 import { ContactSales } from "./pages/company/Contact"
@@ -42,6 +43,9 @@ function App() {
       <WaitlistProvider>
       <ScrollToTop />
       <Routes>
+        {/* Full-screen pages — no layout */}
+        <Route path="/demo-video" element={<DemoVideo />} />
+
         <Route element={<MainLayout />}>
           {/* Homepage */}
           <Route path="/" element={<Home />} />
