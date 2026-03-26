@@ -71,10 +71,10 @@ const solutions = [
 ]
 
 const outcomes = [
-    { icon: TrendingUp, title: "Faster response times", value: "45s", desc: "avg first response" },
-    { icon: CheckCircle, title: "Higher resolution rates", value: "Most", desc: "conversations auto-resolved" },
-    { icon: Heart, title: "Less agent burnout", value: "40%", desc: "less repetitive work" },
-    { icon: Smile, title: "Better customer satisfaction", value: "4.6/5", desc: "CSAT score" }
+    { icon: TrendingUp, title: "Faster first response", value: "—", desc: "AI replies instantly, 24/7" },
+    { icon: CheckCircle, title: "Routine conversations resolved", value: "—", desc: "designed to auto-resolve" },
+    { icon: Heart, title: "Less repetitive work for your team", value: "—", desc: "AI handles the routine" },
+    { icon: Smile, title: "Higher customer satisfaction", value: "—", desc: "faster, more consistent replies" }
 ]
 
 export function CustomerSupport() {
@@ -132,7 +132,8 @@ export function CustomerSupport() {
                             <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[80%] h-48 bg-blue-500/25 blur-[120px] -z-10" />
 
                             {/* Main UI Mockup */}
-                            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.85)] bg-[#0C0E12]">
+                            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.85)] bg-[#0C0E12]">
+                                <span className="absolute top-2 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                                 {/* Header */}
                                 <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-white/[0.02]">
                                     <div className="flex items-center gap-2">

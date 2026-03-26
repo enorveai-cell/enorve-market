@@ -44,7 +44,7 @@ const replacements = [
         color: "#10B981",
         icon: Package,
         what: "AI pulls real-time order data from Shopify — tracking, ETA, carrier info — and resolves the conversation end-to-end.",
-        laborSaved: "Eliminates ~30% of all support FTEs",
+        laborSaved: "Reduce manual support workload",
         capabilities: [
             "Real-time order status lookup from Shopify",
             "Carrier tracking and estimated delivery dates",
@@ -58,7 +58,7 @@ const replacements = [
         color: "#8B5CF6",
         icon: RefreshCw,
         what: "AI applies your return policy consistently — checks eligibility, initiates the return, confirms the refund. For repeat customers, it adapts: more generous with loyal buyers, more careful with edge cases.",
-        laborSaved: "Eliminates ~20% of all support FTEs",
+        laborSaved: "Reduce manual refund processing",
         capabilities: [
             "Return eligibility checks against your policy rules",
             "Automated return label generation",
@@ -73,7 +73,7 @@ const replacements = [
         color: "#F59E0B",
         icon: Brain,
         what: "AI draws from your product catalog, size guides, FAQs, and Shopify product data to answer pre-sale and post-sale questions.",
-        laborSaved: "Eliminates ~15% of all support FTEs",
+        laborSaved: "Reduce repetitive product inquiries",
         capabilities: [
             "Product specs, sizing, compatibility answers",
             "Stock availability and variant information",
@@ -107,14 +107,14 @@ const economicsData = {
     after: {
         label: "With Enorve",
         agents: "2-4",
-        automationRate: "60-80%",
+        automationRate: "High",
         totalCost: "$160-240K",
         model: "AI resolves the majority. Humans handle exceptions only."
     }
 }
 
 const outcomes = [
-    { icon: TrendingDown, title: "Headcount reduction", value: "60-80%", desc: "of conversations resolved without humans", color: "#10B981" },
+    { icon: TrendingDown, title: "Automated resolution", value: "—", desc: "designed to resolve routine conversations automatically", color: "#10B981" },
     { icon: DollarSign, title: "Annual savings", value: "$160K+", desc: "in labor costs per year", color: "#8B5CF6" },
     { icon: Clock, title: "Resolution time", value: "<30s", desc: "avg autonomous resolution", color: "#3B82F6" },
     { icon: Shield, title: "Governed AI", value: "100%", desc: "of AI decisions are auditable", color: "#F59E0B" }
@@ -123,7 +123,7 @@ const outcomes = [
 export function Ecommerce() {
     usePageTitle({
         title: "E-commerce — Replace Support Labor with Autonomous AI",
-        description: "Your Shopify store doesn't have a software problem. It has a labor scaling problem. Enorve automatically resolves 60-80% of support conversations — replacing FTEs, not augmenting them."
+        description: "Your Shopify store doesn't have a software problem. It has a labor scaling problem. Enorve is designed to resolve routine support conversations automatically — so your team focuses on what actually needs a human."
     })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
@@ -149,7 +149,7 @@ export function Ecommerce() {
                         </h1>
                         <p className="text-xl text-gray-400 mb-8 leading-relaxed max-w-3xl">
                             Every time revenue grows, support headcount grows with it. Enorve breaks that link.
-                            AI automatically resolves 60-80% of your conversations — replacing FTEs, not augmenting them.
+                            AI is designed to resolve routine conversations automatically — so your team focuses on exceptions, not repetition.
                         </p>
 
                         {/* Economics callout */}

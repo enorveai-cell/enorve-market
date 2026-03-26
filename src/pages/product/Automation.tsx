@@ -114,7 +114,7 @@ const templates = [
         name: "SLA Escalation",
         trigger: "SLA breach (first response)",
         condition: "SLA breached",
-        outcome: "→ 95% SLA compliance rate",
+        outcome: "→ Built to hit your SLA targets",
         riskLevel: "Low",
         setupTime: "3 min"
     },
@@ -132,7 +132,7 @@ const differentiators = [
     { title: "No-Code Visual Builder", desc: "Create complex automations without writing code", icon: GitBranch },
     { title: "Autonomous Signals", desc: "Leverage intent, sentiment, and confidence in rules", icon: Sparkles },
     { title: "Governance-First", desc: "Built-in safety guardrails for AI actions", icon: Shield },
-    { title: "Template Library", desc: "Pre-built patterns with proven outcomes", icon: LayoutTemplate },
+    { title: "Template Library", desc: "Pre-built patterns with expected outcomes", icon: LayoutTemplate },
     { title: "Revenue Attribution", desc: "Tie conversations directly to revenue", icon: DollarSign },
     { title: "Human-in-Loop", desc: "Choose full automation or supervised automation", icon: Users }
 ]
@@ -470,7 +470,7 @@ export function Automation() {
                                 viewport={{ once: true }}
                                 className="text-lg text-gray-400 max-w-xl"
                             >
-                                Start with proven patterns and customize for your needs. Each template shows expected outcomes.
+                                Start with pre-built patterns and customize for your needs. Each template shows expected outcomes.
                             </motion.p>
                         </div>
                         <Button variant="secondary" size="lg">

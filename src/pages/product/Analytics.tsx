@@ -98,7 +98,8 @@ export function Analytics() {
                             <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[80%] h-48 bg-orange-500/25 blur-[120px] -z-10" />
 
                             {/* Main Dashboard UI */}
-                            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.85)] bg-[#0C0E12]">
+                            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.85)] bg-[#0C0E12]">
+                                <span className="absolute top-2 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                                 {/* Header */}
                                 <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-white/[0.02]">
                                     <div className="flex items-center gap-2">
@@ -322,8 +323,9 @@ export function Analytics() {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="p-6 rounded-[32px] bg-[#0C0E12] border border-white/5"
+                            className="relative p-6 rounded-[32px] bg-[#0C0E12] border border-white/5"
                         >
+                            <span className="absolute top-2 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                             <h3 className="text-lg font-medium text-white mb-6">Containment Rate</h3>
 
                             <div className="flex items-center justify-between mb-4">
@@ -384,8 +386,9 @@ export function Analytics() {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="p-6 rounded-[32px] bg-[#0C0E12] border border-white/5"
+                            className="relative p-6 rounded-[32px] bg-[#0C0E12] border border-white/5"
                         >
+                            <span className="absolute top-2 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                             <h3 className="text-lg font-medium text-white mb-6">Escalation Analysis</h3>
 
                             <div className="grid grid-cols-2 gap-4 mb-6">
@@ -478,8 +481,9 @@ export function Analytics() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="p-8 rounded-[32px] bg-[#0C0E12] border border-white/5"
+                        className="relative p-8 rounded-[32px] bg-[#0C0E12] border border-white/5"
                     >
+                        <span className="absolute top-2 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                         <h3 className="text-lg font-medium text-white mb-6">Usage by Feature Type</h3>
                         <div className="grid md:grid-cols-3 gap-6">
                             {[
@@ -564,8 +568,9 @@ export function Analytics() {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-[32px] bg-[#0C0E12] border border-white/5"
+                            className="relative p-8 rounded-[32px] bg-[#0C0E12] border border-white/5"
                         >
+                            <span className="absolute top-2 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                             <h3 className="text-lg font-medium text-white mb-6">AI vs Agent Messages</h3>
 
                             <div className="flex items-center justify-center mb-8">

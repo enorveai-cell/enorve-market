@@ -73,9 +73,9 @@ const solutions = [
 ]
 
 const outcomes = [
-    { icon: Coffee, title: "Fewer distractions", value: "80%", desc: "less interruptions" },
-    { icon: Clock, title: "Faster customer replies", value: "45s", desc: "avg response time" },
-    { icon: Users, title: "No early support hires", value: "0", desc: "headcount needed" }
+    { icon: Coffee, title: "Fewer interruptions, more focus", value: "—", desc: "AI handles support while you build" },
+    { icon: Clock, title: "Faster customer replies", value: "—", desc: "instant AI responses, 24/7" },
+    { icon: Users, title: "No early support hires", value: "—", desc: "scale without headcount" }
 ]
 
 export function Founders() {

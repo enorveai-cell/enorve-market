@@ -7,6 +7,7 @@ const metrics = [
     { icon: Activity, label: "AI Resolution Rate", value: "65%", change: "+8%", positive: true },
     { icon: Users, label: "Human Interventions", value: "8", change: "-12%", positive: true },
 ]
+// NOTE: These are sample/illustrative values for the dashboard mockup
 
 export function AnalyticsSection() {
     return (
@@ -47,8 +48,9 @@ export function AnalyticsSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
+                    className="relative grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
                 >
+                    <span className="absolute -top-3 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                     {metrics.map((metric, i) => (
                         <div
                             key={i}

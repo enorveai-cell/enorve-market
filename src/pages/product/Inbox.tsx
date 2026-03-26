@@ -158,7 +158,8 @@ export function Inbox() {
                             <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[80%] h-48 bg-blue-500/25 blur-[120px] -z-10" />
 
                             {/* Main Inbox UI */}
-                            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.85)] bg-[#0C0E12]">
+                            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.85)] bg-[#0C0E12]">
+                                <span className="absolute top-2 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                                 {/* Header */}
                                 <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-white/[0.02]">
                                     <div className="flex items-center gap-2">
