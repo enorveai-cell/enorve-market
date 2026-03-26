@@ -119,17 +119,72 @@ function BackgroundMesh() {
 }
 
 // ── Glass card ───────────────────────────────────────────────────────────────
-function GlassCard({ children, className = "", accent }: { children: React.ReactNode; className?: string; accent?: string }) {
+function GlassCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`relative rounded-2xl backdrop-blur-sm ${className}`} style={{
-      background: "rgba(255,255,255,0.6)",
-      border: "1px solid rgba(255,255,255,0.8)",
-      boxShadow: `0 8px 32px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)${accent ? `, 0 0 0 1px ${accent}20` : ""}`,
+      background: "rgba(255,255,255,0.65)",
+      border: "1px solid rgba(0,0,0,0.06)",
+      boxShadow: "0 8px 32px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04)",
     }}>
-      {accent && (
-        <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl" style={{ background: accent }} />
-      )}
       {children}
+    </div>
+  )
+}
+
+// ── Chat window frame ────────────────────────────────────────────────────────
+function ChatWindow({ variant, children }: { variant: "bad" | "good"; children: React.ReactNode }) {
+  const isBad = variant === "bad"
+  return (
+    <div className="rounded-2xl overflow-hidden" style={{
+      background: "#fff",
+      border: `1px solid ${isBad ? "rgba(239,68,68,0.15)" : "rgba(34,197,94,0.15)"}`,
+      boxShadow: `0 20px 60px ${isBad ? "rgba(239,68,68,0.08)" : "rgba(34,197,94,0.08)"}, 0 4px 16px rgba(0,0,0,0.06)`,
+    }}>
+      {/* Window header */}
+      <div className={`flex items-center justify-between px-5 py-3 ${
+        isBad ? "bg-gradient-to-r from-red-50 to-red-50/50" : "bg-gradient-to-r from-emerald-50 to-emerald-50/50"
+      }`} style={{ borderBottom: `1px solid ${isBad ? "rgba(239,68,68,0.1)" : "rgba(34,197,94,0.1)"}` }}>
+        <div className="flex items-center gap-2.5">
+          <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${
+            isBad ? "bg-red-100" : "bg-emerald-100"
+          }`}>
+            {isBad
+              ? <ShieldAlert className="w-4 h-4 text-red-500" />
+              : <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            }
+          </div>
+          <div>
+            <p className={`text-xs font-bold uppercase tracking-wider ${isBad ? "text-red-500" : "text-emerald-600"}`}>
+              {isBad ? "Without Enorve" : "With Enorve"}
+            </p>
+            <p className="text-[10px] text-slate-400">Customer Support</p>
+          </div>
+        </div>
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+          <div className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+          <div className={`w-2.5 h-2.5 rounded-full ${isBad ? "bg-red-300" : "bg-emerald-300"}`} />
+        </div>
+      </div>
+
+      {/* Chat body */}
+      <div className="px-5 py-4 space-y-3 min-h-[280px]">
+        {children}
+      </div>
+
+      {/* Input bar */}
+      <div className="px-5 py-3 border-t border-slate-100 bg-slate-50/50">
+        <div className="flex items-center gap-3">
+          <div className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-300">
+            Type a message...
+          </div>
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+            isBad ? "bg-red-100" : "bg-emerald-100"
+          }`}>
+            <ArrowRight className={`w-4 h-4 ${isBad ? "text-red-400" : "text-emerald-500"}`} />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -148,14 +203,14 @@ function Bubble({ msg, visible }: { msg: ChatMsg; visible: boolean }) {
         initial={{ opacity: 0, scale: 0.9, y: 4 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        className="flex items-center justify-center gap-2 py-2"
+        className="flex items-center justify-center py-1.5"
       >
-        <div className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold ${
+        <div className={`flex items-center gap-2 px-4 py-2 rounded-full text-[11px] font-semibold shadow-sm ${
           isError
-            ? "bg-red-50 text-red-600 border border-red-200"
-            : "bg-emerald-50 text-emerald-600 border border-emerald-200"
+            ? "bg-red-50 text-red-600 border border-red-200/60"
+            : "bg-emerald-50 text-emerald-600 border border-emerald-200/60"
         }`}>
-          {isError ? <AlertTriangle className="w-3.5 h-3.5" /> : <ShieldCheck className="w-3.5 h-3.5" />}
+          {isError ? <AlertTriangle className="w-3 h-3" /> : <ShieldCheck className="w-3 h-3" />}
           {msg.text}
         </div>
       </motion.div>
@@ -164,30 +219,30 @@ function Bubble({ msg, visible }: { msg: ChatMsg; visible: boolean }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16, scale: 0.95 }}
+      initial={{ opacity: 0, y: 14, scale: 0.96 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ type: "spring", stiffness: 350, damping: 30 }}
-      className={`flex items-end gap-2.5 ${isCustomer ? "justify-start" : "justify-end"}`}
+      transition={{ type: "spring", stiffness: 350, damping: 28 }}
+      className={`flex items-end gap-2 ${isCustomer ? "justify-start" : "justify-end"}`}
     >
       {isCustomer && (
-        <div className="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center flex-shrink-0">
-          <Users className="w-3.5 h-3.5 text-slate-500" />
+        <div className="w-7 h-7 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center flex-shrink-0 shadow-sm">
+          <span className="text-[10px] font-bold text-slate-500">JD</span>
         </div>
       )}
       <div
-        className={`max-w-[75%] px-4 py-3 text-sm leading-relaxed ${
+        className={`max-w-[78%] px-4 py-3 text-[13px] leading-relaxed shadow-sm ${
           isCustomer
-            ? "bg-slate-100 text-slate-800 rounded-2xl rounded-bl-md"
+            ? "bg-slate-100 text-slate-700 rounded-2xl rounded-bl-sm"
             : isBad
-              ? "bg-red-50 text-red-800 rounded-2xl rounded-br-md border border-red-100"
-              : "bg-emerald-50 text-emerald-800 rounded-2xl rounded-br-md border border-emerald-100"
+              ? "bg-gradient-to-br from-red-50 to-red-100/50 text-red-800 rounded-2xl rounded-br-sm border border-red-100/80"
+              : "bg-gradient-to-br from-emerald-50 to-emerald-100/50 text-emerald-800 rounded-2xl rounded-br-sm border border-emerald-100/80"
         }`}
       >
         {msg.text}
       </div>
       {!isCustomer && (
-        <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
-          isBad ? "bg-red-100" : "bg-emerald-100"
+        <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm ${
+          isBad ? "bg-gradient-to-br from-red-100 to-red-200" : "bg-gradient-to-br from-emerald-100 to-emerald-200"
         }`}>
           <Bot className={`w-3.5 h-3.5 ${isBad ? "text-red-500" : "text-emerald-600"}`} />
         </div>
@@ -394,21 +449,15 @@ export function DemoVideo() {
                   Generic AI doesn't follow your rules.
                 </motion.h2>
 
-                <GlassCard className="w-full p-5" accent="#ef4444">
-                  <div className="flex items-center gap-2 px-1 mb-4">
-                    <ShieldAlert className="w-4 h-4 text-red-500" />
-                    <span className="text-xs font-bold text-red-500 uppercase tracking-wider">Without Enorve</span>
-                  </div>
-                  <div className="space-y-3">
-                    {BAD_CHAT.map((msg, i) => (
-                      <Bubble key={i} msg={msg} visible={sceneTime >= msg.delay} />
-                    ))}
-                    <AnimatePresence>
-                      {sceneTime >= 3000 && sceneTime < 4000 && <TypingDots bad />}
-                      {sceneTime >= 8500 && sceneTime < 9500 && <TypingDots bad />}
-                    </AnimatePresence>
-                  </div>
-                </GlassCard>
+                <ChatWindow variant="bad">
+                  {BAD_CHAT.map((msg, i) => (
+                    <Bubble key={i} msg={msg} visible={sceneTime >= msg.delay} />
+                  ))}
+                  <AnimatePresence>
+                    {sceneTime >= 3000 && sceneTime < 4000 && <TypingDots bad />}
+                    {sceneTime >= 8500 && sceneTime < 9500 && <TypingDots bad />}
+                  </AnimatePresence>
+                </ChatWindow>
               </div>
             )}
 
@@ -425,21 +474,15 @@ export function DemoVideo() {
                   AI that follows your protocol. Every time.
                 </motion.h2>
 
-                <GlassCard className="w-full p-5" accent="#22c55e">
-                  <div className="flex items-center gap-2 px-1 mb-4">
-                    <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                    <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">With Enorve</span>
-                  </div>
-                  <div className="space-y-3">
-                    {GOOD_CHAT.map((msg, i) => (
-                      <Bubble key={i} msg={msg} visible={sceneTime >= msg.delay} />
-                    ))}
-                    <AnimatePresence>
-                      {sceneTime >= 3500 && sceneTime < 4500 && <TypingDots />}
-                      {sceneTime >= 9000 && sceneTime < 10000 && <TypingDots />}
-                    </AnimatePresence>
-                  </div>
-                </GlassCard>
+                <ChatWindow variant="good">
+                  {GOOD_CHAT.map((msg, i) => (
+                    <Bubble key={i} msg={msg} visible={sceneTime >= msg.delay} />
+                  ))}
+                  <AnimatePresence>
+                    {sceneTime >= 3500 && sceneTime < 4500 && <TypingDots />}
+                    {sceneTime >= 9000 && sceneTime < 10000 && <TypingDots />}
+                  </AnimatePresence>
+                </ChatWindow>
               </div>
             )}
 
