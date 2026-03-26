@@ -137,8 +137,8 @@ function ChatWindow({ variant, children }: { variant: "bad" | "good"; children: 
   return (
     <div className="rounded-2xl overflow-hidden" style={{
       background: "#fff",
-      border: `1px solid ${isBad ? "rgba(239,68,68,0.15)" : "rgba(34,197,94,0.15)"}`,
-      boxShadow: `0 20px 60px ${isBad ? "rgba(239,68,68,0.08)" : "rgba(34,197,94,0.08)"}, 0 4px 16px rgba(0,0,0,0.06)`,
+      border: "1px solid rgba(0,0,0,0.08)",
+      boxShadow: "0 20px 60px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)",
     }}>
       {/* Window header */}
       <div className={`flex items-center justify-between px-5 py-3 ${
