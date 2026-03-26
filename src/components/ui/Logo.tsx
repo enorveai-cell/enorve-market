@@ -1,7 +1,7 @@
 // Enorve logo — custom "e" letterform with diagonal tail
 
 export function EnorveLogoFull({ className = "h-[28px]", variant = "light" }: { className?: string; variant?: "light" | "dark" | "brand" }) {
-    const fill = variant === "dark" ? "#ffffff" : "#0F5C38";
+    const fill = variant === "dark" ? "#ffffff" : "#100f0d";
     return (
         <div className={`flex items-center gap-1.5 ${className}`}>
             <svg viewBox="390 290 700 810" xmlns="http://www.w3.org/2000/svg" style={{ height: '120%', width: 'auto' }}>
@@ -19,7 +19,7 @@ export function EnorveLogoFull({ className = "h-[28px]", variant = "light" }: { 
 
 // Icon-only variant with background-aware fill
 export function EnorveLogoIcon({ className = "w-5 h-5", variant = "light" }: { className?: string; variant?: "light" | "dark" | "brand" }) {
-    const fill = variant === "dark" ? "#ffffff" : "#0F5C38";
+    const fill = variant === "dark" ? "#ffffff" : "#100f0d";
     return (
         <svg viewBox="390 290 700 810" xmlns="http://www.w3.org/2000/svg" className={className}>
             <g fill={fill}>
