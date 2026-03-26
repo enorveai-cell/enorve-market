@@ -339,11 +339,14 @@ export function DemoVideo() {
 
       {/* Logo watermark */}
       {started && (
-        <div className="fixed top-5 left-6 z-50 flex items-center gap-2">
-          <div className="w-6 h-6 bg-emerald-500 rounded-lg flex items-center justify-center">
-            <span className="text-white text-xs font-black">e</span>
-          </div>
-          <span className="text-sm font-semibold text-slate-400 tracking-tight">enorve</span>
+        <div className="fixed top-5 left-6 z-50 flex items-center gap-2.5">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
+            <rect width="56" height="56" rx="13" fill="#0F5C38"/>
+            <rect x="10" y="13" width="30" height="7" rx="3.5" fill="white"/>
+            <rect x="10" y="24.5" width="22" height="7" rx="3.5" fill="#22C76E"/>
+            <rect x="10" y="36" width="26" height="7" rx="3.5" fill="white"/>
+          </svg>
+          <span className="text-[15px] font-normal tracking-[1.5px] lowercase text-slate-500" style={{ fontFamily: "'DM Sans', sans-serif" }}>enorve</span>
         </div>
       )}
 

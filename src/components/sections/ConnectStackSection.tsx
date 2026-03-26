@@ -167,7 +167,7 @@ export function ConnectStackSection() {
                         <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
                             <span className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-black/80 ring-1 ring-white/10 backdrop-blur-xl shadow-[0_0_50px_rgba(250,207,57,0.15)] relative z-20">
                                 {/* Enorve Logo SVG */}
-                                <EnorveLogoIcon className="w-10 h-10 text-yellow-400" />
+                                <EnorveLogoIcon className="w-10 h-10" variant="dark" />
                                 {/* Breathing glow behind logo */}
                                 <span className="absolute inset-0 rounded-2xl bg-yellow-500/20 blur-xl animate-pulse"></span>
                             </span>
