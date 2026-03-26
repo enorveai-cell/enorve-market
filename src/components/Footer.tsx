@@ -53,7 +53,7 @@ export function Footer() {
                     {/* Logo & Description */}
                     <div className="col-span-2 md:col-span-3 lg:col-span-1">
                         <Link to="/" className="flex items-center mb-4">
-                            <EnorveLogoFull className="h-[26px] text-white" />
+                            <EnorveLogoFull className="h-[26px] text-white" variant="dark" />
                         </Link>
                         <p className="text-sm text-gray-400 leading-relaxed">
                             AI that follows your rules. Not its own.

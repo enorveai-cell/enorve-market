@@ -71,7 +71,7 @@ export function Navbar() {
                     <div className="h-16 flex items-center justify-between">
                         {/* Logo */}
                         <Link to="/" className="flex items-center">
-                            <EnorveLogoFull className="h-[26px] text-white" />
+                            <EnorveLogoFull className="h-[26px] text-white" variant="dark" />
                         </Link>
 
                         {/* Desktop Navigation */}
