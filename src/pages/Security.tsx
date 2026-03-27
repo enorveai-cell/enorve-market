@@ -5,7 +5,7 @@ import { usePageTitle } from "../hooks/usePageTitle"
 const fade = { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } }
 
 const certifications = [
-    { cert: "SOC 2 Type II", status: "Gap Resolution Complete", timeline: "Audit Ready Q3 2026", color: "text-emerald-400" },
+    { cert: "SOC 2 Type II", status: "In Progress", timeline: "Q3 2026", color: "text-emerald-400" },
     { cert: "GDPR Compliance", status: "Implemented", timeline: "Active", color: "text-emerald-400" },
     { cert: "CCPA Compliance", status: "Implemented", timeline: "Active", color: "text-emerald-400" },
     { cert: "ISO 27001", status: "Evaluating", timeline: "2027", color: "text-yellow-400" },
@@ -13,22 +13,22 @@ const certifications = [
 ]
 
 const architectureTiles = [
-    { title: "Tenant Isolation", desc: "Row-level security enforced at the database layer. No shared data between accounts.", icon: Shield },
-    { title: "Role-Based Access", desc: "Five permission tiers. Every action is gated. Agents cannot see what they aren't assigned.", icon: Users },
-    { title: "MFA Enforcement", desc: "Two-factor required for all team members. No exceptions.", icon: Smartphone },
-    { title: "PII Auto-Redaction", desc: "SSNs, credit cards, phone numbers, and emails are masked before storage.", icon: Eye },
-    { title: "Audit Logging", desc: "Every user action, API call, and AI decision is logged with full traceability.", icon: FileText },
-    { title: "IP Whitelisting", desc: "Restrict platform access to approved IP ranges only.", icon: Wifi },
+    { title: "Tenant Isolation", desc: "Every account is fully isolated. No shared data between organizations.", icon: Shield },
+    { title: "Role-Based Access", desc: "Granular permission tiers. Every action is gated by role.", icon: Users },
+    { title: "MFA Enforcement", desc: "Two-factor authentication available for all team members.", icon: Smartphone },
+    { title: "PII Auto-Redaction", desc: "Sensitive data is automatically detected and masked in logs.", icon: Eye },
+    { title: "Audit Logging", desc: "Every action is logged with full traceability.", icon: FileText },
+    { title: "IP Whitelisting", desc: "Restrict platform access to approved networks.", icon: Wifi },
 ]
 
 const shipped = [
-    { title: "Incident Response Plan", desc: "Four severity levels, six phases, breach notification, and communication templates documented." },
-    { title: "SLA Commitments", desc: "99.5% uptime, RTO under 4 hours, RPO under 1 hour, security patch SLA defined." },
-    { title: "Security Headers", desc: "HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy all enforced." },
-    { title: "Cookie Consent", desc: "Accept All / Essential Only controls implemented." },
-    { title: "Data Retention Policy", desc: "7\u201330 day operational retention, 7-year compliance retention documented." },
-    { title: "Account Lockout", desc: "Five failed attempts triggers a five-minute lockout with remaining attempts counter." },
-    { title: "Data Classification", desc: "Four-level system (L1\u2013L4) with complete data inventory and third-party registry." },
+    { title: "Incident Response Plan", desc: "Documented severity classification, response phases, breach notification procedures." },
+    { title: "SLA Commitments", desc: "Uptime targets, recovery objectives, and security patch timelines defined." },
+    { title: "Security Headers", desc: "Industry-standard HTTP security headers enforced on all endpoints." },
+    { title: "Cookie Consent", desc: "Granular consent controls implemented." },
+    { title: "Data Retention Policy", desc: "Retention and deletion schedules documented and enforced." },
+    { title: "Account Lockout", desc: "Automated lockout after repeated failed authentication attempts." },
+    { title: "Data Classification", desc: "Multi-level classification system with handling requirements per level." },
     { title: "Data Protection Policy", desc: "Documented and enforced across all data handling flows." },
 ]
 
@@ -75,9 +75,6 @@ export function Security() {
                             </tbody>
                         </table>
                     </div>
-                    <p className="mt-4 text-xs text-gray-600 font-mono">
-                        SOC 2 Type II gap remediation shipped March 2026. Audit observation period begins Q2 2026.
-                    </p>
                 </motion.section>
 
                 {/* ── 3. Architecture Security ─────────────────────────────── */}
@@ -122,7 +119,7 @@ export function Security() {
                                 Where data lives
                             </h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                Supabase (PostgreSQL), hosted on AWS infrastructure, encrypted at rest and in transit. All database connections use TLS 1.2+.
+                                All data is encrypted at rest and in transit. Infrastructure is hosted in SOC 2-compliant data centers.
                             </p>
                         </div>
                         <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
@@ -131,7 +128,7 @@ export function Security() {
                                 How AI decisions are logged
                             </h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                Every Protocol Engine decision is stored with a full audit trail — what triggered it, what it decided, what it did. AI responses include confidence scores and the specific protocol that governed them.
+                                Every AI decision is stored with a full audit trail — what triggered it, what it decided, what it did.
                             </p>
                         </div>
                         <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
@@ -140,7 +137,7 @@ export function Security() {
                                 Data deletion
                             </h3>
                             <p className="text-sm text-gray-400 leading-relaxed">
-                                GDPR-compliant export and deletion available on request for all tiers. Full account data can be exported or permanently deleted within 30 days of request.
+                                GDPR-compliant export and deletion available on request for all tiers.
                             </p>
                         </div>
                     </div>
