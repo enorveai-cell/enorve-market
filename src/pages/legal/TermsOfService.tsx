@@ -132,7 +132,7 @@ export function TermsOfService() {
                                 <li>We will not access your data except to provide the service, prevent fraud, or comply with law</li>
                                 <li>We do not use your data to train AI models</li>
                                 <li>You can export your data at any time via the platform's data export feature</li>
-                                <li>Upon account termination, we will delete your data within 90 days unless legally required to retain it</li>
+                                <li>Upon account termination, we will delete your data within 30 days unless legally required to retain it</li>
                                 <li>We may generate anonymized, aggregated analytics that cannot identify you or your customers</li>
                             </ul>
                         </div>
@@ -150,10 +150,37 @@ export function TermsOfService() {
                         <div>
                             <h2 className="text-2xl font-bold text-white mb-4">Service Level Agreement</h2>
                             <p className="leading-relaxed">
-                                We target 99.9% uptime for our platform, measured monthly. Scheduled maintenance windows are excluded.
-                                Our current SLA commitments, support response time targets, and incident priority definitions are
-                                published at <a href="https://app.enorve.com/sla" className="text-violet-400 hover:underline" target="_blank" rel="noopener noreferrer">app.enorve.com/sla</a>.
-                                Enterprise customers may negotiate custom SLA terms.
+                                We target 99.5% uptime for our platform, measured monthly. Scheduled maintenance windows are excluded.
+                                SLA commitments, support response time targets, and incident priority definitions are available upon request.
+                                Enterprise customers may negotiate custom SLA terms. Contact{" "}
+                                <a href="mailto:legal@enorve.com" className="text-violet-400 hover:underline">legal@enorve.com</a>{" "}
+                                for details.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-bold text-white mb-4">Confidentiality</h2>
+                            <p className="leading-relaxed mb-4">
+                                Each party agrees to protect the other party's Confidential Information using at least the same degree
+                                of care it uses to protect its own confidential information, and in no event less than reasonable care.
+                            </p>
+                            <ul className="list-disc list-inside space-y-2 text-gray-400">
+                                <li>"Confidential Information" includes non-public technical, business, or financial information disclosed by either party</li>
+                                <li>Your Customer Data is treated as your Confidential Information</li>
+                                <li>Confidential Information may only be disclosed to employees or contractors who need access to perform obligations under these terms</li>
+                                <li>This obligation does not apply to information that is publicly available, independently developed, or required to be disclosed by law</li>
+                                <li>Confidentiality obligations survive termination of these terms for a period of three (3) years</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-bold text-white mb-4">Data Processing</h2>
+                            <p className="leading-relaxed">
+                                To the extent we process personal data on your behalf, we act as a data processor under GDPR
+                                and applicable data protection laws. A Data Processing Agreement (DPA) is available upon request
+                                for customers who require one. Contact{" "}
+                                <a href="mailto:privacy@enorve.com" className="text-violet-400 hover:underline">privacy@enorve.com</a>{" "}
+                                to request a copy.
                             </p>
                         </div>
 
@@ -165,9 +192,22 @@ export function TermsOfService() {
                             <ul className="list-disc list-inside space-y-2 text-gray-400">
                                 <li>Enorve shall not be liable for any indirect, incidental, special, consequential, or punitive damages</li>
                                 <li>Our total aggregate liability shall not exceed the fees paid by you in the 12 months preceding the claim</li>
-                                <li>We are not liable for losses caused by AI-generated responses, third-party service outages, or force majeure events</li>
+                                <li>We are not liable for losses caused by AI-generated responses, third-party service outages, or Force Majeure Events</li>
                                 <li>The service is provided "as is" without warranties of any kind, express or implied</li>
                             </ul>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-bold text-white mb-4">Force Majeure</h2>
+                            <p className="leading-relaxed">
+                                Neither party shall be liable for failure or delay in performing its obligations where such failure
+                                or delay results from events beyond the party's reasonable control ("Force Majeure Events"),
+                                including but not limited to: natural disasters, acts of war or terrorism, pandemics, government
+                                actions, power or internet outages, or failures of third-party infrastructure providers. The
+                                affected party must notify the other party promptly and use reasonable efforts to mitigate the
+                                impact. If a Force Majeure Event continues for more than 60 days, either party may terminate
+                                the affected services upon written notice.
+                            </p>
                         </div>
 
                         <div>
@@ -189,7 +229,7 @@ export function TermsOfService() {
                                 <li>We may suspend or terminate your account for violation of these terms with written notice</li>
                                 <li>We may immediately suspend accounts engaged in abusive, fraudulent, or illegal activity</li>
                                 <li>Upon termination, your right to use the service ceases immediately</li>
-                                <li>We will retain your data for 90 days post-termination to allow for export, then delete it</li>
+                                <li>We will retain your data for 30 days post-termination to allow for export, then delete it</li>
                             </ul>
                         </div>
 

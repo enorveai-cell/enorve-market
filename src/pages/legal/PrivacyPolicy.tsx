@@ -40,6 +40,19 @@ export function PrivacyPolicy() {
                         </div>
 
                         <div>
+                            <h2 className="text-2xl font-bold text-white mb-4">Legal Basis for Processing</h2>
+                            <p className="leading-relaxed mb-4">
+                                We process your personal data under the following lawful bases (GDPR Article 6):
+                            </p>
+                            <ul className="list-disc list-inside space-y-2 text-gray-400">
+                                <li><span className="text-white font-medium">Contract performance</span> &mdash; Processing necessary to deliver the services you have subscribed to, including account management, billing, and platform operation.</li>
+                                <li><span className="text-white font-medium">Legitimate interest</span> &mdash; Processing necessary for security monitoring, fraud prevention, service improvement, and error tracking, where our interests do not override your rights.</li>
+                                <li><span className="text-white font-medium">Consent</span> &mdash; Processing based on your explicit opt-in, such as analytics cookies and marketing communications. You may withdraw consent at any time.</li>
+                                <li><span className="text-white font-medium">Legal obligation</span> &mdash; Processing required to comply with applicable laws, such as tax reporting and regulatory requirements.</li>
+                            </ul>
+                        </div>
+
+                        <div>
                             <h2 className="text-2xl font-bold text-white mb-4">Information We Collect</h2>
                             <p className="leading-relaxed mb-4">We collect the following categories of information:</p>
                             <p className="leading-relaxed font-semibold text-white mb-2">Account Information</p>
@@ -98,63 +111,28 @@ export function PrivacyPolicy() {
                         <div>
                             <h2 className="text-2xl font-bold text-white mb-4">Third-Party Services & Subprocessors</h2>
                             <p className="leading-relaxed mb-4">
-                                We share data with the following categories of service providers, solely to operate our platform:
+                                We use third-party service providers to operate our platform, including infrastructure hosting,
+                                AI processing, payment processing, email delivery, error monitoring, and product analytics.
+                                Data is shared with these providers only as necessary to deliver our services.
                             </p>
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-sm text-gray-400 mb-4">
-                                    <thead>
-                                        <tr className="border-b border-white/10 text-left">
-                                            <th className="py-2 pr-4 text-white font-semibold">Provider</th>
-                                            <th className="py-2 pr-4 text-white font-semibold">Purpose</th>
-                                            <th className="py-2 text-white font-semibold">Data Shared</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-white/5">
-                                        <tr>
-                                            <td className="py-2 pr-4">Supabase</td>
-                                            <td className="py-2 pr-4">Database & authentication</td>
-                                            <td className="py-2">All platform data (encrypted at rest)</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 pr-4">OpenAI</td>
-                                            <td className="py-2 pr-4">AI-powered features</td>
-                                            <td className="py-2">Conversation content (zero retention)</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 pr-4">Dodo Payments</td>
-                                            <td className="py-2 pr-4">Payment processing</td>
-                                            <td className="py-2">Billing details (PCI DSS compliant)</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 pr-4">Resend</td>
-                                            <td className="py-2 pr-4">Transactional email delivery</td>
-                                            <td className="py-2">Email address, message content</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 pr-4">Sentry</td>
-                                            <td className="py-2 pr-4">Error monitoring</td>
-                                            <td className="py-2">Error traces, user/tenant IDs (no PII)</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 pr-4">PostHog</td>
-                                            <td className="py-2 pr-4">Product analytics</td>
-                                            <td className="py-2">Anonymized usage events (consent-based)</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 pr-4">Upstash</td>
-                                            <td className="py-2 pr-4">Rate limiting & caching</td>
-                                            <td className="py-2">Tenant IDs, request counters</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 pr-4">Cloudflare</td>
-                                            <td className="py-2 pr-4">CDN, CAPTCHA, DNS</td>
-                                            <td className="py-2">IP address, browser fingerprint</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <p className="leading-relaxed mb-4 text-gray-400">
+                                A complete list of our subprocessors, including their purpose, location, and the categories of
+                                data they process, is available on our{" "}
+                                <a href="/subprocessors" className="text-violet-400 hover:underline">Subprocessors page</a>.
+                            </p>
                             <p className="leading-relaxed text-gray-400">
-                                We do not sell your data to any third party. Data is shared only as necessary to provide our services.
+                                We do not sell your personal data to any third party. We will notify you at least 30 days before
+                                adding a new subprocessor that processes personal data.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-bold text-white mb-4">Data Processing Agreement</h2>
+                            <p className="leading-relaxed">
+                                For customers who require a Data Processing Agreement (DPA) under GDPR Article 28 or other applicable
+                                data protection laws, we provide a standard DPA upon request. Contact{" "}
+                                <a href="mailto:privacy@enorve.com" className="text-violet-400 hover:underline">privacy@enorve.com</a>{" "}
+                                to request a copy.
                             </p>
                         </div>
 
@@ -182,7 +160,7 @@ export function PrivacyPolicy() {
                                 <li>Resolved conversations: configurable (default 90 days)</li>
                                 <li>Audit logs: configurable (default 730 days)</li>
                                 <li>Billing records: retained as required by law</li>
-                                <li>Account data: deleted within 90 days of account closure upon request</li>
+                                <li>Account data: deleted within 30 days of account closure upon request</li>
                             </ul>
                         </div>
 
@@ -191,7 +169,7 @@ export function PrivacyPolicy() {
                             <p className="leading-relaxed">
                                 We implement industry-standard technical and organizational measures to protect your personal
                                 data against unauthorized access, alteration, disclosure, or destruction. All data is
-                                encrypted at rest (AES-256) and in transit (TLS 1.3). Access to production systems is restricted
+                                encrypted at rest and in transit. Access to production systems is restricted
                                 to authorized personnel with multi-factor authentication. We maintain SOC 2 Type II aligned controls.
                             </p>
                         </div>
@@ -223,6 +201,25 @@ export function PrivacyPolicy() {
                         </div>
 
                         <div>
+                            <h2 className="text-2xl font-bold text-white mb-4">California Privacy Rights (CCPA)</h2>
+                            <p className="leading-relaxed mb-4">
+                                If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):
+                            </p>
+                            <ul className="list-disc list-inside space-y-2 text-gray-400 mb-4">
+                                <li>Right to know what personal information is collected and how it is used</li>
+                                <li>Right to request deletion of your personal information</li>
+                                <li>Right to opt out of the sale of your personal information</li>
+                                <li>Right to non-discrimination for exercising your privacy rights</li>
+                            </ul>
+                            <p className="leading-relaxed text-gray-400">
+                                <span className="text-white font-medium">We do not sell your personal information.</span>{" "}
+                                We do not share personal information with third parties for their direct marketing purposes.
+                                To exercise any CCPA rights, contact{" "}
+                                <a href="mailto:privacy@enorve.com" className="text-violet-400 hover:underline">privacy@enorve.com</a>.
+                            </p>
+                        </div>
+
+                        <div>
                             <h2 className="text-2xl font-bold text-white mb-4">Children's Privacy</h2>
                             <p className="leading-relaxed">
                                 Our services are not directed to individuals under 18. We do not knowingly collect personal
@@ -241,13 +238,17 @@ export function PrivacyPolicy() {
                         </div>
 
                         <div>
-                            <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
+                            <h2 className="text-2xl font-bold text-white mb-4">Data Protection Contact</h2>
                             <p className="leading-relaxed">
-                                If you have any questions about this Privacy Policy or wish to exercise your data rights, please contact us at:
+                                If you have any questions about this Privacy Policy, wish to exercise your data rights,
+                                or need to report a data protection concern, please contact our data protection team:
                             </p>
                             <p className="mt-2 text-violet-400">privacy@enorve.com</p>
                             <p className="mt-4 text-gray-400 text-sm">
                                 QuickmaticAI Pvt Ltd, operating as Enorve
+                            </p>
+                            <p className="mt-1 text-gray-500 text-sm">
+                                We will respond to all data protection inquiries within 30 days.
                             </p>
                         </div>
                     </div>

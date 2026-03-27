@@ -5,8 +5,8 @@ import { usePageTitle } from "../../hooks/usePageTitle"
 const subprocessors = [
     {
         name: "Supabase (Pty) Ltd",
-        purpose: "Database hosting, authentication, edge functions, file storage",
-        location: "United States (AWS us-east-1)",
+        purpose: "Database hosting and authentication",
+        location: "United States",
         dataProcessed: "All customer data, user accounts, conversation data",
     },
     {
