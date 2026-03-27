@@ -136,6 +136,13 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             }
             setCooldown()
             setStatus("success")
+            // Track waitlist signup in GA
+            if (window.gtag) {
+                window.gtag('event', 'waitlist_submitted', {
+                    event_category: 'conversion',
+                    event_label: email.split('@')[1],
+                })
+            }
         } catch {
             setStatus("error")
             setErrorMessage("Something went wrong — please try again.")
