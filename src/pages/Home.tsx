@@ -10,6 +10,7 @@ import { CTASection } from "../components/sections/CTASection"
 import { MidPageCTA } from "../components/sections/MidPageCTA"
 import { Hero } from "../components/Hero"
 import { SimulatorTeaser } from "../components/sections/SimulatorTeaser"
+import { ExitIntentModal } from "../components/ExitIntentModal"
 import { usePageTitle } from "../hooks/usePageTitle"
 import { useStructuredData, createOrganizationSchema, createSoftwareApplicationSchema } from "../hooks/useStructuredData"
 
@@ -40,6 +41,7 @@ export function Home() {
             {/* ENTERPRISE SECURITY SECTION — re-enable post Series A */}
             {/* <EnterpriseSecuritySection /> */}
             <CTASection />
+            <ExitIntentModal />
         </>
     )
 }

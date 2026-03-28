@@ -115,6 +115,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://enorve.com/design-partners</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Company Pages -->
   <url>
     <loc>https://enorve.com/contact-sales</loc>

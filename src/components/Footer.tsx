@@ -41,6 +41,7 @@ const footerLinks = {
             { label: "AI Transparency", href: "/ai-transparency" },
             { label: "Privacy Policy", href: "/privacy-policy" },
             { label: "Terms of Service", href: "/terms-of-service" },
+            { label: "Design Partners", href: "/design-partners" },
             { label: "Contact Sales", href: "/contact-sales" },
         ]
     }
