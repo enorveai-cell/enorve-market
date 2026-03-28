@@ -56,6 +56,13 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://enorve.com/product/protocols</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Solution Pages -->
   <url>
     <loc>https://enorve.com/solutions/customer-support</loc>
@@ -110,7 +117,7 @@
 
   <!-- Company Pages -->
   <url>
-    <loc>https://enorve.com/contact</loc>
+    <loc>https://enorve.com/contact-sales</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

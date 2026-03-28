@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { usePageTitle } from "../hooks/usePageTitle"
 import {
   MessageSquare, Shield, ShieldAlert, ShieldCheck, CheckCircle2,
   AlertTriangle, Zap, Mail, Instagram, BarChart3,
@@ -294,6 +295,10 @@ function SceneLabel({ text, color }: { text: string; color: string }) {
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 export function DemoVideo() {
+  usePageTitle({
+    title: "Demo — Watch Enorve in Action",
+    description: "See how Enorve builds, tests, and deploys AI support protocols in a cinematic walkthrough."
+  })
   const [scene, setScene] = useState<Scene>("intro")
   const [sceneTime, setSceneTime] = useState(0)
   const [started, setStarted] = useState(false)

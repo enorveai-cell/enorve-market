@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Play, RotateCcw, Mail, MessageCircle, Instagram, CheckCircle2, ShieldAlert, ArrowRight } from "lucide-react"
 import { useWaitlist } from "../hooks/useWaitlist"
+import { usePageTitle } from "../hooks/usePageTitle"
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface ChatMessage {
@@ -217,6 +218,10 @@ function ChatPanel({
 
 // ── Main Page ────────────────────────────────────────────────────────────────
 export function AISimulator() {
+  usePageTitle({
+    title: "AI Simulator — See How Enorve Handles Support",
+    description: "Watch a side-by-side comparison of AI support with and without Enorve. Same customer, two outcomes."
+  })
   const { openWaitlist } = useWaitlist()
   const [isPlaying, setIsPlaying] = useState(false)
   const [hasPlayed, setHasPlayed] = useState(false)
