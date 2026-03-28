@@ -30,28 +30,28 @@ export function DesignPartners() {
 
         setStatus("submitting")
         try {
-            // Send to Google Sheets via Apps Script web app or mailto fallback
-            const formData = {
-                company: company.trim(),
-                currentTool: currentTool.trim(),
-                volume,
-                pain: pain.trim(),
-                submitted: new Date().toISOString(),
-            }
+            const res = await fetch("https://uggsfinugqzjfroxzpbo.supabase.co/functions/v1/design-partner-apply", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    company_name: company.trim(),
+                    current_tool: currentTool.trim(),
+                    monthly_ticket_volume: volume,
+                    biggest_pain: pain.trim(),
+                }),
+            })
 
-            // mailto fallback — opens founder's email with form data
-            const subject = encodeURIComponent(`Design Partner Application — ${formData.company}`)
-            const body = encodeURIComponent(
-                `Company: ${formData.company}\nCurrent tool: ${formData.currentTool}\nMonthly volume: ${formData.volume}\nBiggest pain: ${formData.pain}\nSubmitted: ${formData.submitted}`
-            )
-            window.open(`mailto:sales@enorve.com?subject=${subject}&body=${body}`, '_self')
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}))
+                throw new Error(data.error || "Submission failed")
+            }
 
             // Track in GA
             if (window.gtag) {
                 window.gtag('event', 'design_partner_applied', {
                     event_category: 'conversion',
-                    event_label: formData.company,
-                    volume: formData.volume,
+                    event_label: company.trim(),
+                    volume,
                 })
             }
 
@@ -235,9 +235,9 @@ export function DesignPartners() {
                             <div className="w-12 h-12 rounded-full bg-emerald-500/15 flex items-center justify-center mx-auto mb-4">
                                 <Check className="w-6 h-6 text-emerald-400" />
                             </div>
-                            <h3 className="text-xl font-semibold text-white mb-2">Application received</h3>
-                            <p className="text-sm text-gray-400">
-                                We'll respond within 24 hours. If it's a fit, you'll be onboarded the same week.
+                            <h3 className="text-xl font-semibold text-white mb-3">Application received.</h3>
+                            <p className="text-sm text-gray-400 leading-relaxed">
+                                We review every application personally and respond within 24 hours. Check your inbox — or spam, just in case.
                             </p>
                         </div>
                     ) : (
