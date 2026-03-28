@@ -299,6 +299,14 @@ export function DemoVideo() {
     title: "Demo — Watch Enorve in Action",
     description: "See how Enorve builds, tests, and deploys AI support protocols in a cinematic walkthrough."
   })
+  // Prevent indexing — internal demo page
+  useEffect(() => {
+    const meta = document.createElement('meta')
+    meta.name = 'robots'
+    meta.content = 'noindex, nofollow'
+    document.head.appendChild(meta)
+    return () => { document.head.removeChild(meta) }
+  }, [])
   const [scene, setScene] = useState<Scene>("intro")
   const [sceneTime, setSceneTime] = useState(0)
   const [started, setStarted] = useState(false)

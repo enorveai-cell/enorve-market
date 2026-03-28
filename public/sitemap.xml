@@ -108,13 +108,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://enorve.com/demo-video</loc>
-    <lastmod>2026-03-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
   <!-- Company Pages -->
   <url>
     <loc>https://enorve.com/contact-sales</loc>
