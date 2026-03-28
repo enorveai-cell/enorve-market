@@ -24,6 +24,7 @@ const solutionLinks = [
 ]
 
 const resourceLinks = [
+    { label: "API Docs", href: "https://app.enorve.com/docs", external: true },
     { label: "AI Simulator", href: "/ai-simulator" },
     { label: "Cost Calculator", href: "/calculator" },
     { label: "ROI Calculator", href: "/labor-replacement-calculator" },
