@@ -80,8 +80,8 @@ const outcomes = [
 export function CustomerSupport() {
     const { openWaitlist } = useWaitlist()
     usePageTitle({
-        title: "Customer Support Teams - AI-Powered Support Solutions",
-        description: "Autonomous support solutions for modern customer operations. Resolve conversations automatically, reduce response times, and scale support with AI-first automation and human oversight."
+        title: "AI for Customer Support Teams | Enorve",
+        description: "Resolve conversations automatically with AI that follows your rules. Faster first response, less repetitive work, higher satisfaction."
     })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">

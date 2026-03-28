@@ -122,8 +122,8 @@ const outcomes = [
 
 export function Ecommerce() {
     usePageTitle({
-        title: "E-commerce — Replace Support Labor with Autonomous AI",
-        description: "Your Shopify store doesn't have a software problem. It has a labor scaling problem. Enorve is designed to resolve routine support conversations automatically — so your team focuses on what actually needs a human."
+        title: "AI Support for E-commerce & Shopify | Enorve",
+        description: "Automate WISMO, returns, and product questions with AI that connects to Shopify. Reduce manual support workload without losing control."
     })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">

@@ -34,7 +34,7 @@ export const createOrganizationSchema = () => ({
     name: 'Enorve',
     url: 'https://enorve.com',
     logo: 'https://enorve.com/favicon.svg',
-    description: 'Governed Autonomous AI Operations for E-commerce. Enorve autonomously resolves customer conversations across WhatsApp, Email, and Chat — with full governance, explainability, and escalation control.',
+    description: 'AI customer support that follows your rules. Define how AI handles refunds, complaints, and escalations — then stress-test before customers see it.',
     foundingDate: '2024',
     sameAs: [
         'https://twitter.com/enorveai',
@@ -44,7 +44,7 @@ export const createOrganizationSchema = () => ({
     contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'Sales',
-        url: 'https://enorve.com/contact'
+        url: 'https://enorve.com/contact-sales'
     }
 })
 
@@ -53,9 +53,9 @@ export const createSoftwareApplicationSchema = () => ({
     '@type': 'SoftwareApplication',
     name: 'Enorve',
     applicationCategory: 'BusinessApplication',
-    applicationSubCategory: 'Autonomous AI Operations Platform',
+    applicationSubCategory: 'AI Customer Support Platform',
     operatingSystem: 'Web, Cloud',
-    description: 'Governed Autonomous AI Operations platform that autonomously resolves customer conversations across WhatsApp, Email, and Chat. AI runs first, humans supervise.',
+    description: 'AI customer support platform for e-commerce. Define protocols for refunds, complaints, and escalations. Connects to Shopify, WhatsApp, email, and live chat.',
     offers: {
         '@type': 'AggregateOffer',
         priceCurrency: 'USD',
@@ -104,6 +104,30 @@ export const createProductSchema = (name: string, price: string, description: st
         availability: 'https://schema.org/InStock',
         url: 'https://enorve.com/pricing'
     }
+})
+
+export const createFAQPageSchema = (faqs: { question: string; answer: string }[]) => ({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+        }
+    }))
+})
+
+export const createBreadcrumbSchema = (items: { name: string; url: string }[]) => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: item.name,
+        item: item.url,
+    }))
 })
 
 export const createWebPageSchema = (name: string, description: string, url: string) => ({

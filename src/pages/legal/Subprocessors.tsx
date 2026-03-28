@@ -72,7 +72,10 @@ const subprocessors = [
 ]
 
 export function Subprocessors() {
-    usePageTitle("Subprocessors")
+    usePageTitle({
+        title: "Subprocessors | Enorve",
+        description: "Complete list of third-party subprocessors used by Enorve, including purpose, location, and data categories processed."
+    })
     return (
         <div className="pt-32 pb-20">
             {/* Hero Section */}

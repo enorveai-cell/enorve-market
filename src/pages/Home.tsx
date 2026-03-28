@@ -15,8 +15,8 @@ import { useStructuredData, createOrganizationSchema, createSoftwareApplicationS
 
 export function Home() {
     usePageTitle({
-        title: "AI-Powered Customer Support for E-commerce",
-        description: "Your AI says exactly what you'd say. Every time. Define exactly how your AI handles refunds, complaints, and escalations — then stress-test it before a real customer ever sees it."
+        title: "Enorve — AI Customer Support That Follows Your Rules",
+        description: "Define how your AI handles refunds, complaints, and escalations. Stress-test before customers see it. Built for e-commerce teams."
     })
 
     // Add structured data for SEO

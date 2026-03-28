@@ -105,8 +105,8 @@ function PercentileBar({ costPerTicket }: { costPerTicket: number }) {
 export function CostPerTicketCalculator() {
     const { openWaitlist } = useWaitlist()
     usePageTitle({
-        title: "Support Cost Calculator — Enorve",
-        description: "Calculate your cost per support ticket in 30 seconds. Most support leaders don't know this number."
+        title: "Cost Per Support Ticket Calculator | Enorve",
+        description: "Calculate your true cost per support ticket in 30 seconds. Benchmark against industry averages and find where to cut costs."
     })
 
     // Read URL params
@@ -322,6 +322,28 @@ export function CostPerTicketCalculator() {
                         </p>
                     </div>
                 )}
+
+                {/* SEO content */}
+                <div className="mt-20 border-t border-white/5 pt-12 space-y-8">
+                    <div>
+                        <h2 className="text-lg font-semibold text-white mb-3">What is cost per ticket?</h2>
+                        <p className="text-sm text-gray-500 leading-relaxed">
+                            Cost per ticket is the total cost of running your support operation divided by the number of tickets resolved. It includes agent salaries, tooling, management overhead, and training. Most e-commerce support teams run between $5 and $25 per ticket depending on channel mix, conversation complexity, and team size.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 className="text-lg font-semibold text-white mb-3">How AI reduces cost per ticket</h2>
+                        <p className="text-sm text-gray-500 leading-relaxed">
+                            AI-powered support resolves routine conversations — order status, refund requests, product questions — without human involvement. This reduces the number of tickets that need agent time, lowering your cost per ticket while maintaining quality. The key is protocol-governed AI that follows your exact policies, not a generic chatbot.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 className="text-lg font-semibold text-white mb-3">How to use this calculator</h2>
+                        <p className="text-sm text-gray-500 leading-relaxed">
+                            Enter the number of support agents, their average monthly salary, and your monthly ticket volume. The calculator shows your current cost per ticket and estimates savings with AI automation. Results are shareable via URL.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     )

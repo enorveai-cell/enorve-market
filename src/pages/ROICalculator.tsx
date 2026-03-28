@@ -15,8 +15,8 @@ export function ROICalculator() {
     const { inputs, setInput, results } = useROICalculator()
     const { openWaitlist } = useWaitlist()
     usePageTitle({
-        title: "Labor Replacement Calculator — Enorve",
-        description: "Calculate how many support FTEs Enorve can replace and your projected annual savings. Input your headcount, agent cost, and conversation volume to see the economics."
+        title: "AI Support ROI Calculator — Estimate Your Savings",
+        description: "Calculate how much you can save by automating customer support. Enter your team size, salary, and volume to see projected ROI."
     })
 
     return (

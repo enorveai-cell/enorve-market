@@ -34,8 +34,8 @@ const shipped = [
 
 export function Security() {
     usePageTitle({
-        title: "Security \u2014 Enorve",
-        description: "Security isn't a feature. It's the foundation. SOC 2, GDPR, encryption, tenant isolation, and audit logging."
+        title: "Security — SOC 2, GDPR, Encryption | Enorve",
+        description: "Tenant isolation, MFA, audit logging, PII redaction, and data classification. SOC 2 Type II in progress. GDPR and CCPA compliant."
     })
 
     return (

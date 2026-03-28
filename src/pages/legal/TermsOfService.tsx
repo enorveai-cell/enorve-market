@@ -3,7 +3,10 @@ import { FileText } from "lucide-react"
 import { usePageTitle } from "../../hooks/usePageTitle"
 
 export function TermsOfService() {
-    usePageTitle("Terms of Service")
+    usePageTitle({
+        title: "Terms of Service | Enorve",
+        description: "Terms governing your use of the Enorve platform. Data ownership, billing, AI features, liability, and dispute resolution."
+    })
     return (
         <div className="pt-32 pb-20">
             {/* Hero Section */}

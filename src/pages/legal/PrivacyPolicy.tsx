@@ -3,7 +3,10 @@ import { Shield } from "lucide-react"
 import { usePageTitle } from "../../hooks/usePageTitle"
 
 export function PrivacyPolicy() {
-    usePageTitle("Privacy Policy")
+    usePageTitle({
+        title: "Privacy Policy | Enorve",
+        description: "How Enorve collects, uses, and protects your data. GDPR and CCPA compliant. Data processing, cookies, and your rights explained."
+    })
     return (
         <div className="pt-32 pb-20">
             {/* Hero Section */}

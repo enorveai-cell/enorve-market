@@ -55,8 +55,8 @@ const lookingForOptions = ["Product Demo", "Pricing Discussion", "Enterprise Req
 export function ContactSales() {
     const { openWaitlist } = useWaitlist()
     usePageTitle({
-        title: "Contact Sales - Talk to Our Team",
-        description: "Get in touch with Enorve. Sales inquiries, support questions, or partnership opportunities - we're here to help your business succeed."
+        title: "Contact Sales — Talk to the Enorve Team",
+        description: "Get in touch for sales inquiries, partnership opportunities, or technical questions. We respond within 24 hours."
     })
 
     return (

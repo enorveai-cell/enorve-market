@@ -9,7 +9,7 @@ import { Button } from "../components/ui/Button"
 import { useState } from "react"
 import { usePageTitle } from "../hooks/usePageTitle"
 import { useWaitlist } from "../hooks/useWaitlist"
-import { useStructuredData, createProductSchema } from "../hooks/useStructuredData"
+import { useStructuredData, createProductSchema, createFAQPageSchema } from "../hooks/useStructuredData"
 import { ROIWidget } from "../components/roi/ROIWidget"
 
 const plans = [
@@ -165,8 +165,8 @@ const securityFeatures = [
 export function Pricing() {
     const { openWaitlist } = useWaitlist()
     usePageTitle({
-        title: "Pricing — AI Customer Support Plans",
-        description: "Plans built around AI resolution capacity. From 500 to 50,000+ AI-resolved conversations per month. Choose the plan that fits your team."
+        title: "Pricing — AI Support Plans by Resolution Capacity",
+        description: "Plans from 500 to 50,000+ AI-resolved conversations per month. Pay for resolution capacity, not feature access. Start with a free trial."
     })
 
     // Add product structured data for SEO
@@ -185,7 +185,8 @@ export function Pricing() {
             "Enorve Business Plan",
             "499",
             "Enterprise features with governance, audit logs, and AI decision explainability for controlled automation."
-        )
+        ),
+        createFAQPageSchema(faqs),
     ])
 
     const [openFaq, setOpenFaq] = useState<number | null>(null)

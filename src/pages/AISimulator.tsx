@@ -219,8 +219,8 @@ function ChatPanel({
 // ── Main Page ────────────────────────────────────────────────────────────────
 export function AISimulator() {
   usePageTitle({
-    title: "AI Simulator — See How Enorve Handles Support",
-    description: "Watch a side-by-side comparison of AI support with and without Enorve. Same customer, two outcomes."
+    title: "AI Support Simulator — Same Customer, Two Outcomes",
+    description: "Watch a side-by-side comparison of AI support with and without Enorve. See how protocol-governed AI outperforms generic chatbots."
   })
   const { openWaitlist } = useWaitlist()
   const [isPlaying, setIsPlaying] = useState(false)
