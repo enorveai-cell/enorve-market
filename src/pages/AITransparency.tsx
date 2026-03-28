@@ -34,32 +34,33 @@ export function AITransparency() {
                         <table className="w-full text-left">
                             <thead>
                                 <tr className="border-b border-white/[0.06] bg-white/[0.02]">
-                                    <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-gray-500">Provider</th>
-                                    <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-gray-500">Model</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-gray-500">Component</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-gray-500">Class</th>
                                     <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-gray-500">Purpose</th>
                                     <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-gray-500">Data Retention</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr className="border-b border-white/[0.04]">
-                                    <td className="px-6 py-4 text-sm font-medium text-white">OpenAI</td>
-                                    <td className="px-6 py-4 text-sm text-gray-400">GPT-4o</td>
+                                    <td className="px-6 py-4 text-sm font-medium text-white">Reasoning Engine</td>
+                                    <td className="px-6 py-4 text-sm text-gray-400">Enterprise-grade</td>
                                     <td className="px-6 py-4 text-sm text-gray-400">Conversation handling, protocol execution, auto-QA grading, knowledge retrieval</td>
                                     <td className="px-6 py-4 text-sm text-emerald-400 font-medium">Zero retention</td>
                                 </tr>
                                 <tr>
-                                    <td className="px-6 py-4 text-sm font-medium text-white">Groq</td>
-                                    <td className="px-6 py-4 text-sm text-gray-400">Llama 3</td>
-                                    <td className="px-6 py-4 text-sm text-gray-400">Lightweight classification (CSAT inference, intent detection)</td>
+                                    <td className="px-6 py-4 text-sm font-medium text-white">Classification Engine</td>
+                                    <td className="px-6 py-4 text-sm text-gray-400">Lightweight</td>
+                                    <td className="px-6 py-4 text-sm text-gray-400">Intent detection, sentiment classification, CSAT inference</td>
                                     <td className="px-6 py-4 text-sm text-emerald-400 font-medium">Zero retention</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <p className="mt-4 text-sm text-gray-500 leading-relaxed">
-                        We select models based on task suitability, not brand. Conversation handling requires high reasoning capability (GPT-4o).
-                        Classification tasks that need speed over depth use lightweight models (Groq).
-                        Both providers operate under zero data retention agreements — your data is processed and discarded, never stored or used for training.
+                        We select models based on task suitability, not brand. Conversation handling requires high reasoning capability.
+                        Classification tasks that need speed over depth use lightweight, purpose-built models.
+                        All AI providers operate under zero data retention agreements — your data is processed and discarded, never stored or used for training.
+                        Specific providers are listed on our <a href="/subprocessors" className="text-violet-400 hover:underline">subprocessors page</a>.
                     </p>
                 </motion.section>
 
@@ -222,7 +223,7 @@ export function AITransparency() {
            │
            ▼
 ┌─────────────────────┐
-│  AI Model (OpenAI)   │  ← Zero retention. Data discarded after response.
+│  Reasoning Engine    │  ← Zero retention. Data discarded after response.
 │  Input: conversation │
 │  + protocol + KB     │
 └──────────┬──────────┘
