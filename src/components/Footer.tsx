@@ -38,6 +38,7 @@ const footerLinks = {
         title: "Company",
         links: [
             { label: "Security", href: "/security" },
+            { label: "AI Transparency", href: "/ai-transparency" },
             { label: "Privacy Policy", href: "/privacy-policy" },
             { label: "Terms of Service", href: "/terms-of-service" },
             { label: "Contact Sales", href: "/contact-sales" },

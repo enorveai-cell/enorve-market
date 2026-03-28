@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
-import { Shield, Lock, Users, Smartphone, Eye, FileText, Wifi, Check } from "lucide-react"
+import { Link } from "react-router-dom"
+import { Shield, Lock, Users, Smartphone, Eye, FileText, Wifi, Check, ArrowRight } from "lucide-react"
 import { usePageTitle } from "../hooks/usePageTitle"
 
 const fade = { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } }
@@ -143,8 +144,22 @@ export function Security() {
                     </div>
                 </motion.section>
 
-                {/* ── 6. Responsible Disclosure ────────────────────────────── */}
-                <motion.section {...fade} transition={{ delay: 0.3 }}>
+                {/* ── 6. AI Transparency link ───────────────────────────────── */}
+                <motion.section className="mb-12" {...fade} transition={{ delay: 0.3 }}>
+                    <Link
+                        to="/ai-transparency"
+                        className="group flex items-center justify-between rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] transition-colors px-5 py-4"
+                    >
+                        <div>
+                            <p className="text-sm font-medium text-white">AI Transparency</p>
+                            <p className="text-xs text-gray-500 mt-0.5">What data flows to the AI, what it cannot do, and how every decision is logged.</p>
+                        </div>
+                        <ArrowRight className="w-4 h-4 text-gray-600 group-hover:text-white transition-colors" />
+                    </Link>
+                </motion.section>
+
+                {/* ── 7. Responsible Disclosure ────────────────────────────── */}
+                <motion.section {...fade} transition={{ delay: 0.35 }}>
                     <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 py-4">
                         <p className="text-sm text-gray-400">
                             Found a vulnerability? Email{" "}

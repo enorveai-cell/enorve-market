@@ -24,6 +24,7 @@ import { ROICalculator } from "./pages/ROICalculator"
 import { CostPerTicketCalculator } from "./pages/CostPerTicketCalculator"
 import { Security } from "./pages/Security"
 import { AISimulator } from "./pages/AISimulator"
+import { AITransparency } from "./pages/AITransparency"
 import { DemoVideo } from "./pages/DemoVideo"
 
 // Company Pages
@@ -70,6 +71,7 @@ function App() {
           <Route path="/labor-replacement-calculator" element={<ROICalculator />} />
           <Route path="/roi-calculator" element={<Navigate to="/labor-replacement-calculator" replace />} />
           <Route path="/security" element={<Security />} />
+          <Route path="/ai-transparency" element={<AITransparency />} />
           <Route path="/ai-simulator" element={<AISimulator />} />
 
           {/* Company Routes */}
