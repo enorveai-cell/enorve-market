@@ -134,7 +134,7 @@ export function PrivacyPolicy() {
                             <p className="leading-relaxed">
                                 For customers who require a Data Processing Agreement (DPA) under GDPR Article 28 or other applicable
                                 data protection laws, we provide a standard DPA upon request. Contact{" "}
-                                <a href="mailto:privacy@enorve.com" className="text-violet-400 hover:underline">privacy@enorve.com</a>{" "}
+                                <a href="mailto:legal@enorve.com" className="text-violet-400 hover:underline">legal@enorve.com</a>{" "}
                                 to request a copy.
                             </p>
                         </div>
@@ -218,7 +218,7 @@ export function PrivacyPolicy() {
                                 <span className="text-white font-medium">We do not sell your personal information.</span>{" "}
                                 We do not share personal information with third parties for their direct marketing purposes.
                                 To exercise any CCPA rights, contact{" "}
-                                <a href="mailto:privacy@enorve.com" className="text-violet-400 hover:underline">privacy@enorve.com</a>.
+                                <a href="mailto:legal@enorve.com" className="text-violet-400 hover:underline">legal@enorve.com</a>.
                             </p>
                         </div>
 
@@ -246,7 +246,7 @@ export function PrivacyPolicy() {
                                 If you have any questions about this Privacy Policy, wish to exercise your data rights,
                                 or need to report a data protection concern, please contact our data protection team:
                             </p>
-                            <p className="mt-2 text-violet-400">privacy@enorve.com</p>
+                            <p className="mt-2 text-violet-400">legal@enorve.com</p>
                             <p className="mt-4 text-gray-400 text-sm">
                                 QuickmaticAI Pvt Ltd, operating as Enorve
                             </p>

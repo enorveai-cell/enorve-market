@@ -109,7 +109,7 @@ export function TermsOfService() {
                                 <li>Prices are listed in your selected currency and exclude applicable taxes</li>
                                 <li>Plan changes take effect immediately with prorated billing</li>
                                 <li>Failed payments enter a 7-day grace period before access is restricted</li>
-                                <li>Refunds are provided at our discretion; contact privacy@enorve.com for requests</li>
+                                <li>Refunds are provided at our discretion; contact legal@enorve.com for requests</li>
                                 <li>We reserve the right to change pricing with 30 days' notice</li>
                                 <li>Usage overages, if enabled on your plan, are billed at the rates displayed in your billing dashboard</li>
                             </ul>
@@ -156,7 +156,7 @@ export function TermsOfService() {
                                 We target 99.5% uptime for our platform, measured monthly. Scheduled maintenance windows are excluded.
                                 SLA commitments, support response time targets, and incident priority definitions are available upon request.
                                 Enterprise customers may negotiate custom SLA terms. Contact{" "}
-                                <a href="mailto:privacy@enorve.com" className="text-violet-400 hover:underline">privacy@enorve.com</a>{" "}
+                                <a href="mailto:legal@enorve.com" className="text-violet-400 hover:underline">legal@enorve.com</a>{" "}
                                 for details.
                             </p>
                         </div>
@@ -182,7 +182,7 @@ export function TermsOfService() {
                                 To the extent we process personal data on your behalf, we act as a data processor under GDPR
                                 and applicable data protection laws. A Data Processing Agreement (DPA) is available upon request
                                 for customers who require one. Contact{" "}
-                                <a href="mailto:privacy@enorve.com" className="text-violet-400 hover:underline">privacy@enorve.com</a>{" "}
+                                <a href="mailto:legal@enorve.com" className="text-violet-400 hover:underline">legal@enorve.com</a>{" "}
                                 to request a copy.
                             </p>
                         </div>
@@ -261,7 +261,7 @@ export function TermsOfService() {
                             <p className="leading-relaxed">
                                 If you have any questions about these Terms, please contact us at:
                             </p>
-                            <p className="mt-2 text-violet-400">privacy@enorve.com</p>
+                            <p className="mt-2 text-violet-400">legal@enorve.com</p>
                             <p className="mt-4 text-gray-400 text-sm">
                                 QuickmaticAI Pvt Ltd, operating as Enorve
                             </p>

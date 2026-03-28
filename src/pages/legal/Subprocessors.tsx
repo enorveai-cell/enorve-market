@@ -129,8 +129,8 @@ export function Subprocessors() {
                         Enorve will notify customers at least 30 days before adding a new subprocessor
                         that processes personal data. If you have concerns about a new subprocessor,
                         please contact us at{" "}
-                        <a href="mailto:privacy@enorve.com" className="text-violet-400 hover:text-violet-300">
-                            privacy@enorve.com
+                        <a href="mailto:legal@enorve.com" className="text-violet-400 hover:text-violet-300">
+                            legal@enorve.com
                         </a>.
                     </p>
                 </div>
