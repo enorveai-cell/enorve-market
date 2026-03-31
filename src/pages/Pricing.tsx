@@ -629,7 +629,7 @@ export function Pricing() {
                             <tbody>
                                 {[
                                     { plan: "Starter", fee: "+$29/mo", included: "300 min", overage: "$0.15/min" },
-                                    { plan: "Professional", fee: "+$79/mo", included: "1,000 min", overage: "$0.12/min" },
+                                    { plan: "Professional", fee: "+$79/mo", included: "2,000 min", overage: "$0.12/min" },
                                     { plan: "Business", fee: "+$149/mo", included: "3,000 min", overage: "$0.10/min" },
                                     { plan: "Enterprise", fee: "Custom", included: "Custom", overage: "Negotiated" },
                                 ].map((row, i) => (
