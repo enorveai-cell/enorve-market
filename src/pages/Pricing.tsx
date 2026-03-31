@@ -591,6 +591,73 @@ export function Pricing() {
                 </div>
             </section>
 
+            {/* Voice Add-on */}
+            <section className="py-24 relative z-10">
+                <div className="max-w-4xl mx-auto px-6">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <span className="text-[10px] font-semibold uppercase tracking-[3px] text-emerald-400 mb-3 block">Add-on</span>
+                        <h2 className="text-3xl font-medium text-white tracking-tighter mb-4">
+                            Voice Channel
+                        </h2>
+                        <p className="text-gray-400 max-w-lg mx-auto">
+                            AI that answers your phone calls — governed by the same Protocol Engine as your chat support.
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="rounded-2xl border border-white/[0.06] overflow-hidden"
+                    >
+                        <table className="w-full text-left">
+                            <thead>
+                                <tr className="border-b border-white/[0.06] bg-white/[0.02]">
+                                    <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-gray-500">Plan</th>
+                                    <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-gray-500">Add-on fee</th>
+                                    <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-gray-500">Included</th>
+                                    <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-gray-500">Overage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[
+                                    { plan: "Starter", fee: "+$29/mo", included: "300 min", overage: "$0.15/min" },
+                                    { plan: "Professional", fee: "+$79/mo", included: "1,000 min", overage: "$0.12/min" },
+                                    { plan: "Business", fee: "+$149/mo", included: "3,000 min", overage: "$0.10/min" },
+                                    { plan: "Enterprise", fee: "Custom", included: "Custom", overage: "Negotiated" },
+                                ].map((row, i) => (
+                                    <tr key={row.plan} className={`border-b border-white/[0.04] ${i % 2 === 1 ? "bg-white/[0.01]" : ""}`}>
+                                        <td className="px-6 py-4 text-sm font-medium text-white">{row.plan}</td>
+                                        <td className="px-6 py-4 text-sm text-emerald-400 font-medium">{row.fee}</td>
+                                        <td className="px-6 py-4 text-sm text-gray-400">{row.included}</td>
+                                        <td className="px-6 py-4 text-sm text-gray-500">{row.overage}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="mt-6 text-center"
+                    >
+                        <p className="text-xs text-gray-500 leading-relaxed max-w-lg mx-auto">
+                            Includes: AI voice agent, warm transfers, live transcription, call recording, auto-QA grading, immutable audit trail. No per-resolution fees. No surprise overages beyond the published rate.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
             {/* FAQ */}
             <section className="py-24 relative z-10">
                 <div className="max-w-[800px] mx-auto px-6">
