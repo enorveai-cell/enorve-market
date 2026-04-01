@@ -17,12 +17,14 @@ export function DesignPartners() {
     })
 
     const [company, setCompany] = useState("")
+    const [email, setEmail] = useState("")
     const [currentTool, setCurrentTool] = useState("")
     const [volume, setVolume] = useState("")
     const [pain, setPain] = useState("")
     const [status, setStatus] = useState<FormStatus>("idle")
 
-    const canSubmit = company.trim() && currentTool.trim() && volume && pain.trim().length >= 10
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    const canSubmit = company.trim() && email.trim() && isValidEmail && currentTool.trim() && volume && pain.trim().length >= 10
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -35,6 +37,7 @@ export function DesignPartners() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     company_name: company.trim(),
+                    email: email.trim(),
                     current_tool: currentTool.trim(),
                     monthly_ticket_volume: volume,
                     biggest_pain: pain.trim(),
@@ -250,6 +253,18 @@ export function DesignPartners() {
                                     value={company}
                                     onChange={e => setCompany(e.target.value)}
                                     placeholder="Acme Inc."
+                                    className="w-full h-11 px-4 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-white/20 transition-colors"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Work email</label>
+                                <input
+                                    id="email"
+                                    type="email"
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                    placeholder="you@company.com"
                                     className="w-full h-11 px-4 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-white/20 transition-colors"
                                 />
                             </div>
