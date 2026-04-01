@@ -5,7 +5,7 @@ const capabilities = [
     {
         icon: ArrowRightLeft,
         title: "Vendor Migration",
-        description: "Rip-and-replace Zendesk or Intercom in one session. Customers, tickets, conversations, and knowledge base — migrated with zero data loss.",
+        description: "Moving from Zendesk? We bring over your customers, tickets, and help articles. You don't start from zero.",
         color: "text-blue-400",
         bg: "from-blue-500/20 to-cyan-500/20",
         border: "border-blue-500/20",
@@ -13,39 +13,39 @@ const capabilities = [
     {
         icon: Shield,
         title: "SOC 2 Ready",
-        description: "HSTS, CSP headers, PII redaction, immutable audit logs, account lockout, MFA, and tenant isolation. Architecture validated for Type I.",
+        description: "Audit logs, tenant isolation, MFA, PII redaction. The security checklist your procurement team actually checks.",
         color: "text-emerald-400",
         bg: "from-emerald-500/20 to-teal-500/20",
         border: "border-emerald-500/20",
     },
     {
         icon: Accessibility,
-        title: "WCAG Accessible",
-        description: "Chat widget with full keyboard navigation, ARIA labels, screen reader support, and Escape-to-close. Enterprise and government compliant.",
+        title: "Accessible Widget",
+        description: "Keyboard navigation, screen reader support, Escape to close. Your widget works for everyone, not just mouse users.",
         color: "text-violet-400",
         bg: "from-violet-500/20 to-purple-500/20",
         border: "border-violet-500/20",
     },
     {
         icon: Palette,
-        title: "White-Label Theming",
-        description: "CSS custom properties let enterprise clients override colors, fonts, and border radii from their own stylesheet. No dashboard needed.",
+        title: "Your Brand, Not Ours",
+        description: "Override colors, fonts, and radii from your own stylesheet. The widget looks like yours, not like a third-party embed.",
         color: "text-amber-400",
         bg: "from-amber-500/20 to-orange-500/20",
         border: "border-amber-500/20",
     },
     {
         icon: FileCheck,
-        title: "Subprocessor Transparency",
-        description: "Published subprocessor list, GDPR data deletion API, data export endpoint, and 30-day notice policy for new subprocessors.",
+        title: "Know Where Your Data Goes",
+        description: "Published subprocessor list. GDPR deletion endpoint. 30-day notice before anything changes. No surprises.",
         color: "text-pink-400",
         bg: "from-pink-500/20 to-rose-500/20",
         border: "border-pink-500/20",
     },
     {
         icon: Database,
-        title: "Bulk Import API",
-        description: "REST endpoint for importing up to 1,000 customers per batch. Upsert by email or phone. Ready for CSV-driven onboarding.",
+        title: "Bulk Import",
+        description: "Upload your customer list. 1,000 at a time. Matches by email or phone so you don't get duplicates.",
         color: "text-cyan-400",
         bg: "from-cyan-500/20 to-sky-500/20",
         border: "border-cyan-500/20",
@@ -77,9 +77,9 @@ export function EnterpriseReadySection() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-medium text-white tracking-tighter leading-[1.1] mb-6"
                     >
-                        Built for procurement teams{" "}
+                        The stuff that{" "}
                         <span className="bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent">
-                            that say no to everything.
+                            actually blocks the deal.
                         </span>
                     </motion.h2>
 
@@ -90,8 +90,8 @@ export function EnterpriseReadySection() {
                         viewport={{ once: true }}
                         className="text-lg text-gray-400 max-w-2xl mx-auto"
                     >
-                        Migration tooling, accessibility compliance, security controls, and data sovereignty —
-                        the checklist items that kill deals when they're missing.
+                        Security reviews, migration plans, accessibility audits.
+                        The things your IT team asks about before they'll sign anything.
                     </motion.p>
                 </div>
 
