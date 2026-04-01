@@ -11,6 +11,7 @@ import { Automation } from "./pages/product/Automation"
 import { KnowledgeBase } from "./pages/product/KnowledgeBase"
 import { Analytics } from "./pages/product/Analytics"
 import { Protocols } from "./pages/product/Protocols"
+import { Campaigns } from "./pages/product/Campaigns"
 
 // Solutions Pages
 import { CustomerSupport } from "./pages/solutions/CustomerSupport"
@@ -59,6 +60,7 @@ function App() {
           <Route path="/product/knowledge-base" element={<KnowledgeBase />} />
           <Route path="/product/analytics" element={<Analytics />} />
           <Route path="/product/protocols" element={<Protocols />} />
+          <Route path="/product/campaigns" element={<Campaigns />} />
 
           {/* Solutions Routes */}
           <Route path="/solutions/customer-support" element={<CustomerSupport />} />
