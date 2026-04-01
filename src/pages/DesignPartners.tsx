@@ -34,7 +34,10 @@ export function DesignPartners() {
         try {
             const res = await fetch("https://uggsfinugqzjfroxzpbo.supabase.co/functions/v1/design-partner-apply", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVnZ3NmaW51Z3F6amZyb3h6cGJvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MjUwMzYsImV4cCI6MjA3NzUwMTAzNn0.p5IFNxPI2rbbQ40BZvM9B40JxDFyzQ2v4j6YTw20m_M",
+                },
                 body: JSON.stringify({
                     company_name: company.trim(),
                     email: email.trim(),
