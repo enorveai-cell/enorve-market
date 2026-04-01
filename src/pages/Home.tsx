@@ -5,6 +5,7 @@ import { AIEngineSection } from "../components/sections/AIEngineSection"
 import { LanguagesSection } from "../components/sections/LanguagesSection"
 import { FeatureGridSection } from "../components/sections/FeatureGridSection"
 import { EnterpriseSecuritySection } from "../components/sections/EnterpriseSecuritySection"
+import { EnterpriseReadySection } from "../components/sections/EnterpriseReadySection"
 import { ConnectStackSection } from "../components/sections/ConnectStackSection"
 import { CTASection } from "../components/sections/CTASection"
 import { MidPageCTA } from "../components/sections/MidPageCTA"
@@ -38,8 +39,7 @@ export function Home() {
             <LanguagesSection />
             <MidPageCTA />
             <ConnectStackSection />
-            {/* ENTERPRISE SECURITY SECTION — re-enable post Series A */}
-            {/* <EnterpriseSecuritySection /> */}
+            <EnterpriseReadySection />
             <CTASection />
             <ExitIntentModal />
         </>

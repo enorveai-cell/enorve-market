@@ -42,21 +42,21 @@ const features = [
         color: "#96BF48",
     },
     {
-        title: "WFM & Scheduling",
-        description: "See team workload, forecast message volume, and manage shift schedules.",
+        title: "Generative UI",
+        description: "AI renders interactive components inside the chat — order trackers, receipts, rating forms — not just text.",
         icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611l-.772.136a23.727 23.727 0 01-8.726 0l-.772-.136c-1.717-.293-2.299-2.379-1.067-3.611L5 14.5" />
             </svg>
         ),
         color: "#EC4899",
     },
     {
-        title: "Agent Macros",
-        description: "Type / to trigger quick actions — assign, tag, change priority, and reply in one keystroke.",
+        title: "Vendor Migration",
+        description: "Rip-and-replace Zendesk or Intercom in one session. Customers, tickets, KB articles — all migrated.",
         icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
             </svg>
         ),
         color: "#3B82F6",

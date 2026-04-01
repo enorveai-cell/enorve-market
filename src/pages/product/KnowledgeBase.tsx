@@ -46,7 +46,7 @@ const qualityFeatures = [
 
 const differentiators = [
     { title: "Governance-First", desc: "Retrieval-only mode with verified-source responses", icon: Shield },
-    { title: "AI-Generated Suggestions", desc: "Proactive gap detection from escalation patterns", icon: Sparkles },
+    { title: "Knowledge Gap Auto-Fill", desc: "AI drafts articles from resolved conversations — operators publish in one click", icon: Sparkles },
     { title: "Impact Measurement", desc: "Before/after metrics for each published article", icon: TrendingUp },
     { title: "Conflict Detection", desc: "Automatically find contradictory information", icon: AlertTriangle },
     { title: "Website Crawler", desc: "One-click import with SSRF protection", icon: Globe },
@@ -656,6 +656,85 @@ export function KnowledgeBase() {
                             </div>
                         </motion.div>
                     </div>
+                </div>
+            </section>
+
+            {/* Knowledge Gap Auto-Fill */}
+            <section className="max-w-7xl mx-auto px-6 mb-32 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 mb-4">
+                            <Lightbulb className="w-4 h-4 text-violet-400" />
+                            <span className="text-xs font-medium text-violet-400 uppercase tracking-wider">Auto-Fill</span>
+                        </div>
+                        <h3 className="text-3xl font-medium tracking-tight text-white mb-3">
+                            AI drafts articles from<br />resolved conversations.
+                        </h3>
+                        <p className="text-gray-400 leading-relaxed mb-6">
+                            When the AI can't answer a question and an agent resolves it, Enorve automatically drafts a knowledge base article from the conversation. The agent's resolution becomes reusable knowledge — not buried in a ticket log.
+                        </p>
+                        <div className="space-y-3">
+                            {[
+                                { text: "Triggered on conversation resolution — no manual action required", icon: Zap },
+                                { text: "GPT-4o drafts title, body, category, and tags from the transcript", icon: Sparkles },
+                                { text: "One-click publish, or edit first — operator stays in control", icon: CheckCircle },
+                                { text: "Only drafts from fully resolved conversations — no hallucinated articles", icon: Shield },
+                            ].map((f, i) => (
+                                <motion.div
+                                    key={f.text}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                                    viewport={{ once: true }}
+                                    className="flex items-start gap-3"
+                                >
+                                    <f.icon className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
+                                    <span className="text-sm text-gray-300">{f.text}</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+
+                    {/* Auto-Fill Flow Mockup */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="relative"
+                    >
+                        <div className="rounded-2xl border border-white/10 bg-[#0C0E12] p-5 space-y-3">
+                            {/* Step flow */}
+                            {[
+                                { step: "1", label: "Gap Detected", desc: "Customer asked about return policy — no article found", color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20" },
+                                { step: "2", label: "Agent Resolves", desc: "Agent explains the 30-day return window and process", color: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/20" },
+                                { step: "3", label: "AI Drafts Article", desc: '"How to Return an Item" — 3 paragraphs, categorized, tagged', color: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/20" },
+                                { step: "4", label: "Operator Publishes", desc: "One click — article goes live, gap closed permanently", color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
+                            ].map((s, i) => (
+                                <motion.div
+                                    key={s.step}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.3, delay: 0.3 + i * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className={`flex items-center gap-3 p-3 rounded-xl border ${s.border} ${s.bg}`}
+                                >
+                                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold ${s.color} bg-white/5`}>
+                                        {s.step}
+                                    </div>
+                                    <div>
+                                        <div className={`text-xs font-medium ${s.color}`}>{s.label}</div>
+                                        <div className="text-[11px] text-gray-500">{s.desc}</div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
