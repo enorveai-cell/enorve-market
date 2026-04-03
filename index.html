@@ -84,9 +84,21 @@
   <script type="module" src="/src/main.tsx"></script>
 
   <!-- Enorve Chat Widget -->
-  <script
-    src="https://uggsfinugqzjfroxzpbo.supabase.co/functions/v1/serve-chat-widget?widget_id=75affe11-ca7b-4e8e-a9dd-fa2c39f37891"
-    defer>
+  <script>
+    (function() {
+      window.EnorveChat = window.EnorveChat || function() {
+        (window.EnorveChat.q = window.EnorveChat.q || []).push(arguments);
+      };
+      var script = document.createElement('script');
+      script.src = 'https://uggsfinugqzjfroxzpbo.supabase.co/functions/v1/serve-chat-widget?widget_id=75affe11-ca7b-4e8e-a9dd-fa2c39f37891';
+      script.async = true;
+      document.head.appendChild(script);
+      window.EnorveChat('init', {
+        widgetKey: '75affe11-ca7b-4e8e-a9dd-fa2c39f37891',
+        position: 'bottom-right',
+        primaryColor: '#100f0d'
+      });
+    })();
   </script>
 </body>
 
