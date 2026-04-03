@@ -3,11 +3,14 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import {
     ArrowRight, Shield, Plug, Play, DollarSign,
-    CheckCircle, MessageSquare, Clock, Globe, Mail
+    CheckCircle, MessageSquare, Clock, Globe, Mail, Loader2, Send
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { usePageTitle } from "../../hooks/usePageTitle"
 import { useWaitlist } from "../../hooks/useWaitlist"
+
+const SUPABASE_URL = "https://uggsfinugqzjfroxzpbo.supabase.co"
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVnZ3NmaW51Z3F6amZyb3h6cGJvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MjUwMzYsImV4cCI6MjA3NzUwMTAzNn0.p5IFNxPI2rbbQ40BZvM9B40JxDFyzQ2v4j6YTw20m_M"
 
 const helpTopics = [
     {
@@ -54,10 +57,48 @@ const lookingForOptions = ["Product Demo", "Pricing Discussion", "Enterprise Req
 
 export function ContactSales() {
     const { openWaitlist } = useWaitlist()
+    const [formData, setFormData] = useState({
+        name: "", email: "", company: "",
+        team_size: "", monthly_volume: "", looking_for: "", message: ""
+    })
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
+    const [error, setError] = useState("")
+
     usePageTitle({
         title: "Contact Sales — Talk to the Enorve Team",
         description: "Get in touch for sales inquiries, partnership opportunities, or technical questions. We respond within 24 hours."
     })
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setError("")
+        setIsSubmitting(true)
+
+        try {
+            const res = await fetch(`${SUPABASE_URL}/functions/v1/contact-sales`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+                },
+                body: JSON.stringify(formData),
+            })
+
+            const data = await res.json()
+            if (!res.ok) throw new Error(data.error || "Failed to submit")
+
+            setSubmitted(true)
+        } catch (err) {
+            setError((err as Error).message)
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
+    const updateField = (field: string, value: string) => {
+        setFormData(prev => ({ ...prev, [field]: value }))
+    }
 
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
@@ -87,46 +128,151 @@ export function ContactSales() {
             {/* Main Content */}
             <section className="max-w-3xl mx-auto px-6 mb-20 relative z-10">
                 <div className="space-y-12">
-                    {/* Contact CTA */}
+                    {/* Contact Form */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="max-w-md mx-auto"
+                        className="max-w-lg mx-auto"
                     >
-                        <div className="p-8 rounded-[24px] bg-[#0C0E12] border border-white/5 text-center">
-                            <h3 className="text-lg font-medium text-white mb-6">Get in touch</h3>
-                            <div className="space-y-6">
-                                {/* Primary CTA - Email */}
-                                <a
-                                    href="mailto:sales@enorve.com?subject=Sales Inquiry from Website"
-                                    className="block w-full"
-                                >
-                                    <Button variant="primary" className="w-full group">
-                                        <Mail className="w-4 h-4 mr-2" />
-                                        Email Sales Team
-                                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                                    </Button>
-                                </a>
-                                <p className="text-xs text-center text-gray-400">We typically respond within 24 hours</p>
-                            </div>
-
-                            {/* Trust badges */}
-                            <div className="mt-6 pt-6 border-t border-white/5">
-                                <div className="flex flex-wrap gap-3 justify-center">
-                                    {[
-                                        { icon: Shield, text: "Enterprise security" },
-                                        { icon: Clock, text: "High availability" },
-                                        { icon: Globe, text: "Status page" }
-                                    ].map((badge) => (
-                                        <div key={badge.text} className="flex items-center gap-1.5 text-xs text-gray-400">
-                                            <badge.icon className="w-3 h-3" />
-                                            {badge.text}
-                                        </div>
-                                    ))}
+                        <div className="p-8 rounded-[24px] bg-[#0C0E12] border border-white/5">
+                            {submitted ? (
+                                <div className="text-center py-8">
+                                    <div className="w-14 h-14 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-4">
+                                        <CheckCircle className="w-7 h-7 text-emerald-400" />
+                                    </div>
+                                    <h3 className="text-lg font-medium text-white mb-2">We've got your message</h3>
+                                    <p className="text-gray-400 text-sm">Our team will reach out within 1 business day. Check your inbox for a confirmation.</p>
                                 </div>
-                            </div>
+                            ) : (
+                                <form onSubmit={handleSubmit} className="space-y-5">
+                                    <h3 className="text-lg font-medium text-white mb-1">Get in touch</h3>
+                                    <p className="text-sm text-gray-400 mb-4">We typically respond within 24 hours.</p>
+
+                                    {error && (
+                                        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400">
+                                            {error}
+                                        </div>
+                                    )}
+
+                                    <div className="grid sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-xs text-gray-400 mb-1.5">Full name *</label>
+                                            <input
+                                                type="text" required value={formData.name}
+                                                onChange={e => updateField("name", e.target.value)}
+                                                className="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm placeholder:text-gray-500 focus:outline-none focus:border-violet-500/50 transition-colors"
+                                                placeholder="Jane Smith"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-xs text-gray-400 mb-1.5">Work email *</label>
+                                            <input
+                                                type="email" required value={formData.email}
+                                                onChange={e => updateField("email", e.target.value)}
+                                                className="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm placeholder:text-gray-500 focus:outline-none focus:border-violet-500/50 transition-colors"
+                                                placeholder="jane@company.com"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-xs text-gray-400 mb-1.5">Company *</label>
+                                        <input
+                                            type="text" required value={formData.company}
+                                            onChange={e => updateField("company", e.target.value)}
+                                            className="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm placeholder:text-gray-500 focus:outline-none focus:border-violet-500/50 transition-colors"
+                                            placeholder="Acme Inc."
+                                        />
+                                    </div>
+
+                                    <div className="grid sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-xs text-gray-400 mb-1.5">Team size</label>
+                                            <select
+                                                value={formData.team_size}
+                                                onChange={e => updateField("team_size", e.target.value)}
+                                                className="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-violet-500/50 transition-colors appearance-none"
+                                            >
+                                                <option value="" className="bg-[#0C0E12]">Select...</option>
+                                                {teamSizeOptions.map(opt => (
+                                                    <option key={opt} value={opt} className="bg-[#0C0E12]">{opt}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="block text-xs text-gray-400 mb-1.5">Monthly support volume</label>
+                                            <select
+                                                value={formData.monthly_volume}
+                                                onChange={e => updateField("monthly_volume", e.target.value)}
+                                                className="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-violet-500/50 transition-colors appearance-none"
+                                            >
+                                                <option value="" className="bg-[#0C0E12]">Select...</option>
+                                                {volumeOptions.map(opt => (
+                                                    <option key={opt} value={opt} className="bg-[#0C0E12]">{opt}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-xs text-gray-400 mb-1.5">What are you looking for? *</label>
+                                        <select
+                                            required value={formData.looking_for}
+                                            onChange={e => updateField("looking_for", e.target.value)}
+                                            className="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-violet-500/50 transition-colors appearance-none"
+                                        >
+                                            <option value="" className="bg-[#0C0E12]">Select a topic...</option>
+                                            {lookingForOptions.map(opt => (
+                                                <option key={opt} value={opt} className="bg-[#0C0E12]">{opt}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-xs text-gray-400 mb-1.5">Anything else?</label>
+                                        <textarea
+                                            value={formData.message}
+                                            onChange={e => updateField("message", e.target.value)}
+                                            rows={3}
+                                            className="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm placeholder:text-gray-500 focus:outline-none focus:border-violet-500/50 transition-colors resize-none"
+                                            placeholder="Tell us about your use case, requirements, or questions..."
+                                        />
+                                    </div>
+
+                                    <Button variant="primary" className="w-full group" disabled={isSubmitting}>
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-4 h-4 mr-2" />
+                                                Send to Sales
+                                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                            </>
+                                        )}
+                                    </Button>
+
+                                    {/* Trust badges */}
+                                    <div className="pt-4 border-t border-white/5">
+                                        <div className="flex flex-wrap gap-3 justify-center">
+                                            {[
+                                                { icon: Shield, text: "Enterprise security" },
+                                                { icon: Clock, text: "24h response time" },
+                                                { icon: Globe, text: "No spam, ever" }
+                                            ].map((badge) => (
+                                                <div key={badge.text} className="flex items-center gap-1.5 text-xs text-gray-400">
+                                                    <badge.icon className="w-3 h-3" />
+                                                    {badge.text}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </form>
+                            )}
                         </div>
                     </motion.div>
 
