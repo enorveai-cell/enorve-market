@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { MainLayout } from "./layouts/MainLayout"
+import { V2Layout } from "./layouts/V2Layout"
 import { ScrollToTop } from "./components/ScrollToTop"
 import { WaitlistProvider } from "./hooks/useWaitlist"
 import { Home } from "./pages/Home"
+import { V2Home } from "./pages/v2/Home"
 
 // Product Pages
 import { AICopilot } from "./pages/product/AICopilot"
@@ -48,6 +50,11 @@ function App() {
       <Routes>
         {/* Full-screen pages — no layout */}
         <Route path="/demo-video" element={<DemoVideo />} />
+
+        {/* v2 redesign — parallel route, scoped tokens. See docs/redesign-brief.md */}
+        <Route element={<V2Layout />}>
+          <Route path="/v2" element={<V2Home />} />
+        </Route>
 
         <Route element={<MainLayout />}>
           {/* Homepage */}
