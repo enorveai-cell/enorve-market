@@ -362,7 +362,7 @@ export function Analytics() {
                                     {[
                                         { range: "90-100%", count: 892, percent: 45, color: "#10B981" },
                                         { range: "70-90%", count: 456, percent: 23, color: "#3B82F6" },
-                                        { range: "50-70%", count: 312, percent: 16, color: "#F59E0B" },
+                                        { range: "50-70%", count: 312, percent: 16, color: "#D4C08A" },
                                         { range: "0-50%", count: 287, percent: 16, color: "#EF4444" }
                                     ].map((item) => (
                                         <div key={item.range} className="flex items-center gap-3">
@@ -593,8 +593,8 @@ export function Analytics() {
                                         />
                                         <defs>
                                             <linearGradient id="ai-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                <stop offset="0%" stopColor="#F97316" />
-                                                <stop offset="100%" stopColor="#FBBF24" />
+                                                <stop offset="0%" stopColor="#C17A2B" />
+                                                <stop offset="100%" stopColor="#D4C08A" />
                                             </linearGradient>
                                         </defs>
                                     </svg>

@@ -15,7 +15,7 @@ const capabilities = [
         icon: Tag,
         title: "Auto-Tag Rules",
         subtitle: "Intelligent Categorization",
-        color: "#8B5CF6",
+        color: "#1FA86F",
         features: [
             "Multi-condition matching on channels, intent, sentiment, keywords",
             "Add, remove, or replace tags automatically",
@@ -27,7 +27,7 @@ const capabilities = [
         icon: AlertTriangle,
         title: "Auto-Escalation",
         subtitle: "Smart Human Handoff",
-        color: "#F59E0B",
+        color: "#D4C08A",
         features: [
             "Configurable confidence thresholds (50-90%)",
             "Real-time AI confidence evaluation",
@@ -554,7 +554,7 @@ export function Automation() {
                                 {[
                                     { color: "#10B981", title: "Allow", desc: "Action proceeds automatically when conditions are met" },
                                     { color: "#EF4444", title: "Block", desc: "Action prevented from executing, logged for review" },
-                                    { color: "#F59E0B", title: "Require Approval", desc: "Human approval needed before action executes" }
+                                    { color: "#D4C08A", title: "Require Approval", desc: "Human approval needed before action executes" }
                                 ].map((policy) => (
                                     <div key={policy.title} className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5">
                                         <div

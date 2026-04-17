@@ -39,7 +39,7 @@ const plans = [
         price: 199,
         tagline: "Up to 2,500 autonomously resolved conversations/mo",
         description: "Autonomous operations for growing teams",
-        color: "#8B5CF6",
+        color: "#1FA86F",
         icon: Sparkles,
         popular: true,
         features: [
@@ -92,7 +92,7 @@ const plans = [
         price: "Custom",
         tagline: "50,000+ autonomously resolved conversations/mo",
         description: "Full autonomous operations with contractual guarantees",
-        color: "#F59E0B",
+        color: "#D4C08A",
         icon: Crown,
         popular: false,
         features: [
@@ -194,7 +194,7 @@ export function Pricing() {
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}
-            <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(139,92,246,0.3),rgba(255,255,255,0))] pointer-events-none z-0" />
+            <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(31, 168, 111,0.3),rgba(255,255,255,0))] pointer-events-none z-0" />
 
             {/* Hero Section */}
             <section className="max-w-5xl mx-auto px-6 mb-20 relative z-10 text-center">
@@ -282,7 +282,7 @@ export function Pricing() {
 
                             <Button
                                 variant={plan.popular ? "primary" : "secondary"}
-                                className={`w-full ${plan.popular ? "bg-gradient-to-r from-violet-500 to-purple-600 shadow-[0_0_25px_rgba(139,92,246,0.4)] hover:shadow-[0_0_35px_rgba(139,92,246,0.5)]" : ""}`}
+                                className={`w-full ${plan.popular ? "bg-gradient-to-r from-violet-500 to-purple-600 shadow-[0_0_25px_rgba(31, 168, 111,0.4)] hover:shadow-[0_0_35px_rgba(31, 168, 111,0.5)]" : ""}`}
                                 onClick={openWaitlist}
                             >
                                 {plan.cta}
@@ -710,7 +710,7 @@ export function Pricing() {
                     viewport={{ once: true }}
                     className="relative p-12 rounded-[32px] bg-gradient-to-br from-violet-500/10 to-purple-500/10 border border-violet-500/20 text-center overflow-hidden"
                 >
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.15),transparent_70%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(31, 168, 111,0.15),transparent_70%)]" />
 
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-4xl font-medium text-white mb-4 tracking-tight">

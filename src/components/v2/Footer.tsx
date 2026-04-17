@@ -1,9 +1,14 @@
+import { motion } from "framer-motion"
 import { homeV2 } from "../../content/home.v2"
+import { fadeUpSmall, revealViewport } from "./motion"
 
 /**
  * v2 Footer — 4-column sitemap on a darker ink surface.
  * Brand + tagline on the left, link columns on the right.
  * Bottom bar holds copyright + small meta links.
+ *
+ * Motion: single fadeUpSmall on the whole footer. Intentionally minimal —
+ * footer should not compete with the FinalCTA for attention.
  */
 export function V2Footer() {
     const { tagline, columns, copyright } = homeV2.footer
@@ -17,8 +22,12 @@ export function V2Footer() {
                 borderTop: "1px solid var(--brand-line-on-dark)",
             }}
         >
-            <div
+            <motion.div
                 className="v2-container"
+                variants={fadeUpSmall}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
                 style={{
                     paddingTop: "clamp(56px, 7vw, 96px)",
                     paddingBottom: 40,
@@ -164,7 +173,7 @@ export function V2Footer() {
                         Built for teams who care about what their AI says.
                     </span>
                 </div>
-            </div>
+            </motion.div>
         </footer>
     )
 }

@@ -11,8 +11,8 @@ import { usePageTitle } from "../../hooks/usePageTitle"
 import { useWaitlist } from "../../hooks/useWaitlist"
 
 const painPoints = [
-    { icon: MessageSquare, text: "Long, complex conversations", color: "#8B5CF6" },
-    { icon: Users, text: "Trial users asking the same questions", color: "#F59E0B" },
+    { icon: MessageSquare, text: "Long, complex conversations", color: "#1FA86F" },
+    { icon: Users, text: "Trial users asking the same questions", color: "#D4C08A" },
     { icon: FileText, text: "Knowledge scattered across docs", color: "#3B82F6" },
     { icon: GitBranch, text: "Escalations between support and engineering", color: "#EF4444" }
 ]
@@ -22,7 +22,7 @@ const solutions = [
         number: "01",
         title: "AI understands long, technical conversations",
         feature: "AI Copilot (Context Mode)",
-        color: "#8B5CF6",
+        color: "#1FA86F",
         icon: Brain,
         capabilities: [
             "Conversation summaries for quick context",
@@ -48,7 +48,7 @@ const solutions = [
         number: "03",
         title: "Escalate only when it truly matters",
         feature: "AI Auto-Escalation",
-        color: "#F59E0B",
+        color: "#D4C08A",
         icon: AlertTriangle,
         capabilities: [
             "Low confidence detection triggers handoff",
@@ -94,7 +94,7 @@ export function SaaS() {
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
             {/* Ambient Background Glow */}
-            <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(139,92,246,0.3),rgba(255,255,255,0))] pointer-events-none z-0" />
+            <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(31, 168, 111,0.3),rgba(255,255,255,0))] pointer-events-none z-0" />
 
             {/* Hero Section */}
             <section className="max-w-7xl mx-auto px-6 mb-32 relative z-10">
@@ -561,7 +561,7 @@ export function SaaS() {
                         className="grid md:grid-cols-3 gap-6"
                     >
                         {[
-                            { stage: "Trial", icon: Users, desc: "AI answers common questions instantly, converts more trials to paid", color: "#8B5CF6" },
+                            { stage: "Trial", icon: Users, desc: "AI answers common questions instantly, converts more trials to paid", color: "#1FA86F" },
                             { stage: "Onboarding", icon: Zap, desc: "Context Mode summarizes setup progress, accelerates time-to-value", color: "#3B82F6" },
                             { stage: "Production", icon: Server, desc: "Technical issues resolved faster with KB-powered AI assistance", color: "#10B981" }
                         ].map((item, i) => (
@@ -597,7 +597,7 @@ export function SaaS() {
                     className="relative p-12 rounded-[32px] bg-gradient-to-br from-violet-500/10 to-purple-500/10 border border-violet-500/20 text-center overflow-hidden"
                 >
                     {/* Background glow */}
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.15),transparent_70%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(31, 168, 111,0.15),transparent_70%)]" />
 
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-4xl font-medium text-white mb-4 tracking-tight">

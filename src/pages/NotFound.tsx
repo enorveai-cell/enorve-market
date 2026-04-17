@@ -13,7 +13,7 @@ export function NotFound() {
     return (
         <div className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-black">
             {/* Ambient Background Glow */}
-            <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(139,92,246,0.15),rgba(255,255,255,0))] pointer-events-none" />
+            <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(31, 168, 111,0.15),rgba(255,255,255,0))] pointer-events-none" />
 
             <div className="relative z-10 max-w-2xl mx-auto text-center">
                 {/* 404 Number */}

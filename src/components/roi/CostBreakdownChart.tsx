@@ -27,7 +27,7 @@ export function CostBreakdownChart({ results }: Props) {
     ]
 
     const COLORS = {
-        Labor: "#6366F1",
+        Labor: "#1FA86F",
         "Enorve Platform": "#10B981",
     }
 

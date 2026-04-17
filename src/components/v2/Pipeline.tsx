@@ -1,17 +1,31 @@
+import { motion } from "framer-motion"
 import { homeV2 } from "../../content/home.v2"
+import { fadeUp, fadeUpSmall, revealViewport, staggerContainer } from "./motion"
 
 /**
  * v2 Pipeline — "How it works" — 4-step horizontal flow on cream.
  * Steps connect with a subtle line; each step is numbered + titled + sub-text.
+ *
+ * Motion: header fades up first, then each step fades up in sequence so the
+ * eye reads left→right through the flow exactly as the copy intends.
  */
 export function V2Pipeline() {
     const { eyebrow, headline, subhead, steps } = homeV2.pipeline
 
     return (
         <section className="v2-surface-cream">
-            <div className="v2-container v2-section">
+            <motion.div
+                className="v2-container v2-section"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
+            >
                 {/* Section header */}
-                <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+                <motion.div
+                    variants={fadeUp}
+                    style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}
+                >
                     <span className="v2-eyebrow">{eyebrow}</span>
                     <h2 style={{ marginTop: 16 }}>{headline}</h2>
                     <p
@@ -24,10 +38,11 @@ export function V2Pipeline() {
                     >
                         {subhead}
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Steps */}
-                <div
+                <motion.div
+                    variants={staggerContainer}
                     style={{
                         marginTop: 72,
                         display: "grid",
@@ -58,15 +73,16 @@ export function V2Pipeline() {
                             body={step.body}
                         />
                     ))}
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     )
 }
 
 function Step({ index, title, body }: { index: number; title: string; body: string }) {
     return (
-        <div
+        <motion.div
+            variants={fadeUpSmall}
             style={{
                 position: "relative",
                 zIndex: 1,
@@ -116,6 +132,6 @@ function Step({ index, title, body }: { index: number; title: string; body: stri
             >
                 {body}
             </p>
-        </div>
+        </motion.div>
     )
 }

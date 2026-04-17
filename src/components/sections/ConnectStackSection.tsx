@@ -115,7 +115,7 @@ export function ConnectStackSection() {
                         </div>
                         {/* Live Chat */}
                         <div className="group relative">
-                            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-yellow-500/50 group-hover:shadow-[0_0_20px_rgba(250,207,57,0.2)] transition-all duration-300">
+                            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-yellow-500/50 group-hover:shadow-[0_0_20px_rgba(31, 168, 111,0.2)] transition-all duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFD500">
                                     <path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.516 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8z" />
                                     <circle cx="8" cy="10" r="1.3" fill="#0F1216" />
@@ -131,9 +131,9 @@ export function ConnectStackSection() {
                         <svg viewBox="0 0 900 360" className="absolute inset-0 w-full h-full" fill="none">
                             <defs>
                                 <linearGradient id="enorve-line-gradient" x1="0" y1="0" x2="1" y2="0">
-                                    <stop offset="0%" stopColor="#facf39" stopOpacity="0"></stop>
-                                    <stop offset="50%" stopColor="#facf39" stopOpacity="0.8"></stop>
-                                    <stop offset="100%" stopColor="#facf39" stopOpacity="0"></stop>
+                                    <stop offset="0%" stopColor="#1FA86F" stopOpacity="0"></stop>
+                                    <stop offset="50%" stopColor="#1FA86F" stopOpacity="0.8"></stop>
+                                    <stop offset="100%" stopColor="#1FA86F" stopOpacity="0"></stop>
                                 </linearGradient>
                             </defs>
                             {/* Connecting Lines with Dash Animation */}
@@ -165,7 +165,7 @@ export function ConnectStackSection() {
 
                         {/* Center Logo Enorve */}
                         <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
-                            <span className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-black/80 ring-1 ring-white/10 backdrop-blur-xl shadow-[0_0_50px_rgba(250,207,57,0.15)] relative z-20">
+                            <span className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-black/80 ring-1 ring-white/10 backdrop-blur-xl shadow-[0_0_50px_rgba(31, 168, 111,0.15)] relative z-20">
                                 {/* Enorve Logo SVG */}
                                 <EnorveLogoIcon className="w-10 h-10" variant="dark" />
                                 {/* Breathing glow behind logo */}

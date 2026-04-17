@@ -1,4 +1,6 @@
+import { motion } from "framer-motion"
 import { homeV2 } from "../../content/home.v2"
+import { fadeUp, fadeUpSmall, revealViewport, staggerContainer } from "./motion"
 
 /**
  * v2 DemoCompare — WITHOUT / WITH Enorve refund scenario.
@@ -6,6 +8,10 @@ import { homeV2 } from "../../content/home.v2"
  * Cream surface (contrasts hero's deep forest). The comparison is the
  * single strongest piece of copy we have — it deserves a full section
  * with two symmetric cards and a clear verdict chip on each.
+ *
+ * Motion: header fades up first, then the customer bubble, then the two
+ * reply cards stagger in so your eye moves left→right and lands on the
+ * enorve card (with the primary-tinted border doing the rest).
  */
 export function V2DemoCompare() {
     const { eyebrow, headline, subhead, customerMessage, without, with: withCase, ctaLabel, ctaHref } =
@@ -13,9 +19,18 @@ export function V2DemoCompare() {
 
     return (
         <section className="v2-surface-cream-alt">
-            <div className="v2-container v2-section">
+            <motion.div
+                className="v2-container v2-section"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
+            >
                 {/* Section header */}
-                <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+                <motion.div
+                    variants={fadeUp}
+                    style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}
+                >
                     <span className="v2-eyebrow">{eyebrow}</span>
                     <h2 style={{ marginTop: 16 }}>{headline}</h2>
                     <p
@@ -28,15 +43,19 @@ export function V2DemoCompare() {
                     >
                         {subhead}
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Shared customer message */}
-                <div style={{ marginTop: 56, display: "flex", justifyContent: "center" }}>
+                <motion.div
+                    variants={fadeUpSmall}
+                    style={{ marginTop: 56, display: "flex", justifyContent: "center" }}
+                >
                     <CustomerBubble text={customerMessage} />
-                </div>
+                </motion.div>
 
                 {/* Paired replies */}
-                <div
+                <motion.div
+                    variants={staggerContainer}
                     style={{
                         marginTop: 32,
                         display: "grid",
@@ -45,29 +64,36 @@ export function V2DemoCompare() {
                         alignItems: "stretch",
                     }}
                 >
-                    <ReplyCard
-                        label={without.label}
-                        reply={without.reply}
-                        verdict={without.verdict}
-                        tone={without.verdictTone}
-                        variant="generic"
-                    />
-                    <ReplyCard
-                        label={withCase.label}
-                        reply={withCase.reply}
-                        verdict={withCase.verdict}
-                        tone={withCase.verdictTone}
-                        variant="enorve"
-                    />
-                </div>
+                    <motion.div variants={fadeUpSmall} style={{ display: "flex" }}>
+                        <ReplyCard
+                            label={without.label}
+                            reply={without.reply}
+                            verdict={without.verdict}
+                            tone={without.verdictTone}
+                            variant="generic"
+                        />
+                    </motion.div>
+                    <motion.div variants={fadeUpSmall} style={{ display: "flex" }}>
+                        <ReplyCard
+                            label={withCase.label}
+                            reply={withCase.reply}
+                            verdict={withCase.verdict}
+                            tone={withCase.verdictTone}
+                            variant="enorve"
+                        />
+                    </motion.div>
+                </motion.div>
 
                 {/* CTA */}
-                <div style={{ marginTop: 48, display: "flex", justifyContent: "center" }}>
+                <motion.div
+                    variants={fadeUpSmall}
+                    style={{ marginTop: 48, display: "flex", justifyContent: "center" }}
+                >
                     <a href={ctaHref} className="v2-btn v2-btn-outline">
                         {ctaLabel} →
                     </a>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     )
 }

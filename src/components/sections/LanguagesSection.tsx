@@ -70,7 +70,7 @@ export function LanguagesSection() {
     return (
         <section className="py-24 relative overflow-hidden" id="languages">
             {/* Subtle background glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.06),transparent_70%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(31, 168, 111,0.06),transparent_70%)]" />
 
             <div className="max-w-[1200px] mx-auto px-6 relative z-10">
                 {/* Header */}

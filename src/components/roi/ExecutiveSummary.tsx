@@ -25,7 +25,7 @@ const metrics = [
         key: "headcountReduction" as const,
         label: "Headcount Reduction",
         icon: Users,
-        color: "#8B5CF6",
+        color: "#1FA86F",
         format: (r: LaborResults) => `${r.headcountReduction}`,
         sub: (r: LaborResults) => `${r.projectedHeadcount} agents remaining`,
     },
@@ -33,7 +33,7 @@ const metrics = [
         key: "roiMonths" as const,
         label: "ROI Timeline",
         icon: Clock,
-        color: "#F59E0B",
+        color: "#D4C08A",
         format: (r: LaborResults) =>
             r.roiMonths === null
                 ? "—"

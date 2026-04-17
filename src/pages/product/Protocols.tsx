@@ -112,8 +112,8 @@ const toolTypes = [
     { name: "Webhook Tools", desc: "Call any external API — Shopify refunds, CRM updates, inventory checks", icon: Wrench, color: "#3B82F6" },
     { name: "SSRF Protection", desc: "Built-in safeguards block internal network calls and validate endpoints", icon: Lock, color: "#EF4444" },
     { name: "Auth Injection", desc: "API keys and bearer tokens injected securely — never exposed to AI", icon: Shield, color: "#10B981" },
-    { name: "HITL Gating", desc: "Mark any tool as requiring human approval before execution", icon: Eye, color: "#F59E0B" },
-    { name: "Timeout & Retry", desc: "Configurable timeouts with automatic retry on transient failures", icon: RefreshCw, color: "#8B5CF6" },
+    { name: "HITL Gating", desc: "Mark any tool as requiring human approval before execution", icon: Eye, color: "#D4C08A" },
+    { name: "Timeout & Retry", desc: "Configurable timeouts with automatic retry on transient failures", icon: RefreshCw, color: "#1FA86F" },
     { name: "Audit Trail", desc: "Every tool call logged with input, output, latency, and approval chain", icon: BarChart3, color: "#EC4899" }
 ]
 

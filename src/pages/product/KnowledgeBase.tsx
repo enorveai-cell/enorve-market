@@ -27,7 +27,7 @@ const ingestionSources = [
         icon: FileText,
         title: "Paste Content",
         desc: "Manually paste text directly into the knowledge base",
-        color: "#8B5CF6"
+        color: "#1FA86F"
     }
 ]
 
@@ -39,8 +39,8 @@ const lifecycleStages = [
 
 const qualityFeatures = [
     { icon: AlertTriangle, title: "Contradiction Detection", desc: "Find conflicting statements across articles", color: "#EF4444" },
-    { icon: FileCheck, title: "Numeric Conflict Detection", desc: "Spot different values for same policy", color: "#F59E0B" },
-    { icon: Database, title: "Duplicate Detection", desc: "Jaccard similarity for overlapping content", color: "#8B5CF6" },
+    { icon: FileCheck, title: "Numeric Conflict Detection", desc: "Spot different values for same policy", color: "#D4C08A" },
+    { icon: Database, title: "Duplicate Detection", desc: "Jaccard similarity for overlapping content", color: "#1FA86F" },
     { icon: Clock, title: "Staleness Warnings", desc: "Flags articles not updated in 180+ days", color: "#6B7280" }
 ]
 

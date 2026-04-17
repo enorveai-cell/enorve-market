@@ -20,13 +20,13 @@ const laborCosts = [
         icon: TrendingUp,
         title: "Peak season hiring spikes",
         description: "Sale events 3-5x your ticket volume overnight. You can't hire, train, and fire agents on a seasonal cycle.",
-        color: "#F59E0B"
+        color: "#D4C08A"
     },
     {
         icon: RefreshCw,
         title: "70% of tickets are repetitive",
         description: '"Where is my order?" "How do I return this?" "When will my refund arrive?" — the same 5 questions, thousands of times.',
-        color: "#8B5CF6"
+        color: "#1FA86F"
     },
     {
         icon: Clock,
@@ -55,7 +55,7 @@ const replacements = [
         number: "02",
         title: "Returns and refunds — automatically processed",
         capability: "Policy-Governed Resolution",
-        color: "#8B5CF6",
+        color: "#1FA86F",
         icon: RefreshCw,
         what: "AI applies your return policy consistently — checks eligibility, initiates the return, confirms the refund. For repeat customers, it adapts: more generous with loyal buyers, more careful with edge cases.",
         laborSaved: "Reduce manual refund processing",
@@ -70,7 +70,7 @@ const replacements = [
         number: "03",
         title: "Product questions — automatically answered",
         capability: "Knowledge Base + AI Resolution",
-        color: "#F59E0B",
+        color: "#D4C08A",
         icon: Brain,
         what: "AI draws from your product catalog, size guides, FAQs, and Shopify product data to answer pre-sale and post-sale questions.",
         laborSaved: "Reduce repetitive product inquiries",
@@ -115,9 +115,9 @@ const economicsData = {
 
 const outcomes = [
     { icon: TrendingDown, title: "Automated resolution", value: "—", desc: "designed to resolve routine conversations automatically", color: "#10B981" },
-    { icon: DollarSign, title: "Annual savings", value: "$160K+", desc: "in labor costs per year", color: "#8B5CF6" },
+    { icon: DollarSign, title: "Annual savings", value: "$160K+", desc: "in labor costs per year", color: "#1FA86F" },
     { icon: Clock, title: "Resolution time", value: "<30s", desc: "avg autonomous resolution", color: "#3B82F6" },
-    { icon: Shield, title: "Governed AI", value: "100%", desc: "of AI decisions are auditable", color: "#F59E0B" }
+    { icon: Shield, title: "Governed AI", value: "100%", desc: "of AI decisions are auditable", color: "#D4C08A" }
 ]
 
 export function Ecommerce() {

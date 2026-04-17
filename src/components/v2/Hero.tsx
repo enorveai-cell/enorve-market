@@ -1,4 +1,6 @@
+import { motion } from "framer-motion"
 import { homeV2 } from "../../content/home.v2"
+import { cardReveal, fadeUp, staggerContainer } from "./motion"
 
 /**
  * v2 Hero — split layout.
@@ -6,6 +8,10 @@ import { homeV2 } from "../../content/home.v2"
  *  • Right: stylized product UI card showing "AI resolving a conversation" moment
  *
  * The right-side card is CSS-drawn; swap in a real screenshot/loop when available.
+ *
+ * Motion: above-fold, so entrance runs on mount (not whileInView). Left column
+ * uses a staggerContainer so each block fades up in rhythm; right card reveals
+ * with a softer scale-in so it feels like the UI is "landing".
  */
 export function V2Hero() {
     const { eyebrow, headline, subhead, prelaunchChip, socialProof, ctaPrimary, ctaSecondary } =
@@ -25,13 +31,18 @@ export function V2Hero() {
                 }}
             >
                 {/* Left column */}
-                <div>
-                    <span className="v2-eyebrow" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+                <motion.div variants={staggerContainer} initial="hidden" animate="visible">
+                    <motion.span
+                        variants={fadeUp}
+                        className="v2-eyebrow"
+                        style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+                    >
                         <span className="v2-dot" />
                         {eyebrow}
-                    </span>
+                    </motion.span>
 
-                    <h1
+                    <motion.h1
+                        variants={fadeUp}
                         style={{
                             marginTop: 24,
                             fontSize: "var(--type-hero)",
@@ -49,9 +60,10 @@ export function V2Hero() {
                                 </span>
                             )
                         })}
-                    </h1>
+                    </motion.h1>
 
-                    <p
+                    <motion.p
+                        variants={fadeUp}
                         style={{
                             marginTop: 24,
                             maxWidth: 520,
@@ -61,9 +73,10 @@ export function V2Hero() {
                         }}
                     >
                         {subhead}
-                    </p>
+                    </motion.p>
 
-                    <div
+                    <motion.div
+                        variants={fadeUp}
                         style={{
                             marginTop: 28,
                             display: "inline-flex",
@@ -75,9 +88,10 @@ export function V2Hero() {
                     >
                         <span className="v2-dot" />
                         {prelaunchChip}
-                    </div>
+                    </motion.div>
 
-                    <div
+                    <motion.div
+                        variants={fadeUp}
                         style={{
                             marginTop: 24,
                             display: "flex",
@@ -91,9 +105,10 @@ export function V2Hero() {
                         <a href={ctaSecondary.href} className="v2-btn v2-btn-ghost">
                             {ctaSecondary.label} →
                         </a>
-                    </div>
+                    </motion.div>
 
-                    <div
+                    <motion.div
+                        variants={fadeUp}
                         style={{
                             marginTop: 20,
                             display: "inline-flex",
@@ -105,11 +120,13 @@ export function V2Hero() {
                     >
                         <span className="v2-dot" />
                         {socialProof}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Right column — product UI preview card */}
-                <HeroProductCard />
+                <motion.div variants={cardReveal} initial="hidden" animate="visible">
+                    <HeroProductCard />
+                </motion.div>
             </div>
         </section>
     )

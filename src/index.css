@@ -11,10 +11,13 @@
 
 @layer base {
   :root {
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-hero: linear-gradient(180deg, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
-    --glow-primary: 0 0 80px rgba(99, 102, 241, 0.4);
-    --glow-secondary: 0 0 60px rgba(139, 92, 246, 0.3);
+    /* Forest-green + cream brand. Gradient stops use the primary and a
+       softer forest variant so the existing `bg-gradient-primary` hooks
+       still look like a gradient, just on-brand. */
+    --gradient-primary: linear-gradient(135deg, #1FA86F 0%, #0E5A3E 100%);
+    --gradient-hero: linear-gradient(180deg, rgba(31, 168, 111, 0.18) 0%, rgba(11, 24, 18, 0) 50%);
+    --glow-primary: 0 0 80px rgba(31, 168, 111, 0.35);
+    --glow-secondary: 0 0 60px rgba(14, 90, 62, 0.3);
   }
 
   * {
@@ -23,14 +26,19 @@
 
   html {
     scroll-behavior: smooth;
+    /* Keep html painted in ink so nothing flashes pure black during route changes. */
+    background: #0B1812;
   }
 
   body {
-    @apply bg-black text-gray-300 antialiased font-sans;
+    /* Ink background, cream-muted body text. `bg-background` reads from the
+       tailwind `background` token which now points at forest ink. */
+    @apply bg-background text-foreground/80 antialiased font-sans;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   ::selection {
+    /* Forest-green selection — indigo utility now remaps to forest anyway. */
     @apply bg-indigo-500/30;
   }
 
@@ -39,26 +47,26 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #000;
+    background: #0B1812;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #15231C;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    background: #1F3A2C;
   }
 }
 
 @layer components {
 
-  /* Glass Panel */
+  /* Glass Panel — faint cream tint on forest ink. */
   .glass-panel {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    background: linear-gradient(180deg, rgba(238, 242, 238, 0.05) 0%, rgba(238, 242, 238, 0.02) 100%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(238, 242, 238, 0.08);
   }
 
   /* Glow Text */
@@ -66,11 +74,11 @@
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   }
 
-  /* Card Grid Background */
+  /* Card Grid Background — cream-tinted lines on ink. */
   .card-grid {
     background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(238, 242, 238, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(238, 242, 238, 0.03) 1px, transparent 1px);
   }
 
   /* Mask Fade Bottom */
@@ -155,16 +163,16 @@
   }
 }
 
-/* Pulse Glow */
+/* Pulse Glow — forest-green bloom (was amber yellow). */
 @keyframes pulseGlow {
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(250, 207, 57, 0.2);
+    box-shadow: 0 0 20px rgba(31, 168, 111, 0.2);
   }
 
   50% {
-    box-shadow: 0 0 40px rgba(250, 207, 57, 0.4);
+    box-shadow: 0 0 40px rgba(31, 168, 111, 0.45);
   }
 }
 
@@ -227,7 +235,7 @@
 
 .animate-shimmer {
   animation: shimmer 2s linear infinite;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(238, 242, 238, 0.1), transparent);
   background-size: 200% 100%;
 }
 
@@ -290,7 +298,8 @@
 }
 
 .isometric-layer:hover {
-  border-color: rgba(250, 207, 57, 0.5);
+  /* Forest-green edge on hover (was amber yellow). */
+  border-color: rgba(31, 168, 111, 0.5);
 }
 
 /* Marquee Animation */
@@ -314,16 +323,16 @@
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
-/* Grid pattern background */
+/* Grid pattern background — cream lines on ink. */
 .grid-pattern {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(238, 242, 238, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(238, 242, 238, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
-/* Dot pattern for flow diagrams */
+/* Dot pattern for flow diagrams — forest-green dots (was amber). */
 .dot-grid {
-  background-image: radial-gradient(#facf39 1px, transparent 1px);
+  background-image: radial-gradient(#1FA86F 1px, transparent 1px);
   background-size: 30px 30px;
 }
 

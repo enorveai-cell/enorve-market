@@ -188,7 +188,7 @@ export function ROIWidget() {
                                     label: "FTEs Replaced",
                                     value: `${results.headcountReduction}`,
                                     icon: Users,
-                                    color: "#8B5CF6",
+                                    color: "#1FA86F",
                                 },
                                 {
                                     label: "3-Year Savings",
@@ -200,7 +200,7 @@ export function ROIWidget() {
                                     label: "ROI",
                                     value: results.roiMonths === null ? "—" : results.roiMonths <= 1 ? "< 1 mo" : `${results.roiMonths} mo`,
                                     icon: Clock,
-                                    color: "#F59E0B",
+                                    color: "#D4C08A",
                                 },
                             ].map(m => {
                                 const Icon = m.icon

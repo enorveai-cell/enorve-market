@@ -1,17 +1,29 @@
+import { motion } from "framer-motion"
 import { homeV2 } from "../../content/home.v2"
+import { cardLiftHover, fadeUp, fadeUpSmall, revealViewport, staggerContainer } from "./motion"
 
 /**
  * v2 Enterprise — trust pillars on cream.
  * 4 horizontal pillars on wide, auto-stacks on narrow.
  * Links to /security for full details.
+ *
+ * Motion: header fades up, pillars stagger in, each has a subtle spring lift
+ * on hover. These cards make a trust claim — the lift signals "tangible".
  */
 export function V2Enterprise() {
     const { eyebrow, headline, subhead, pillars, ctaLabel, ctaHref } = homeV2.enterprise
 
     return (
         <section className="v2-surface-cream">
-            <div className="v2-container v2-section">
-                <div
+            <motion.div
+                className="v2-container v2-section"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
+            >
+                <motion.div
+                    variants={fadeUp}
                     style={{
                         display: "grid",
                         gridTemplateColumns: "minmax(0, 1fr) auto",
@@ -41,9 +53,10 @@ export function V2Enterprise() {
                     >
                         {ctaLabel} →
                     </a>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                    variants={staggerContainer}
                     style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
@@ -53,15 +66,17 @@ export function V2Enterprise() {
                     {pillars.map((pillar, i) => (
                         <Pillar key={pillar.title} title={pillar.title} body={pillar.body} index={i} />
                     ))}
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     )
 }
 
 function Pillar({ title, body, index }: { title: string; body: string; index: number }) {
     return (
-        <div
+        <motion.div
+            variants={fadeUpSmall}
+            whileHover={cardLiftHover}
             style={{
                 padding: 28,
                 background: "#fff",
@@ -87,7 +102,7 @@ function Pillar({ title, body, index }: { title: string; body: string; index: nu
             >
                 {body}
             </p>
-        </div>
+        </motion.div>
     )
 }
 

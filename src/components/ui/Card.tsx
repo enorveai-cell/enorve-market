@@ -72,7 +72,7 @@ export function FeatureCard({
                         gradient,
                         "text-white shadow-lg"
                     )}
-                    style={{ boxShadow: `0 8px 32px -8px rgba(99, 102, 241, 0.5)` }}
+                    style={{ boxShadow: `0 8px 32px -8px rgba(31, 168, 111, 0.5)` }}
                 >
                     {icon}
                 </div>

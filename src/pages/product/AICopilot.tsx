@@ -213,7 +213,7 @@ export function AICopilot() {
                                 <path d="M80 50 L40 50 L40 350 L80 350" stroke="url(#gradient1)" strokeWidth="1" fill="none" strokeDasharray="4 4" />
                                 <defs>
                                     <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stopColor="#8B5CF6" />
+                                        <stop offset="0%" stopColor="#1FA86F" />
                                         <stop offset="100%" stopColor="#3B82F6" />
                                     </linearGradient>
                                 </defs>
@@ -366,7 +366,7 @@ export function AICopilot() {
                                 <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
                                     <defs>
                                         <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.5" />
+                                            <stop offset="0%" stopColor="#1FA86F" stopOpacity="0.5" />
                                             <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.1" />
                                         </linearGradient>
                                     </defs>
@@ -725,7 +725,7 @@ export function AICopilot() {
                     className="relative p-12 rounded-[32px] bg-gradient-to-br from-violet-500/10 to-purple-500/10 border border-violet-500/20 text-center overflow-hidden"
                 >
                     {/* Background glow */}
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.15),transparent_70%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(31, 168, 111,0.15),transparent_70%)]" />
 
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-4xl font-medium text-white mb-4 tracking-tight">

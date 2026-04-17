@@ -12,8 +12,8 @@ import { useWaitlist } from "../../hooks/useWaitlist"
 
 const painPoints = [
     { icon: Users, text: "Agents are overwhelmed by volume", color: "#EF4444" },
-    { icon: MessageSquare, text: "Same questions answered again and again", color: "#F59E0B" },
-    { icon: Clock, text: "SLAs are hard to track across channels", color: "#8B5CF6" },
+    { icon: MessageSquare, text: "Same questions answered again and again", color: "#D4C08A" },
+    { icon: Clock, text: "SLAs are hard to track across channels", color: "#1FA86F" },
     { icon: Brain, text: "Senior agents waste time on repetitive issues", color: "#3B82F6" }
 ]
 
@@ -34,7 +34,7 @@ const solutions = [
         number: "02",
         title: "AI that assists — not replaces — your agents",
         feature: "AI Copilot (Assist Mode + Context Mode)",
-        color: "#8B5CF6",
+        color: "#1FA86F",
         icon: Brain,
         capabilities: [
             "Suggested replies based on conversation + knowledge",
@@ -60,7 +60,7 @@ const solutions = [
         number: "04",
         title: "Never miss an SLA again",
         feature: "SLA Management + Real-time Alerts",
-        color: "#F59E0B",
+        color: "#D4C08A",
         icon: Timer,
         capabilities: [
             "First response and resolution SLAs",
@@ -452,9 +452,9 @@ export function CustomerSupport() {
                             <div className="relative space-y-6 pl-8 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-blue-500 before:via-violet-500 before:to-green-500">
                                 {[
                                     { time: "9:00 AM", event: "Log in to unified inbox", detail: "All channels ready, no tab switching", color: "#3B82F6" },
-                                    { time: "9:15 AM", event: "AI handles routine queries", detail: "18 conversations auto-resolved", color: "#8B5CF6" },
-                                    { time: "10:30 AM", event: "Complex case arrives", detail: "AI Copilot suggests response with KB context", color: "#8B5CF6" },
-                                    { time: "11:00 AM", event: "SLA alert received", detail: "Prioritize at-risk conversation", color: "#F59E0B" },
+                                    { time: "9:15 AM", event: "AI handles routine queries", detail: "18 conversations auto-resolved", color: "#1FA86F" },
+                                    { time: "10:30 AM", event: "Complex case arrives", detail: "AI Copilot suggests response with KB context", color: "#1FA86F" },
+                                    { time: "11:00 AM", event: "SLA alert received", detail: "Prioritize at-risk conversation", color: "#D4C08A" },
                                     { time: "5:00 PM", event: "Shift ends", detail: "89 conversations resolved, zero SLA breaches", color: "#10B981" }
                                 ].map((item, i) => (
                                     <div key={i} className="relative flex items-start gap-4">

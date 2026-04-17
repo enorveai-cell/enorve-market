@@ -12,8 +12,8 @@ import { useWaitlist } from "../../hooks/useWaitlist"
 
 const painPoints = [
     { icon: Bell, text: "Constant interruptions from customers", color: "#EF4444" },
-    { icon: MessageSquare, text: "No time to answer repetitive questions", color: "#F59E0B" },
-    { icon: DollarSign, text: "Expensive or complex tools", color: "#8B5CF6" },
+    { icon: MessageSquare, text: "No time to answer repetitive questions", color: "#D4C08A" },
+    { icon: DollarSign, text: "Expensive or complex tools", color: "#1FA86F" },
     { icon: AlertTriangle, text: "Fear of missing important issues", color: "#3B82F6" }
 ]
 
@@ -35,7 +35,7 @@ const solutions = [
         number: "02",
         title: "Humans step in only when needed",
         feature: "AI Auto-Escalation",
-        color: "#F59E0B",
+        color: "#D4C08A",
         icon: AlertTriangle,
         capabilities: [
             "Confidence thresholds trigger handoff",
@@ -48,7 +48,7 @@ const solutions = [
         number: "03",
         title: "Simple automation without setup overhead",
         feature: "Workflow Automation (Templates)",
-        color: "#8B5CF6",
+        color: "#1FA86F",
         icon: Zap,
         capabilities: [
             "Pre-built auto-reply templates",
@@ -174,7 +174,7 @@ export function Founders() {
                                         {[
                                             { icon: Bot, text: "AI resolved: 'How do I reset my password?'", time: "2m ago", color: "#10B981" },
                                             { icon: Bot, text: "AI resolved: 'What's your pricing?'", time: "15m ago", color: "#10B981" },
-                                            { icon: AlertTriangle, text: "Escalated: 'Custom enterprise pricing'", time: "1h ago", color: "#F59E0B" },
+                                            { icon: AlertTriangle, text: "Escalated: 'Custom enterprise pricing'", time: "1h ago", color: "#D4C08A" },
                                             { icon: Bot, text: "AI resolved: 'How to integrate API?'", time: "2h ago", color: "#10B981" }
                                         ].map((item, i) => (
                                             <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.02] border border-white/5">

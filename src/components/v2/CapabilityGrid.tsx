@@ -1,17 +1,32 @@
+import { motion } from "framer-motion"
 import { homeV2 } from "../../content/home.v2"
+import { cardLiftHover, fadeUp, fadeUpSmall, revealViewport, staggerContainer } from "./motion"
 
 /**
  * v2 CapabilityGrid — 6 tiles on cream-alt, auto-fit grid.
  * Each tile: a small graphical glyph, a title, and a short body.
  * The glyphs are CSS/SVG so we can iterate copy + layout without image assets.
+ *
+ * Motion: header fades up, then tiles stagger in. Each tile has a subtle
+ * spring-based lift on hover — keeps the grid feeling interactive without
+ * distracting from the copy.
  */
 export function V2CapabilityGrid() {
     const { eyebrow, headline, subhead, items } = homeV2.capabilities
 
     return (
         <section className="v2-surface-cream-alt">
-            <div className="v2-container v2-section">
-                <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
+            <motion.div
+                className="v2-container v2-section"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
+            >
+                <motion.div
+                    variants={fadeUp}
+                    style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}
+                >
                     <span className="v2-eyebrow">{eyebrow}</span>
                     <h2 style={{ marginTop: 16 }}>{headline}</h2>
                     <p
@@ -24,9 +39,10 @@ export function V2CapabilityGrid() {
                     >
                         {subhead}
                     </p>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                    variants={staggerContainer}
                     style={{
                         marginTop: 64,
                         display: "grid",
@@ -37,22 +53,23 @@ export function V2CapabilityGrid() {
                     {items.map((item, i) => (
                         <Tile key={item.title} title={item.title} body={item.body} index={i} />
                     ))}
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     )
 }
 
 function Tile({ title, body, index }: { title: string; body: string; index: number }) {
     return (
-        <div
+        <motion.div
+            variants={fadeUpSmall}
+            whileHover={cardLiftHover}
             className="v2-card"
             style={{
                 padding: 28,
                 display: "flex",
                 flexDirection: "column",
                 gap: 16,
-                transition: "transform 180ms ease, border-color 180ms ease",
             }}
         >
             <Glyph variant={index} />
@@ -69,7 +86,7 @@ function Tile({ title, body, index }: { title: string; body: string; index: numb
             >
                 {body}
             </p>
-        </div>
+        </motion.div>
     )
 }
 

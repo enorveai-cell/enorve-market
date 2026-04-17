@@ -2,7 +2,7 @@ export function PlatformSection() {
     return (
         <section className="overflow-hidden bg-[#050505] w-full z-20 border-t border-white/5 py-24 relative" id="platform">
             {/* Ambient Glow */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#facf39]/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1FA86F]/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
             <div className="max-w-7xl mx-auto px-6 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
@@ -19,7 +19,7 @@ export function PlatformSection() {
                         <div className="space-y-10">
                             {/* Item 1 */}
                             <div className="flex gap-6 items-start animate-fade-in-up delay-200">
-                                <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-blue-500/10 border border-indigo-500/20 flex items-center justify-center shadow-[0_0_20px_-5px_rgba(99,102,241,0.3)] ring-1 ring-white/5">
+                                <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-blue-500/10 border border-indigo-500/20 flex items-center justify-center shadow-[0_0_20px_-5px_rgba(31, 168, 111,0.3)] ring-1 ring-white/5">
                                     <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                     </svg>
@@ -34,7 +34,7 @@ export function PlatformSection() {
 
                             {/* Item 2 */}
                             <div className="flex gap-6 items-start animate-fade-in-up delay-400">
-                                <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 flex items-center justify-center shadow-[0_0_20px_-5px_rgba(245,158,11,0.3)] ring-1 ring-white/5">
+                                <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 flex items-center justify-center shadow-[0_0_20px_-5px_rgba(212, 192, 138,0.3)] ring-1 ring-white/5">
                                     <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                                     </svg>
@@ -71,12 +71,12 @@ export function PlatformSection() {
                             <div className="absolute inset-0 opacity-20 dot-grid" />
 
                             {/* Active Pill with ping animation */}
-                            <div className="absolute top-8 left-8 z-30 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#facf39]/40 bg-[#facf39]/10 backdrop-blur-md shadow-lg shadow-[#facf39]/5">
+                            <div className="absolute top-8 left-8 z-30 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1FA86F]/40 bg-[#1FA86F]/10 backdrop-blur-md shadow-lg shadow-[#1FA86F]/5">
                                 <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#facf39] opacity-75" />
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#facf39]" />
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1FA86F] opacity-75" />
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1FA86F]" />
                                 </span>
-                                <span className="text-[10px] uppercase font-bold text-[#facf39] tracking-wide font-mono">
+                                <span className="text-[10px] uppercase font-bold text-[#1FA86F] tracking-wide font-mono">
                                     LIVE CONVERSATION EXECUTION FLOW
                                 </span>
                             </div>
@@ -95,7 +95,7 @@ export function PlatformSection() {
                                         </defs>
 
                                         {/* Connection Lines */}
-                                        <g stroke="#facf39" strokeWidth="1" strokeOpacity="0.4" fill="none">
+                                        <g stroke="#1FA86F" strokeWidth="1" strokeOpacity="0.4" fill="none">
                                             <path d="M 100 200 L 120 200" />
                                             <path d="M 200 200 L 220 200" />
                                             <path d="M 300 200 L 315 200 L 315 100 L 330 100" />
@@ -104,7 +104,7 @@ export function PlatformSection() {
                                         </g>
 
                                         {/* Animated Flow Dots */}
-                                        <g fill="#facf39" filter="url(#glow-connector)">
+                                        <g fill="#1FA86F" filter="url(#glow-connector)">
                                             <circle r="3">
                                                 <animateMotion dur="3s" repeatCount="indefinite" path="M 100 200 L 120 200" calcMode="linear" />
                                             </circle>
@@ -124,15 +124,15 @@ export function PlatformSection() {
                                     </svg>
 
                                     {/* Node 1: Customer Message */}
-                                    <div className="flex flex-col z-10 bg-[#161616]/80 w-20 h-20 border border-[#facf39]/40 rounded-lg absolute top-[160px] left-[20px] shadow-[0_0_30px_-10px_rgba(250,207,57,0.1)] backdrop-blur-sm items-center justify-center hover:border-[#facf39]/80 transition-colors cursor-default">
+                                    <div className="flex flex-col z-10 bg-[#15231C]/80 w-20 h-20 border border-[#1FA86F]/40 rounded-lg absolute top-[160px] left-[20px] shadow-[0_0_30px_-10px_rgba(31, 168, 111,0.1)] backdrop-blur-sm items-center justify-center hover:border-[#1FA86F]/80 transition-colors cursor-default">
                                         <span className="text-[10px] font-medium text-neutral-300 text-center mt-0.5">
                                             Customer Message
                                         </span>
                                     </div>
 
                                     {/* Node 2: Conversation Context */}
-                                    <div className="absolute left-[120px] top-[160px] w-20 h-20 bg-[#161616]/80 backdrop-blur-sm border border-[#facf39]/40 rounded-lg flex flex-col items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(250,207,57,0.1)] gap-1 hover:border-[#facf39]/80 transition-colors cursor-default">
-                                        <svg className="w-6 h-6 text-[#facf39]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="absolute left-[120px] top-[160px] w-20 h-20 bg-[#15231C]/80 backdrop-blur-sm border border-[#1FA86F]/40 rounded-lg flex flex-col items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(31, 168, 111,0.1)] gap-1 hover:border-[#1FA86F]/80 transition-colors cursor-default">
+                                        <svg className="w-6 h-6 text-[#1FA86F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                         </svg>
                                         <span className="text-[10px] leading-tight font-medium text-neutral-300 text-center px-1">
@@ -141,7 +141,7 @@ export function PlatformSection() {
                                     </div>
 
                                     {/* Node 3: Decision Diamond */}
-                                    <div className="absolute left-[220px] top-[160px] w-20 h-20 bg-[#161616]/80 backdrop-blur-sm border border-[#facf39]/40 rounded-lg rotate-45 flex items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(250,207,57,0.1)] hover:border-[#facf39]/80 transition-colors cursor-default">
+                                    <div className="absolute left-[220px] top-[160px] w-20 h-20 bg-[#15231C]/80 backdrop-blur-sm border border-[#1FA86F]/40 rounded-lg rotate-45 flex items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(31, 168, 111,0.1)] hover:border-[#1FA86F]/80 transition-colors cursor-default">
                                         <div className="-rotate-45 flex flex-col items-center justify-center pt-1">
                                             <span className="text-[10px] font-medium text-neutral-300 text-center mt-0.5">
                                                 Can Enorve Resolve?
@@ -150,8 +150,8 @@ export function PlatformSection() {
                                     </div>
 
                                     {/* Node 4: Reply Sent */}
-                                    <div className="absolute left-[330px] top-[60px] w-20 h-20 bg-[#161616]/80 backdrop-blur-sm border border-[#facf39]/40 rounded-lg flex flex-col items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(250,207,57,0.1)] gap-2 hover:border-[#facf39]/80 transition-colors cursor-default">
-                                        <svg className="w-5 h-5 text-[#facf39]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="absolute left-[330px] top-[60px] w-20 h-20 bg-[#15231C]/80 backdrop-blur-sm border border-[#1FA86F]/40 rounded-lg flex flex-col items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(31, 168, 111,0.1)] gap-2 hover:border-[#1FA86F]/80 transition-colors cursor-default">
+                                        <svg className="w-5 h-5 text-[#1FA86F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                         </svg>
                                         <span className="text-[10px] leading-tight font-medium text-neutral-300 text-center">
@@ -160,14 +160,14 @@ export function PlatformSection() {
                                     </div>
 
                                     {/* Node 5: Human Escalation */}
-                                    <div className="absolute left-[330px] top-[260px] w-20 h-20 bg-[#161616]/80 backdrop-blur-sm border border-[#facf39]/40 rounded-lg flex flex-col items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(250,207,57,0.1)] gap-1 hover:border-[#facf39]/80 transition-colors cursor-default">
+                                    <div className="absolute left-[330px] top-[260px] w-20 h-20 bg-[#15231C]/80 backdrop-blur-sm border border-[#1FA86F]/40 rounded-lg flex flex-col items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(31, 168, 111,0.1)] gap-1 hover:border-[#1FA86F]/80 transition-colors cursor-default">
                                         <span className="text-[10px] leading-tight font-medium text-neutral-300 text-center px-1">
                                             Human Escalation
                                         </span>
                                     </div>
 
                                     {/* Node 6: Ticket Created */}
-                                    <div className="absolute left-[430px] top-[260px] w-20 h-20 bg-[#161616]/80 backdrop-blur-sm border border-[#facf39]/40 rounded-lg flex flex-col items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(250,207,57,0.1)] gap-1 hover:border-[#facf39]/80 transition-colors cursor-default">
+                                    <div className="absolute left-[430px] top-[260px] w-20 h-20 bg-[#15231C]/80 backdrop-blur-sm border border-[#1FA86F]/40 rounded-lg flex flex-col items-center justify-center z-10 shadow-[0_0_30px_-10px_rgba(31, 168, 111,0.1)] gap-1 hover:border-[#1FA86F]/80 transition-colors cursor-default">
                                         <span className="text-[10px] leading-tight font-medium text-neutral-300 text-center">
                                             Ticket Created
                                         </span>

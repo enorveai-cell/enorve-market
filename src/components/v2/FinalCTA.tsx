@@ -1,16 +1,25 @@
+import { motion } from "framer-motion"
 import { homeV2 } from "../../content/home.v2"
+import { fadeUp, revealViewport, staggerContainer } from "./motion"
 
 /**
  * v2 FinalCTA — ink-on-glow closer. Mirrors the hero's tonal weight
  * so the page bookends with conviction. Single centered column.
+ *
+ * Motion: same stagger rhythm as the hero (eyebrow → headline → subhead →
+ * CTAs → footnote) so the close echoes the open.
  */
 export function V2FinalCTA() {
     const { eyebrow, headline, subhead, ctaPrimary, ctaSecondary, footNote } = homeV2.finalCta
 
     return (
         <section className="v2-surface-hero">
-            <div
+            <motion.div
                 className="v2-container v2-section"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
                 style={{
                     textAlign: "center",
                     display: "flex",
@@ -19,12 +28,17 @@ export function V2FinalCTA() {
                     gap: 20,
                 }}
             >
-                <span className="v2-eyebrow" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+                <motion.span
+                    variants={fadeUp}
+                    className="v2-eyebrow"
+                    style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+                >
                     <span className="v2-dot" />
                     {eyebrow}
-                </span>
+                </motion.span>
 
-                <h2
+                <motion.h2
+                    variants={fadeUp}
                     style={{
                         maxWidth: 760,
                         marginTop: 8,
@@ -35,9 +49,10 @@ export function V2FinalCTA() {
                     }}
                 >
                     {headline}
-                </h2>
+                </motion.h2>
 
-                <p
+                <motion.p
+                    variants={fadeUp}
                     style={{
                         maxWidth: 560,
                         fontSize: 18,
@@ -46,9 +61,10 @@ export function V2FinalCTA() {
                     }}
                 >
                     {subhead}
-                </p>
+                </motion.p>
 
-                <div
+                <motion.div
+                    variants={fadeUp}
                     style={{
                         marginTop: 16,
                         display: "flex",
@@ -63,9 +79,10 @@ export function V2FinalCTA() {
                     <a href={ctaSecondary.href} className="v2-btn v2-btn-ghost">
                         {ctaSecondary.label} →
                     </a>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                    variants={fadeUp}
                     style={{
                         marginTop: 4,
                         display: "inline-flex",
@@ -77,8 +94,8 @@ export function V2FinalCTA() {
                 >
                     <span className="v2-dot" />
                     {footNote}
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     )
 }

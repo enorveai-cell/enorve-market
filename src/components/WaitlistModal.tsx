@@ -245,7 +245,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                     <button
                                         type="submit"
                                         disabled={status === "loading"}
-                                        className="w-full h-11 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-sm font-medium transition-all hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] disabled:opacity-60 disabled:cursor-not-allowed"
+                                        className="w-full h-11 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-sm font-medium transition-all hover:shadow-[0_0_30px_rgba(31, 168, 111,0.3)] disabled:opacity-60 disabled:cursor-not-allowed"
                                     >
                                         {status === "loading" ? "Joining..." : "Join the waitlist"}
                                     </button>

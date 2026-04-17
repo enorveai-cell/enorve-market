@@ -1,9 +1,14 @@
+import { motion } from "framer-motion"
 import { homeV2 } from "../../content/home.v2"
+import { cardReveal, fadeUp, revealViewport, staggerContainer } from "./motion"
 
 /**
  * v2 Language — "Governed autonomy" — split layout on ink.
  * Left: copy + CTA. Right: stylized protocol editor showing plain-English rules.
  * This is the central brand argument: you write rules, AI follows them.
+ *
+ * Motion: pitch fades up on the left as the card reveals from the right,
+ * reinforcing the "you → AI" direction of the brand argument.
  */
 export function V2Language() {
     const { eyebrow, headline, subhead, protocolTitle, rules, chip, ctaLabel, ctaHref } =
@@ -11,8 +16,12 @@ export function V2Language() {
 
     return (
         <section className="v2-surface-ink">
-            <div
+            <motion.div
                 className="v2-container v2-section"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
                 style={{
                     display: "grid",
                     gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.15fr)",
@@ -21,7 +30,7 @@ export function V2Language() {
                 }}
             >
                 {/* Left: pitch */}
-                <div>
+                <motion.div variants={fadeUp}>
                     <span className="v2-eyebrow">{eyebrow}</span>
                     <h2 style={{ marginTop: 16 }}>{headline}</h2>
                     <p
@@ -40,11 +49,13 @@ export function V2Language() {
                             {ctaLabel} →
                         </a>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Right: protocol editor */}
-                <ProtocolCard title={protocolTitle} rules={[...rules]} chip={chip} />
-            </div>
+                <motion.div variants={cardReveal}>
+                    <ProtocolCard title={protocolTitle} rules={[...rules]} chip={chip} />
+                </motion.div>
+            </motion.div>
         </section>
     )
 }

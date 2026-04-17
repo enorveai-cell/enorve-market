@@ -43,10 +43,10 @@ const GOOD_CHAT: ChatMsg[] = [
 ]
 
 const FLOW_NODES = [
-  { label: "Trigger", sub: "Customer requests refund", color: "#8b5cf6", icon: Zap },
+  { label: "Trigger", sub: "Customer requests refund", color: "#1FA86F", icon: Zap },
   { label: "Collect", sub: "Ask for order number", color: "#14b8a6", icon: MessageSquare },
   { label: "Action", sub: "Look up order details", color: "#22c55e", icon: GitBranch },
-  { label: "Condition", sub: "Within 30-day policy?", color: "#f59e0b", icon: Shield },
+  { label: "Condition", sub: "Within 30-day policy?", color: "#D4C08A", icon: Shield },
   { label: "Approve", sub: "Process refund", color: "#3b82f6", icon: CheckCircle2 },
   { label: "Escalate", sub: "Transfer to manager", color: "#ef4444", icon: Users },
 ]
@@ -62,8 +62,8 @@ const INBOX_ITEMS = [
 const METRICS = [
   { label: "Resolution Rate", value: 87, suffix: "%", color: "#22c55e" },
   { label: "Avg Response", value: 12, suffix: "s", color: "#3b82f6" },
-  { label: "AI Confidence", value: 94, suffix: "%", color: "#8b5cf6" },
-  { label: "QA Score", value: 82, suffix: "/100", color: "#f59e0b" },
+  { label: "AI Confidence", value: 94, suffix: "%", color: "#1FA86F" },
+  { label: "QA Score", value: 82, suffix: "/100", color: "#D4C08A" },
 ]
 
 // ── Animated counter ─────────────────────────────────────────────────────────
@@ -100,7 +100,7 @@ function BackgroundMesh() {
       />
       <motion.div
         className="absolute w-[500px] h-[500px] rounded-full opacity-[0.12]"
-        style={{ background: "radial-gradient(circle, #8b5cf6 0%, transparent 70%)", bottom: "-5%", left: "-5%" }}
+        style={{ background: "radial-gradient(circle, #1FA86F 0%, transparent 70%)", bottom: "-5%", left: "-5%" }}
         animate={{ x: [0, -25, 15, 0], y: [0, 20, -25, 0], scale: [1, 0.95, 1.08, 1] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -505,7 +505,7 @@ export function DemoVideo() {
             {/* ── BUILDER ────────────────────────────────── */}
             {scene === "builder" && (
               <div className="flex flex-col items-center gap-6 w-full">
-                <SceneLabel text="Protocol Engine" color="#8b5cf6" />
+                <SceneLabel text="Protocol Engine" color="#1FA86F" />
                 <motion.h2
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -556,7 +556,7 @@ export function DemoVideo() {
             {/* ── SIMULATOR ──────────────────────────────── */}
             {scene === "simulator" && (
               <div className="flex flex-col items-center gap-6 w-full max-w-lg">
-                <SceneLabel text="Adversarial Simulator" color="#f59e0b" />
+                <SceneLabel text="Adversarial Simulator" color="#D4C08A" />
                 <motion.h2
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -596,7 +596,7 @@ export function DemoVideo() {
                   <GlassCard className="p-8 text-center">
                     <p className="text-[10px] text-slate-400 uppercase tracking-[3px] mb-4">Health Score</p>
                     <div className="text-6xl font-bold mb-3" style={{
-                      background: "linear-gradient(135deg, #f59e0b, #f97316)",
+                      background: "linear-gradient(135deg, #D4C08A, #C17A2B)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}>
@@ -605,7 +605,7 @@ export function DemoVideo() {
                     <div className="w-full bg-slate-100 rounded-full h-2.5 mt-4 overflow-hidden">
                       <motion.div
                         className="h-full rounded-full"
-                        style={{ background: "linear-gradient(90deg, #f59e0b, #f97316)" }}
+                        style={{ background: "linear-gradient(90deg, #D4C08A, #C17A2B)" }}
                         initial={{ width: 0 }}
                         animate={{ width: sceneTime >= 3000 ? "72%" : "0%" }}
                         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
@@ -677,7 +677,7 @@ export function DemoVideo() {
             {/* ── ANALYTICS ──────────────────────────────── */}
             {scene === "analytics" && (
               <div className="flex flex-col items-center gap-6 w-full max-w-2xl">
-                <SceneLabel text="Real-Time Analytics" color="#6366f1" />
+                <SceneLabel text="Real-Time Analytics" color="#1FA86F" />
                 <motion.h2
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}

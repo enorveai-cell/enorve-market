@@ -8,7 +8,7 @@ export function MidPageCTA() {
             <div className="max-w-4xl mx-auto px-6">
                 <div className="relative p-8 md:p-10 rounded-[24px] bg-gradient-to-br from-violet-500/10 via-purple-500/5 to-transparent border border-violet-500/20 text-center overflow-hidden">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.15),transparent_70%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(31, 168, 111,0.15),transparent_70%)]" />
 
                     <div className="relative z-10">
                         <h2 className="text-2xl md:text-3xl font-medium text-white mb-3">
