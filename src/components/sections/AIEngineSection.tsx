@@ -110,6 +110,7 @@ export function AIEngineSection() {
                         {/* Logs Visual */}
                         <div className="mt-8 relative w-full h-64 bg-[#08090B] border border-white/5 rounded-xl shadow-2xl overflow-hidden flex flex-col justify-end">
                             <div className="absolute inset-0 bg-gradient-to-t from-[#08090B] to-transparent z-10" />
+                            <div className="absolute top-3 right-3 z-30 text-[9px] text-gray-500 uppercase tracking-[2px] font-medium">Example</div>
                             <div className="relative z-20 p-6 space-y-3">
                                 <div className="flex items-center gap-3 p-3 rounded-lg border border-white/5 bg-white/[0.03] backdrop-blur-sm">
                                     <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center border border-green-500/20 text-green-400">

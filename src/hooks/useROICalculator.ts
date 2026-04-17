@@ -67,11 +67,15 @@ function getEnorvePlan(monthlyConversations: number): { name: string; monthlyCos
 export function useROICalculator() {
     // Read URL params for shareable links
     const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null
+    // NOTE: automationRate defaults to 0 by design. Enorve has not yet validated an
+    // industry-standard auto-resolution rate against customer data, so seeding a
+    // non-zero default would dress a projection as a benchmark. The user moves the
+    // slider to model their own automation target. See claims_inventory.md row 70.
     const [inputs, setInputs] = useState<LaborInputs>(() => ({
         currentHeadcount: Number(searchParams?.get("agents")) || 15,
         avgAgentCost: Number(searchParams?.get("salary")) || 55000,
         monthlyConversations: Number(searchParams?.get("conversations")) || 5000,
-        automationRate: Number(searchParams?.get("automation")) || 0.60,
+        automationRate: Number(searchParams?.get("automation")) || 0,
     }))
 
     function setInput<K extends keyof LaborInputs>(key: K, value: LaborInputs[K]) {

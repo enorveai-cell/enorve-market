@@ -184,7 +184,7 @@ export function ConnectStackSection() {
                                 <path d="M7 11v4a2 2 0 0 0 2 2h4"></path>
                                 <rect width="8" height="8" x="13" y="13" rx="2"></rect>
                             </svg>
-                            <span className="font-medium text-xs">Instant sync</span>
+                            <span className="font-medium text-xs">Syncs in seconds</span>
                         </div>
                         <div className="hidden sm:block w-16 h-px border-t border-dashed border-white/20"></div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/5">
@@ -200,7 +200,7 @@ export function ConnectStackSection() {
                                 <path d="m12 14 4-4"></path>
                                 <path d="M3.34 19a10 10 0 1 1 17.32 0"></path>
                             </svg>
-                            <span className="font-medium text-xs">Real-time</span>
+                            <span className="font-medium text-xs">Real-time inbox</span>
                         </div>
                     </div>
                 </div>

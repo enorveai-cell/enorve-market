@@ -94,7 +94,7 @@ export function InputPanel({ inputs, onInputChange }: Props) {
                         </div>
                         <input
                             type="range"
-                            min={0.20}
+                            min={0}
                             max={0.80}
                             step={0.01}
                             value={inputs.automationRate}
@@ -118,10 +118,12 @@ export function InputPanel({ inputs, onInputChange }: Props) {
                 [&::-moz-range-thumb]:cursor-pointer"
                         />
                         <div className="flex justify-between text-[10px] text-gray-500 mt-1">
-                            <span>20%</span>
+                            <span>0%</span>
                             <span>80%</span>
                         </div>
-                        <p className="text-[11px] text-gray-500 mt-2">Percentage of conversations AI resolves autonomously</p>
+                        <p className="text-[11px] text-gray-500 mt-2">
+                            Set the automation rate <em>you</em> expect to achieve — Enorve has not yet validated an industry benchmark with customer data.
+                        </p>
                     </div>
                 </div>
             </div>
