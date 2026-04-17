@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Shield, ArrowRightLeft, Accessibility, Palette, FileCheck, Database } from "lucide-react"
+import { SecurityOpsCanvas } from "./SecurityOpsCanvas"
 
 const capabilities = [
     {
@@ -94,6 +95,31 @@ export function EnterpriseReadySection() {
                         The things your IT team asks about before they'll sign anything.
                     </motion.p>
                 </div>
+
+                {/* Security Operations console — live audit stream, residency map, compliance strip */}
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
+                    viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+                    className="mb-16"
+                >
+                    <div className="flex items-center justify-between mb-4 px-1">
+                        <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#1FA86F" }} />
+                            <span className="text-[10px] uppercase tracking-[0.18em] text-white/50 font-medium">
+                                Security Ops · live
+                            </span>
+                        </div>
+                        <span className="hidden md:inline text-[10px] text-white/35 uppercase tracking-wider">
+                            Every event · every region · every control
+                        </span>
+                    </div>
+                    <SecurityOpsCanvas />
+                    <p className="mt-5 text-sm text-white/45 text-center max-w-2xl mx-auto leading-relaxed">
+                        Not a trust-badge wall. Your procurement team gets an actual live audit feed, region control, and exportable controls — in one link.
+                    </p>
+                </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {capabilities.map((cap, index) => {
