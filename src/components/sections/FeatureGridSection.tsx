@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { ProtocolWorkflowCanvas } from "./ProtocolWorkflowCanvas"
 
 const features = [
     {
@@ -126,6 +127,32 @@ export function FeatureGridSection() {
                         Beyond the inbox — tools that help your AI and your team work faster, together.
                     </motion.p>
                 </div>
+
+                {/* Protocol workflow demo — visual anchor before the feature grid */}
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
+                    viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+                    className="mb-16"
+                >
+                    <div className="flex items-center justify-between mb-4 px-1">
+                        <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-forest-500" />
+                            <span className="text-[10px] uppercase tracking-[0.18em] text-white/50 font-medium">
+                                Protocol Engine · live demo
+                            </span>
+                        </div>
+                        <span className="hidden md:inline text-[10px] text-white/35 uppercase tracking-wider">
+                            Drag · connect · publish
+                        </span>
+                    </div>
+                    <ProtocolWorkflowCanvas />
+                    <p className="mt-5 text-sm text-white/45 text-center max-w-2xl mx-auto leading-relaxed">
+                        Draw the flow your AI should follow — it obeys the graph, not a prompt.
+                        Every step is audited, every branch is traceable.
+                    </p>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {features.map((feature, index) => (
