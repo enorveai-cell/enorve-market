@@ -205,6 +205,7 @@ export function KnowledgeBase() {
                                         <div className="text-[10px] text-gray-400">Containment</div>
                                     </div>
                                 </div>
+                                <div className="text-[8px] uppercase tracking-wider text-white/30 mt-1.5">Example</div>
                             </div>
                         </div>
                     </motion.div>
@@ -579,7 +580,8 @@ export function KnowledgeBase() {
                                 See before/after metrics for every published article. Track escalation rates, containment, and get a verdict on whether your changes helped.
                             </p>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="relative grid grid-cols-2 gap-4">
+                                <span className="absolute -top-3 right-0 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                                 {[
                                     { label: "Containment Rate", value: "78%", trend: "+12%", up: true },
                                     { label: "Avg Confidence", value: "84%", trend: "+8%", up: true },

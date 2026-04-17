@@ -65,7 +65,7 @@ export function AICopilot() {
     const { openWaitlist } = useWaitlist()
     usePageTitle({
         title: "AI Copilot - Intelligent Agent Assistant",
-        description: "AI-powered agent assistance that resolves tickets 3x faster. Get instant suggestions, automated responses, and intelligent routing powered by advanced machine learning."
+        description: "AI-powered agent assistance. Instant suggestions, automated responses, and intelligent routing grounded in your knowledge base and protocols."
     })
     return (
         <div className="pt-32 pb-20 relative overflow-hidden">
@@ -597,7 +597,8 @@ export function AICopilot() {
                                 Track AI Copilot effectiveness across your team. Measure ROI with detailed usage and adoption metrics.
                             </p>
 
-                            <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="relative grid sm:grid-cols-2 gap-4">
+                                <span className="absolute -top-3 right-0 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                                 {[
                                     { metric: "Total Suggestions", value: "2,847", trend: "+12%" },
                                     { metric: "Usage Rate", value: "73%", trend: "+5%" },
