@@ -388,7 +388,10 @@ export function AISimulator() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="max-w-3xl mx-auto px-4 pb-16"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+          <p className="text-[11px] uppercase tracking-[3px] text-[#888899]/60 text-center mt-8">
+            Scripted scenario — illustrative, not a live run
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             <div className="rounded-xl border border-[#e05252]/20 bg-[#e05252]/5 p-5">
               <div className="flex items-center gap-2 mb-3">
                 <ShieldAlert className="h-4 w-4 text-[#e05252]" />
@@ -449,13 +452,6 @@ export function AISimulator() {
           Get early access
           <ArrowRight className="h-4 w-4" />
         </button>
-        <div className="flex items-center justify-center gap-2 mt-4">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2d9653] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2d9653]" />
-          </span>
-          <span className="text-[13px] text-[#888899]/60">47 support teams already waiting</span>
-        </div>
       </div>
     </div>
   )

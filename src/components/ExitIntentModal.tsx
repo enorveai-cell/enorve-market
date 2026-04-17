@@ -71,11 +71,11 @@ export function ExitIntentModal() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
                             </span>
-                            <span className="text-xs text-emerald-400 font-medium">5 spots this month</span>
+                            <span className="text-xs text-emerald-400 font-medium">Design Partner Programme</span>
                         </span>
 
                         <h3 className="text-lg font-semibold text-white mb-2">
-                            We're accepting 5 design partners.
+                            We're accepting design partners.
                         </h3>
                         <p className="text-sm text-gray-400 mb-6">
                             Free setup. No commitment. Shape the product with us.

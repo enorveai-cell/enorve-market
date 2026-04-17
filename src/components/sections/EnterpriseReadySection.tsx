@@ -13,8 +13,8 @@ const capabilities = [
     },
     {
         icon: Shield,
-        title: "SOC 2 Ready",
-        description: "Audit logs, tenant isolation, MFA, PII redaction. The security checklist your procurement team actually checks.",
+        title: "SOC 2 Type II (audit in progress)",
+        description: "Audit targeted Q3 2026. Controls in place today: audit logs, tenant isolation, MFA, PII redaction.",
         color: "text-emerald-400",
         bg: "from-emerald-500/20 to-teal-500/20",
         border: "border-emerald-500/20",

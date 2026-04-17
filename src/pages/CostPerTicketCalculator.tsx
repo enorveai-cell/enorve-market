@@ -92,11 +92,6 @@ function PercentileBar({ costPerTicket }: { costPerTicket: number }) {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 />
             </div>
-            <div className="flex items-center justify-between text-[10px] text-gray-600 mt-1">
-                <span></span>
-                <span>Industry avg: $8 – $25</span>
-                <span></span>
-            </div>
         </div>
     )
 }
@@ -122,13 +117,6 @@ export function CostPerTicketCalculator() {
     const costPerTicket = tickets > 0 ? monthlyLaborCost / tickets : 0
     const annualSupportCost = monthlyLaborCost * 12
 
-    const autoResolveRate = 0.60
-    const ticketsAutoResolved = tickets * autoResolveRate
-    const monthlySavings = ticketsAutoResolved * costPerTicket * 0.85
-    const annualSavings = monthlySavings * 12
-    const newCostPerTicket = tickets > 0 ? (monthlyLaborCost - monthlySavings) / tickets : 0
-    const savingsPerTicket = costPerTicket - newCostPerTicket
-
     function handleCalculate() {
         setCalculated(true)
         const params = new URLSearchParams({
@@ -141,7 +129,7 @@ export function CostPerTicketCalculator() {
 
     function handleShare() {
         const url = window.location.href
-        const text = `My support team costs $${costPerTicket.toFixed(2)}/ticket. What's yours? → ${url}`
+        const text = `My support team costs $${costPerTicket.toFixed(2)}/ticket. What's yours? \u2192 ${url}`
         navigator.clipboard.writeText(text).then(() => {
             setCopied(true)
             setTimeout(() => setCopied(false), 2000)
@@ -224,48 +212,20 @@ export function CostPerTicketCalculator() {
                             <PercentileBar costPerTicket={costPerTicket} />
                         </motion.div>
 
-                        {/* Enorve savings */}
+                        {/* Annual spend */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.15 }}
-                            className="p-6 md:p-8 rounded-2xl bg-emerald-500/5 border border-emerald-500/20"
+                            className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/[0.06]"
                         >
-                            <p className="text-sm text-emerald-400 uppercase tracking-wider mb-3">With Enorve</p>
-                            <div className="flex items-baseline gap-3 mb-4">
-                                <span className="text-4xl md:text-5xl font-bold text-emerald-400">
-                                    <AnimatedNumber value={newCostPerTicket} prefix="$" decimals={2} />
-                                </span>
-                                <span className="text-lg text-gray-400">per ticket</span>
-                            </div>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
-                                    <p className="text-xs text-gray-500 mb-1">You'd save per ticket</p>
-                                    <p className="text-xl font-semibold text-white">
-                                        <AnimatedNumber value={savingsPerTicket} prefix="$" decimals={2} />
-                                    </p>
-                                </div>
-                                <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
-                                    <p className="text-xs text-gray-500 mb-1">Monthly savings</p>
-                                    <p className="text-xl font-semibold text-white">
-                                        $<AnimatedNumber value={monthlySavings} prefix="" decimals={0} />
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="mt-4 pt-4 border-t border-emerald-500/10 flex items-center justify-between">
-                                <div>
-                                    <p className="text-xs text-gray-500">Annual savings</p>
-                                    <p className="text-2xl font-bold text-emerald-400">
-                                        $<AnimatedNumber value={annualSavings} prefix="" decimals={0} />
-                                    </p>
-                                </div>
-                                <div className="text-right">
-                                    <p className="text-xs text-gray-500">Annual support spend</p>
-                                    <p className="text-2xl font-semibold text-white/60">
-                                        $<AnimatedNumber value={annualSupportCost} prefix="" decimals={0} />
-                                    </p>
-                                </div>
-                            </div>
+                            <p className="text-sm text-gray-400 uppercase tracking-wider mb-3">Annual support spend</p>
+                            <p className="text-3xl md:text-4xl font-semibold text-white">
+                                $<AnimatedNumber value={annualSupportCost} prefix="" decimals={0} />
+                            </p>
+                            <p className="text-sm text-gray-500 mt-2">
+                                Based on the inputs you entered — no projection, no automation assumption.
+                            </p>
                         </motion.div>
 
                         {/* Share + CTA */}
@@ -275,8 +235,8 @@ export function CostPerTicketCalculator() {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="text-center space-y-4 pt-4"
                         >
-                            <p className="text-lg text-white font-medium">
-                                Your team could recover <span className="text-emerald-400">${Math.round(annualSavings).toLocaleString()}</span> this year.
+                            <p className="text-base text-gray-400 font-normal">
+                                Now model what AI automation can reduce \u2014 using your own target automation rate.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -299,27 +259,14 @@ export function CostPerTicketCalculator() {
                                 </button>
                             </div>
 
-                            <p className="flex items-center justify-center gap-2 text-[13px] text-white/45">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
-                                </span>
-                                47 support teams already on early access
-                            </p>
-
                             <Link
-                                to={`/labor-replacement-calculator?agents=${agents}&salary=${salary * 12}&conversations=${tickets}&automation=0.6`}
+                                to={`/labor-replacement-calculator?agents=${agents}&salary=${salary * 12}&conversations=${tickets}`}
                                 className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
                             >
-                                See full ROI breakdown with charts
+                                Model automation impact
                                 <ArrowRight className="w-3.5 h-3.5" />
                             </Link>
                         </motion.div>
-
-                        {/* Fine print */}
-                        <p className="text-[11px] text-gray-600 text-center leading-relaxed pt-4">
-                            Based on 60% AI auto-resolution rate. Conservative estimate. Actual savings depend on ticket type and team configuration.
-                        </p>
                     </div>
                 )}
 

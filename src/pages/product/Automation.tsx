@@ -660,8 +660,9 @@ export function Automation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="grid md:grid-cols-4 gap-6"
+                        className="relative grid md:grid-cols-4 gap-6"
                     >
+                        <span className="absolute -top-3 right-0 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                         {[
                             { label: "Total Workflows", value: "24", trend: "+3 this week" },
                             { label: "Active Workflows", value: "18", trend: "75% active" },

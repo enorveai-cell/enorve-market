@@ -27,7 +27,7 @@ export const homeV2 = {
     subhead:
       "Define exactly how your AI handles refunds, complaints, and escalations — then stress-test it before a real customer ever sees it.",
     prelaunchChip: "Early access opening soon — join the waitlist for priority access.",
-    socialProof: "47 support teams already waiting",
+    socialProof: "Early access — design partner programme open",
     ctaPrimary: { label: "Join Early Access", href: "/design-partners" },
     ctaSecondary: { label: "Watch the demo", href: "/demo-video" },
   },
@@ -124,7 +124,7 @@ export const homeV2 = {
       "Always apologize before citing policy.",
       "Never offer store credit unless the customer asks for it first.",
     ],
-    chip: "AI follows 47 rules",
+    chip: "AI follows your rules",
     ctaLabel: "See the full protocol editor",
     ctaHref: "/product/protocols",
   },
@@ -136,8 +136,8 @@ export const homeV2 = {
       "The same platform whether you're the founder answering tickets or a 50-person ops team.",
     pillars: [
       {
-        title: "SOC 2 Type II",
-        body: "Audited controls across data, access, and availability.",
+        title: "SOC 2 Type II — audit in progress",
+        body: "Target Q3 2026. Controls across data, access, and availability live today; audit report is in flight.",
       },
       {
         title: "Data residency",
@@ -163,7 +163,7 @@ export const homeV2 = {
       "Design partners get priority onboarding, pricing locked for year one, and direct access to the team building it.",
     ctaPrimary: { label: "Join Early Access", href: "/design-partners" },
     ctaSecondary: { label: "Talk to sales", href: "/contact-sales" },
-    footNote: "47 support teams already waiting · No credit card required",
+    footNote: "No credit card required",
   },
 
   footer: {

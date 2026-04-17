@@ -80,22 +80,6 @@ export function ConnectStackSection() {
                                 </svg>
                             </span>
                         </div>
-                        {/* Telegram */}
-                        <div className="group relative">
-                            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-[#0088CC]/50 group-hover:shadow-[0_0_20px_rgba(0,136,204,0.2)] transition-all duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#0088CC">
-                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-                                </svg>
-                            </span>
-                        </div>
-                        {/* Messenger */}
-                        <div className="group relative">
-                            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-[#0084FF]/50 group-hover:shadow-[0_0_20px_rgba(0,132,255,0.2)] transition-all duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#0084FF">
-                                    <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8.2l3.131 3.259L19.752 8.2l-6.561 6.763z" />
-                                </svg>
-                            </span>
-                        </div>
                         {/* Email */}
                         <div className="group relative">
                             <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F1216] border border-white/10 shadow-lg group-hover:scale-110 group-hover:border-[#4285F4]/50 group-hover:shadow-[0_0_20px_rgba(66,133,244,0.2)] transition-all duration-300">
@@ -175,8 +159,13 @@ export function ConnectStackSection() {
                     </div>
                 </div>
 
+                {/* Gmail CASA caveat */}
+                <p className="mx-auto mt-10 max-w-2xl text-center text-[11px] text-white/35 leading-relaxed animate-fade-in-up delay-300">
+                    <span className="text-white/50 font-medium">Gmail autonomous reply</span> is pending our enterprise security review (CASA) — expected late Q2 2026. Assisted agent replies on Gmail work today.
+                </p>
+
                 {/* Feature Pills */}
-                <div className="mx-auto mt-12 max-w-4xl animate-fade-in-up delay-400">
+                <div className="mx-auto mt-6 max-w-4xl animate-fade-in-up delay-400">
                     <div className="flex items-center justify-center gap-3 flex-wrap text-sm text-white/70">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400">
@@ -184,7 +173,7 @@ export function ConnectStackSection() {
                                 <path d="M7 11v4a2 2 0 0 0 2 2h4"></path>
                                 <rect width="8" height="8" x="13" y="13" rx="2"></rect>
                             </svg>
-                            <span className="font-medium text-xs">Instant sync</span>
+                            <span className="font-medium text-xs">Syncs in seconds</span>
                         </div>
                         <div className="hidden sm:block w-16 h-px border-t border-dashed border-white/20"></div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/5">
@@ -200,7 +189,7 @@ export function ConnectStackSection() {
                                 <path d="m12 14 4-4"></path>
                                 <path d="M3.34 19a10 10 0 1 1 17.32 0"></path>
                             </svg>
-                            <span className="font-medium text-xs">Real-time</span>
+                            <span className="font-medium text-xs">Real-time inbox</span>
                         </div>
                     </div>
                 </div>

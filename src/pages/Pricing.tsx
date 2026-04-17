@@ -80,7 +80,7 @@ const plans = [
             { text: "Auto-QA grading", included: true },
             { text: "Volume forecasting", included: true },
             { text: "Developer API", included: true },
-            { text: "90-day audit log retention", included: true },
+            { text: "Audit log retention", included: true },
             { text: "Custom branding", included: true },
             { text: "Priority phone & email support", included: true }
         ],

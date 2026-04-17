@@ -248,8 +248,8 @@ export function Campaigns() {
             <section className="max-w-7xl mx-auto px-6 mb-32 relative z-10">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
-                        { value: "98%", label: "WhatsApp open rate", sub: "vs 20% for email" },
-                        { value: "5 min", label: "Campaign build time", sub: "No-code wizard" },
+                        { value: "Multi", label: "Channels in one flow", sub: "WhatsApp, Instagram, email" },
+                        { value: "No-code", label: "Campaign builder", sub: "Drag, edit, publish" },
                         { value: "5", label: "A/B variants", sub: "Per campaign" },
                         { value: "0", label: "Messages during quiet hours", sub: "Timezone-aware" },
                     ].map((stat, i) => (

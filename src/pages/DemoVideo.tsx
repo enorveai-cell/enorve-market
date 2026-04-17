@@ -767,10 +767,6 @@ export function DemoVideo() {
                   >
                     Get early access →
                   </a>
-                  <div className="flex items-center gap-2 text-sm text-slate-400">
-                    <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                    47 support teams already waiting
-                  </div>
                 </motion.div>
               </div>
             )}

@@ -252,7 +252,8 @@ export function Analytics() {
                         </motion.div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <span className="absolute -top-3 right-0 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                         {kpiCards.map((kpi, index) => (
                             <motion.div
                                 key={kpi.label}
@@ -458,7 +459,8 @@ export function Analytics() {
                     </div>
 
                     {/* Metrics Grid */}
-                    <div className="grid md:grid-cols-4 gap-6 mb-8">
+                    <div className="relative grid md:grid-cols-4 gap-6 mb-8">
+                        <span className="absolute -top-3 right-0 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                         {aiMetrics.map((metric, index) => (
                             <motion.div
                                 key={metric.label}
@@ -661,8 +663,9 @@ export function Analytics() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="grid md:grid-cols-4 gap-6"
+                        className="relative grid md:grid-cols-4 gap-6"
                     >
+                        <span className="absolute -top-3 right-0 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                         {[
                             { label: "Total Revenue", value: "₹8,47,000", trend: "+18%" },
                             { label: "Conversations with Revenue", value: "892", trend: "+12%" },
@@ -688,8 +691,9 @@ export function Analytics() {
                             whileInView={{ opacity: 1, x: 0 satisfies number }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-[32px] bg-[#0C0E12] border border-white/5"
+                            className="relative p-8 rounded-[32px] bg-[#0C0E12] border border-white/5"
                         >
+                            <span className="absolute top-2 right-3 text-[9px] font-semibold uppercase tracking-wider text-white/20 bg-white/5 px-2 py-0.5 rounded-full z-10">Sample data — illustrative only</span>
                             <div className="flex items-center justify-between mb-6">
                                 <h3 className="text-lg font-medium text-white">SLA Performance</h3>
                                 <span className="text-xs px-2 py-1 rounded bg-green-500/10 text-green-400 border border-green-500/20">Excellent</span>

@@ -73,9 +73,9 @@ const solutions = [
 ]
 
 const outcomes = [
-    { icon: Zap, title: "Faster onboarding support", value: "60%", desc: "faster first response" },
-    { icon: TrendingUp, title: "Lower churn risk", value: "Lower", desc: "customer churn" },
-    { icon: Layers, title: "Scalable operations", value: "More", desc: "tickets per agent" }
+    { icon: Zap, title: "Faster onboarding support", value: "—", desc: "AI replies grounded in your docs" },
+    { icon: TrendingUp, title: "Lower churn risk", value: "—", desc: "earlier intervention on at-risk accounts" },
+    { icon: Layers, title: "Scalable operations", value: "—", desc: "AI handles routine tickets" }
 ]
 
 const enterpriseFeatures = [

@@ -173,7 +173,7 @@ export function PrivacyPolicy() {
                                 We implement industry-standard technical and organizational measures to protect your personal
                                 data against unauthorized access, alteration, disclosure, or destruction. All data is
                                 encrypted at rest and in transit. Access to production systems is restricted
-                                to authorized personnel with multi-factor authentication. We maintain SOC 2 Type II aligned controls.
+                                to authorized personnel with multi-factor authentication. SOC 2 Type II audit is in progress (target Q3 2026); aligned controls are live today.
                             </p>
                         </div>
 

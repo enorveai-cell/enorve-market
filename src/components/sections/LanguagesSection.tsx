@@ -105,7 +105,7 @@ export function LanguagesSection() {
                         viewport={{ once: true }}
                         className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto"
                     >
-                        AI responds naturally in 30+ languages. No configuration needed — it just works across every language your customers speak.
+                        AI responds in 30+ languages. No configuration needed — it works across every language your customers speak.
                     </motion.p>
                 </div>
 

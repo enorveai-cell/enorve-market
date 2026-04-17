@@ -421,7 +421,7 @@ function ResidencyMap() {
 /* ─────────────── compliance strip ─────────────── */
 
 const CONTROLS: Array<{ label: string; sub: string; tone: "forest" | "cream" }> = [
-    { label: "SOC 2 Type II", sub: "90d active", tone: "forest" },
+    { label: "SOC 2 Type II", sub: "audit in progress", tone: "forest" },
     { label: "DPA v2", sub: "counter-signed", tone: "forest" },
     { label: "GDPR DSAR", sub: "/api/gdpr", tone: "cream" },
     { label: "SAML / OIDC", sub: "enabled", tone: "forest" },
