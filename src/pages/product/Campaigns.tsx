@@ -384,8 +384,8 @@ export function Campaigns() {
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">come to you.</span>
                     </h2>
                     <p className="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
-                        WhatsApp has a 98% open rate. Instagram DMs get read within minutes.
-                        Your website chat widget gets seen by people who are already on your website.
+                        Reach your customers where they already are — WhatsApp, Instagram DMs,
+                        or right inside the chat widget on your site. No downloads, no ads, no waiting.
                     </p>
                     <div className="flex justify-center gap-4">
                         <Button variant="primary" size="lg" onClick={openWaitlist}>
